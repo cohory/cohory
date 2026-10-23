@@ -1,0 +1,15 @@
+# The maintainers team of the cohory organization reviews every change.
+# Later rules take precedence over earlier ones.
+
+*                       @cohory/maintainers
+
+# Highest risk areas need a maintainer who knows payments, authorization, and tenancy.
+/packages/payments/     @cohory/maintainers
+/packages/auth/         @cohory/maintainers
+/packages/db/           @cohory/maintainers
+
+# Licensing, governance, and security policy.
+/LICENSE                @cohory/maintainers
+/GOVERNANCE.md          @cohory/maintainers
+/SECURITY.md            @cohory/maintainers
+/docs/decisions/        @cohory/maintainers

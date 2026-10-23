@@ -1,0 +1,72 @@
+name: Bug report
+description: Something does not work as documented.
+title: "bug: "
+labels: ["bug", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Do not report security issues here. Use the private process in SECURITY.md.
+        Remove any secrets, API keys, or personal data before posting.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: Describe the problem and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. See ...
+    validations:
+      required: true
+  - type: dropdown
+    id: edition
+    attributes:
+      label: Edition
+      options:
+        - Community Edition (self-hosted)
+        - Cloud Edition
+        - Local development
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: "0.1.0 or a commit hash"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      multiple: true
+      options:
+        - Community (posts, comments)
+        - Classroom (courses, lessons)
+        - Calendar (events)
+        - Members (directory, leaderboard)
+        - Manage (creator admin)
+        - Payments and memberships
+        - Authentication
+        - API or agent integrations
+        - Self-hosting and Docker
+        - Documentation
+        - Other
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser, operating system, device, and for self-hosted installs the Docker and Postgres versions.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Relevant log lines with secrets removed.
+      render: text

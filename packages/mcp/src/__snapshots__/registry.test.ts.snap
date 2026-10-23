@@ -1,0 +1,875 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MCP tool registry > generates the same tool shapes from the route metadata 1`] = `
+[
+  {
+    "action": "membership.ban",
+    "inputs": {
+      "userId": {
+        "format": "uuid",
+        "type": "string",
+      },
+    },
+    "name": "ban_member",
+    "operation": "POST /api/v1/communities/{slug}/manage/people/{userId}/ban",
+    "required": [
+      "userId",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "event.delete",
+    "inputs": {
+      "eventSlug": {
+        "maxLength": 200,
+        "pattern": "^[A-Za-z0-9-]+$",
+        "type": "string",
+      },
+    },
+    "name": "cancel_event_series",
+    "operation": "DELETE /api/v1/communities/{slug}/calendar/events/{eventSlug}",
+    "required": [
+      "eventSlug",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "post.create",
+    "inputs": {
+      "body": {
+        "$ref": "#/$defs/ContentDocument",
+      },
+      "categoryId": {
+        "description": "A category of this community.",
+        "format": "uuid",
+        "type": [
+          "string",
+          "null",
+        ],
+      },
+      "title": {
+        "maxLength": 120,
+        "type": [
+          "string",
+          "null",
+        ],
+      },
+    },
+    "name": "create_draft_post",
+    "operation": "POST /api/v1/communities/{slug}/posts",
+    "required": [
+      "body",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "event.create",
+    "inputs": {
+      "coverKey": {
+        "description": "Key of an image already uploaded to this community. Null removes the cover.",
+        "maxLength": 512,
+        "type": [
+          "string",
+          "null",
+        ],
+      },
+      "description": {
+        "maxLength": 5000,
+        "type": [
+          "string",
+          "null",
+        ],
+      },
+      "durationMinutes": {
+        "maximum": 1440,
+        "minimum": 5,
+        "type": "integer",
+      },
+      "location": {
+        "maxLength": 500,
+        "type": [
+          "string",
+          "null",
+        ],
+      },
+      "recurrence": {
+        "enum": [
+          "weekly",
+          null,
+        ],
+        "type": [
+          "string",
+          "null",
+        ],
+      },
+      "recurrenceUntil": {
+        "description": "Last date of a weekly series, inclusive.",
+        "type": [
+          "string",
+          "null",
+        ],
+      },
+      "startsAtLocal": {
+        "description": "Local wall clock start in the event time zone, without an offset.",
+        "type": "string",
+      },
+      "timeZone": {
+        "description": "IANA time zone.",
+        "type": "string",
+      },
+      "title": {
+        "maxLength": 120,
+        "type": "string",
+      },
+    },
+    "name": "create_event",
+    "operation": "POST /api/v1/communities/{slug}/calendar/events",
+    "required": [
+      "title",
+      "startsAtLocal",
+      "timeZone",
+      "durationMinutes",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "membership.manage",
+    "inputs": {
+      "access": {
+        "description": "Only people with this access. paying means any paid subscription (monthly, yearly, past due, or cancelling). Needs permission to read payments.",
+        "enum": [
+          "paying_monthly",
+          "paying_yearly",
+          "free_access",
+          "past_due",
+          "cancelling",
+          "paying",
+          "none",
+        ],
+        "type": "string",
+      },
+      "cursor": {
+        "description": "The nextCursor of the previous page. Leave it out for the first page.",
+        "maxLength": 512,
+        "type": "string",
+      },
+      "inactiveDays": {
+        "description": "Only active members whose last activity (see lastActiveAt) is more than this many days ago.",
+        "maximum": 3650,
+        "minimum": 1,
+        "type": "integer",
+      },
+      "limit": {
+        "description": "How many items to return, at most 100.",
+        "maximum": 100,
+        "minimum": 1,
+        "type": "integer",
+      },
+      "neverSignedIn": {
+        "description": "Only people who have never signed in, such as imported members.",
+        "type": "boolean",
+      },
+      "query": {
+        "description": "Name, username, or (admins) email prefix.",
+        "maxLength": 80,
+        "type": "string",
+      },
+      "role": {
+        "enum": [
+          "owner",
+          "admin",
+          "moderator",
+          "member",
+        ],
+        "type": "string",
+      },
+      "status": {
+        "description": "Defaults to active in the list and to every status in the export.",
+        "enum": [
+          "pending",
+          "active",
+          "removed",
+          "banned",
+        ],
+        "type": "string",
+      },
+    },
+    "name": "find_inactive_members",
+    "operation": "GET /api/v1/communities/{slug}/manage/people",
+    "required": [
+      "inactiveDays",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "lesson.read",
+    "inputs": {
+      "courseId": {
+        "format": "uuid",
+        "type": "string",
+      },
+      "path": {
+        "description": "A file path from the material's references or templates.",
+        "maxLength": 400,
+        "minLength": 1,
+        "type": "string",
+      },
+      "version": {
+        "description": "A published version. Leave it out for the latest.",
+        "pattern": "^\\d{1,6}\\.\\d{1,6}\\.\\d{1,6}$",
+        "type": "string",
+      },
+    },
+    "name": "get_agent_material_file",
+    "operation": "GET /api/v1/communities/{slug}/courses/{courseId}/agent-material/file-content",
+    "required": [
+      "courseId",
+      "path",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "lesson.read",
+    "inputs": {
+      "courseId": {
+        "format": "uuid",
+        "type": "string",
+      },
+      "lessonId": {
+        "format": "uuid",
+        "type": "string",
+      },
+      "taskId": {
+        "maxLength": 64,
+        "type": "string",
+      },
+      "version": {
+        "description": "A published version. Leave it out for the latest.",
+        "pattern": "^\\d{1,6}\\.\\d{1,6}\\.\\d{1,6}$",
+        "type": "string",
+      },
+    },
+    "name": "get_agent_task",
+    "operation": "GET /api/v1/communities/{slug}/courses/{courseId}/agent-material/lessons/{lessonId}/tasks/{taskId}",
+    "required": [
+      "courseId",
+      "lessonId",
+      "taskId",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "approval.read_own",
+    "inputs": {
+      "approvalId": {
+        "type": "string",
+      },
+    },
+    "name": "get_approval_status",
+    "operation": "GET /api/v1/communities/{slug}/approvals/{approvalId}",
+    "required": [
+      "approvalId",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "community.read",
+    "inputs": {},
+    "name": "get_community",
+    "operation": "GET /api/v1/communities/{slug}",
+    "required": [],
+    "userContent": true,
+  },
+  {
+    "action": "settings.read",
+    "inputs": {},
+    "name": "get_community_settings",
+    "operation": "GET /api/v1/communities/{slug}/manage/settings",
+    "required": [],
+    "userContent": true,
+  },
+  {
+    "action": "course.read",
+    "inputs": {
+      "courseSlug": {
+        "maxLength": 200,
+        "pattern": "^[A-Za-z0-9-]+$",
+        "type": "string",
+      },
+    },
+    "name": "get_course",
+    "operation": "GET /api/v1/communities/{slug}/courses/{courseSlug}",
+    "required": [
+      "courseSlug",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "course.read",
+    "inputs": {
+      "courseId": {
+        "format": "uuid",
+        "type": "string",
+      },
+      "version": {
+        "description": "A published version. Leave it out for the latest.",
+        "pattern": "^\\d{1,6}\\.\\d{1,6}\\.\\d{1,6}$",
+        "type": "string",
+      },
+    },
+    "name": "get_course_agent_material",
+    "operation": "GET /api/v1/communities/{slug}/courses/{courseId}/agent-material",
+    "required": [
+      "courseId",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "event.read",
+    "inputs": {
+      "eventSlug": {
+        "maxLength": 200,
+        "pattern": "^[A-Za-z0-9-]+$",
+        "type": "string",
+      },
+    },
+    "name": "get_event",
+    "operation": "GET /api/v1/communities/{slug}/calendar/events/{eventSlug}",
+    "required": [
+      "eventSlug",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "event.read",
+    "inputs": {
+      "eventSlug": {
+        "maxLength": 200,
+        "pattern": "^[A-Za-z0-9-]+$",
+        "type": "string",
+      },
+      "occurrenceId": {
+        "format": "uuid",
+        "type": "string",
+      },
+    },
+    "name": "get_event_occurrence",
+    "operation": "GET /api/v1/communities/{slug}/calendar/events/{eventSlug}/occurrences/{occurrenceId}",
+    "required": [
+      "eventSlug",
+      "occurrenceId",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "lesson.read",
+    "inputs": {
+      "courseSlug": {
+        "maxLength": 200,
+        "pattern": "^[A-Za-z0-9-]+$",
+        "type": "string",
+      },
+      "lessonSlug": {
+        "maxLength": 200,
+        "pattern": "^[A-Za-z0-9-]+$",
+        "type": "string",
+      },
+    },
+    "name": "get_lesson",
+    "operation": "GET /api/v1/communities/{slug}/courses/{courseSlug}/lessons/{lessonSlug}",
+    "required": [
+      "courseSlug",
+      "lessonSlug",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "membership.read_profile",
+    "inputs": {
+      "userId": {
+        "type": "string",
+      },
+    },
+    "name": "get_member",
+    "operation": "GET /api/v1/communities/{slug}/members/{userId}",
+    "required": [
+      "userId",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "payment.read",
+    "inputs": {},
+    "name": "get_payments_summary",
+    "operation": "GET /api/v1/communities/{communityId}/payments/ledger",
+    "required": [],
+    "userContent": true,
+  },
+  {
+    "action": "post.read",
+    "inputs": {
+      "postId": {
+        "format": "uuid",
+        "type": "string",
+      },
+    },
+    "name": "get_post",
+    "operation": "GET /api/v1/communities/{slug}/posts/{postId}",
+    "required": [
+      "postId",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "review.read",
+    "inputs": {},
+    "name": "get_review_summary",
+    "operation": "GET /api/v1/communities/{slug}/reviews/summary",
+    "required": [],
+    "userContent": false,
+  },
+  {
+    "action": "course.read",
+    "inputs": {
+      "courseId": {
+        "format": "uuid",
+        "type": "string",
+      },
+      "version": {
+        "description": "A published version. Leave it out for the latest.",
+        "pattern": "^\\d{1,6}\\.\\d{1,6}\\.\\d{1,6}$",
+        "type": "string",
+      },
+    },
+    "name": "get_skill_export",
+    "operation": "GET /api/v1/communities/{slug}/courses/{courseId}/agent-export",
+    "required": [
+      "courseId",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "comment.read",
+    "inputs": {
+      "cursor": {
+        "description": "The nextCursor of the previous page. Leave it out for the first page.",
+        "maxLength": 512,
+        "type": "string",
+      },
+      "limit": {
+        "description": "How many items to return, at most 100.",
+        "maximum": 100,
+        "minimum": 1,
+        "type": "integer",
+      },
+      "postId": {
+        "format": "uuid",
+        "type": "string",
+      },
+    },
+    "name": "list_comments",
+    "operation": "GET /api/v1/communities/{slug}/posts/{postId}/comments",
+    "required": [
+      "postId",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "course.read",
+    "inputs": {},
+    "name": "list_courses",
+    "operation": "GET /api/v1/communities/{slug}/courses",
+    "required": [],
+    "userContent": true,
+  },
+  {
+    "action": "event.read_rsvps",
+    "inputs": {
+      "occurrenceId": {
+        "format": "uuid",
+        "type": "string",
+      },
+    },
+    "name": "list_event_rsvps",
+    "operation": "GET /api/v1/communities/{slug}/calendar/occurrences/{occurrenceId}/rsvps",
+    "required": [
+      "occurrenceId",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "event.read",
+    "inputs": {
+      "from": {
+        "format": "date-time",
+        "type": "string",
+      },
+      "to": {
+        "description": "At most 100 days after from.",
+        "format": "date-time",
+        "type": "string",
+      },
+    },
+    "name": "list_events",
+    "operation": "GET /api/v1/communities/{slug}/calendar/occurrences",
+    "required": [
+      "from",
+      "to",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "membership.list",
+    "inputs": {
+      "cursor": {
+        "description": "The nextCursor of the previous page. Leave it out for the first page.",
+        "maxLength": 512,
+        "type": "string",
+      },
+      "level": {
+        "type": [
+          "integer",
+          "null",
+        ],
+      },
+      "limit": {
+        "description": "How many items to return, at most 100.",
+        "maximum": 100,
+        "minimum": 1,
+        "type": "integer",
+      },
+      "query": {
+        "description": "Name or username prefix.",
+        "maxLength": 80,
+        "type": "string",
+      },
+    },
+    "name": "list_members",
+    "operation": "GET /api/v1/communities/{slug}/members",
+    "required": [],
+    "userContent": true,
+  },
+  {
+    "action": "approval.read_own",
+    "inputs": {},
+    "name": "list_my_approval_requests",
+    "operation": "GET /api/v1/communities/{slug}/approvals",
+    "required": [],
+    "userContent": true,
+  },
+  {
+    "action": "course.read",
+    "inputs": {},
+    "name": "list_my_courses",
+    "operation": "GET /api/v1/communities/{slug}/agent-courses",
+    "required": [],
+    "userContent": true,
+  },
+  {
+    "action": "submission.read_own",
+    "inputs": {
+      "courseId": {
+        "format": "uuid",
+        "type": "string",
+      },
+    },
+    "name": "list_my_submissions",
+    "operation": "GET /api/v1/communities/{slug}/courses/{courseId}/submissions",
+    "required": [
+      "courseId",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "post.create",
+    "inputs": {},
+    "name": "list_post_drafts",
+    "operation": "GET /api/v1/communities/{slug}/post-drafts",
+    "required": [],
+    "userContent": true,
+  },
+  {
+    "action": "post.read",
+    "inputs": {
+      "category": {
+        "description": "A category slug.",
+        "maxLength": 64,
+        "type": "string",
+      },
+      "cursor": {
+        "description": "The nextCursor of the previous page. Leave it out for the first page.",
+        "maxLength": 512,
+        "type": "string",
+      },
+      "limit": {
+        "description": "How many items to return, at most 100.",
+        "maximum": 100,
+        "minimum": 1,
+        "type": "integer",
+      },
+      "sort": {
+        "description": "active (default): latest comment first. new: newest first. top: likes plus comments counted twice, last 7 days.",
+        "enum": [
+          "active",
+          "new",
+          "top",
+        ],
+        "type": "string",
+      },
+    },
+    "name": "list_posts",
+    "operation": "GET /api/v1/communities/{slug}/posts",
+    "required": [],
+    "userContent": true,
+  },
+  {
+    "action": "review.read",
+    "inputs": {
+      "cursor": {
+        "description": "The nextCursor of the previous page. Leave it out for the first page.",
+        "maxLength": 512,
+        "type": "string",
+      },
+      "limit": {
+        "description": "How many items to return, at most 50.",
+        "maximum": 50,
+        "minimum": 1,
+        "type": "integer",
+      },
+      "rating": {
+        "description": "Only this many stars.",
+        "maximum": 5,
+        "minimum": 1,
+        "type": "integer",
+      },
+    },
+    "name": "list_reviews",
+    "operation": "GET /api/v1/communities/{slug}/reviews",
+    "required": [],
+    "userContent": true,
+  },
+  {
+    "action": "post.create",
+    "inputs": {},
+    "name": "list_scheduled_posts",
+    "operation": "GET /api/v1/communities/{slug}/scheduled-posts",
+    "required": [],
+    "userContent": true,
+  },
+  {
+    "action": "payment.purchase",
+    "inputs": {
+      "answers": {
+        "description": "Answers to the community's join questions, in question order. Required questions must be answered before checkout.",
+        "items": {
+          "maxLength": 1000,
+          "type": "string",
+        },
+        "maxItems": 3,
+        "type": "array",
+      },
+      "interval": {
+        "enum": [
+          "month",
+          "year",
+        ],
+        "type": "string",
+      },
+    },
+    "name": "propose_course_purchase",
+    "operation": "POST /api/v1/communities/{communityId}/payments/checkout",
+    "required": [],
+    "userContent": false,
+  },
+  {
+    "action": "settings.update",
+    "inputs": {
+      "description": {
+        "maxLength": 2000,
+        "type": [
+          "string",
+          "null",
+        ],
+      },
+      "gamificationEnabled": {
+        "type": "boolean",
+      },
+      "joinMode": {
+        "enum": [
+          "open",
+          "approval",
+          "invite",
+        ],
+        "type": "string",
+      },
+      "joinQuestions": {
+        "description": "Up to three questions shown with Request to join.",
+        "items": {
+          "properties": {
+            "required": {
+              "type": "boolean",
+            },
+            "text": {
+              "maxLength": 200,
+              "type": "string",
+            },
+          },
+          "required": [
+            "text",
+            "required",
+          ],
+          "type": "object",
+        },
+        "maxItems": 3,
+        "type": "array",
+      },
+      "levelNames": {
+        "description": "Nine names, 1 to 30 characters each.",
+        "items": {
+          "maxLength": 120,
+          "type": "string",
+        },
+        "type": "array",
+      },
+      "name": {
+        "maxLength": 80,
+        "type": "string",
+      },
+      "pointsForEvents": {
+        "description": "Give 1 point for each event a member attends (a going RSVP, once it ends), while points and levels are on. Off by default.",
+        "type": "boolean",
+      },
+      "pointsForLessons": {
+        "description": "Give 1 point for each lesson a member finishes, while points and levels are on. Off by default.",
+        "type": "boolean",
+      },
+      "privacy": {
+        "enum": [
+          "private",
+          "public",
+        ],
+        "type": "string",
+      },
+      "reviewsEnabled": {
+        "description": "Turn reviews on or off. Off hides every review on the About page but keeps them.",
+        "type": "boolean",
+      },
+    },
+    "name": "propose_settings_change",
+    "operation": "PATCH /api/v1/communities/{slug}/manage/settings",
+    "required": [],
+    "userContent": true,
+  },
+  {
+    "action": "membership.remove",
+    "inputs": {
+      "userId": {
+        "format": "uuid",
+        "type": "string",
+      },
+    },
+    "name": "remove_member",
+    "operation": "POST /api/v1/communities/{slug}/manage/people/{userId}/remove",
+    "required": [
+      "userId",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "post.create",
+    "inputs": {
+      "body": {
+        "$ref": "#/$defs/ContentDocument",
+      },
+      "categoryId": {
+        "description": "A category of this community.",
+        "format": "uuid",
+        "type": [
+          "string",
+          "null",
+        ],
+      },
+      "scheduledAt": {
+        "description": "Publish later instead of now: an ISO 8601 time with an offset, at least one minute and at most one year ahead. The post stays out of the feed until then, and notifications and webhooks fire at publish time.",
+        "format": "date-time",
+        "type": [
+          "string",
+          "null",
+        ],
+      },
+      "title": {
+        "maxLength": 120,
+        "type": [
+          "string",
+          "null",
+        ],
+      },
+    },
+    "name": "schedule_post",
+    "operation": "POST /api/v1/communities/{slug}/posts",
+    "required": [
+      "body",
+      "scheduledAt",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "post.read",
+    "inputs": {
+      "q": {
+        "maxLength": 100,
+        "type": "string",
+      },
+    },
+    "name": "search_community",
+    "operation": "GET /api/v1/communities/{slug}/search",
+    "required": [
+      "q",
+    ],
+    "userContent": true,
+  },
+  {
+    "action": "submission.create",
+    "inputs": {
+      "courseId": {
+        "format": "uuid",
+        "type": "string",
+      },
+      "lessonId": {
+        "maxLength": 200,
+        "minLength": 1,
+        "type": "string",
+      },
+      "payload": {
+        "description": "Your result as JSON, up to 64 KiB.",
+      },
+      "runId": {
+        "description": "Your own id for this run. One result per agent, run, and task.",
+        "maxLength": 200,
+        "minLength": 1,
+        "type": "string",
+      },
+      "taskId": {
+        "maxLength": 200,
+        "minLength": 1,
+        "type": "string",
+      },
+      "version": {
+        "maxLength": 64,
+        "minLength": 1,
+        "type": "string",
+      },
+    },
+    "name": "submit_task_result",
+    "operation": "POST /api/v1/communities/{slug}/courses/{courseId}/submissions",
+    "required": [
+      "courseId",
+      "lessonId",
+      "taskId",
+      "version",
+      "runId",
+    ],
+    "userContent": false,
+  },
+]
+`;

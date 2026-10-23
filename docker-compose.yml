@@ -1,0 +1,103 @@
+name: cohory
+
+x-app-database-url: &app-database-url postgres://${POSTGRES_APP_USER:-cohory_app}:${POSTGRES_APP_PASSWORD:-cohory_app}@postgres:5432/${POSTGRES_DB:-cohory}
+
+x-app: &app
+  image: ${COHORY_IMAGE:-cohory}:${COHORY_VERSION:-local}
+  build:
+    context: .
+  env_file:
+    - path: .env
+      required: false
+  environment:
+    DATABASE_URL: *app-database-url
+    STORAGE_LOCAL_PATH: /data/uploads
+    APP_URL: ${APP_URL:-${BETTER_AUTH_URL:-http://localhost:3000}}
+    BETTER_AUTH_URL: ${BETTER_AUTH_URL:-${APP_URL:-http://localhost:3000}}
+    NEXT_PUBLIC_APP_URL: ${APP_URL:-${BETTER_AUTH_URL:-http://localhost:3000}}
+
+services:
+  postgres:
+    image: postgres:17.11
+    ports:
+      - "${POSTGRES_HOST_PORT:-127.0.0.1:5433}:5432"
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-cohory}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-cohory}
+      POSTGRES_DB: ${POSTGRES_DB:-cohory}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", 'pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  migrations:
+    <<: *app
+    command: ["node", "packages/db/dist/migrate.js"]
+    restart: "no"
+    environment:
+      DATABASE_URL: *app-database-url
+      DATABASE_ADMIN_URL: postgres://${POSTGRES_USER:-cohory}:${POSTGRES_PASSWORD:-cohory}@postgres:5432/${POSTGRES_DB:-cohory}
+    healthcheck:
+      disable: true
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  web:
+    <<: *app
+    command: ["node", "apps/web/server.js"]
+    restart: unless-stopped
+    ports:
+      - "${APP_BIND:-127.0.0.1}:${APP_PORT:-3000}:3000"
+    volumes:
+      - uploads:/data/uploads
+    depends_on:
+      migrations:
+        condition: service_completed_successfully
+
+  worker:
+    <<: *app
+    command: ["node", "apps/worker/dist/index.js"]
+    restart: unless-stopped
+    init: true
+    healthcheck:
+      test: ["CMD", "node", "apps/worker/dist/healthcheck.js"]
+      interval: 30s
+      timeout: 5s
+      start_period: 30s
+      retries: 3
+    volumes:
+      - uploads:/data/uploads
+    depends_on:
+      migrations:
+        condition: service_completed_successfully
+
+  redis:
+    image: redis:7.4.11
+    profiles: ["redis"]
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  mailpit:
+    image: axllent/mailpit:v1.29
+    profiles: ["mail"]
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${MAILPIT_UI_PORT:-8025}:8025"
+      - "127.0.0.1:${MAILPIT_SMTP_PORT:-1025}:1025"
+
+volumes:
+  pgdata:
+  uploads:
+  redisdata:

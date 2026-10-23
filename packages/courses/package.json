@@ -1,0 +1,46 @@
+{
+  "name": "@cohory/courses",
+  "version": "0.0.0",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./seed": "./src/seed.ts",
+    "./agent-format": "./src/agent/index.ts",
+    "./markdown": "./src/markdown.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --project unit",
+    "test:integration": "vitest run --project integration --passWithNoTests",
+    "db:seed": "node --env-file-if-exists=../../.env --import tsx src/seed-cli.ts"
+  },
+  "dependencies": {
+    "@cohory/authz": "workspace:*",
+    "@cohory/communities": "workspace:*",
+    "@cohory/config": "workspace:*",
+    "@cohory/db": "workspace:*",
+    "@cohory/entitlements": "workspace:*",
+    "@cohory/events": "workspace:*",
+    "@cohory/fair-use": "workspace:*",
+    "@cohory/posts": "workspace:*",
+    "@cohory/storage": "workspace:*",
+    "ajv": "8.20.0",
+    "drizzle-orm": "0.45.4",
+    "fflate": "0.8.3",
+    "markdown-it": "14.3.3",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@cohory/agents": "workspace:*",
+    "@cohory/notifications": "workspace:*",
+    "@cohory/payments": "workspace:*",
+    "@types/markdown-it": "14.2.0",
+    "@types/node": "22.20.5",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5"
+  }
+}

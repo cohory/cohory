@@ -1,0 +1,15 @@
+pnpm-lock.yaml
+node_modules
+.next
+.turbo
+dist
+coverage
+next-env.d.ts
+packages/db/migrations/meta
+*.md
+.claude
+.github
+packages/ui/styles/tokens.css
+apps/e2e/playwright-report
+apps/e2e/test-results
+apps/e2e/blob-report

@@ -1,0 +1,10 @@
+{
+  "created_at": "2026-10-19T10:10:00Z",
+  "modified_at": null,
+  "id": "3f2e1d0c-9b8a-4776-a5b4-c3d2e1f0a9b1",
+  "token": "polar_cst_fixture",
+  "expires_at": "2026-10-19T11:10:00Z",
+  "return_url": "http://localhost:3000/c/paid/membership",
+  "customer_portal_url": "https://sandbox.polar.sh/paid-circle-studio/portal?customer_session_token=polar_cst_fixture",
+  "customer_id": "5e4d3c2b-1a09-4f8e-9d7c-6b5a49382701"
+}

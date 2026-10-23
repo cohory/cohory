@@ -1,0 +1,55 @@
+@import "@cohory/ui/globals.css";
+
+@layer base {
+  [data-theme="light"] {
+    color-scheme: light;
+    color: var(--color-text);
+  }
+
+  [data-theme="dark"] {
+    color-scheme: dark;
+    color: var(--color-text);
+  }
+}
+
+[data-community-accent],
+:root:has([data-community-root][data-community-accent]) {
+  --color-accent: var(--community-light-color-accent);
+  --color-accent-hover: var(--community-light-color-accent-hover);
+  --color-accent-foreground: var(--community-light-color-accent-foreground);
+  --color-accent-muted: var(--community-light-color-accent-muted);
+  --color-ring: var(--community-light-color-ring);
+}
+
+[data-theme="dark"] [data-community-accent],
+[data-community-accent][data-theme="dark"],
+:root[data-theme="dark"]:has([data-community-root][data-community-accent]) {
+  --color-accent: var(--community-dark-color-accent);
+  --color-accent-hover: var(--community-dark-color-accent-hover);
+  --color-accent-foreground: var(--community-dark-color-accent-foreground);
+  --color-accent-muted: var(--community-dark-color-accent-muted);
+  --color-ring: var(--community-dark-color-ring);
+}
+
+[data-community-accent][data-theme="light"] {
+  --color-accent: var(--community-light-color-accent);
+  --color-accent-hover: var(--community-light-color-accent-hover);
+  --color-accent-foreground: var(--community-light-color-accent-foreground);
+  --color-accent-muted: var(--community-light-color-accent-muted);
+  --color-ring: var(--community-light-color-ring);
+}
+
+.community-font-inter,
+:root:has([data-community-root].community-font-inter) {
+  --font-heading: var(--font-inter), var(--font-sans);
+}
+
+.community-font-source-serif,
+:root:has([data-community-root].community-font-source-serif) {
+  --font-heading: var(--font-source-serif), var(--font-serif);
+}
+
+.community-font-nunito-sans,
+:root:has([data-community-root].community-font-nunito-sans) {
+  --font-heading: var(--font-nunito-sans), ui-sans-serif, system-ui, sans-serif;
+}

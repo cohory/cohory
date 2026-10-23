@@ -1,0 +1,59 @@
+{
+  "name": "@cohory/api",
+  "version": "0.0.0",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./errors": "./src/error-catalog/index.ts",
+    "./services": "./src/services.ts"
+  },
+  "imports": {
+    "#server-only": {
+      "browser": "server-only",
+      "default": "./src/server-environment.ts"
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --project unit",
+    "test:integration": "vitest run --project integration --passWithNoTests"
+  },
+  "dependencies": {
+    "@cohory/agents": "workspace:*",
+    "@cohory/auth": "workspace:*",
+    "@cohory/authz": "workspace:*",
+    "@cohory/calendar": "workspace:*",
+    "@cohory/communities": "workspace:*",
+    "@cohory/config": "workspace:*",
+    "@cohory/courses": "workspace:*",
+    "@cohory/db": "workspace:*",
+    "@cohory/entitlements": "workspace:*",
+    "@cohory/events": "workspace:*",
+    "@cohory/fair-use": "workspace:*",
+    "@cohory/gamification": "workspace:*",
+    "@cohory/infra": "workspace:*",
+    "@cohory/members": "workspace:*",
+    "@cohory/migration": "workspace:*",
+    "@cohory/notifications": "workspace:*",
+    "@cohory/payments": "workspace:*",
+    "@cohory/posts": "workspace:*",
+    "@cohory/rate-limit": "workspace:*",
+    "@cohory/reviews": "workspace:*",
+    "@cohory/search": "workspace:*",
+    "@cohory/storage": "workspace:*",
+    "@cohory/webhooks": "workspace:*",
+    "@hono/zod-openapi": "1.6.3",
+    "hono": "4.13.13",
+    "server-only": "0.0.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "drizzle-orm": "0.45.4",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5"
+  }
+}

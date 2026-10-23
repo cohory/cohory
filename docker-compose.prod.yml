@@ -1,0 +1,111 @@
+# Production overlay. Use it together with the base file:
+#
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml --env-file .env up -d
+#
+# It adds Caddy in front of web with automatic TLS for DOMAIN, pins the image to COHORY_VERSION,
+# keeps PostgreSQL and web off the host network, sets memory limits from REQ-NFR-HOST-002, and
+# rotates container logs. See docs/operations/install.md.
+
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: ${LOG_MAX_SIZE:-10m}
+    max-file: ${LOG_MAX_FILE:-5}
+
+x-prod-image: &prod-image ${COHORY_IMAGE:-cohory}:${COHORY_VERSION:?Set COHORY_VERSION to a release such as 0.2.0}
+
+x-prod-url: &prod-url
+  APP_URL: ${APP_URL:-https://${DOMAIN:?Set DOMAIN to the public host name}}
+  BETTER_AUTH_URL: ${APP_URL:-https://${DOMAIN}}
+  NEXT_PUBLIC_APP_URL: ${APP_URL:-https://${DOMAIN}}
+  NODE_ENV: production
+
+services:
+  postgres:
+    ports: !reset []
+    restart: unless-stopped
+    logging: *logging
+    shm_size: 256mb
+    deploy:
+      resources:
+        limits:
+          memory: ${POSTGRES_MEMORY_LIMIT:-1g}
+
+  migrations:
+    image: *prod-image
+    logging: *logging
+
+  web:
+    image: *prod-image
+    ports: !reset []
+    restart: unless-stopped
+    logging: *logging
+    environment:
+      <<: *prod-url
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000/api/v1/health').then((r) => process.exit(r.ok ? 0 : 1), () => process.exit(1))",
+        ]
+      interval: 15s
+      timeout: 5s
+      start_period: 30s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: ${WEB_MEMORY_LIMIT:-1g}
+
+  worker:
+    image: *prod-image
+    restart: unless-stopped
+    init: true
+    logging: *logging
+    healthcheck:
+      test: ["CMD", "node", "apps/worker/dist/healthcheck.js", "--restart"]
+      interval: 30s
+      timeout: 5s
+      start_period: 30s
+      retries: 3
+    environment:
+      <<: *prod-url
+    deploy:
+      resources:
+        limits:
+          memory: ${WORKER_MEMORY_LIMIT:-512m}
+
+  caddy:
+    image: caddy:2.10.2-alpine
+    restart: unless-stopped
+    logging: *logging
+    ports:
+      - "${HTTP_BIND:-0.0.0.0:80}:80"
+      - "${HTTPS_BIND:-0.0.0.0:443}:443"
+      - "${HTTPS_BIND:-0.0.0.0:443}:443/udp"
+    environment:
+      DOMAIN: ${DOMAIN}
+      ACME_EMAIL: ${ACME_EMAIL:?Set ACME_EMAIL so the certificate authority can reach you}
+      CADDY_SITE_ADDRESS: ${CADDY_SITE_ADDRESS:-${DOMAIN}}
+    volumes:
+      - ./docker/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:2019/config/"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: ${CADDY_MEMORY_LIMIT:-256m}
+    depends_on:
+      web:
+        condition: service_healthy
+
+volumes:
+  caddy_data:
+  caddy_config:

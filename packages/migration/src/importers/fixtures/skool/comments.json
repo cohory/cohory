@@ -1,0 +1,16 @@
+[
+  {
+    "id": "skool-comment-10",
+    "post_id": "skool-post-2",
+    "content": "Shipped my first lesson.",
+    "author_name": "Grace Hopper",
+    "created_at": "2025-03-05T13:00:00Z"
+  },
+  {
+    "id": "skool-comment-11",
+    "post_url": "https://www.skool.com/fixture/not-exported",
+    "content": "This post is not in the file.",
+    "author_name": "Ada Lovelace",
+    "created_at": "2025-03-07T09:00:00Z"
+  }
+]

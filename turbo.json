@@ -1,0 +1,71 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "globalDependencies": ["eslint.config.js", ".prettierrc"],
+  "globalEnv": ["NODE_ENV"],
+  "tasks": {
+    "transit": {
+      "dependsOn": ["^transit"],
+      "inputs": ["$TURBO_DEFAULT$", "!**/*.test.ts", "!**/*.test.tsx", "!**/*.md"]
+    },
+    "build": {
+      "dependsOn": ["^build", "transit"],
+      "inputs": ["$TURBO_DEFAULT$", "!**/*.test.ts", "!**/*.test.tsx", "!README.md"],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+    },
+    "@cohory/web#build": {
+      "dependsOn": ["^build", "transit"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "!**/*.test.ts",
+        "!**/*.test.tsx",
+        "!README.md",
+        "$TURBO_ROOT$/.env"
+      ],
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "typecheck": {
+      "dependsOn": ["transit"],
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": []
+    },
+    "lint": {
+      "dependsOn": ["transit"],
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": []
+    },
+    "check": {
+      "dependsOn": ["transit"],
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": []
+    },
+    "test": {
+      "dependsOn": ["transit"],
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": [],
+      "passThroughEnv": ["VITEST_MAX_WORKERS"]
+    },
+    "@cohory/ui#test": {
+      "dependsOn": ["transit"],
+      "inputs": ["$TURBO_DEFAULT$", "$TURBO_ROOT$/assets/brand/colors.json"],
+      "outputs": [],
+      "passThroughEnv": ["VITEST_MAX_WORKERS"]
+    },
+    "@cohory/mcp#test": {
+      "dependsOn": ["transit"],
+      "inputs": ["$TURBO_DEFAULT$", "$TURBO_ROOT$/docs/operations/mcp.md"],
+      "outputs": [],
+      "passThroughEnv": ["VITEST_MAX_WORKERS"]
+    },
+    "test:integration": {
+      "dependsOn": ["transit"],
+      "inputs": ["$TURBO_DEFAULT$", "$TURBO_ROOT$/docker/testinfra.compose.yml"],
+      "outputs": [],
+      "env": ["CI", "COHORY_TEST_ALLOW_DEV_DB"],
+      "passThroughEnv": ["DATABASE_URL", "DATABASE_ADMIN_URL", "VITEST_MAX_WORKERS"]
+    }
+  }
+}

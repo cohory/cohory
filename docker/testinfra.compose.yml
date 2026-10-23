@@ -1,0 +1,39 @@
+# Shared test services for integration runs on a developer machine. One long lived Compose
+# project (cohory-testinfra) serves every checkout; each checkout gets its own database.
+# Started by scripts/testinfra-up.sh, removed with its volume by scripts/testinfra-down.sh.
+# Never used by the development stack (project cohory, port 5433).
+name: cohory-testinfra
+
+services:
+  postgres:
+    image: postgres:17.11
+    command:
+      - postgres
+      - -c
+      - fsync=off
+      - -c
+      - synchronous_commit=off
+      - -c
+      - full_page_writes=off
+      - -c
+      - max_connections=300
+      - -c
+      - shared_buffers=256MB
+    ports:
+      - "127.0.0.1:${TESTINFRA_PG_PORT:-55432}:5432"
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: cohory
+      POSTGRES_PASSWORD: cohory
+      POSTGRES_DB: postgres
+    volumes:
+      - testpgdata:/var/lib/postgresql/data
+    shm_size: 256mb
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cohory -d postgres"]
+      interval: 2s
+      timeout: 5s
+      retries: 30
+
+volumes:
+  testpgdata:

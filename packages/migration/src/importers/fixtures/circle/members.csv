@@ -1,0 +1,4 @@
+UID,First name,Last name,Email,Join date,Active,Tags,Profile URL,Avatar URL,Posts,Comments,Likes received,Headline,Last active at,Email marketing,Member,Invitation status,Invitation date,Activity score,Admin,Moderator,Company size
+m-101,Maya,Rivera,maya@circle-fixture.test,2024-11-02T15:04:05Z,Yes,"founder,early",https://fixture.circle.so/u/m-101,https://cdn.example.test/a.png,3,5,9,Runs the studio,2026-10-01 08:00:00 UTC,subscribed,Yes,Accepted,2024-11-01,88,Yes,No,1-10
+m-102,Omar,Haddad,omar@circle-fixture.test,2025-01-20T10:00:00Z,Yes,,,,1,2,1,Designer,2026-09-20T12:00:00Z,unsubscribed,Yes,Accepted,2025-01-19,40,No,Yes,
+m-103,Ines,Duarte,ines@circle-fixture.test,2025-05-05T10:00:00Z,No,,,,0,0,0,,,subscribed,No,Pending,2025-05-05,0,No,No,

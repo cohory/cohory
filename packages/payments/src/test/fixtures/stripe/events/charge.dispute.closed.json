@@ -1,0 +1,62 @@
+{
+  "id": "evt_1UTCGAFx0CreatorjprKLVdm",
+  "object": "event",
+  "account": "acct_1Fake0Creator01",
+  "api_version": "2026-09-30.endive",
+  "context": "acct_1Fake0Creator01",
+  "created": 1792638102,
+  "data": {
+    "object": {
+      "id": "du_1UTCFyFx0CreatorEafxzLDl",
+      "object": "dispute",
+      "amount": 4900,
+      "balance_transaction": "txn_1UTCFzFx0CreatorwfANg9X7",
+      "balance_transactions": [
+        {
+          "id": "txn_1UTCFzFx0CreatorwfANg9X7",
+          "object": "balance_transaction",
+          "amount": -4900,
+          "available_on": 1793232000,
+          "balance_type": "payments",
+          "created": 1792638091,
+          "currency": "gbp",
+          "description": null,
+          "exchange_rate": null,
+          "fee": 2000,
+          "fee_details": [
+            {
+              "amount": 2000,
+              "application": null,
+              "currency": "gbp",
+              "description": null,
+              "type": "stripe_fee"
+            }
+          ],
+          "net": -6900,
+          "reporting_category": "dispute",
+          "source": "du_1UTCFyFx0CreatorEafxzLDl",
+          "status": "pending",
+          "type": "adjustment"
+        }
+      ],
+      "charge": "ch_3UTCFvFx0Creator0lqakA2v",
+      "created": 1792638090,
+      "currency": "gbp",
+      "enhanced_eligibility_types": [],
+      "evidence": null,
+      "evidence_details": null,
+      "intended_submission_method": "prefer_manual",
+      "is_charge_refundable": false,
+      "livemode": false,
+      "metadata": {},
+      "payment_intent": "pi_3UTCFvFx0Creator0Kk9T91i",
+      "payment_method_details": null,
+      "reason": "fraudulent",
+      "status": "lost"
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 0,
+  "request": null,
+  "type": "charge.dispute.closed"
+}

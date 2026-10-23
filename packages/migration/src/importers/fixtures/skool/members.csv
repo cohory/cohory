@@ -1,0 +1,6 @@
+FirstName,LastName,Email,Invited By,JoinedDate,Question1,Answer1,Question2,Answer2,Question3,Answer3,Price,Recurring Interval,Tier,LTV,Points,Role,Favorite Color
+Ada,Lovelace,ada@skool-fixture.test,,2025-01-05 09:30:00,What brings you here?,Learning to ship,How did you find us?,A friend,,,0,,free,0,120,admin,Blue
+Grace,Hopper,grace@skool-fixture.test,Ada Lovelace,2025-02-11 14:00:00,What brings you here?,Compilers,,,,,49,month,premium,147,35,,Green
+Linus,Example,linus@skool-fixture.test,,03/15/2025,,,,,,,0,,free,0,0,member,
+Broken,Row,not-an-email,,2025-03-01 00:00:00,,,,,,,,,,,,,
+Grace,Again,GRACE@skool-fixture.test,,2025-04-01 00:00:00,,,,,,,,,,,,,

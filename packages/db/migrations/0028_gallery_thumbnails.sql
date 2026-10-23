@@ -1,0 +1,1 @@
+ALTER TABLE "community_gallery_items" ADD COLUMN "thumbnail_url" text;

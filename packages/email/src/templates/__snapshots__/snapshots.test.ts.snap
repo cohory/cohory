@@ -1,0 +1,1906 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`change-email-confirmation > matches the snapshot 1`] = `
+{
+  "fromName": "Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>Approve your new Cohory email address</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">Nothing changes until you approve it from this address.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-text" style="margin:0;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Cohory</p></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Hi Ada,</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Someone signed in to your Cohory account asked to move it to ada.new@example.com. Approve the change from this address first. We then ask ada.new@example.com to confirm itself.</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/verify?t=1" class="ce-button-default" style="display:inline-block;background-color:#2563EB;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Approve the change</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">The link works for 1 hour. If this was not you, do not open the link, and secure your account with a new password: https://community.example.com/forgot-password</p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a>. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "Approve your new Cohory email address",
+  "template": "change-email-confirmation",
+  "text": "Hi Ada,
+
+Someone signed in to your Cohory account asked to move it to ada.new@example.com. Approve the change from this address first. We then ask ada.new@example.com to confirm itself.
+
+Approve the change: https://community.example.com/verify?t=1
+
+The link works for 1 hour. If this was not you, do not open the link, and secure your account with a new password: https://community.example.com/forgot-password
+
+Sent by Cohory.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`change-email-verification > matches the snapshot 1`] = `
+{
+  "fromName": "Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>Confirm your new email address</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">Your Cohory account moves to this address once you confirm.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-text" style="margin:0;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Cohory</p></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Hi Ada,</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">You asked to use ada.new@example.com for your Cohory account. Confirm this address to finish the change:</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/verify?t=1" class="ce-button-default" style="display:inline-block;background-color:#2563EB;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Confirm new address</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">The link works for 1 hour. Until you confirm, your account keeps its current email address. If you did not ask for this, you can ignore this email.</p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a>. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "Confirm your new email address",
+  "template": "change-email-verification",
+  "text": "Hi Ada,
+
+You asked to use ada.new@example.com for your Cohory account. Confirm this address to finish the change:
+
+Confirm new address: https://community.example.com/verify?t=1
+
+The link works for 1 hour. Until you confirm, your account keeps its current email address. If you did not ask for this, you can ignore this email.
+
+Sent by Cohory.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`community-moved > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] The community has moved</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">Choose a password to sign in. Your posts and comments are already there.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><div style="width:40px;height:40px;border-radius:8px;background-color:#2563EB;color:#FFFFFF;font-size:18px;line-height:40px;font-weight:600;text-align:center;">D</div></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Hi Ada,</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Grace moved Design Club from Skool to Cohory. Your membership came with it. To sign in, choose a password with this link:</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com" class="ce-button-default" style="display:inline-block;background-color:#2563EB;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Choose a password</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Your posts and comments are already there.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Use the email address this message was sent to. The link works once and expires in 7 days.</p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] The community has moved",
+  "template": "community-moved",
+  "text": "Hi Ada,
+
+Grace moved Design Club from Skool to Cohory. Your membership came with it. To sign in, choose a password with this link:
+
+Choose a password: https://community.example.com
+
+Your posts and comments are already there.
+
+Use the email address this message was sent to. The link works once and expires in 7 days.
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`comp-invitation > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] You&#39;re offered free access</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">Free access until December 31, 2026. You don&#39;t pay anything.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><img src="https://cdn.example.com/design-club.png" alt="Design Club" width="40" height="40" style="display:block;width:40px;height:40px;border-radius:8px;border:0;"></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Design Club offers you free access to its paid community until December 31, 2026. You don&#39;t pay anything.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Sign in or sign up with this email address (ada@example.test), then accept the offer on the membership page. Nothing changes until you accept.</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/c/design-club/membership" style="display:inline-block;background-color:#7C3AED;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Open the membership page</a></p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">You received this email because an admin of Design Club entered your email address. If you did not expect it, ignore it.</p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] You're offered free access",
+  "template": "comp-invitation",
+  "text": "Design Club offers you free access to its paid community until December 31, 2026. You don't pay anything.
+
+Sign in or sign up with this email address (ada@example.test), then accept the offer on the membership page. Nothing changes until you accept.
+
+Open the membership page: https://community.example.com/c/design-club/membership
+
+You received this email because an admin of Design Club entered your email address. If you did not expect it, ignore it.
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`creators-invite > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] You&#39;re invited to join Design Club</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">A private community for people who run communities on Cohory.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><img src="https://cdn.example.com/design-club.png" alt="Design Club" width="40" height="40" style="display:block;width:40px;height:40px;border-radius:8px;border:0;"></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Hi Ada,</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Riza would like you to join Design Club, a private community for people who run communities on Cohory. Ask how others set things up, share what worked, and tell us what to build next.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Joining is free and takes one click. The link works once, until 22 November 2026.</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/join/abc" style="display:inline-block;background-color:#7C3AED;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Join Design Club</a></p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">You received this email once, because you created a community on Cohory.</p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;"><a href="https://community.example.com/email-opt-out?token=t" class="ce-link" style="color:#2563EB;">Don&#39;t email me about Design Club</a></p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] You're invited to join Design Club",
+  "template": "creators-invite",
+  "text": "Hi Ada,
+
+Riza would like you to join Design Club, a private community for people who run communities on Cohory. Ask how others set things up, share what worked, and tell us what to build next.
+
+Joining is free and takes one click. The link works once, until 22 November 2026.
+
+Join Design Club: https://community.example.com/join/abc
+
+You received this email once, because you created a community on Cohory.
+
+Don't email me about Design Club: https://community.example.com/email-opt-out?token=t
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`duplicate-refunded > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] We refunded your second payment of $49.00</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">You paid twice, so we cancelled the second subscription. Your access stays.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><div style="width:40px;height:40px;border-radius:8px;background-color:#2563EB;color:#FFFFFF;font-size:18px;line-height:40px;font-weight:600;text-align:center;">D</div></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">You started two paid memberships in Design Club, so we cancelled the second one and refunded $49.00.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Your first membership keeps running and you keep your access. The refund usually reaches your card within 5 to 10 business days.</p>
+<p style="margin:8px 0 24px;"><a href="https://cohory.test/c/design-club/membership" class="ce-button-default" style="display:inline-block;background-color:#2563EB;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">View your membership</a></p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">You received this email because you pay for a membership in Design Club on Cohory.</p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] We refunded your second payment of $49.00",
+  "template": "duplicate-refunded",
+  "text": "You started two paid memberships in Design Club, so we cancelled the second one and refunded $49.00.
+
+Your first membership keeps running and you keep your access. The refund usually reaches your card within 5 to 10 business days.
+
+View your membership: https://cohory.test/c/design-club/membership
+
+You received this email because you pay for a membership in Design Club on Cohory.
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`email-verification > matches the snapshot 1`] = `
+{
+  "fromName": "Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>Confirm your email address</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">One click so Cohory can reach you.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-text" style="margin:0;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Cohory</p></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Hi Ada,</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Confirm that this is your email address so we can reach you about your Cohory account:</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/verify?t=1" class="ce-button-default" style="display:inline-block;background-color:#2563EB;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Confirm email address</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">The link works for 1 hour. If you did not ask for this, you can ignore this email.</p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a>. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "Confirm your email address",
+  "template": "email-verification",
+  "text": "Hi Ada,
+
+Confirm that this is your email address so we can reach you about your Cohory account:
+
+Confirm email address: https://community.example.com/verify?t=1
+
+The link works for 1 hour. If you did not ask for this, you can ignore this email.
+
+Sent by Cohory.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`event-canceled > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] Canceled: Office hours</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">Office hours on Thursday, October 22, 3:00 PM (Europe/Istanbul) is canceled.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><img src="https://cdn.example.com/design-club.png" alt="Design Club" width="40" height="40" style="display:block;width:40px;height:40px;border-radius:8px;border:0;"></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Hi Ada,</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Office hours on Thursday, October 22, 3:00 PM (Europe/Istanbul) is canceled.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">If you added it to your calendar, this email removes it.</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/c/design-club/calendar" style="display:inline-block;background-color:#7C3AED;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Open the calendar</a></p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] Canceled: Office hours",
+  "template": "event-canceled",
+  "text": "Hi Ada,
+
+Office hours on Thursday, October 22, 3:00 PM (Europe/Istanbul) is canceled.
+
+If you added it to your calendar, this email removes it.
+
+Open the calendar: https://community.example.com/c/design-club/calendar
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`event-dates-removed > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] Date removed: Office hours</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">Removed: Thursday, October 29.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><img src="https://cdn.example.com/design-club.png" alt="Design Club" width="40" height="40" style="display:block;width:40px;height:40px;border-radius:8px;border:0;"></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Hi Ada,</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Office hours no longer takes place on a date you said you were going to.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Removed: Thursday, October 29</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Your RSVP for it is removed too.</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/c/design-club/calendar" style="display:inline-block;background-color:#7C3AED;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Open the calendar</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">See the other dates in the community calendar.</p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] Date removed: Office hours",
+  "template": "event-dates-removed",
+  "text": "Hi Ada,
+
+Office hours no longer takes place on a date you said you were going to.
+
+Removed: Thursday, October 29
+
+Your RSVP for it is removed too.
+
+Open the calendar: https://community.example.com/c/design-club/calendar
+
+See the other dates in the community calendar.
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`event-reminder > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] Starts in 1 hour: Office hours</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">When: Thursday, October 22, 3:00 PM (Europe/Istanbul). Event time: Thursday, October 22, 2:00 PM (Europe/Berlin)&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><img src="https://cdn.example.com/design-club.png" alt="Design Club" width="40" height="40" style="display:block;width:40px;height:40px;border-radius:8px;border:0;"></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Hi Ada,</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Office hours starts in 1 hour. You said you are going.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">When: Thursday, October 22, 3:00 PM (Europe/Istanbul)</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Event time: Thursday, October 22, 2:00 PM (Europe/Berlin)</p>
+<p style="margin:8px 0 24px;"><a href="https://meet.example.com/office" style="display:inline-block;background-color:#7C3AED;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Join the call</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;"><a href="https://community.example.com/c/design-club/calendar/office-hours/o1" class="ce-link" style="color:#2563EB;">Event details</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Plans changed? Update your RSVP on the event page.</p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">You get this email because you said you are going and event reminder emails are on.</p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;"><a href="https://community.example.com/unsubscribe?token=t" class="ce-link" style="color:#2563EB;">Stop event reminder emails</a> · <a href="https://community.example.com/account/notifications" class="ce-link" style="color:#2563EB;">Change your notification settings</a></p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] Starts in 1 hour: Office hours",
+  "template": "event-reminder",
+  "text": "Hi Ada,
+
+Office hours starts in 1 hour. You said you are going.
+
+When: Thursday, October 22, 3:00 PM (Europe/Istanbul)
+
+Event time: Thursday, October 22, 2:00 PM (Europe/Berlin)
+
+Join the call: https://meet.example.com/office
+
+Event details: https://community.example.com/c/design-club/calendar/office-hours/o1
+
+Plans changed? Update your RSVP on the event page.
+
+You get this email because you said you are going and event reminder emails are on.
+
+Stop event reminder emails: https://community.example.com/unsubscribe?token=t
+
+Change your notification settings: https://community.example.com/account/notifications
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`event-updated > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] New time: Office hours</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">Now: Thursday 4:00 PM. You are still going.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><img src="https://cdn.example.com/design-club.png" alt="Design Club" width="40" height="40" style="display:block;width:40px;height:40px;border-radius:8px;border:0;"></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Hi Ada,</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Office hours has a new time.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Was: Thursday 3:00 PM</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Now: Thursday 4:00 PM</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">You are still going.</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/c/design-club/calendar/e1" style="display:inline-block;background-color:#7C3AED;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Open the event</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;"><a href="https://community.example.com/c/design-club/calendar/e1.ics" class="ce-link" style="color:#2563EB;">Add the new time to your calendar</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Plans changed? Update your RSVP on the event page.</p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] New time: Office hours",
+  "template": "event-updated",
+  "text": "Hi Ada,
+
+Office hours has a new time.
+
+Was: Thursday 3:00 PM
+
+Now: Thursday 4:00 PM
+
+You are still going.
+
+Open the event: https://community.example.com/c/design-club/calendar/e1
+
+Add the new time to your calendar: https://community.example.com/c/design-club/calendar/e1.ics
+
+Plans changed? Update your RSVP on the event page.
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`existing-account-sign-up > matches the snapshot 1`] = `
+{
+  "fromName": "Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>Someone tried to create an account with your email</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">Nothing changed on your account.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-text" style="margin:0;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Cohory</p></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Hi Ada,</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Someone tried to create a Cohory account with this email address, which already has one. Nothing changed on your account.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">If it was you, sign in with your existing account:</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/sign-in" class="ce-button-default" style="display:inline-block;background-color:#2563EB;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Sign in</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;"><a href="https://community.example.com/forgot-password" class="ce-link" style="color:#2563EB;">Forgot your password?</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">If it was not you, you can ignore this email.</p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a>. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "Someone tried to create an account with your email",
+  "template": "existing-account-sign-up",
+  "text": "Hi Ada,
+
+Someone tried to create a Cohory account with this email address, which already has one. Nothing changed on your account.
+
+If it was you, sign in with your existing account:
+
+Sign in: https://community.example.com/sign-in
+
+Forgot your password?: https://community.example.com/forgot-password
+
+If it was not you, you can ignore this email.
+
+Sent by Cohory.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`fee-clear-required > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] Remove the Cohory fee in your Stripe Dashboard</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">Remove the application fee from each subscription in Stripe.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><div style="width:40px;height:40px;border-radius:8px;background-color:#2563EB;color:#FFFFFF;font-size:18px;line-height:40px;font-weight:600;text-align:center;">D</div></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Design Club is no longer connected to Cohory, so we can no longer change your subscriptions. Some of them may still carry the Cohory platform fee. Open each subscription in your Stripe Dashboard and remove the application fee. We refund any platform fee we receive after you left.</p>
+<p style="margin:8px 0 24px;"><a href="https://dashboard.stripe.com" class="ce-button-default" style="display:inline-block;background-color:#2563EB;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Open your Stripe Dashboard</a></p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">You received this email because you own Design Club on Cohory.</p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] Remove the Cohory fee in your Stripe Dashboard",
+  "template": "fee-clear-required",
+  "text": "Design Club is no longer connected to Cohory, so we can no longer change your subscriptions. Some of them may still carry the Cohory platform fee. Open each subscription in your Stripe Dashboard and remove the application fee. We refund any platform fee we receive after you left.
+
+Open your Stripe Dashboard: https://dashboard.stripe.com
+
+You received this email because you own Design Club on Cohory.
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`magic-link > matches the snapshot 1`] = `
+{
+  "fromName": "Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>Your Cohory sign in link</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">Works for 15 minutes on this device.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-text" style="margin:0;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Cohory</p></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Open this link to sign in to your Cohory account:</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/magic?t=1" class="ce-button-default" style="display:inline-block;background-color:#2563EB;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Sign in</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">The link works for 15 minutes and only once. If you did not ask for this, you can ignore this email.</p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a>. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "Your Cohory sign in link",
+  "template": "magic-link",
+  "text": "Open this link to sign in to your Cohory account:
+
+Sign in: https://community.example.com/magic?t=1
+
+The link works for 15 minutes and only once. If you did not ask for this, you can ignore this email.
+
+Sent by Cohory.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`member-added > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] You were added to the community</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">Open it with your existing account.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><div style="width:40px;height:40px;border-radius:8px;background-color:#2563EB;color:#FFFFFF;font-size:18px;line-height:40px;font-weight:600;text-align:center;">D</div></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Hi Ada,</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">You are now a member of Design Club. Open it here:</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com" class="ce-button-default" style="display:inline-block;background-color:#2563EB;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Open Design Club</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">If you did not expect this, you can ignore this email or leave the community.</p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] You were added to the community",
+  "template": "member-added",
+  "text": "Hi Ada,
+
+You are now a member of Design Club. Open it here:
+
+Open Design Club: https://community.example.com
+
+If you did not expect this, you can ignore this email or leave the community.
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`member-invited > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] You are invited to join</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">The link works once and expires in 30 days.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><div style="width:40px;height:40px;border-radius:8px;background-color:#2563EB;color:#FFFFFF;font-size:18px;line-height:40px;font-weight:600;text-align:center;">D</div></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Hi Ada,</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">You are invited to join Design Club. Open this link to accept:</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com" class="ce-button-default" style="display:inline-block;background-color:#2563EB;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Join Design Club</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">The link works once and expires in 30 days. If you did not expect this, ignore it.</p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] You are invited to join",
+  "template": "member-invited",
+  "text": "Hi Ada,
+
+You are invited to join Design Club. Open this link to accept:
+
+Join Design Club: https://community.example.com
+
+The link works once and expires in 30 days. If you did not expect this, ignore it.
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`moving-offer > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] Keep your membership</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">You won&#39;t be charged until November 18, 2026.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><img src="https://cdn.example.com/design-club.png" alt="Design Club" width="40" height="40" style="display:block;width:40px;height:40px;border-radius:8px;border:0;"></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Design Club has moved from Skool to Cohory. Your subscription can&#39;t move with it, so start a new one here to keep your access.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">You won&#39;t be charged until November 18, 2026, when your old subscription would renew. Cancel your old subscription on Skool now so you aren&#39;t charged twice.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Sign in or sign up with this email address (ada@example.test), then choose a plan on the membership page.</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/c/design-club/membership" style="display:inline-block;background-color:#7C3AED;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Open the membership page</a></p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">You received this email because Design Club listed you as a paying member who is moving with the community.</p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] Keep your membership",
+  "template": "moving-offer",
+  "text": "Design Club has moved from Skool to Cohory. Your subscription can't move with it, so start a new one here to keep your access.
+
+You won't be charged until November 18, 2026, when your old subscription would renew. Cancel your old subscription on Skool now so you aren't charged twice.
+
+Sign in or sign up with this email address (ada@example.test), then choose a plan on the membership page.
+
+Open the membership page: https://community.example.com/c/design-club/membership
+
+You received this email because Design Club listed you as a paying member who is moving with the community.
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`notification > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] Office hours this week</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">Cy replied to your comment in Design Club. &quot;Tuesday works.&quot;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><img src="https://cdn.example.com/design-club.png" alt="Design Club" width="40" height="40" style="display:block;width:40px;height:40px;border-radius:8px;border:0;"></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Hi Ada,</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Cy replied to your comment in Design Club.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">&quot;Tuesday works.&quot;</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/c/design-club/posts/p1" style="display:inline-block;background-color:#7C3AED;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Open the comment</a></p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">You get this email because email for replies to your comments is on.</p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;"><a href="https://community.example.com/unsubscribe?token=t" class="ce-link" style="color:#2563EB;">Stop these emails</a> · <a href="https://community.example.com/account" class="ce-link" style="color:#2563EB;">Change your notification settings</a></p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] Office hours this week",
+  "template": "notification",
+  "text": "Hi Ada,
+
+Cy replied to your comment in Design Club.
+
+"Tuesday works."
+
+Open the comment: https://community.example.com/c/design-club/posts/p1
+
+You get this email because email for replies to your comments is on.
+
+Stop these emails: https://community.example.com/unsubscribe?token=t
+
+Change your notification settings: https://community.example.com/account
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`notification-digest > matches the snapshot 1`] = `
+{
+  "fromName": "Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>Cy commented on your post and 1 more</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">Cy commented on your post in Design Club and 1 more.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-text" style="margin:0;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Cohory</p></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Hi Ada,</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Here is what happened in your communities since your last summary.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Design Club</p>
+<ul class="ce-text" style="margin:0 0 16px;padding-left:20px;font-size:16px;line-height:24px;color:#111827;"><li style="margin:0 0 8px;"><a href="https://community.example.com/p/1" class="ce-link" style="color:#2563EB;">Cy commented on your post</a></li></ul>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Makers</p>
+<ul class="ce-text" style="margin:0 0 16px;padding-left:20px;font-size:16px;line-height:24px;color:#111827;"><li style="margin:0 0 8px;"><a href="https://community.example.com/p/2" class="ce-link" style="color:#2563EB;">Bo mentioned you</a></li></ul>
+
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">You get this summary because you chose daily email for these notifications.</p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;"><a href="https://community.example.com/unsubscribe?token=t" class="ce-link" style="color:#2563EB;">Stop daily summaries</a> · <a href="https://community.example.com/account" class="ce-link" style="color:#2563EB;">Change your notification settings</a></p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a>. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "Cy commented on your post and 1 more",
+  "template": "notification-digest",
+  "text": "Hi Ada,
+
+Here is what happened in your communities since your last summary.
+
+Design Club
+
+Cy commented on your post
+https://community.example.com/p/1
+
+Makers
+
+Bo mentioned you
+https://community.example.com/p/2
+
+You get this summary because you chose daily email for these notifications.
+
+Stop daily summaries: https://community.example.com/unsubscribe?token=t
+
+Change your notification settings: https://community.example.com/account
+
+Sent by Cohory.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`paid-membership-changed > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] Your membership is now billed by Design Club</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">To change or cancel it, use the link in your Stripe receipt emails.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><div style="width:40px;height:40px;border-radius:8px;background-color:#2563EB;color:#FFFFFF;font-size:18px;line-height:40px;font-weight:600;text-align:center;">D</div></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Your membership is now billed directly by Design Club. To change or cancel it, use the link in your Stripe receipt emails or contact owner@example.test.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;"><a href="https://community.example.com/c/design-club/membership" class="ce-link" style="color:#2563EB;">Open your membership</a></p>
+<p style="margin:8px 0 24px;"><a href="https://billing.stripe.com/p/login/test" class="ce-button-default" style="display:inline-block;background-color:#2563EB;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Manage your billing</a></p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">You received this email because you have a paid membership in Design Club.</p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] Your membership is now billed by Design Club",
+  "template": "paid-membership-changed",
+  "text": "Your membership is now billed directly by Design Club. To change or cancel it, use the link in your Stripe receipt emails or contact owner@example.test.
+
+Open your membership: https://community.example.com/c/design-club/membership
+
+Manage your billing: https://billing.stripe.com/p/login/test
+
+You received this email because you have a paid membership in Design Club.
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`password-changed > matches the snapshot 1`] = `
+{
+  "fromName": "Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>Your Cohory password was changed</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">If this was not you, reset it now.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-text" style="margin:0;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Cohory</p></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Hi Ada,</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">The password for your Cohory account was changed on October 22, 2026 at 09:30 UTC. Every other device was signed out.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Device: Firefox on macOS.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">If this was not you, reset it now.</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/forgot-password" class="ce-button-default" style="display:inline-block;background-color:#2563EB;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Reset password</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">If it was you, there is nothing else to do.</p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a>. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "Your Cohory password was changed",
+  "template": "password-changed",
+  "text": "Hi Ada,
+
+The password for your Cohory account was changed on October 22, 2026 at 09:30 UTC. Every other device was signed out.
+
+Device: Firefox on macOS.
+
+If this was not you, reset it now.
+
+Reset password: https://community.example.com/forgot-password
+
+If it was you, there is nothing else to do.
+
+Sent by Cohory.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`password-removed > matches the snapshot 1`] = `
+{
+  "fromName": "Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>We removed the password on your Cohory account</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">If you set it, choose a new one from Account, Security.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-text" style="margin:0;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Cohory</p></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Hi Ada,</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">For your security we removed the password on this account, because it was set before your email was confirmed. If you set it, choose a new one from Account, Security.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">We also signed out your other devices. You can keep signing in with an email link.</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/account/security" class="ce-button-default" style="display:inline-block;background-color:#2563EB;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Open Security</a></p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a>. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "We removed the password on your Cohory account",
+  "template": "password-removed",
+  "text": "Hi Ada,
+
+For your security we removed the password on this account, because it was set before your email was confirmed. If you set it, choose a new one from Account, Security.
+
+We also signed out your other devices. You can keep signing in with an email link.
+
+Open Security: https://community.example.com/account/security
+
+Sent by Cohory.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`password-reset > matches the snapshot 1`] = `
+{
+  "fromName": "Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>Reset your Cohory password</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">The link works for 1 hour.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-text" style="margin:0;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Cohory</p></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Hi Ada,</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">We received a request to reset the password for your Cohory account. Open this link to choose a new password:</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/reset?t=1" class="ce-button-default" style="display:inline-block;background-color:#2563EB;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Choose a new password</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">The link works for 1 hour. If you did not ask for this, you can ignore this email. Your password stays the same.</p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a>. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "Reset your Cohory password",
+  "template": "password-reset",
+  "text": "Hi Ada,
+
+We received a request to reset the password for your Cohory account. Open this link to choose a new password:
+
+Choose a new password: https://community.example.com/reset?t=1
+
+The link works for 1 hour. If you did not ask for this, you can ignore this email. Your password stays the same.
+
+Sent by Cohory.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`payment-disputed > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] A member disputed a payment of €20.00</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">Answer it in Stripe before the deadline. The member keeps access meanwhile.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><div style="width:40px;height:40px;border-radius:8px;background-color:#2563EB;color:#FFFFFF;font-size:18px;line-height:40px;font-weight:600;text-align:center;">D</div></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">A member disputed a payment of €20.00 in Design Club. Answer it in your Stripe Dashboard before the deadline Stripe shows. The member keeps access while the dispute is open.</p>
+<p style="margin:8px 0 24px;"><a href="https://dashboard.stripe.com/disputes" class="ce-button-default" style="display:inline-block;background-color:#2563EB;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Open your disputes in Stripe</a></p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">You received this email because you own Design Club on Cohory.</p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] A member disputed a payment of €20.00",
+  "template": "payment-disputed",
+  "text": "A member disputed a payment of €20.00 in Design Club. Answer it in your Stripe Dashboard before the deadline Stripe shows. The member keeps access while the dispute is open.
+
+Open your disputes in Stripe: https://dashboard.stripe.com/disputes
+
+You received this email because you own Design Club on Cohory.
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`platform-billing-paused > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] New paid signups are paused</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">Pay the invoice and signups open again within a day.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><div style="width:40px;height:40px;border-radius:8px;background-color:#2563EB;color:#FFFFFF;font-size:18px;line-height:40px;font-weight:600;text-align:center;">D</div></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">New paid signups to Design Club are paused because the platform fee invoice for October 2026 ($12.50) has been unpaid for 30 days.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Existing members keep their access. Pay the invoice and signups open again within a day.</p>
+<p style="margin:8px 0 24px;"><a href="https://invoice.stripe.com/i/test" class="ce-button-default" style="display:inline-block;background-color:#2563EB;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Pay the invoice</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;"><a href="https://cohory.test/c/clay/manage/payments/platform-fees" class="ce-link" style="color:#2563EB;">Open Platform fees</a></p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">You received this email because you own Design Club on Cohory and it sells memberships through a payment provider that Cohory bills monthly.</p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] New paid signups are paused",
+  "template": "platform-billing-paused",
+  "text": "New paid signups to Design Club are paused because the platform fee invoice for October 2026 ($12.50) has been unpaid for 30 days.
+
+Existing members keep their access. Pay the invoice and signups open again within a day.
+
+Pay the invoice: https://invoice.stripe.com/i/test
+
+Open Platform fees: https://cohory.test/c/clay/manage/payments/platform-fees
+
+You received this email because you own Design Club on Cohory and it sells memberships through a payment provider that Cohory bills monthly.
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`platform-invoice-payment-failed > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] Payment failed for your platform fee invoice</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">Pay $12.50 or update your card to keep paid signups open.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><div style="width:40px;height:40px;border-radius:8px;background-color:#2563EB;color:#FFFFFF;font-size:18px;line-height:40px;font-weight:600;text-align:center;">D</div></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">We couldn&#39;t collect $12.50 for your Cohory platform fee invoice for October 2026.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Open the invoice to pay it, or update the card on the Platform fees page.</p>
+<p style="margin:8px 0 24px;"><a href="https://invoice.stripe.com/i/test" class="ce-button-default" style="display:inline-block;background-color:#2563EB;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Pay the invoice</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;"><a href="https://cohory.test/c/clay/manage/payments/platform-fees" class="ce-link" style="color:#2563EB;">Open Platform fees</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">If the invoice is still unpaid 30 days after the failed payment, new paid signups to Design Club pause until it is paid. Existing members keep their access.</p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">You received this email because you own Design Club on Cohory and it sells memberships through a payment provider that Cohory bills monthly.</p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] Payment failed for your platform fee invoice",
+  "template": "platform-invoice-payment-failed",
+  "text": "We couldn't collect $12.50 for your Cohory platform fee invoice for October 2026.
+
+Open the invoice to pay it, or update the card on the Platform fees page.
+
+Pay the invoice: https://invoice.stripe.com/i/test
+
+Open Platform fees: https://cohory.test/c/clay/manage/payments/platform-fees
+
+If the invoice is still unpaid 30 days after the failed payment, new paid signups to Design Club pause until it is paid. Existing members keep their access.
+
+You received this email because you own Design Club on Cohory and it sells memberships through a payment provider that Cohory bills monthly.
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`renewal-reminder > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] Your membership renews on November 18, 2026</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">$290.00 for one more year.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><img src="https://cdn.example.com/design-club.png" alt="Design Club" width="40" height="40" style="display:block;width:40px;height:40px;border-radius:8px;border:0;"></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Your yearly membership in Design Club renews on November 18, 2026. We will charge $290.00 for one more year.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Nothing to do if you want to stay. To change your card or cancel before then, open Manage billing.</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/c/design-club/membership" style="display:inline-block;background-color:#7C3AED;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Manage billing</a></p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">You received this email because you have a yearly membership in Design Club on Cohory.</p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] Your membership renews on November 18, 2026",
+  "template": "renewal-reminder",
+  "text": "Your yearly membership in Design Club renews on November 18, 2026. We will charge $290.00 for one more year.
+
+Nothing to do if you want to stay. To change your card or cancel before then, open Manage billing.
+
+Manage billing: https://community.example.com/c/design-club/membership
+
+You received this email because you have a yearly membership in Design Club on Cohory.
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`rsvp-confirmation > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] You&#39;re going: Office hours</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">Thursday, October 22, 3:00 PM (Europe/Istanbul). Add it to your calendar.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><img src="https://cdn.example.com/design-club.png" alt="Design Club" width="40" height="40" style="display:block;width:40px;height:40px;border-radius:8px;border:0;"></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Hi Ada,</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">You&#39;re going to Office hours.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">When: Thursday, October 22, 3:00 PM (Europe/Istanbul)</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Where: Room 4</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/api/v1/communities/design-club/calendar/occurrences/o1/ics" style="display:inline-block;background-color:#7C3AED;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Add to calendar</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;"><a href="https://community.example.com/c/design-club/calendar/office-hours/o1" class="ce-link" style="color:#2563EB;">Event details</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">We&#39;ll remind you 1 hour before it starts. Plans changed? Update your RSVP on the event page.</p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">You get this email because you said you are going and event reminder emails are on.</p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;"><a href="https://community.example.com/unsubscribe?token=t" class="ce-link" style="color:#2563EB;">Stop event reminder emails</a> · <a href="https://community.example.com/account/notifications" class="ce-link" style="color:#2563EB;">Change your notification settings</a></p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] You're going: Office hours",
+  "template": "rsvp-confirmation",
+  "text": "Hi Ada,
+
+You're going to Office hours.
+
+When: Thursday, October 22, 3:00 PM (Europe/Istanbul)
+
+Where: Room 4
+
+Add to calendar: https://community.example.com/api/v1/communities/design-club/calendar/occurrences/o1/ics
+
+Event details: https://community.example.com/c/design-club/calendar/office-hours/o1
+
+We'll remind you 1 hour before it starts. Plans changed? Update your RSVP on the event page.
+
+You get this email because you said you are going and event reminder emails are on.
+
+Stop event reminder emails: https://community.example.com/unsubscribe?token=t
+
+Change your notification settings: https://community.example.com/account/notifications
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`subscription-moved > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] Your membership has moved</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">You don&#39;t pay again. Sign up with this email address to get in.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><div style="width:40px;height:40px;border-radius:8px;background-color:#2563EB;color:#FFFFFF;font-size:18px;line-height:40px;font-weight:600;text-align:center;">D</div></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Your paid membership in Design Club has moved to Cohory. You don&#39;t pay again, and your card and renewal date stay the same.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Sign up with this email address (ada@example.test) to get in. If you already have an account with it, sign in instead.</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/c/design-club/membership" class="ce-button-default" style="display:inline-block;background-color:#2563EB;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Open the membership page</a></p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Confirm your email address when we ask. Your membership starts as soon as it is confirmed.</p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">You received this email because Design Club linked your existing subscription to its community.</p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] Your membership has moved",
+  "template": "subscription-moved",
+  "text": "Your paid membership in Design Club has moved to Cohory. You don't pay again, and your card and renewal date stay the same.
+
+Sign up with this email address (ada@example.test) to get in. If you already have an account with it, sign in instead.
+
+Open the membership page: https://community.example.com/c/design-club/membership
+
+Confirm your email address when we ask. Your membership starts as soon as it is confirmed.
+
+You received this email because Design Club linked your existing subscription to its community.
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`test > matches the snapshot 1`] = `
+{
+  "fromName": "Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>Test email from Cohory</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">If you can read this, email sending works.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-text" style="margin:0;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Cohory</p></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">This is a test email from Cohory at https://community.example.com.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">If you can read this, email sending works. Check that it arrived in the inbox and not in spam, and that the sender shows your domain.</p>
+
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">You received this email because an operator ran the email test command.</p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a>. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "Test email from Cohory",
+  "template": "test",
+  "text": "This is a test email from Cohory at https://community.example.com.
+
+If you can read this, email sending works. Check that it arrived in the inbox and not in spam, and that the sender shows your domain.
+
+You received this email because an operator ran the email test command.
+
+Sent by Cohory.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`token-expiring > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] Your token Nightly sync expires in 6 days</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">It stops working on November 18, 2026 (UTC).&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><img src="https://cdn.example.com/design-club.png" alt="Design Club" width="40" height="40" style="display:block;width:40px;height:40px;border-radius:8px;border:0;"></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Your token Nightly sync in Design Club. It stops working on November 18, 2026 (UTC), and anything that uses it stops with it.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Choose Regenerate to get a new token with the same name and permissions, then put it where the old one was. The old token stops working as soon as you regenerate.</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/account/api-tokens" style="display:inline-block;background-color:#7C3AED;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Open your tokens</a></p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">You received this email because you created this token on Cohory.</p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] Your token Nightly sync expires in 6 days",
+  "template": "token-expiring",
+  "text": "Your token Nightly sync in Design Club. It stops working on November 18, 2026 (UTC), and anything that uses it stops with it.
+
+Choose Regenerate to get a new token with the same name and permissions, then put it where the old one was. The old token stops working as soon as you regenerate.
+
+Open your tokens: https://community.example.com/account/api-tokens
+
+You received this email because you created this token on Cohory.
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`webhook-endpoint-disabled > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] A webhook endpoint was turned off</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">Every delivery to hooks.example.com failed for 3 days.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><div style="width:40px;height:40px;border-radius:8px;background-color:#2563EB;color:#FFFFFF;font-size:18px;line-height:40px;font-weight:600;text-align:center;">D</div></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">We turned off the webhook endpoint at hooks.example.com for Design Club. Every delivery to it failed for 3 days, so events stopped going out.</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Check that the receiver is online and answers with a 2xx status, then turn the endpoint back on in Manage, Settings, Webhooks. Events from while it was off are not sent again.</p>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/c/design-club/manage/settings/webhooks" class="ce-button-default" style="display:inline-block;background-color:#2563EB;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Open Webhooks</a></p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">You received this email because you own Design Club on Cohory.</p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] A webhook endpoint was turned off",
+  "template": "webhook-endpoint-disabled",
+  "text": "We turned off the webhook endpoint at hooks.example.com for Design Club. Every delivery to it failed for 3 days, so events stopped going out.
+
+Check that the receiver is online and answers with a 2xx status, then turn the endpoint back on in Manage, Settings, Webhooks. Events from while it was off are not sent again.
+
+Open Webhooks: https://community.example.com/c/design-club/manage/settings/webhooks
+
+You received this email because you own Design Club on Cohory.
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;
+
+exports[`welcome > matches the snapshot 1`] = `
+{
+  "fromName": "Design Club via Cohory",
+  "html": "<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>[Design Club] Welcome to Design Club</title>
+<style>
+:root { color-scheme: light dark; supported-color-schemes: light dark; }
+@media (prefers-color-scheme: dark) {
+  .ce-bg { background-color: #0E131B !important; }
+  .ce-card { background-color: #151B24 !important; border-color: #2A3240 !important; }
+  .ce-text { color: #F1F5F9 !important; }
+  .ce-muted { color: #94A3B8 !important; }
+  .ce-link { color: #60A5FA !important; }
+  .ce-button-default { background-color: #60A5FA !important; color: #0B1120 !important; }
+}
+</style>
+</head>
+<body class="ce-bg" style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;" aria-hidden="true">Start here: introduce yourself and meet Riza.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ce-bg" style="background-color:#F8FAFC;"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr><td style="padding:0 0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right:12px;vertical-align:middle;"><img src="https://cdn.example.com/design-club.png" alt="Design Club" width="40" height="40" style="display:block;width:40px;height:40px;border-radius:8px;border:0;"></td><td class="ce-text" style="vertical-align:middle;font-size:16px;line-height:24px;font-weight:600;color:#111827;">Design Club</td></tr></table></td></tr>
+<tr><td class="ce-card" style="background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">Hi Ada,</p>
+<p class="ce-text" style="margin:0 0 16px;font-size:16px;line-height:24px;color:#111827;">You&#39;re now a member of Design Club. Start here: introduce yourself and meet Riza. Say who you are and what you are building.</p>
+<ul class="ce-text" style="margin:0 0 16px;padding-left:20px;font-size:16px;line-height:24px;color:#111827;"><li style="margin:0 0 8px;"><a href="https://community.example.com/c/design-club" class="ce-link" style="color:#2563EB;">Start here: the community feed</a></li><li style="margin:0 0 8px;"><a href="https://community.example.com/c/design-club/classroom/start-here" class="ce-link" style="color:#2563EB;">First course: Start here</a></li><li style="margin:0 0 8px;"><a href="https://community.example.com/c/design-club/calendar/office-hours/o1" class="ce-link" style="color:#2563EB;">Next event: Office hours</a> on Thursday, October 22, 3:00 PM</li></ul>
+<p style="margin:8px 0 24px;"><a href="https://community.example.com/c/design-club?compose=1" style="display:inline-block;background-color:#7C3AED;color:#FFFFFF;padding:12px 20px;border-radius:8px;font-size:16px;line-height:20px;font-weight:600;text-decoration:none;">Introduce yourself</a></p>
+</td></tr>
+<tr><td style="padding:16px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">You received this email once, because you joined Design Club.</p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;"><a href="https://community.example.com/account/notifications" class="ce-link" style="color:#2563EB;">Manage notifications</a></p><p class="ce-muted" style="margin:0 0 16px;font-size:13px;line-height:20px;color:#64748B;">Sent by <a href="https://community.example.com" class="ce-link" style="color:#2563EB;">Cohory</a> for Design Club. <a href="https://community.example.com/privacy" class="ce-link" style="color:#2563EB;">Privacy</a></p></td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>",
+  "subject": "[Design Club] Welcome to Design Club",
+  "template": "welcome",
+  "text": "Hi Ada,
+
+You're now a member of Design Club. Start here: introduce yourself and meet Riza. Say who you are and what you are building.
+
+Start here: the community feed
+https://community.example.com/c/design-club
+
+First course: Start here
+https://community.example.com/c/design-club/classroom/start-here
+
+Next event: Office hours on Thursday, October 22, 3:00 PM
+https://community.example.com/c/design-club/calendar/office-hours/o1
+
+Introduce yourself: https://community.example.com/c/design-club?compose=1
+
+You received this email once, because you joined Design Club.
+
+Manage notifications: https://community.example.com/account/notifications
+
+Sent by Cohory for Design Club.
+
+Privacy: https://community.example.com/privacy",
+}
+`;

@@ -1,0 +1,61 @@
+export {
+  agentForbiddenActions,
+  approvalActions,
+  approvalCategories,
+  credentialDecision,
+  nonGrantableActions,
+  proposalScope,
+  roleMayPerform,
+  type ApprovalCategory,
+  type CredentialDecision,
+} from "./credentials";
+export {
+  AgentNotAllowedError,
+  ApprovalRequiredError,
+  ForbiddenError,
+  UnauthenticatedError,
+} from "./errors";
+export {
+  matrix,
+  resources,
+  roles,
+  type ActionOf,
+  type Matrix,
+  type Resource,
+  type Role,
+} from "./matrix";
+export { assertCan, can } from "./policy";
+export {
+  availableScopes,
+  defaultScopes,
+  memberAgentScopes,
+  scopeDescription,
+  everyScope,
+  grantedScopes,
+  parseScopes,
+  scopeDetails,
+  scopeListSchema,
+  scopes,
+  scopeSchema,
+  type Scope,
+  type ScopeCheck,
+  type ScopeAccess,
+  type ScopeAudience,
+  type ScopeDetail,
+  type ScopeHolder,
+} from "./scopes";
+export {
+  actorVias,
+  communityRoles,
+  type Actor,
+  type ActorVia,
+  type ApiActor,
+  type ApiCredential,
+  type PolicyAction,
+  type UserActor,
+  type CommunityPrivacy,
+  type CommunityRole,
+  type PolicyContext,
+  type PolicyTarget,
+  type Rule,
+} from "./types";

@@ -1,0 +1,26 @@
+{
+  "id": "fee_1UTCFwFx0CreatornLHtr0ZV",
+  "object": "application_fee",
+  "account": "acct_1Fake0Creator01",
+  "amount": 98,
+  "amount_refunded": 0,
+  "application": "ca_FakeConnectClient0000000000000",
+  "balance_transaction": "txn_1UTCFzFx0PlatfrmN3OnrgAC",
+  "charge": "ch_3UTCFvFx0Creator0lqakA2v",
+  "created": 1792638088,
+  "currency": "gbp",
+  "fee_source": {
+    "charge": "ch_3UTCFvFx0Creator0lqakA2v",
+    "type": "charge"
+  },
+  "livemode": false,
+  "originating_transaction": null,
+  "refunded": false,
+  "refunds": {
+    "object": "list",
+    "data": [],
+    "has_more": false,
+    "total_count": 0,
+    "url": null
+  }
+}

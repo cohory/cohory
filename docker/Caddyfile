@@ -1,0 +1,26 @@
+# Reverse proxy for docker-compose.prod.yml. Caddy gets and renews a certificate for DOMAIN on
+# its own. CADDY_SITE_ADDRESS overrides the site address, for example "http://:80" to serve plain
+# HTTP or "localhost" to use Caddy's internal certificate authority for a local test.
+{
+	email {$ACME_EMAIL}
+}
+
+{$CADDY_SITE_ADDRESS} {
+	encode zstd gzip
+
+	request_body {
+		max_size 30MB
+	}
+
+	reverse_proxy web:3000 {
+		flush_interval -1
+		header_up X-Forwarded-For {remote_host}
+		header_up X-Forwarded-Proto {scheme}
+		header_up X-Forwarded-Host {http.request.hostport}
+	}
+
+	log {
+		output stdout
+		format json
+	}
+}

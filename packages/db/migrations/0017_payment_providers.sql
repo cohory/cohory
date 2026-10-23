@@ -1,0 +1,3 @@
+ALTER TYPE "public"."payment_provider" ADD VALUE 'polar';--> statement-breakpoint
+ALTER TABLE "payment_connections" ADD COLUMN "last_webhook_at" timestamp with time zone;--> statement-breakpoint
+ALTER TABLE "payment_connections" ADD CONSTRAINT "payment_connections_polar_secret" CHECK ("payment_connections"."provider"::text <> 'polar' or "payment_connections"."status" = 'disconnected' or "payment_connections"."encrypted_secret" is not null);

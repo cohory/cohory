@@ -1,0 +1,51 @@
+{
+  "name": "cohory",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "version": "0.12.0",
+  "type": "module",
+  "packageManager": "pnpm@12.4.2",
+  "engines": {
+    "node": ">=22.12.0 <23"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck --concurrency=4",
+    "lint": "turbo run lint --concurrency=4",
+    "test": "turbo run test --concurrency=3",
+    "test:coverage": "turbo run test --concurrency=2 --filter=@cohory/authz --filter=@cohory/payments --filter=@cohory/entitlements -- --coverage",
+    "test:integration": "turbo run test:integration --concurrency=3",
+    "test:integration:local": "bash scripts/test-integration.sh",
+    "testinfra:up": "bash scripts/testinfra-up.sh",
+    "testinfra:down": "bash scripts/testinfra-down.sh",
+    "verify": "bash scripts/verify.sh",
+    "verify:changed": "bash scripts/verify-changed.sh",
+    "cache:clean": "bash scripts/turbo-cache-clean.sh",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "db:generate": "pnpm --filter @cohory/db db:generate",
+    "db:migrate": "pnpm --filter @cohory/db db:migrate",
+    "db:seed": "pnpm --filter @cohory/db db:seed && pnpm --filter @cohory/communities db:seed && pnpm --filter @cohory/posts db:seed && pnpm --filter @cohory/gamification db:seed && pnpm --filter @cohory/courses db:seed && pnpm --filter @cohory/calendar db:seed",
+    "db:seed:paid": "pnpm --filter @cohory/payments db:seed:paid",
+    "db:reset:local": "bash scripts/db-reset-local.sh",
+    "migration": "pnpm --silent --filter @cohory/worker migration",
+    "billing": "pnpm --silent --filter @cohory/worker billing",
+    "secrets": "pnpm --silent --filter @cohory/worker secrets",
+    "accounts": "pnpm --silent --filter @cohory/worker accounts",
+    "email:test": "pnpm --silent --filter @cohory/email email:test",
+    "email:suppress": "pnpm --silent --filter @cohory/email email:suppress",
+    "e2e": "bash scripts/e2e-run.sh",
+    "e2e:host": "bash scripts/e2e-host.sh",
+    "stack:dev": "bash scripts/stack-dev.sh",
+    "e2e:ui": "pnpm --filter @cohory/e2e e2e:ui"
+  },
+  "devDependencies": {
+    "@cohory/config": "workspace:*",
+    "@vitest/coverage-v8": "5.0.5",
+    "eslint": "9.39.5",
+    "prettier": "3.9.10",
+    "turbo": "2.11.9",
+    "typescript": "6.0.3"
+  }
+}

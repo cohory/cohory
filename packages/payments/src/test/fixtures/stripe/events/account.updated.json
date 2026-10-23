@@ -1,0 +1,70 @@
+{
+  "id": "evt_1UTCGlFx0CreatorOgHeXwmz",
+  "object": "event",
+  "account": "acct_1Fake0Creator01",
+  "api_version": "2026-09-30.endive",
+  "context": "acct_1Fake0Creator01",
+  "created": 1792638139,
+  "data": {
+    "object": {
+      "id": "acct_1Fake0Creator01",
+      "object": "account",
+      "business_profile": null,
+      "business_type": "individual",
+      "capabilities": {
+        "amazon_pay_payments": "active",
+        "bancontact_payments": "active",
+        "blik_payments": "active",
+        "card_payments": "active",
+        "eps_payments": "active",
+        "ideal_payments": "active",
+        "kakao_pay_payments": "active",
+        "klarna_payments": "active",
+        "link_payments": "active",
+        "naver_pay_payments": "active",
+        "pay_by_bank_payments": "active",
+        "payco_payments": "active",
+        "revolut_pay_payments": "active",
+        "samsung_pay_payments": "active",
+        "transfers": "active"
+      },
+      "charges_enabled": true,
+      "company": null,
+      "controller": {
+        "fees": {
+          "payer": "account"
+        },
+        "is_controller": true,
+        "losses": {
+          "payments": "stripe"
+        },
+        "requirement_collection": "stripe",
+        "stripe_dashboard": {
+          "type": "full"
+        },
+        "type": "application"
+      },
+      "country": "GB",
+      "created": 1792360550,
+      "default_currency": "gbp",
+      "details_submitted": true,
+      "email": null,
+      "external_accounts": null,
+      "future_requirements": null,
+      "individual": null,
+      "metadata": {
+        "cohory_community_id": "01a14eab-84b3-7174-a611-5f60daca2b49"
+      },
+      "payouts_enabled": true,
+      "requirements": null,
+      "settings": null,
+      "tos_acceptance": null,
+      "type": "standard"
+    },
+    "previous_attributes": null
+  },
+  "livemode": false,
+  "pending_webhooks": 0,
+  "request": null,
+  "type": "account.updated"
+}
