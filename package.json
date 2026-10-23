@@ -43,7 +43,7 @@
   "devDependencies": {
     "@cohory/config": "workspace:*",
     "@vitest/coverage-v8": "5.0.5",
-    "eslint": "9.39.5",
+    "eslint": "10.13.0",
     "prettier": "3.9.10",
     "turbo": "2.11.9",
     "typescript": "6.0.3"
