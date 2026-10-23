@@ -78,7 +78,7 @@ services:
           memory: ${WORKER_MEMORY_LIMIT:-512m}
 
   caddy:
-    image: caddy:2.10.2-alpine
+    image: caddy:2.11.6-alpine
     restart: unless-stopped
     logging: *logging
     ports:
