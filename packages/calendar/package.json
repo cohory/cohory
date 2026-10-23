@@ -26,7 +26,7 @@
     "@cohory/infra": "workspace:*",
     "@cohory/rate-limit": "workspace:*",
     "@cohory/storage": "workspace:*",
-    "@date-fns/tz": "1.4.1",
+    "@date-fns/tz": "1.5.0",
     "drizzle-orm": "0.45.4",
     "pg-boss": "12.38.0",
     "zod": "4.6.7"

@@ -21,7 +21,7 @@
     "@cohory/infra": "workspace:*",
     "@cohory/storage": "workspace:*",
     "drizzle-orm": "0.45.4",
-    "nodemailer": "10.1.2",
+    "nodemailer": "10.1.7",
     "pg-boss": "12.38.0",
     "zod": "4.6.7"
   },

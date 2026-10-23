@@ -32,7 +32,7 @@
     "@cohory/infra": "workspace:*",
     "@cohory/rate-limit": "workspace:*",
     "@cohory/storage": "workspace:*",
-    "better-auth": "1.7.10",
+    "better-auth": "1.7.12",
     "drizzle-orm": "0.45.4",
     "server-only": "0.0.1",
     "zod": "4.6.7"
