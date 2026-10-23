@@ -12,4 +12,4 @@
 
 On pull requests, `ci.yml` passes `--affected`, so turbo runs only the packages changed against the base branch and their dependents (a change to root config such as `turbo.json` or the lockfile affects every package). Both turbo jobs restore `.turbo/cache` with `actions/cache`, so unchanged tasks replay from the cache. No remote cache service is needed.
 
-Every action is pinned by full commit SHA with the version in a trailing comment. Dependabot (`../dependabot.yml`) proposes updates for npm, GitHub Actions (including the SHAs), Docker base image digests, and Compose images.
+Every action is pinned by full commit SHA with the version in a trailing comment. Dependabot (`../dependabot.yml`) proposes monthly minor and patch updates for npm, GitHub Actions (including the SHAs), Docker base images, and Compose images. Major versions are upgraded on purpose. The DCO check skips Dependabot pull requests, since Dependabot cannot sign off.
