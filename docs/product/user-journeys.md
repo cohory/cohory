@@ -281,7 +281,7 @@ Steps (failed payment):
 2. System marks the membership past due and shows a "Payment failed" banner in the community with a "Manage billing" link to the Membership page. The Membership page shows "Payment failed" and a "Manage billing" button that opens the Stripe customer portal. Manage, Payments shows "Past due" in Paid members. Access continues while past due (Recommendation). For each of Stripe's first three attempts, the member gets an email and an in-app notice with the amount and the next retry date that link to the Membership page ([0034](../decisions/0034-notification-types-and-weekly-digest.md)). The owner gets one in-app notice on the first failure. Creators should turn off Stripe's own customer email about failed card payments so members do not get two emails.
 3. If Stripe marks the subscription canceled or unpaid, system removes the entitlement and Paid members shows "Canceled" or "Unpaid". A member who sets their subscription to cancel at the period end shows up as a cancellation notice for the owner.
 
-Success criteria: membership state in cohory always matches subscription state in Stripe after webhook processing.
+Success criteria: membership state in Cohory always matches subscription state in Stripe after webhook processing.
 
 Failure and edge cases:
 - Refunds and disputes are handled in the creator's Stripe dashboard. Neither removes access automatically. When a member disputes a payment, the owner gets a notice and an email that link to Stripe's disputes page. On Cloud, a lost dispute refunds the platform fee on the disputed amount ([0028](../decisions/0028-stripe-disputes.md)).
@@ -319,7 +319,7 @@ Failure and edge cases:
 - **Preconditions:** the community exists on Cloud. Community uses Stripe Connect on Cloud.
 - **Phase:** Post-MVP (Phase 5). Steps 1 to 7 are built (since 0.4.0); the two stack run (Cloud to Community Edition) was verified for 0.4.0. The full guide is [../operations/offboarding.md](../operations/offboarding.md).
 
-This journey has two separate parts. Moving data is under cohory's control. Continuing payment collection depends on Stripe account types and capabilities and is not guaranteed for every account.
+This journey has two separate parts. Moving data is under Cohory's control. Continuing payment collection depends on Stripe account types and capabilities and is not guaranteed for every account.
 
 Steps:
 
@@ -378,7 +378,7 @@ Failure and edge cases:
 
 Steps (as built):
 
-1. Owner tells their assistant: "Draft an announcement for Monday's call". The assistant calls the cohory MCP server or REST API with the agent's token.
+1. Owner tells their assistant: "Draft an announcement for Monday's call". The assistant calls the Cohory MCP server or REST API with the agent's token.
 2. System checks the token scope and answers 201 with `status: "draft"`. The draft is stored apart from posts and is not visible to members.
 3. Owner or an admin sees the draft under **Drafts waiting for you** in Manage, Settings, Agents, with the Agent badge.
 4. They press **Publish draft** or **Discard draft**. The published post keeps the agent and shows the Agent badge; editing before publishing and scheduling from the draft are not built.

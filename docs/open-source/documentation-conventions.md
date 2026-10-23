@@ -4,7 +4,7 @@ The rules every Cohory doc follows: structure, labels, punctuation, links, termi
 
 Status: Draft, 2026-10-17
 
-The product name is written "Cohory" in prose, UI copy, emails, and page titles. Write "cohory" only in code, paths, package names, URLs, CLI commands, and other technical strings (founder decisions, 2026-10-19 and 2026-10-20). Older docs still use lowercase in prose; fix them when you touch them.
+The product name is written "Cohory" in prose, UI copy, emails, and page titles. Write "cohory" only in code, paths, package names, URLs, CLI commands, and other technical strings (founder decisions, 2026-10-19 and 2026-10-20).
 
 These rules apply to everything under `docs/`, the root Markdown files, and PR and issue text where it makes sense. They are **Confirmed** for the foundation phase and can change only through a decision record.
 

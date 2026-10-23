@@ -1,6 +1,6 @@
 # Release strategy
 
-How cohory will version, release, and support the Community Edition, and how security fixes ship.
+How Cohory will version, release, and support the Community Edition, and how security fixes ship.
 
 Status: Draft, 2026-10-23
 

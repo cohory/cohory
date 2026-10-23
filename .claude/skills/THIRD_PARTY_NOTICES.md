@@ -1,10 +1,10 @@
 # Third party skill notices
 
-Licenses and attribution for the agent skills in this directory that cohory copies unchanged from other projects.
+Licenses and attribution for the agent skills in this directory that Cohory copies unchanged from other projects.
 
 Status: Accepted, 2026-10-24
 
-These skills keep their own terms. They are not covered by cohory's AGPL-3.0 license. Each folder is a copy of the upstream skill, installed with the `skills` CLI; [skills-lock.json](../../skills-lock.json) at the repository root records the source path and content hash of each one. The commit column is the upstream default branch at the time of the audit (2026-10-24); the content hash in the lock file identifies the copied version exactly.
+These skills keep their own terms. They are not covered by Cohory's AGPL-3.0 license. Each folder is a copy of the upstream skill, installed with the `skills` CLI; [skills-lock.json](../../skills-lock.json) at the repository root records the source path and content hash of each one. The commit column is the upstream default branch at the time of the audit (2026-10-24); the content hash in the lock file identifies the copied version exactly.
 
 ## Skills
 
@@ -54,7 +54,7 @@ SOFTWARE.
 
 ## Creative Commons Attribution-ShareAlike 4.0
 
-`supply-chain-risk-auditor` is the work of Trail of Bits, published in [trailofbits/skills](https://github.com/trailofbits/skills) under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/) ([full legal code](https://creativecommons.org/licenses/by-sa/4.0/legalcode)). Cohory distributes it unchanged. It stays under CC-BY-SA-4.0, not under cohory's AGPL-3.0, and any adaptation of it must be shared under the same license.
+`supply-chain-risk-auditor` is the work of Trail of Bits, published in [trailofbits/skills](https://github.com/trailofbits/skills) under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/) ([full legal code](https://creativecommons.org/licenses/by-sa/4.0/legalcode)). Cohory distributes it unchanged. It stays under CC-BY-SA-4.0, not under Cohory's AGPL-3.0, and any adaptation of it must be shared under the same license.
 
 ## Skills without a license statement
 
@@ -63,4 +63,4 @@ SOFTWARE.
 | `better-auth-best-practices` | [better-auth/skills](https://github.com/better-auth/skills) (`better-auth/best-practices`) | `20c9e88a5c00` |
 | `better-auth-security-best-practices` | [better-auth/skills](https://github.com/better-auth/skills) (`security`) | `20c9e88a5c00` |
 
-The source repository has no license file and states no license. The Better Auth project itself ([better-auth/better-auth](https://github.com/better-auth/better-auth)) is MIT licensed. These two skills are not covered by cohory's AGPL-3.0 license. They are included unchanged with attribution to their authors, the Better Auth team, and we will remove them on the authors' request.
+The source repository has no license file and states no license. The Better Auth project itself ([better-auth/better-auth](https://github.com/better-auth/better-auth)) is MIT licensed. These two skills are not covered by Cohory's AGPL-3.0 license. They are included unchanged with attribution to their authors, the Better Auth team, and we will remove them on the authors' request.

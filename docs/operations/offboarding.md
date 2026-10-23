@@ -1,6 +1,6 @@
 # Moving from Cloud to self hosted
 
-How a creator moves a community from cohory Cloud to their own server: export the archive, install the Community Edition, import, and switch payments and the domain (REQ-MIG-006, journey 12).
+How a creator moves a community from Cohory Cloud to their own server: export the archive, install the Community Edition, import, and switch payments and the domain (REQ-MIG-006, journey 12).
 
 Status: Draft, 2026-10-18
 
@@ -70,7 +70,7 @@ Archives up to `MIGRATION_ARCHIVE_MAX_BYTES` (512 MiB by default) are accepted. 
 
 ## 5. Payments
 
-Members' subscriptions and saved cards live in your Stripe account, not in cohory, so they keep billing while you move.
+Members' subscriptions and saved cards live in your Stripe account, not in Cohory, so they keep billing while you move.
 
 What the import does today:
 
@@ -81,7 +81,7 @@ What the import does today:
 What you do:
 
 1. On the new server, connect the same Stripe account with your own API keys (Manage, Payments) and create the plan again.
-2. Open Manage, Migration, "Bring your existing subscribers" (or the same card on Manage, Payments). cohory lists the subscriptions on the connected account, matches them to members by confirmed email, and links them without any action from the members. The free access from the import stays until you end it in Manage, Payments, Free access; a linked subscription grants access on its own. The options, including what to do when the subscriptions live in another Stripe account, are in [payment-migration.md](payment-migration.md).
+2. Open Manage, Migration, "Bring your existing subscribers" (or the same card on Manage, Payments). Cohory lists the subscriptions on the connected account, matches them to members by confirmed email, and links them without any action from the members. The free access from the import stays until you end it in Manage, Payments, Free access; a linked subscription grants access on its own. The options, including what to do when the subscriptions live in another Stripe account, are in [payment-migration.md](payment-migration.md).
 3. On Cloud, open Manage, Payments and choose Disconnect Stripe. Keep "Take my members with me" so subscriptions keep billing in your Stripe account, and paste your Stripe customer portal login link if you want members to get it in their email (it starts with `https://billing.stripe.com/p/login/`). Cloud first removes the application fee from every subscription and checks it, then closes the connection, then tells each member that you bill them directly now, with your email as the contact. While it works, Manage, Payments shows Disconnecting and new memberships are paused. If Stripe refuses the change for some subscriptions, the page names those members with Try again and Disconnect anyway; after Disconnect anyway, remove the fee from those subscriptions in your Stripe Dashboard. Cloud refunds any platform fee it receives after you leave. See [../architecture/payments.md](../architecture/payments.md) section 13.8.
 4. Paid access on Cloud ends at the end of each member's current period. Link the subscriptions on the new server (step 2) before then so members keep access there.
 

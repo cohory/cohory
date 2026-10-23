@@ -1,6 +1,6 @@
 # 0021. Agent course format 1.0.0, immutable snapshots, and Agent Skills export
 
-cohory stores a structured agent layer per lesson as validated JSON, freezes it into immutable, checksummed course versions, and exports each version as a deterministic Agent Skills folder.
+Cohory stores a structured agent layer per lesson as validated JSON, freezes it into immutable, checksummed course versions, and exports each version as a deterministic Agent Skills folder.
 
 Status: Accepted, 2026-10-19
 

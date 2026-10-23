@@ -1,6 +1,6 @@
 # Mission
 
-What cohory exists to do, what we commit to in the first year, and what we deliberately leave out.
+What Cohory exists to do, what we commit to in the first year, and what we deliberately leave out.
 
 Status: Draft, 2026-10-19
 
@@ -103,7 +103,7 @@ In return, contributions must:
 
 - If a feature needs a fifth member tab, it is out of scope or it moves into an existing tab.
 - If a feature works only on the Cloud Edition, it must be infrastructure (managed hosting, custom domain provisioning, automatic updates), not product.
-- If a feature puts cohory between the creator and their subscribers' payment relationship, it is rejected or redesigned.
+- If a feature puts Cohory between the creator and their subscribers' payment relationship, it is rejected or redesigned.
 - If a feature cannot be explained in a plain sentence in the creator UI ("Connect your Stripe account", "Platform fee: 2%"), it is not ready.
 
 ## Related documents

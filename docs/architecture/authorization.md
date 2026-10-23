@@ -19,7 +19,7 @@ Tenant isolation is in [multi-tenancy.md](multi-tenancy.md). Agent surfaces are 
 
 | Role | Scope | Who | Label |
 |---|---|---|---|
-| Platform admin | Instance | Operator of a Community Edition instance, or cohory staff on Cloud | Recommendation |
+| Platform admin | Instance | Operator of a Community Edition instance, or Cohory staff on Cloud | Recommendation |
 | Owner | Community | The creator. Exactly one per community. Owns the payment connection. | Confirmed (roles from mvp-scope) |
 | Admin | Community | Trusted helpers. Manage access except payment changes, ownership transfer, deletion. | Confirmed role, Recommendation for limits |
 | Moderator | Community | Content and member moderation. Manage shows People only. | Confirmed role |

@@ -1,6 +1,6 @@
 # End to end tests
 
-Playwright specs for cohory's critical journeys, run against the production image in an isolated Compose project.
+Playwright specs for Cohory's critical journeys, run against the production image in an isolated Compose project.
 
 Status: Draft, 2026-10-22
 

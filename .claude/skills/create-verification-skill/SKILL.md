@@ -1,6 +1,6 @@
 ---
 name: create-verification-skill
-description: Use when cohory has no scripted way to launch the app and prove a feature works the way a user sees it, when asked to "make a verify skill", or when the existing verify-cohory skill or its feature map has drifted from the app ("audit the verify skill"). Generates or maintains .claude/skills/verify-cohory/.
+description: Use when Cohory has no scripted way to launch the app and prove a feature works the way a user sees it, when asked to "make a verify skill", or when the existing verify-cohory skill or its feature map has drifted from the app ("audit the verify skill"). Generates or maintains .claude/skills/verify-cohory/.
 ---
 
 # Create or maintain a verification skill

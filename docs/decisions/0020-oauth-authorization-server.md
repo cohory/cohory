@@ -1,6 +1,6 @@
 # 0020. Built in OAuth authorization server for MCP clients
 
-cohory runs its own small OAuth 2.1 authorization server whose access tokens are ordinary agent API tokens, so MCP clients and REST clients are authorized by the same bearer middleware.
+Cohory runs its own small OAuth 2.1 authorization server whose access tokens are ordinary agent API tokens, so MCP clients and REST clients are authorized by the same bearer middleware.
 
 Status: Accepted, 2026-10-19
 
@@ -11,7 +11,7 @@ Status: Accepted, 2026-10-19
 
 ## Context
 
-The MCP authorization specification (revision 2026-07-28) asks an MCP server to publish OAuth 2.0 Protected Resource Metadata (RFC 9728) and an authorization server that supports OAuth 2.1 with PKCE, Authorization Server Metadata (RFC 8414), resource indicators (RFC 8707), and a way for unknown clients to register. Desktop assistants connect without any prior relationship with a self hosted cohory, so registration has to be automatic. Step 13 already built agent identities, scoped `api_tokens`, and a bearer middleware that checks scope, the owner's current role, community, rate limits, approvals, and audit on every request ([ADR 0017](0017-bearer-api-tokens.md)).
+The MCP authorization specification (revision 2026-07-28) asks an MCP server to publish OAuth 2.0 Protected Resource Metadata (RFC 9728) and an authorization server that supports OAuth 2.1 with PKCE, Authorization Server Metadata (RFC 8414), resource indicators (RFC 8707), and a way for unknown clients to register. Desktop assistants connect without any prior relationship with a self hosted Cohory, so registration has to be automatic. Step 13 already built agent identities, scoped `api_tokens`, and a bearer middleware that checks scope, the owner's current role, community, rate limits, approvals, and audit on every request ([ADR 0017](0017-bearer-api-tokens.md)).
 
 Better Auth 1.7.10 (pinned) ships an OIDC provider and an MCP plugin. Both issue their own access tokens into their own tables, bind them to a user rather than to a community and an agent, and keep a second consent and permission model. Using them would mean two token formats and two authorization paths for the same API.
 

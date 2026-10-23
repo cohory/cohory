@@ -1,6 +1,6 @@
 # Security policy
 
-How to report a vulnerability in cohory privately, what we consider in scope, and how we respond.
+How to report a vulnerability in Cohory privately, what we consider in scope, and how we respond.
 
 Status: Draft, 2026-10-22
 
@@ -23,7 +23,7 @@ Do not open a public issue, discussion, or pull request for a security problem.
 
 Report it through GitHub private vulnerability reporting: open [Report a vulnerability](https://github.com/cohory/cohory/security/advisories/new) in the repository's **Security** tab. If you cannot use GitHub, email [hello@cohory.org](mailto:hello@cohory.org) with "Security" in the subject and no exploit details; we reply with a private channel.
 
-To reach the operator of a particular cohory server, use the contact in its `/.well-known/security.txt`. Every server publishes that file (RFC 9116) once its operator sets `SECURITY_CONTACT` or `CONTACT_EMAIL` ([self-hosting](docs/self-hosting.md#legal-pages-and-contact)).
+To reach the operator of a particular Cohory server, use the contact in its `/.well-known/security.txt`. Every server publishes that file (RFC 9116) once its operator sets `SECURITY_CONTACT` or `CONTACT_EMAIL` ([self-hosting](docs/self-hosting.md#legal-pages-and-contact)).
 
 For a self-hosted server, the operator who runs it handles reports about their configuration and data. Report problems in the code itself here.
 
@@ -68,7 +68,7 @@ In scope:
 
 Out of scope:
 
-- Vulnerabilities in third-party services (Stripe, email providers, hosting) that are not caused by how cohory uses them. Report those to the vendor.
+- Vulnerabilities in third-party services (Stripe, email providers, hosting) that are not caused by how Cohory uses them. Report those to the vendor.
 - Self-hosted deployments that changed security-relevant defaults
 - Denial of service through volume, spam, or social engineering
 - Missing security headers or best practices without a demonstrated impact

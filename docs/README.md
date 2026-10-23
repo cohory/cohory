@@ -1,6 +1,6 @@
 # Documentation index
 
-Every doc in the cohory repository, grouped by folder, with one line on what each covers.
+Every doc in the Cohory repository, grouped by folder, with one line on what each covers.
 
 Status: Draft, 2026-10-23
 
@@ -11,7 +11,7 @@ Writing rules are in [documentation conventions](open-source/documentation-conve
 | Doc | What it covers |
 |-----|----------------|
 | [vision.md](foundation/vision.md) | Long-term direction: what we are building, for whom, and what we refuse to become |
-| [mission.md](foundation/mission.md) | What cohory exists to do and the first-year commitments |
+| [mission.md](foundation/mission.md) | What Cohory exists to do and the first-year commitments |
 | [principles.md](foundation/principles.md) | The eleven rules for product and engineering trade-offs |
 | [target-audience.md](foundation/target-audience.md) | Audience segments, personas, and the alternatives they use today |
 | [product-requirements.md](foundation/product-requirements.md) | Functional and non-functional requirements by module |
@@ -34,7 +34,7 @@ Writing rules are in [documentation conventions](open-source/documentation-conve
 | Doc | What it covers |
 |-----|----------------|
 | [brand-strategy.md](brand/brand-strategy.md) | Positioning, messaging, homepage copy, naming directions |
-| [voice-and-tone.md](brand/voice-and-tone.md) | How cohory sounds, with plain-language rules |
+| [voice-and-tone.md](brand/voice-and-tone.md) | How Cohory sounds, with plain-language rules |
 | [visual-identity.md](brand/visual-identity.md) | Logo direction, color, type, layout, dark mode, creator customization |
 | [design-tokens.md](brand/design-tokens.md) | Token specification for Tailwind CSS and shadcn/ui, component behavior |
 
@@ -89,7 +89,7 @@ Writing rules are in [documentation conventions](open-source/documentation-conve
 
 | Doc | What it covers |
 |-----|----------------|
-| [comparable-projects.md](research/comparable-projects.md) | Ten comparable open-source projects, their stacks, licenses, and lessons for cohory |
+| [comparable-projects.md](research/comparable-projects.md) | Ten comparable open-source projects, their stacks, licenses, and lessons for Cohory |
 
 ## Open source
 

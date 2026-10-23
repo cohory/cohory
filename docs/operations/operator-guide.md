@@ -1,6 +1,6 @@
 # Operator guide
 
-Day to day operation of a self-hosted cohory server: configuration, backups and restores, logs, upgrades, fair use limits, and rotating secrets.
+Day to day operation of a self-hosted Cohory server: configuration, backups and restores, logs, upgrades, fair use limits, and rotating secrets.
 
 Status: Draft, 2026-10-18
 

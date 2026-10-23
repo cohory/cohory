@@ -2,7 +2,7 @@
 
 Status: Draft, 2026-10-22
 
-How cohory sends community events to other apps, and how a receiver checks that a request is genuine.
+How Cohory sends community events to other apps, and how a receiver checks that a request is genuine.
 
 Available since 0.6.0 (REQ-AGT-007). Design notes are in [agent-integrations.md](../architecture/agent-integrations.md) section 6.
 

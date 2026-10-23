@@ -4,7 +4,7 @@ What the brand stands for, how we position it, and the words we lead with on the
 
 Status: Draft, 2026-10-17
 
-The product name is cohory (founder decision, 2026-10-19). The [naming exploration](#naming-exploration) is kept for the record.
+The product name is Cohory (founder decision, 2026-10-19). The [naming exploration](#naming-exploration) is kept for the record.
 
 Related: [voice and tone](./voice-and-tone.md), [visual identity](./visual-identity.md), [design tokens](./design-tokens.md), [information architecture](../product/information-architecture.md), [payments architecture](../architecture/payments.md).
 
@@ -38,7 +38,7 @@ The promise has two halves on purpose. The first is about the member and creator
 
 ### Positioning statement
 
-**Recommendation:** For independent creators who run paid communities, cohory is an open-source community platform that combines a feed, courses, events, and memberships in one calm app. Unlike closed community platforms, cohory can be self-hosted for free, and on the managed cloud the creator's subscriptions live in the creator's own payment account, with a 2% platform fee and no monthly plan.
+**Recommendation:** For independent creators who run paid communities, Cohory is an open-source community platform that combines a feed, courses, events, and memberships in one calm app. Unlike closed community platforms, Cohory can be self-hosted for free, and on the managed cloud the creator's subscriptions live in the creator's own payment account, with a 2% platform fee and no monthly plan.
 
 ### Positioning directions
 
@@ -114,7 +114,7 @@ Proof points:
 
 **Hero:** Your community. Your subscribers. Your business.
 
-**Subhead:** cohory is an open-source home for your community, courses, and events. Self-host it for free, or use our cloud with no monthly plan and a 2% platform fee when you earn.
+**Subhead:** Cohory is an open-source home for your community, courses, and events. Self-host it for free, or use our cloud with no monthly plan and a 2% platform fee when you earn.
 
 **Primary CTA:** Start your community
 **Secondary CTA:** Self-host on GitHub
@@ -157,7 +157,7 @@ Proof points:
 
 ## Naming exploration
 
-**Confirmed** (founder, 2026-10-19): "cohory" is the final name. The list below is the exploration that came before. **Assumption:** none of the names below has been checked for domain availability, trademark conflicts, package registry names, or social handles. Many are common words and likely taken in some form. Treat this as a direction board, not a shortlist.
+**Confirmed** (founder, 2026-10-19): "Cohory" is the final name. The list below is the exploration that came before. **Assumption:** none of the names below has been checked for domain availability, trademark conflicts, package registry names, or social handles. Many are common words and likely taken in some form. Treat this as a direction board, not a shortlist.
 
 | Name | Direction | Rationale |
 | --- | --- | --- |
@@ -196,7 +196,7 @@ Proof points:
 
 ## Decisions and open questions
 
-- **Confirmed** (founder, 2026-10-19): "cohory" is the final name.
+- **Confirmed** (founder, 2026-10-19): "Cohory" is the final name.
 - **Confirmed:** three positioning directions from the founder notes; founder taglines 1 to 3.
 - **Confirmed:** pricing facts (0% self-hosted, 2% cloud, no monthly plan, processing separate).
 - **Recommendation:** lead with "Open-source Skool" positioning for MVP launch.

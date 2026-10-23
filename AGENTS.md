@@ -1,6 +1,6 @@
 # AGENTS.md
 
-The operating manual for coding agents (and humans) working in the cohory repository.
+The operating manual for coding agents (and humans) working in the Cohory repository.
 
 Status: Accepted, 2026-10-24 (Cohory 0.12.0)
 
@@ -235,7 +235,7 @@ Use the `autonomous-run` skill. Before, during, and after an unattended run:
 ## Decisions and open questions
 
 - **Confirmed:** modular monolith, module list, mandatory tests for money, auth, permissions, and subscriptions, agents read docs before implementing.
-- **Confirmed** (founder, 2026-10-19): "cohory" is the final name. The license is AGPL-3.0 for the core and MIT for the SDK, generated client, plugin templates, and agent runner ([0009](docs/decisions/0009-license.md), [LICENSING.md](LICENSING.md)); the plugin exception wording awaits legal review. Contributions require a DCO sign-off, no CLA (see [CONTRIBUTING.md](CONTRIBUTING.md)).
+- **Confirmed** (founder, 2026-10-19): "Cohory" is the final name. The license is AGPL-3.0 for the core and MIT for the SDK, generated client, plugin templates, and agent runner ([0009](docs/decisions/0009-license.md), [LICENSING.md](LICENSING.md)); the plugin exception wording awaits legal review. Contributions require a DCO sign-off, no CLA (see [CONTRIBUTING.md](CONTRIBUTING.md)).
 - **Recommendation**, applied since 0.1.0: PostgreSQL row level security is on and forced on every tenant-scoped table, in addition to repository scoping (see [multi-tenancy](docs/architecture/multi-tenancy.md) section 3.4).
 - **Recommendation:** repository layout, Vitest and Playwright, pg-boss as the queue, Hono with Zod for the API, file size limits, fee rounding rule.
 - Every resolved product question is in [decisions-log](docs/product/decisions-log.md); open and deferred items are in [backlog](docs/product/backlog.md).

@@ -1,6 +1,6 @@
 # Testing
 
-How cohory is tested: which suites exist, what each one needs, and how to run them on a developer machine and in CI.
+How Cohory is tested: which suites exist, what each one needs, and how to run them on a developer machine and in CI.
 
 Status: Draft, 2026-10-23
 

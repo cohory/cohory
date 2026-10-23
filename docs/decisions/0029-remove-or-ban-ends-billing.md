@@ -1,6 +1,6 @@
 # 0029. Removing or banning a paying member ends their subscription
 
-When staff remove or ban a member who pays, cohory cancels that member's subscription at once, without proration and without a refund, and the creator sees this before confirming.
+When staff remove or ban a member who pays, Cohory cancels that member's subscription at once, without proration and without a refund, and the creator sees this before confirming.
 
 Status: Accepted, 2026-10-22
 

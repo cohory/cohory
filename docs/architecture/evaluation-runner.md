@@ -1,10 +1,10 @@
 # Evaluation runner
 
-How an agent that reads a cohory course runs its tasks and evaluations in its own environment and reports results, and what cohory can and cannot say about those results.
+How an agent that reads a Cohory course runs its tasks and evaluations in its own environment and reports results, and what Cohory can and cannot say about those results.
 
 Status: Draft, 2026-10-19
 
-This is a design. cohory does not run evaluations, scripts, or agents on its servers, and hosted execution is out of scope ([agent-integrations.md](agent-integrations.md) sections 9 and 11.4). The format of tasks and evaluations is in [agent-course-format.md](agent-course-format.md); access rules are in [../operations/agent-courses-delegation.md](../operations/agent-courses-delegation.md). The decision record is [ADR 0023](../decisions/0023-agent-course-delivery.md).
+This is a design. Cohory does not run evaluations, scripts, or agents on its servers, and hosted execution is out of scope ([agent-integrations.md](agent-integrations.md) sections 9 and 11.4). The format of tasks and evaluations is in [agent-course-format.md](agent-course-format.md); access rules are in [../operations/agent-courses-delegation.md](../operations/agent-courses-delegation.md). The decision record is [ADR 0023](../decisions/0023-agent-course-delivery.md).
 
 ## 1. Flow
 
@@ -14,7 +14,7 @@ This is a design. cohory does not run evaluations, scripts, or agents on its ser
 4. **Check locally.**
    - The output schema and every `schema` evaluation are checked with JSON Schema 2020-12.
    - A `rubric` evaluation has the status `needs_judgement`. The agent or its person scores it against the criteria and the passing score.
-   - A `script` evaluation is never run by cohory and never run by the reference runner. A consuming agent that chooses to run one does so only inside its own sandbox, after reviewing it, never with its owner's credentials or elevated permissions.
+   - A `script` evaluation is never run by Cohory and never run by the reference runner. A consuming agent that chooses to run one does so only inside its own sandbox, after reviewing it, never with its owner's credentials or elevated permissions.
 5. **Report.** `submit_task_result` (or `POST /api/v1/communities/{slug}/courses/{courseId}/submissions`) with:
 
 ```json
@@ -44,10 +44,10 @@ Each stored result records the agent, the person who owns it, the delegation it 
 
 ## 3. What "verified" can and cannot mean
 
-- Results are self reported. cohory stores what the agent said and never calls a result verified.
-- cohory knows which token sent the result, so it knows which agent and person reported it. It cannot know whether the agent really ran the task, whether the output is the real output, or whether the checks passed.
+- Results are self reported. Cohory stores what the agent said and never calls a result verified.
+- Cohory knows which token sent the result, so it knows which agent and person reported it. It cannot know whether the agent really ran the task, whether the output is the real output, or whether the checks passed.
 - A signature from a key held by the agent could prove origin and integrity of a report outside cohory. It still proves nothing about correctness.
-- A trustworthy "verified capability report" would need an execution environment that cohory controls or attests. That is hosted execution, which is out of scope.
+- A trustworthy "verified capability report" would need an execution environment that Cohory controls or attests. That is hosted execution, which is out of scope.
 
 ## 4. Reference runner
 
@@ -61,7 +61,7 @@ COHORY_TOKEN=cohory_... pnpm --filter @cohory/agent-runner run-task -- \
 ```
 
 - It reads the output from a local JSON file, fetches the task, runs the output schema and `schema` evaluations with Ajv (JSON Schema 2020-12), each in a worker thread stopped after 2 seconds (`checkTimeoutMs`), after refusing patterns that could backtrack for a long time (nested or alternated repetition, back references, more than 256 characters) as failed checks, marks rubrics `needs_judgement` and scripts `not_run`, and submits the result unless `--dry-run` is given. It exits 0 when the checks passed, 1 when one failed, and 2 on errors.
-- It talks only to the configured cohory origin: every request URL must have that origin, redirects are refused, and there are no other network calls.
+- It talks only to the configured Cohory origin: every request URL must have that origin, redirects are refused, and there are no other network calls.
 - It never runs scripts, templates, or anything else from course material.
 - Its functions (`evaluateTask`, `createRunnerClient`, `buildSubmission`, `runTask`) can be used from code.
 
@@ -69,7 +69,7 @@ COHORY_TOKEN=cohory_... pnpm --filter @cohory/agent-runner run-task -- \
 
 | Label | Item |
 |---|---|
-| Confirmed | Evaluations run in the consuming agent's environment; cohory accepts self reported results and calls nothing verified (since 0.8.0). |
+| Confirmed | Evaluations run in the consuming agent's environment; Cohory accepts self reported results and calls nothing verified (since 0.8.0). |
 | Recommendation | Payload convention `{ outcome, checks, output, environment }`, not enforced by the server. |
 | Recommendation | A reference runner that runs JSON Schema checks only and never scripts, as a private workspace package. |
 | Open question | Whether results should carry a signature from an agent key, and how keys would be registered. |

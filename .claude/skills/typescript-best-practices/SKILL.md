@@ -1,11 +1,11 @@
 ---
 name: typescript-best-practices
-description: Use when writing, editing, or reviewing any .ts or .tsx file in cohory, including Drizzle schemas, zod validators, server actions, route handlers, and React components.
+description: Use when writing, editing, or reviewing any .ts or .tsx file in Cohory, including Drizzle schemas, zod validators, server actions, route handlers, and React components.
 ---
 
 # TypeScript best practices
 
-Apply the type system discipline and boundary discipline entries in `engineering-principles` first. This skill grounds them in syntax for cohory's stack (TypeScript strict mode, Next.js App Router, Drizzle, zod, Better Auth, Stripe). Code examples live in `references/patterns.md`.
+Apply the type system discipline and boundary discipline entries in `engineering-principles` first. This skill grounds them in syntax for Cohory's stack (TypeScript strict mode, Next.js App Router, Drizzle, zod, Better Auth, Stripe). Code examples live in `references/patterns.md`.
 
 If `AGENTS.md` or `docs/architecture/*.md` define a rule that differs from this table, the project doc wins.
 

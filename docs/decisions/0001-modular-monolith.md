@@ -1,6 +1,6 @@
 # 0001. Modular monolith
 
-Build cohory as one deployable application with strict internal module boundaries, not as microservices.
+Build Cohory as one deployable application with strict internal module boundaries, not as microservices.
 
 Status: Draft, 2026-10-17
 
@@ -30,7 +30,7 @@ Forces:
 
 | Option | Pros | Cons | Why not chosen |
 |---|---|---|---|
-| Microservices per module | Independent deploys and scaling | Distributed transactions, many containers for self-hosters, network failure handling, tracing as a requirement | Costs far exceed benefits at cohory's scale. Contradicts the brief. |
+| Microservices per module | Independent deploys and scaling | Distributed transactions, many containers for self-hosters, network failure handling, tracing as a requirement | Costs far exceed benefits at Cohory's scale. Contradicts the brief. |
 | Unstructured monolith (one app folder) | Fastest start | Boundaries erode, hard to extract later, hard for contributors and agents to work in one area safely | Module boundaries are needed for testing, review, and agent-friendly code. |
 | Monolith with modules as folders in one package | Less package overhead | Boundaries enforced only by lint | Explicit package dependencies make direction visible and enforceable. Acceptable fallback if package overhead hurts. |
 

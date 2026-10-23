@@ -1,6 +1,6 @@
 # Threat model
 
-What cohory protects, who can attack it, where trust changes hands, and which controls exist today with the file that implements each one.
+What Cohory protects, who can attack it, where trust changes hands, and which controls exist today with the file that implements each one.
 
 Status: Draft, 2026-10-19
 

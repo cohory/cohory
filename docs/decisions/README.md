@@ -1,6 +1,6 @@
 # Architecture decision records
 
-How cohory records architecture decisions, the template to use, and the index of all ADRs.
+How Cohory records architecture decisions, the template to use, and the index of all ADRs.
 
 Status: Draft, 2026-10-17
 

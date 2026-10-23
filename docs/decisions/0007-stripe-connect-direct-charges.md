@@ -21,8 +21,8 @@ Verified on docs.stripe.com (2026-10-17): direct charges create charges on the c
 - Onboarding through Account Links. OAuth is not used.
 - Checkout in subscription mode on the connected account with `subscription_data.application_fee_percent = 1`. One-time purchases (post-MVP) with `payment_intent_data.application_fee_amount`.
 - When invoices carry tax, set a per-invoice `application_fee_amount` on `invoice.created` computed on the pre-tax amount, keeping the percent as fallback and refunding any excess in reconciliation.
-- Refunds from cohory use `refund_application_fee = true`. Lost disputes refund the fee on the disputed amount.
-- Offboarding removes the application fee from all subscriptions before cohory deauthorizes the account.
+- Refunds from Cohory use `refund_application_fee = true`. Lost disputes refund the fee on the disputed amount.
+- Offboarding removes the application fee from all subscriptions before Cohory deauthorizes the account.
 - Community Edition uses the creator's own Stripe keys with the same code and no application fee.
 
 ## Alternatives considered
@@ -37,7 +37,7 @@ Verified on docs.stripe.com (2026-10-17): direct charges create charges on the c
 ## Consequences
 
 - Positive: customers, payment methods, and subscriptions live in the creator's Stripe account and survive leaving cohory.
-- Negative: cohory has limited visibility (objects live on connected accounts) and must query with the `Stripe-Account` header.
+- Negative: Cohory has limited visibility (objects live on connected accounts) and must query with the `Stripe-Account` header.
 - Negative: creators can refund in their Dashboard without refunding our fee. Handled by webhook-driven fee refunds.
 - Follow-up: test-mode verification of every item marked Unverified in [../architecture/payments.md](../architecture/payments.md) before Phase 3 ends.
 

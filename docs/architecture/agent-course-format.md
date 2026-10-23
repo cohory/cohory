@@ -2,9 +2,9 @@
 
 Status: Draft, 2026-10-19
 
-The agent course format is the structured layer creators add to lessons so that agents can learn a workflow and be checked on it. This document specifies format version **1.1.0** (`cohory-agent-course`; 1.1.0 adds one license id to 1.0.0, and 1.0.0 manifests stay valid), how cohory stores and versions it, and how it is exported as an [Agent Skills](https://agentskills.io/specification) folder. The design background is [agent-integrations.md](agent-integrations.md) section 11, and the decision record is [ADR 0021](../decisions/0021-agent-course-format-and-storage.md). The creator guide is [../operations/agent-courses.md](../operations/agent-courses.md).
+The agent course format is the structured layer creators add to lessons so that agents can learn a workflow and be checked on it. This document specifies format version **1.1.0** (`cohory-agent-course`; 1.1.0 adds one license id to 1.0.0, and 1.0.0 manifests stay valid), how Cohory stores and versions it, and how it is exported as an [Agent Skills](https://agentskills.io/specification) folder. The design background is [agent-integrations.md](agent-integrations.md) section 11, and the decision record is [ADR 0021](../decisions/0021-agent-course-format-and-storage.md). The creator guide is [../operations/agent-courses.md](../operations/agent-courses.md).
 
-The format is Markdown plus JSON and stays small on purpose. Everything in it is untrusted course content (section 9 of [agent-integrations.md](agent-integrations.md)): cohory validates and stores it, and never runs it.
+The format is Markdown plus JSON and stays small on purpose. Everything in it is untrusted course content (section 9 of [agent-integrations.md](agent-integrations.md)): Cohory validates and stores it, and never runs it.
 
 ## 1. Where it lives
 
@@ -39,7 +39,7 @@ Evaluation `spec` by `kind`:
 |---|---|---|
 | `schema` | `{ schema }` | The task output must match this JSON Schema |
 | `rubric` | `{ criteria: [{ id, description, points }], passingScore }` | Up to 20 criteria, 0 to 100 points each |
-| `script` | `{ language, source }` | Source up to 50,000 characters. Text for the consuming agent's own sandbox. cohory never runs it, and the export writes it inside JSON, never as an executable file |
+| `script` | `{ language, source }` | Source up to 50,000 characters. Text for the consuming agent's own sandbox. Cohory never runs it, and the export writes it inside JSON, never as an executable file |
 
 ### 2.1 Text rules
 

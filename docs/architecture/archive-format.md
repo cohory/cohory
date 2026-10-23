@@ -1,6 +1,6 @@
 # Archive format
 
-The public, versioned file format that cohory uses to export a whole community and import it into another instance (REQ-MIG-001, REQ-MIG-002, REQ-CRS-007).
+The public, versioned file format that Cohory uses to export a whole community and import it into another instance (REQ-MIG-001, REQ-MIG-002, REQ-CRS-007).
 
 Status: Draft, 2026-10-23
 
@@ -64,7 +64,7 @@ Version 1.3.0 adds `community_gallery.jsonl` and `detailedDescription` on the co
 
 Version 1.4.0 (Step 17, 0.10.0) adds `reviews.jsonl`, `review_replies.jsonl`, and `reviewsEnabled` on the community line. A 1.4.0 reader accepts older archives without those files and treats a missing `reviewsEnabled` as `false`.
 
-Version 1.5.0 adds copies for people who leave cohory or open the archive without it: `README.txt`, which explains each file, and `spreadsheets/members.csv` (email, name, username, role, status, join date), `spreadsheets/posts.csv`, and `spreadsheets/comments.csv` (posts and comments that were not deleted, as plain text, with author and category or post). The CSV files are UTF-8 with a byte order mark and RFC 4180 quoting, and a field that starts with a spreadsheet formula character gets an apostrophe in front. Erased people have an empty email. All four files are listed in the manifest with checksums. A reader checks them like any other file and imports nothing from them; the `data/` files stay the source. A 1.5.0 reader accepts older archives without them.
+Version 1.5.0 adds copies for people who leave Cohory or open the archive without it: `README.txt`, which explains each file, and `spreadsheets/members.csv` (email, name, username, role, status, join date), `spreadsheets/posts.csv`, and `spreadsheets/comments.csv` (posts and comments that were not deleted, as plain text, with author and category or post). The CSV files are UTF-8 with a byte order mark and RFC 4180 quoting, and a field that starts with a spreadsheet formula character gets an apostrophe in front. Erased people have an empty email. All four files are listed in the manifest with checksums. A reader checks them like any other file and imports nothing from them; the `data/` files stay the source. A 1.5.0 reader accepts older archives without them.
 
 Version 1.6.0 adds `pointsForLessons` and `pointsForEvents` on the community line and `requiredLevel` on course lines ([0045](../decisions/0045-levels-that-unlock-and-learning-points.md)). A 1.6.0 reader treats missing values (older archives) as `false` and `null`.
 

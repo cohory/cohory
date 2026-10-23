@@ -1,6 +1,6 @@
 # Licensing
 
-How cohory is licensed, which parts use which license, and the plugin exception.
+How Cohory is licensed, which parts use which license, and the plugin exception.
 
 Status: Accepted, 2026-10-19 (founder decision; the exception wording awaits legal review)
 
@@ -22,14 +22,14 @@ The reasoning is in [decision 0009](docs/decisions/0009-license.md).
 ## What the AGPL means for you
 
 - **Creators who self-host** for their own community have no extra obligations. Run it, change it, and keep your data.
-- **Anyone who modifies cohory and lets other people use it over a network** must offer those people the source of the modified version under the AGPL. Set `SOURCE_URL` to your copy of the code and every page footer shows a "Source code" link with the version ([self-hosting](docs/self-hosting.md#legal-pages-and-contact)).
+- **Anyone who modifies Cohory and lets other people use it over a network** must offer those people the source of the modified version under the AGPL. Set `SOURCE_URL` to your copy of the code and every page footer shows a "Source code" link with the version ([self-hosting](docs/self-hosting.md#legal-pages-and-contact)).
 - **Code you write against the SDK, the REST API, the MCP server, or webhooks** is covered by the plugin exception below.
 
 ## Plugin exception (draft for legal review)
 
 **Draft.** This wording is modeled on the exceptions other AGPL projects with an MIT SDK publish (Twenty among them). It has not been reviewed by a lawyer yet and may change before the first public release. Nothing here is legal advice.
 
-> As an additional permission under section 7 of the GNU Affero General Public License, version 3, the copyright holders of cohory give you permission to create, use, and distribute programs ("plugins") that interact with cohory only through its public interfaces, under terms of your choice, without those programs being covered by the GNU AGPL. The public interfaces are the HTTP API under `/api/v1`, the MCP server at `/mcp`, outgoing webhooks, the OAuth endpoints, and the MIT licensed packages listed in LICENSING.md. This permission does not cover modifications of cohory itself or works that copy or link cohory's AGPL code, and it does not change the obligations of anyone who modifies cohory and offers it to users over a network.
+> As an additional permission under section 7 of the GNU Affero General Public License, version 3, the copyright holders of Cohory give you permission to create, use, and distribute programs ("plugins") that interact with Cohory only through its public interfaces, under terms of your choice, without those programs being covered by the GNU AGPL. The public interfaces are the HTTP API under `/api/v1`, the MCP server at `/mcp`, outgoing webhooks, the OAuth endpoints, and the MIT licensed packages listed in LICENSING.md. This permission does not cover modifications of Cohory itself or works that copy or link Cohory's AGPL code, and it does not change the obligations of anyone who modifies Cohory and offers it to users over a network.
 
 ## Contributions
 

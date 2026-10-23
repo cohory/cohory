@@ -1,10 +1,8 @@
-# cohory
+# Cohory
 
-The open-source community platform for creators.
+The open source alternative to Skool. Run your community, courses, events, and paid memberships on software you own.
 
-Status: Draft, 2026-10-24
-
-Cohory gives a creator one calm place for a community, courses, events, and paid memberships. Members see four tabs (Community, Classroom, Calendar, Members), and the creator runs everything from Manage. Members pay through the creator's own Stripe account, so the subscriptions stay with the creator, and the whole community exports as an archive that another cohory server imports. You can run it yourself for free, or use the hosted Cloud Edition, which takes 2% of each successful payment and no monthly fee.
+Cohory gives a creator one calm place for a community, courses, events, and paid memberships. Members see four tabs (Community, Classroom, Calendar, Members), and the creator runs everything from Manage. Members pay through the creator's own Stripe account, so the subscriptions stay with the creator, and the whole community exports as an archive that another Cohory server imports. You can run it yourself for free, or use the hosted Cloud Edition, which takes 2% of each successful payment and no monthly fee.
 
 > **Version 0.12.0.** [CHANGELOG.md](CHANGELOG.md) lists what each release contains, and the [feature inventory](docs/product/feature-inventory.md) marks every feature as Built, Partly built, or planned. No image has been published yet, so the quickstart builds the image from source.
 
@@ -38,7 +36,7 @@ The app listens on `127.0.0.1` only. Before anyone else uses the server, change 
 
 | | Community Edition (self-hosted) | Cloud Edition (hosted) |
 |---|---|---|
-| Who runs it | You, on your own server | The cohory team |
+| Who runs it | You, on your own server | The Cohory team |
 | Code | This repository | The same core |
 | Monthly subscription | None | None |
 | Platform fee | 0% | 2% of each successful payment |
@@ -93,4 +91,4 @@ Please follow the [Code of Conduct](CODE_OF_CONDUCT.md). Report security issues 
 
 ## License
 
-cohory is licensed under the [GNU Affero General Public License, version 3](LICENSE) (`AGPL-3.0-only`). The SDK and generated API client (`packages/sdk`) and the agent runner (`packages/agent-runner`) are MIT. A draft plugin exception, awaiting legal review, lets code that talks to cohory only through its public API, MCP server, webhooks, or the MIT packages use any license. Third party agent skills in `.claude/skills` keep their own licenses. Details are in [LICENSING.md](LICENSING.md).
+Cohory is licensed under the [GNU Affero General Public License, version 3](LICENSE) (`AGPL-3.0-only`). The SDK and generated API client (`packages/sdk`) and the agent runner (`packages/agent-runner`) are MIT. A draft plugin exception, awaiting legal review, lets code that talks to Cohory only through its public API, MCP server, webhooks, or the MIT packages use any license. Third party agent skills in `.claude/skills` keep their own licenses. Details are in [LICENSING.md](LICENSING.md).

@@ -1,4 +1,4 @@
-# Contributing to cohory
+# Contributing to Cohory
 
 How to propose changes, set up a development environment, and get a pull request merged.
 

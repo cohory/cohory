@@ -43,9 +43,9 @@ flowchart TD
 | Isolation strength | Logical, enforced by code and optionally RLS | Stronger by default, but still one database and one set of credentials |
 | Per-tenant backup and restore | Through export (section 9) | Easier per schema |
 | Self-hosted footprint | Same as single tenant | Same, plus operational surprise for operators |
-| Precedent | Most comparable projects ([../research/comparable-projects.md](../research/comparable-projects.md)) | Twenty, because it lets users define their own schemas, which cohory does not |
+| Precedent | Most comparable projects ([../research/comparable-projects.md](../research/comparable-projects.md)) | Twenty, because it lets users define their own schemas, which Cohory does not |
 
-Schema per tenant is rejected because cohory has no per-tenant schema customization, communities are small and numerous, and migration time would grow with the number of communities. Database per tenant is rejected for the same reasons, more strongly.
+Schema per tenant is rejected because Cohory has no per-tenant schema customization, communities are small and numerous, and migration time would grow with the number of communities. Database per tenant is rejected for the same reasons, more strongly.
 
 ## 3. Enforcement layers
 
@@ -234,7 +234,7 @@ As built (Step 18, [payments.md](payments.md)): only the owner can delete, and o
 
 ## 10. Platform administration
 
-Platform admins (operators on Community Edition, cohory staff on Cloud) act through `platformDb` and audited tools only. Every platform admin read of community content is written to the audit log of that community with `actorType = platform_admin`. Platform admins do not appear as community members. Support access to a community's private content on Cloud requires the owner's consent, recorded in the audit log (**Recommendation**).
+Platform admins (operators on Community Edition, Cohory staff on Cloud) act through `platformDb` and audited tools only. Every platform admin read of community content is written to the audit log of that community with `actorType = platform_admin`. Platform admins do not appear as community members. Support access to a community's private content on Cloud requires the owner's consent, recorded in the audit log (**Recommendation**).
 
 ## 11. Self-hosted single-community and multi-community modes
 

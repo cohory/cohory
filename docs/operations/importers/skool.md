@@ -1,6 +1,6 @@
 # Importing from Skool
 
-What the Skool importer reads, what it brings into a cohory community, and what stays behind (REQ-MIG-004).
+What the Skool importer reads, what it brings into a Cohory community, and what stays behind (REQ-MIG-004).
 
 Status: Draft, 2026-10-18
 
@@ -12,20 +12,20 @@ Importer `skool`, version 1.0.0. **Best effort, versioned, no promise:** Skool d
 - **No official content export.** Skool has no export for posts, comments, or the classroom, and no public API.
 - **Posts and comments JSON (third party).** Some creators run a scraper (for example the Apify actors listed in section 7) on their own community. These produce a JSON array of posts with a title, a body, the author, the category, the date, and optionally the comments. The importer accepts the common shape described in section 3.
 
-## 2. What cohory imports
+## 2. What Cohory imports
 
-| Skool data | cohory result |
+| Skool data | Cohory result |
 |---|---|
 | Members with name, email, join date | On Cloud, an invitation to join with their own account; their history is kept under their name until then ([0043](../../decisions/0043-import-invitations-and-emails.md)). On the Community Edition, accounts (new ones without a password, linked by email when the person already has a confirmed account) and active memberships |
 | Join question answers | Join answers on the membership, as `question: answer` |
-| Points, or level when points are missing | Points total, with the level from cohory's thresholds |
+| Points, or level when points are missing | Points total, with the level from Cohory's thresholds |
 | Role column, when present | Admin, moderator, or member; a Skool owner becomes an admin and you stay the owner |
 | Post categories | Categories (up to 10 in the community, extra ones leave their posts without a category) |
-| Posts with title and body | Posts, with markdown or HTML turned into cohory's post format |
-| Comments and replies | Comments; replies to replies are attached to the top comment, because cohory threads are one level deep |
+| Posts with title and body | Posts, with markdown or HTML turned into Cohory's post format |
+| Comments and replies | Comments; replies to replies are attached to the top comment, because Cohory threads are one level deep |
 | Pinned posts | Pinned, up to 3 (the newest ones) |
 
-The import runs through the same pipeline as a cohory archive import: you see a preview with counts and warnings, nothing changes until you confirm, and it works on a new, empty community only.
+The import runs through the same pipeline as a Cohory archive import: you see a preview with counts and warnings, nothing changes until you confirm, and it works on a new, empty community only.
 
 ## 3. Field mapping
 
@@ -33,7 +33,7 @@ Column names are matched without case, spaces, or punctuation, so `JoinedDate`, 
 
 ### Members CSV
 
-| Skool column | cohory field | Notes |
+| Skool column | Cohory field | Notes |
 |---|---|---|
 | `FirstName` and `LastName`, or `Name` | user name | Required: a row without a name uses the part of the email before `@` |
 | `Email` | user email | Required; rows with a missing, invalid, or repeated email are skipped |
@@ -50,7 +50,7 @@ Column names are matched without case, spaces, or punctuation, so `JoinedDate`, 
 
 The file is a JSON array of posts, or an object with a `posts`, `items`, or `data` array. Field names are matched the same way as columns.
 
-| Field | cohory field | Notes |
+| Field | Cohory field | Notes |
 |---|---|---|
 | `id` or `post_id` | used to connect comments | Optional |
 | `title` or `name` | post title | Cut at 120 characters |
@@ -113,5 +113,5 @@ Read on 2026-10-18. None of these is a Skool publication; Skool's help center ha
 ## Decisions and open questions
 
 - **Recommendation:** authors who are not in the members CSV keep their posts under their own name marked as former member rather than losing them or showing them as yours.
-- **Recommendation:** Skool points are imported as they are; cohory levels come from cohory's thresholds, so a level can differ from Skool's.
+- **Recommendation:** Skool points are imported as they are; Cohory levels come from Cohory's thresholds, so a level can differ from Skool's.
 - **Open question:** whether to accept a classroom JSON once a scraper shape proves stable.

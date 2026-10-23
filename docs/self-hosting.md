@@ -1,6 +1,6 @@
 # Self-hosting
 
-How to run cohory on your own server with Docker Compose. This page is the index for self-hosting and the reference for services, data, backups, upgrades, limits, and the reverse proxy.
+How to run Cohory on your own server with Docker Compose. This page is the index for self-hosting and the reference for services, data, backups, upgrades, limits, and the reverse proxy.
 
 Status: Draft, 2026-10-23
 
@@ -39,7 +39,7 @@ The Compose file publishes PostgreSQL on `127.0.0.1:5433` (host side) so local t
 
 ## Cleaning up
 
-Repeated builds leave dangling images and build cache behind. Run `scripts/docker-clean.sh` to stop the cohory stack (including its volumes), prune dangling images and the build cache, and remove volumes no container uses. It never touches other projects. Note that it deletes the local database volume. When you start throwaway containers by hand, use `docker run --rm` and `docker rm -fv` so no anonymous volume is left behind.
+Repeated builds leave dangling images and build cache behind. Run `scripts/docker-clean.sh` to stop the Cohory stack (including its volumes), prune dangling images and the build cache, and remove volumes no container uses. It never touches other projects. Note that it deletes the local database volume. When you start throwaway containers by hand, use `docker run --rm` and `docker rm -fv` so no anonymous volume is left behind.
 
 ## Requirements
 
@@ -214,7 +214,7 @@ It ends with a `PASS` line, or prints `FAIL` with the reason and the last migrat
 
 ## Rate limits
 
-cohory limits how often one client can repeat sensitive or public writes. A refused request gets HTTP 429 with a `Retry-After` header, and the web app shows "You're doing that too often" with the wait time.
+Cohory limits how often one client can repeat sensitive or public writes. A refused request gets HTTP 429 with a `Retry-After` header, and the web app shows "You're doing that too often" with the wait time.
 
 | Action | Counted per | Default (max per window) | Variable |
 |---|---|---|---|

@@ -1,6 +1,6 @@
 ---
 name: technical-writing
-description: Use when writing or reviewing docs, READMEs, ADRs, files in docs/, AGENTS.md, PR descriptions, commit messages, issue bodies, changelogs, or SKILL.md files for cohory, or when asked to "unslop", "tighten", or "clean up" prose.
+description: Use when writing or reviewing docs, READMEs, ADRs, files in docs/, AGENTS.md, PR descriptions, commit messages, issue bodies, changelogs, or SKILL.md files for Cohory, or when asked to "unslop", "tighten", or "clean up" prose.
 ---
 
 # Technical writing
@@ -32,7 +32,7 @@ One document, one mode (Diátaxis).
 - **Reference.** Facts for lookup. Dry, complete, mirrors the structure of the thing described. Generate from code where possible.
 - **Explanation.** Understanding and why. Design decisions, history, constraints, alternatives. Opinion belongs here and nowhere else.
 
-Do not mix modes. Split and link instead. In cohory, `docs/architecture/*.md` is explanation, setup guides are how-to, and API or schema docs are reference.
+Do not mix modes. Split and link instead. In Cohory, `docs/architecture/*.md` is explanation, setup guides are how-to, and API or schema docs are reference.
 
 ## Sentences
 

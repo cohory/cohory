@@ -124,9 +124,9 @@ flowchart LR
 - Payments view in Manage with gross, processing, platform fee, and net.
 
 **Acceptance criteria.**
-- In Stripe test mode, a subscription created through cohory Cloud belongs to the connected account, carries the correct application fee, and the ledger matches Stripe to the minor unit.
+- In Stripe test mode, a subscription created through Cohory Cloud belongs to the connected account, carries the correct application fee, and the ledger matches Stripe to the minor unit.
 - Refunds (full and partial) and lost disputes produce the correct fee ledger entries.
-- Community Edition creates subscriptions with no application fee and no call to any cohory service.
+- Community Edition creates subscriptions with no application fee and no call to any Cohory service.
 - Entitlements update within one minute of payment, cancellation, and failed payment events.
 - Disconnecting the payment account removes application fees from future invoices in test mode.
 
@@ -157,7 +157,7 @@ flowchart LR
 
 **Goals.** Make moving in and out real and tested.
 
-**Scope.** Full archive export with a versioned schema (REQ-MIG-001, REQ-CRS-007), import of the cohory export (REQ-MIG-002), member CSV import (REQ-MIG-003), Skool and Circle importers (REQ-MIG-004), payment migration options A, B, C (REQ-MIG-005), linking existing Stripe subscriptions (REQ-SUB-007), Cloud to self-hosted offboarding (REQ-MIG-006), first Bring Your Own Payment Provider integration (REQ-PAY-008).
+**Scope.** Full archive export with a versioned schema (REQ-MIG-001, REQ-CRS-007), import of the Cohory export (REQ-MIG-002), member CSV import (REQ-MIG-003), Skool and Circle importers (REQ-MIG-004), payment migration options A, B, C (REQ-MIG-005), linking existing Stripe subscriptions (REQ-SUB-007), Cloud to self-hosted offboarding (REQ-MIG-006), first Bring Your Own Payment Provider integration (REQ-PAY-008).
 
 **Dependencies.** Phase 4 (stable data model and production payments).
 

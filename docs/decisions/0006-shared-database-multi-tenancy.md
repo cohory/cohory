@@ -11,7 +11,7 @@ Status: Draft, 2026-10-17
 
 ## Context
 
-The brief asks for tenant isolation and authorization rules. REQ-NFR-SEC-001 requires isolation in one data access layer with cross-tenant tests in CI. The tenant is the community. Users are shared across communities on an instance (REQ-ID-004). Communities are many and mostly small. cohory has no per-tenant schema customization.
+The brief asks for tenant isolation and authorization rules. REQ-NFR-SEC-001 requires isolation in one data access layer with cross-tenant tests in CI. The tenant is the community. Users are shared across communities on an instance (REQ-ID-004). Communities are many and mostly small. Cohory has no per-tenant schema customization.
 
 ## Decision
 

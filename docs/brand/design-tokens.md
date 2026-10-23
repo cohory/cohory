@@ -203,7 +203,7 @@ This yields utilities such as `bg-bg`, `bg-surface`, `text-text-muted`, `border-
 
 **Recommendation:** we do not register shadcn's variable names as a second vocabulary. When a shadcn component is added to `packages/ui/primitives`, its classes are rewritten once using this table, and a lint check flags the left column in our code.
 
-| shadcn/ui | cohory |
+| shadcn/ui | Cohory |
 | --- | --- |
 | `background` / `foreground` | `bg` / `text` |
 | `card`, `card-foreground` | `surface`, `text` |

@@ -21,7 +21,7 @@ Phase 7 asks that a person buys a course, delegates read access to their agent, 
 - **One license source.** The course's agent access settings (T2) are the terms. Publishing reads them and maps `personal_agents`, `team_agents`, and `custom` to the manifest ids `personal-agent-use`, `team-agent-use` (new, format 1.1.0), and `custom` in one module. The publish body's `license` is optional and a different id is refused.
 - **Submissions checked.** A result must name a lesson, task, and version that exist in the published material.
 - **Lapsed agents.** When a person's membership is removed (not banned), their personal agent that holds `proposals:write` is not suspended. Its token authenticates with a lapsed standing, scopes narrowed to `courses:read` and `proposals:write`, and the bearer middleware and MCP allow only the checkout proposal and reading its own approval requests. The person may list, approve, and decline their own purchase requests without being a member.
-- **Reference runner.** `@cohory/agent-runner` runs JSON Schema checks locally, never scripts, and talks only to the cohory origin.
+- **Reference runner.** `@cohory/agent-runner` runs JSON Schema checks locally, never scripts, and talks only to the Cohory origin.
 
 ## Consequences
 

@@ -16,7 +16,7 @@ Put plainly: a creator should be able to leave us on a Tuesday and still collect
 
 Most community platforms bundle three things that should be separate:
 
-| Layer | Typical hosted platform | cohory intent |
+| Layer | Typical hosted platform | Cohory intent |
 |---|---|---|
 | Software | Proprietary, rented monthly | Open source, self-hostable, or managed by us |
 | Data | Exportable in part, often as screenshots or partial CSVs | Exportable in documented, open formats |
@@ -51,7 +51,7 @@ The rules that keep this safe and useful:
 
 Details live in [../architecture/agent-integrations.md](../architecture/agent-integrations.md).
 
-## What cohory is
+## What Cohory is
 
 - A community platform with exactly four member areas: Community, Classroom, Calendar, Members.
 - A place to run a paid membership business with posts, courses, events, and light gamification.
@@ -59,13 +59,13 @@ Details live in [../architecture/agent-integrations.md](../architecture/agent-in
 - A managed hosting service (Cloud Edition) with no mandatory monthly subscription and a 2% platform fee on successful transactions.
 - An API-first system that developers, agencies, and agents can build on.
 
-## What cohory is not
+## What Cohory is not
 
 | Not this | Why |
 |---|---|
 | A marketing suite (funnels, landing page builders, email campaigns) | Kajabi and others do this. It would bloat the product and dilute the four-area model. |
 | A chat app competing with Discord or Slack | Real-time chat changes the product's rhythm. Direct messages are post-MVP and scoped narrowly. |
-| A marketplace that owns the buyer relationship | We do not route members through a cohory storefront or claim them as our customers. |
+| A marketplace that owns the buyer relationship | We do not route members through a Cohory storefront or claim them as our customers. |
 | A merchant of record for creators | **Assumption.** The creator is the intended merchant of record, subject to legal review and Stripe configuration. |
 | A native mobile app (for now) | A responsive web app with bottom navigation comes first. Native apps are long-term. |
 | A no-code automation builder | Complex automation builders are explicitly deferred. Agents and the API cover advanced needs. |
@@ -150,4 +150,4 @@ These are checks, not metrics targets.
 | Recommendation | A round-trip export and import test (Cloud to Community Edition) is a release gate from Phase 5 onward. |
 | Assumption | The creator is the merchant of record on Stripe Connect direct charges. Requires legal review. |
 | Recommendation | Polar is the first Bring Your Own Payment Provider beyond Stripe (built in 0.5.0, engineering choice). |
-| Confirmed | "cohory" is the final product name (founder decision, 2026-10-19). |
+| Confirmed | "Cohory" is the final product name (founder decision, 2026-10-19). |

@@ -1,6 +1,6 @@
 # 0004. Better Auth for authentication
 
-Use Better Auth for users, sessions, and sign-in methods, and keep authorization in cohory's own policy module.
+Use Better Auth for users, sessions, and sign-in methods, and keep authorization in Cohory's own policy module.
 
 Status: Draft, 2026-10-17
 
@@ -18,9 +18,9 @@ Research: Formbricks runs Better Auth in production. NextAuth v4, used by severa
 ## Decision
 
 - Better Auth with its Drizzle adapter, PostgreSQL storage, and plugins for magic link, two-factor (Post-MVP), and passkeys (post-MVP).
-- Better Auth tables are mapped to cohory naming (`users`, `sessions`, `accounts`) and extended with profile fields.
+- Better Auth tables are mapped to Cohory naming (`users`, `sessions`, `accounts`) and extended with profile fields.
 - Authorization (roles, entitlements, scopes) is not implemented with Better Auth's organization features. It lives in `packages/policy`.
-- API tokens and agent tokens are cohory tables verified by `packages/auth`, not Better Auth sessions.
+- API tokens and agent tokens are Cohory tables verified by `packages/auth`, not Better Auth sessions.
 
 ## Alternatives considered
 

@@ -10,10 +10,10 @@ Most skills were adapted from [pstack](https://github.com/cursor/plugins/tree/ma
 
 | Skill | Use when | Origin in pstack | What changed |
 |-------|----------|------------------|--------------|
-| `engineering-principles` | Choosing a data shape, sizing a diff, placing validation, justifying a design choice | The 24 `principle-*` skills | Merged into one index plus `references/principles.md`. Added cohory examples (membership states, Stripe webhooks, tenant scoping). Linked overlapping entries to superpowers. |
+| `engineering-principles` | Choosing a data shape, sizing a diff, placing validation, justifying a design choice | The 24 `principle-*` skills | Merged into one index plus `references/principles.md`. Added Cohory examples (membership states, Stripe webhooks, tenant scoping). Linked overlapping entries to superpowers. |
 | `typescript-best-practices` | Editing any `.ts` or `.tsx` file | `typescript-best-practices` | Added Next.js, Drizzle, zod, and Stripe rules and examples. Real Postgres in tests. Multi-tenant query scoping. |
 | `architect` | Code that crosses a function or package boundary | `architect`, `arena` | Multi-model arena replaced by parallel `Agent` subagents. Added a missing-tenant-scope red flag and package `exports` guidance. Positioned between brainstorming and writing-plans. |
-| `prototype` | An undecided layout, interaction, or behavior | `poteto-mode` prototype playbook, `principle-exhaust-the-design-space` | Added cohory's design direction (colors, radius, spacing, shadcn/ui, Lucide) and required empty, loading, and error states. |
+| `prototype` | An undecided layout, interaction, or behavior | `poteto-mode` prototype playbook, `principle-exhaust-the-design-space` | Added Cohory's design direction (colors, radius, spacing, shadcn/ui, Lucide) and required empty, loading, and error states. |
 | `how` | "How does X work", placement and ownership questions | `how` | Explore subagents instead of model-routed Task calls. Reads `AGENTS.md` and `docs/architecture/` first. Monorepo placement guidance. |
 | `why` | "Why is it built this way", regressions, postmortems | `why` | Cursor MCP discovery replaced by git, `gh`, project docs, vendor docs, and any connected MCP. Trimmed source playbooks. |
 | `blast-radius` | "What could this break", risky small diffs | `blast-radius` | Cohory breakage checklist: Drizzle migrations, queued job payloads, server and client boundaries, auth and tenancy, lockfile pins. |
@@ -90,4 +90,4 @@ These skills are copied unchanged from other projects and keep their own license
 
 ## Attribution
 
-Many skills in this directory are adapted from pstack by Lauren Tan, published in [cursor/plugins](https://github.com/cursor/plugins/tree/main/pstack) at commit `0317eb8b858c991c57721358daaee19dbe8c814d`. pstack is released under the MIT License. The original copyright and permission notice is reproduced in [`LICENSE-pstack`](LICENSE-pstack), as the license requires. The adaptations (rewrites for Claude Code, the cohory stack, and its conventions) are part of cohory.
+Many skills in this directory are adapted from pstack by Lauren Tan, published in [cursor/plugins](https://github.com/cursor/plugins/tree/main/pstack) at commit `0317eb8b858c991c57721358daaee19dbe8c814d`. pstack is released under the MIT License. The original copyright and permission notice is reproduced in [`LICENSE-pstack`](LICENSE-pstack), as the license requires. The adaptations (rewrites for Claude Code, the Cohory stack, and its conventions) are part of cohory.

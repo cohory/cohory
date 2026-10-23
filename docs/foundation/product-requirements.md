@@ -1,6 +1,6 @@
 # Product requirements
 
-Functional and non-functional requirements for cohory, grouped by module, with priorities and acceptance notes.
+Functional and non-functional requirements for Cohory, grouped by module, with priorities and acceptance notes.
 
 Status: Draft, 2026-10-17
 
@@ -18,7 +18,7 @@ The MVP cut is summarized in [../product/mvp-scope.md](../product/mvp-scope.md).
 1. A non-technical creator can launch a paid community (posts, a course, an event, a paid tier) without documentation.
 2. Members can read, post, learn, and join events from a phone with four tabs.
 3. The same codebase runs as the Community Edition (self-hosted, 0% platform fee) and the Cloud Edition (managed, 2% platform fee on successful transactions, processing fees separate).
-4. Subscriptions created through cohory live in the creator's payment account.
+4. Subscriptions created through Cohory live in the creator's payment account.
 5. Every capability is available through a documented API.
 
 ## Non-goals
@@ -67,7 +67,7 @@ See [mission.md](mission.md) for the full list with reasons. In short: no native
 | REQ-COM-007 | Custom domain per community. | MVP | Cloud: automatic TLS. Community Edition: operator configures reverse proxy, documented. |
 | REQ-COM-008 | Transfer community ownership to another member. | MVP | Requires the new owner to connect their own payment account. Existing subscriptions are not moved automatically. |
 | REQ-COM-009 | Archive and delete a community. | MVP | Deletion offers export first, cancels future fees, and warns about active subscriptions. |
-| REQ-COM-010 | White labeling (remove cohory branding). | Post-MVP | Agency direction. |
+| REQ-COM-010 | White labeling (remove Cohory branding). | Post-MVP | Agency direction. |
 
 ### Members
 
@@ -162,7 +162,7 @@ See [mission.md](mission.md) for the full list with reasons. In short: no native
 | ID | Requirement | Priority | Acceptance notes |
 |---|---|---|---|
 | REQ-PAY-001 | Cloud: connect the creator's Stripe account through Stripe Connect. | MVP | UI label "Connect your Stripe account". **Recommendation.** Accounts v2 connected account with full dashboard access, Stripe as fee collector and loss liable (see [../architecture/payments.md](../architecture/payments.md)), direct charges. The legacy Standard account type is deprecated for new platforms. |
-| REQ-PAY-002 | Community Edition: connect the creator's own Stripe account with API keys, no platform fee. | MVP | **Confirmed** 0% platform fee. No cohory service in the payment path. |
+| REQ-PAY-002 | Community Edition: connect the creator's own Stripe account with API keys, no platform fee. | MVP | **Confirmed** 0% platform fee. No Cohory service in the payment path. |
 | REQ-PAY-003 | Cloud platform fee of 2% on successful transactions, collected as a Stripe application fee. | MVP | **Confirmed** rate. Fee base, rounding, refunds, and disputes per [business-model.md](business-model.md). |
 | REQ-PAY-004 | Fee ledger: every platform fee, fee refund, and adjustment written as an append-only entry. | MVP | Reconciled daily against Stripe application fee objects. Mismatches alert. |
 | REQ-PAY-005 | Checkout through Stripe hosted pages. | MVP | We never handle card data. |
@@ -209,7 +209,7 @@ See [mission.md](mission.md) for the full list with reasons. In short: no native
 | ID | Requirement | Priority | Acceptance notes |
 |---|---|---|---|
 | REQ-MIG-001 | Full community export as a versioned JSON bundle plus media in a ZIP. | Post-MVP | Phase 5. Located in Settings. Includes a schema version and a manifest. MVP ships the members CSV export (REQ-MEM-007). |
-| REQ-MIG-002 | Import the cohory export format into another instance. | Post-MVP | Round-trip test from Cloud to Community Edition is a release gate. |
+| REQ-MIG-002 | Import the Cohory export format into another instance. | Post-MVP | Round-trip test from Cloud to Community Edition is a release gate. |
 | REQ-MIG-003 | Generic CSV import for members. | Post-MVP | Invitations sent only after creator confirmation. |
 | REQ-MIG-004 | Skool and Circle importers for content and members. | Post-MVP | Limits of each source documented. No promise of payment method access. |
 | REQ-MIG-005 | Payment migration: link existing Stripe subscriptions, or guide members to create a new subscription. | Post-MVP | Option A connect existing account, Option B Stripe account to account migration (provider assisted), Option C no payment method access. |
@@ -281,7 +281,7 @@ See [mission.md](mission.md) for the full list with reasons. In short: no native
 | REQ-NFR-HOST-002 | Indicative memory budget: web 1 GB, worker 512 MB, PostgreSQL 1 GB, remainder for the OS and optional services (Redis about 256 MB if enabled, storage). |
 | REQ-NFR-HOST-003 | Install from a clean VPS to a working community in under 30 minutes by following the README. |
 | REQ-NFR-HOST-004 | Documented backup, restore, and upgrade. Migrations run automatically and are forward only. |
-| REQ-NFR-HOST-005 | No outbound calls to cohory services. Optional integrations (Stripe, SMTP, OAuth) configured by the operator. |
+| REQ-NFR-HOST-005 | No outbound calls to Cohory services. Optional integrations (Stripe, SMTP, OAuth) configured by the operator. |
 
 ### Observability
 

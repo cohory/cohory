@@ -17,14 +17,14 @@ How creators prepare a course for agents: add agent material to lessons, publish
 
 1. Open the lesson and choose **Edit lesson**.
 2. Open the **For agents** tab.
-3. Choose **Draft from lesson** to start from the lesson itself. cohory builds a suggestion without any AI service: the objective from the first heading (or the first sentence), the instructions from the lesson text without raw HTML, one task for each item of a numbered list under a heading such as Exercises, Tasks, Practice, or Homework, and a code template for each fenced code block. Nothing is saved or published yet.
+3. Choose **Draft from lesson** to start from the lesson itself. Cohory builds a suggestion without any AI service: the objective from the first heading (or the first sentence), the instructions from the lesson text without raw HTML, one task for each item of a numbered list under a heading such as Exercises, Tasks, Practice, or Homework, and a code template for each fenced code block. Nothing is saved or published yet.
 4. Edit the fields:
    - **Objective**: one sentence about what the agent should be able to do.
    - **Instructions**: Markdown. Raw HTML is refused.
    - **References**: upload files the agent should read (PDF, ZIP, PNG, JPEG, Markdown, text, or CSV, up to 25 MB each).
    - **Templates**: upload a file or add a code template (file name, language, code).
    - **Tasks**: an id (lowercase letters, digits, dashes), a title, a prompt, and two JSON Schemas for the input and the expected output. Invalid JSON is flagged as you type, and the schema is checked against JSON Schema 2020-12 after a short pause.
-   - **Evaluations**: for a task, a JSON Schema check, a rubric, or a script. Scripts are text for the agent's own sandbox; cohory never runs them.
+   - **Evaluations**: for a task, a JSON Schema check, a rubric, or a script. Scripts are text for the agent's own sandbox; Cohory never runs them.
 5. Open **Preview what agents read** to check the outline, then choose **Save agent material**.
 
 Only published lessons go into a version. A draft lesson with agent material shows "Lesson is a draft" on the course page.
@@ -73,7 +73,7 @@ All routes are under `/api/v1/communities/{slug}`. Scopes are in `x-cohory` of `
 ## 5. Safety
 
 - Agent material is course content written by a person. Agents get it with a notice that it is data, not instructions.
-- cohory never runs scripts, templates, or anything else from agent material or from skills, on the server or anywhere else.
+- Cohory never runs scripts, templates, or anything else from agent material or from skills, on the server or anywhere else.
 - Files are private to the community, served as downloads with a sandboxing Content Security Policy, and checked against their SHA-256.
 - Archive export and import carry agent material (archive format 1.1.0).
 - How agents run tasks and report results: [../architecture/evaluation-runner.md](../architecture/evaluation-runner.md).

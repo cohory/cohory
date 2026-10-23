@@ -1,6 +1,6 @@
 # Importing from Circle
 
-What the Circle importer reads, what it brings into a cohory community, and what stays behind (REQ-MIG-004).
+What the Circle importer reads, what it brings into a Cohory community, and what stays behind (REQ-MIG-004).
 
 Status: Draft, 2026-10-18
 
@@ -13,18 +13,18 @@ Importer `circle`, version 1.0.0. **Best effort, versioned, no promise:** Circle
 - **Admin API (official).** Business plans and above have an Admin API (v2) with posts, comments, members, and spaces. The importer accepts posts and comments saved from it as JSON (section 3).
 - **No course export.** Neither the data export nor the members CSV contains courses, lessons, or progress.
 
-## 2. What cohory imports
+## 2. What Cohory imports
 
-| Circle data | cohory result |
+| Circle data | Cohory result |
 |---|---|
 | Members with name, email, join date, last active date | On Cloud, an invitation to join with their own account; their history is kept under their name until then ([0043](../../decisions/0043-import-invitations-and-emails.md)). On the Community Edition, accounts (new ones without a password, linked by email when the person already has a confirmed account) and active memberships |
 | Headline or bio | Membership bio |
 | Admin or moderator, when the file says so | Admin or moderator; everyone else is a member |
 | Spaces | Categories (up to 10 in the community, posts in extra spaces have no category) |
-| Posts with title and HTML body | Posts, with HTML turned into cohory's post format |
-| Comments and replies | Comments; replies to replies are attached to the top comment, because cohory threads are one level deep |
+| Posts with title and HTML body | Posts, with HTML turned into Cohory's post format |
+| Comments and replies | Comments; replies to replies are attached to the top comment, because Cohory threads are one level deep |
 
-The import runs through the same pipeline as a cohory archive import: you see a preview with counts and warnings, nothing changes until you confirm, and it works on a new, empty community only.
+The import runs through the same pipeline as a Cohory archive import: you see a preview with counts and warnings, nothing changes until you confirm, and it works on a new, empty community only.
 
 ## 3. Field mapping
 
@@ -32,7 +32,7 @@ Column names are matched without case, spaces, or punctuation, so `First name`, 
 
 ### Members CSV
 
-| Circle column | cohory field | Notes |
+| Circle column | Cohory field | Notes |
 |---|---|---|
 | `UID`, `ID`, `Member ID`, or `Community member ID` | used to connect posts and comments | Optional |
 | `First name` and `Last name`, or `Name` | user name | A row without a name uses the part of the email before `@` |
@@ -48,7 +48,7 @@ Column names are matched without case, spaces, or punctuation, so `First name`, 
 
 ### Spaces CSV
 
-| Circle column | cohory field |
+| Circle column | Cohory field |
 |---|---|
 | `ID` | used to connect posts |
 | `Name` | category name (cut at 40 characters) |
@@ -56,7 +56,7 @@ Column names are matched without case, spaces, or punctuation, so `First name`, 
 
 ### Posts CSV or JSON
 
-| Circle column or field | cohory field | Notes |
+| Circle column or field | Cohory field | Notes |
 |---|---|---|
 | `ID` | used to connect comments | |
 | `Space ID`, or `Space name` | category | Through the Spaces file when present |
@@ -73,7 +73,7 @@ A JSON file is an array of Admin API post records, or an object with a `records`
 
 ### Comments CSV or JSON
 
-| Circle column or field | cohory field |
+| Circle column or field | Cohory field |
 |---|---|
 | `ID` | used to connect replies |
 | `Post ID` | the post |

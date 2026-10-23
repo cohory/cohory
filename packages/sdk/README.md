@@ -1,6 +1,6 @@
 # @cohory/sdk
 
-Typed client for the cohory REST API, generated from the OpenAPI document.
+Typed client for the Cohory REST API, generated from the OpenAPI document.
 
 Status: Draft, 2026-10-19
 
@@ -45,4 +45,4 @@ pnpm --filter @cohory/sdk generate
 
 ## License
 
-The SDK, including the generated client in `src/schema.ts`, is MIT licensed ([LICENSE](LICENSE)) so integrations and plugins can stay proprietary. The rest of cohory is AGPL-3.0; see [LICENSING.md](../../LICENSING.md) and [ADR 0009](../../docs/decisions/0009-license.md).
+The SDK, including the generated client in `src/schema.ts`, is MIT licensed ([LICENSE](LICENSE)) so integrations and plugins can stay proprietary. The rest of Cohory is AGPL-3.0; see [LICENSING.md](../../LICENSING.md) and [ADR 0009](../../docs/decisions/0009-license.md).

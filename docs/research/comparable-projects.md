@@ -1,6 +1,6 @@
 # Comparable Open-Source Projects: Research for Cohory
 
-Ten open-source products that overlap with cohory, and the patterns to reuse or avoid.
+Ten open-source products that overlap with Cohory, and the patterns to reuse or avoid.
 
 Status: Draft, 2026-10-17
 
@@ -89,7 +89,7 @@ Lessons for cohory:
 
 1. One OpenAPI operation file per endpoint, generated from the same Zod schemas used for validation, keeps docs, SDKs and MCP tools in sync.
 2. Handling `account.application.deauthorized` and `account.updated` from day one is table stakes for Connect.
-3. A self-host story that depends on five SaaS vendors is not self-hosting. Every external service in cohory must have a local default (Postgres, Redis, MinIO or local disk, SMTP).
+3. A self-host story that depends on five SaaS vendors is not self-hosting. Every external service in Cohory must have a local default (Postgres, Redis, MinIO or local disk, SMTP).
 4. Splitting by legal folder only (`(ee)`) is cheap to implement but invites confusion about what self-hosters may run.
 
 ---
@@ -119,7 +119,7 @@ Lessons for cohory:
 
 1. Write an `ARCHITECTURE.md` early with the package table, request flow and provider matrix. It doubles as agent context.
 2. Copy the provider strategy pattern: a database-backed job queue as the zero-dependency default, BullMQ when Redis is configured. This makes a single-container self-host possible.
-3. Gating billing itself as EE works for Documenso because billing is their SaaS plumbing. For cohory, creator payments are core product and must stay open source.
+3. Gating billing itself as EE works for Documenso because billing is their SaaS plumbing. For Cohory, creator payments are core product and must stay open source.
 4. A license server with a cached file and graceful fallback is the reference design if we ever sell enterprise self-host licenses.
 
 ---
@@ -350,7 +350,7 @@ Lessons for cohory:
 
 ### (a) Recurring stack patterns
 
-| Concern | Most common choice in this set | Alternatives seen | Notes for cohory |
+| Concern | Most common choice in this set | Alternatives seen | Notes for Cohory |
 |---------|-------------------------------|-------------------|------------------|
 | Language and framework | TypeScript + Next.js (Cal, Dub, Formbricks, Midday, LearnHouse web, Payload) | Remix on Hono (Documenso), NestJS (Twenty, Cal API v2), Rails (Discourse), Express (Ghost), FastAPI (LearnHouse) | Next.js matches; consider a Hono API mounted in Next.js route handlers |
 | Monorepo | Turborepo (Cal, Dub, Documenso, Formbricks, Midday, Payload) | Nx (Twenty, Ghost) | pnpm + Turborepo is mainstream; pnpm catalogs (Formbricks) keep versions aligned |
@@ -382,7 +382,7 @@ Observed models:
 | AGPL core + per-file enterprise headers | Twenty (`/* @license Enterprise */`) | File-level license plus signed key | Fine grained but harder to audit |
 | AGPL core + MIT SDK + application exception | Twenty, Formbricks (MIT SDKs) | Clients and plugins are permissive | Removes AGPL fear for plugin and integration authors |
 | Open core then closed | Cal.com (April 2026) | Production repo made private; MIT community fork published without EE | Loss of trust and of the "open source" marketing claim; stated reason was security exposure of public code to AI-driven scanning |
-| Fair source | Sentry and others under FSL (https://fsl.software) | Source available, non-compete for two years, then converts to Apache 2.0 or MIT | Not OSI open source; would contradict cohory's "open-source alternative" positioning |
+| Fair source | Sentry and others under FSL (https://fsl.software) | Source available, non-compete for two years, then converts to Apache 2.0 or MIT | Not OSI open source; would contradict Cohory's "open-source alternative" positioning |
 
 Runtime enforcement patterns:
 
@@ -415,10 +415,10 @@ All facts below were verified on docs.stripe.com on 2026-10-17.
 How this maps to the founder notes:
 
 1. "Subscription Ownership: your subscribers stay yours" is native to direct charges on a Standard (full Dashboard) account. Customers, payment methods, prices and subscriptions all live in the creator's account. Ghost and Cal.com both use this model.
-2. "Bring your existing subscribers", Option A (connect an existing Stripe account): if the existing subscriptions were created by the creator directly (Dashboard, Payment Links, their own code), cohory can link them by reading them with the `Stripe-Account` header and mapping customers to members. If they were created by another platform (for example a competitor that used Connect), cohory cannot update or cancel them. The safe flow is to create a new cohory subscription on the same account using the saved payment method (no PAN copy needed, since the payment method is already on that account), aligned to the old period end with `trial_end` or a billing cycle anchor, and have the creator cancel the old one in their Dashboard. Each step needs confirmation; this flow is a design proposal, not a documented Stripe recipe.
-3. Option B (move between Stripe accounts): requires Stripe's PAN copy between accounts, then subscription import. This is a Stripe-mediated process, not something cohory can automate fully.
+2. "Bring your existing subscribers", Option A (connect an existing Stripe account): if the existing subscriptions were created by the creator directly (Dashboard, Payment Links, their own code), Cohory can link them by reading them with the `Stripe-Account` header and mapping customers to members. If they were created by another platform (for example a competitor that used Connect), Cohory cannot update or cancel them. The safe flow is to create a new Cohory subscription on the same account using the saved payment method (no PAN copy needed, since the payment method is already on that account), aligned to the old period end with `trial_end` or a billing cycle anchor, and have the creator cancel the old one in their Dashboard. Each step needs confirmation; this flow is a design proposal, not a documented Stripe recipe.
+3. Option B (move between Stripe accounts): requires Stripe's PAN copy between accounts, then subscription import. This is a Stripe-mediated process, not something Cohory can automate fully.
 4. Option C (Skool, no payment-method access): members must re-enter payment details. Offer a re-subscribe campaign with a discount or `trial_end` until their Skool period ends.
-5. Disconnect: when a creator leaves cohory cloud, we must remove `application_fee_percent` from their subscriptions before or right after disconnection. Doing it automatically is both an ethical commitment and the only way to keep the "your subscribers stay yours" promise honest.
+5. Disconnect: when a creator leaves Cohory cloud, we must remove `application_fee_percent` from their subscriptions before or right after disconnection. Doing it automatically is both an ethical commitment and the only way to keep the "your subscribers stay yours" promise honest.
 6. Onboarding: use Connect Onboarding (Account Links) for new Standard-style accounts with full Dashboard access, and support linking existing accounts. Treat OAuth as a legacy path (Ghost and Cal.com still use it).
 7. Fee ledger: record every `application_fee.created` (and refunds) in our own ledger table keyed by community, for the BYO provider monthly invoicing path in the notes.
 
@@ -442,7 +442,7 @@ Patterns:
 - Agent-facing repo docs (`AGENTS.md`, skills folders) are now standard; Twenty and Discourse ship skills for agents.
 - No project in this set offers agent entitlements to paid content (our "agents access paid courses" idea). That is a genuine differentiator, and it needs delegated, scoped, revocable tokens tied to a human's entitlement.
 
-### (e) Recommendations for cohory
+### (e) Recommendations for Cohory
 
 Architecture:
 
@@ -510,7 +510,7 @@ Licensing:
 
 ### (f) Risks and anti-patterns observed
 
-| Risk or anti-pattern | Where observed | Mitigation for cohory |
+| Risk or anti-pattern | Where observed | Mitigation for Cohory |
 |----------------------|---------------|------------------------|
 | Closing source after building on open source | Cal.com moved production code private in April 2026 | No `ee` surface to grow; public commitment to keep the core open; AGPL rather than a license we would later need to tighten |
 | "Community edition not for production" | Cal.diy README | Self-host must be the same code as cloud, production grade, with upgrade docs |
@@ -531,7 +531,7 @@ Licensing:
 
 ---
 
-## Appendix A: License options compared for cohory
+## Appendix A: License options compared for Cohory
 
 | Criterion | MIT or Apache 2.0 | AGPL 3.0 core + MIT SDK | AGPL + `ee` folder | FSL (fair source) |
 |-----------|-------------------|-------------------------|--------------------|-------------------|
@@ -543,7 +543,7 @@ Licensing:
 | Examples in this research | Ghost, Payload, Cal.diy, Trigger.dev (Apache) | Twenty (with exception), Formbricks (MIT SDKs) | Dub, Documenso, Formbricks, Papermark | Sentry and others (https://fsl.software) |
 | Fit with a transaction-fee business | Good, the fee is tied to our Connect platform | Good | Unnecessary complexity | Poor |
 
-## Appendix B: Stripe webhook events cohory should handle at launch
+## Appendix B: Stripe webhook events Cohory should handle at launch
 
 | Event | Account context | Cohory action |
 |-------|-----------------|---------------|
@@ -561,10 +561,10 @@ Implementation rules (from Ghost's Stripe README and Stripe docs): store every e
 
 ## Appendix C: Migration Center mapping to Stripe capabilities
 
-| Source situation | Stripe capability | What cohory can automate | What needs the creator or Stripe |
+| Source situation | Stripe capability | What Cohory can automate | What needs the creator or Stripe |
 |------------------|-------------------|--------------------------|----------------------------------|
-| Creator already sells with their own Stripe account (Payment Links, Dashboard, own code) | Connect the existing account; read subscriptions with the `Stripe-Account` header | Match Stripe customers to imported members by email; link subscriptions to memberships | Confirm mapping of prices to cohory tiers |
-| Subscriptions on the creator's account created by another Connect platform | Cannot be updated or cancelled by cohory | Recreate subscriptions on the same account with saved payment methods, aligned to the current period end | Creator cancels the old subscriptions or the other platform does |
+| Creator already sells with their own Stripe account (Payment Links, Dashboard, own code) | Connect the existing account; read subscriptions with the `Stripe-Account` header | Match Stripe customers to imported members by email; link subscriptions to memberships | Confirm mapping of prices to Cohory tiers |
+| Subscriptions on the creator's account created by another Connect platform | Cannot be updated or cancelled by Cohory | Recreate subscriptions on the same account with saved payment methods, aligned to the current period end | Creator cancels the old subscriptions or the other platform does |
 | Subscriptions in a different Stripe account | PAN copy between accounts, then Billing migration toolkit | Import members and content; prepare a price mapping file | Request the copy through Stripe; run the toolkit |
 | Platform without payment-method export (Skool) | None | Import members, posts, courses where exportable; send re-subscribe invitations with trial until old renewal date | Members re-enter payment details |
 | Generic CSV or API source | Billing migration toolkit if payment data reaches Stripe | Normalization pipeline into members, courses, posts | Depends on source |

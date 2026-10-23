@@ -1,6 +1,6 @@
 # Target audience
 
-Who cohory is for, described as audience segments and working personas, with a snapshot of the alternatives they use today.
+Who Cohory is for, described as audience segments and working personas, with a snapshot of the alternatives they use today.
 
 Status: Draft, 2026-10-17
 

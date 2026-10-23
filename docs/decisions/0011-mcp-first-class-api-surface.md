@@ -1,6 +1,6 @@
 # 0011. MCP as a first-class API surface
 
-Expose cohory to AI assistants through an MCP server at `/mcp` that is generated from the same route definitions as the REST API and enforces the same permissions.
+Expose Cohory to AI assistants through an MCP server at `/mcp` that is generated from the same route definitions as the REST API and enforces the same permissions.
 
 Status: Draft, 2026-10-17
 

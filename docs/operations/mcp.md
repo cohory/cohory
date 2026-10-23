@@ -2,18 +2,18 @@
 
 Status: Draft, 2026-10-19
 
-How to connect AI assistants such as Claude and Codex to a cohory community through the Model Context Protocol (MCP), with OAuth or with an agent token, which tools exist, and how to keep that access safe. The design is in [../architecture/agent-integrations.md](../architecture/agent-integrations.md) section 4, [ADR 0019](../decisions/0019-mcp-dispatch-through-http-handlers.md) (tools), and [ADR 0020](../decisions/0020-oauth-authorization-server.md) (OAuth). Scopes, agents, and approvals are described in [api-tokens.md](api-tokens.md); the [scope reference](api-tokens.md#scope-reference) lists every permission.
+How to connect AI assistants such as Claude and Codex to a Cohory community through the Model Context Protocol (MCP), with OAuth or with an agent token, which tools exist, and how to keep that access safe. The design is in [../architecture/agent-integrations.md](../architecture/agent-integrations.md) section 4, [ADR 0019](../decisions/0019-mcp-dispatch-through-http-handlers.md) (tools), and [ADR 0020](../decisions/0020-oauth-authorization-server.md) (OAuth). Scopes, agents, and approvals are described in [api-tokens.md](api-tokens.md); the [scope reference](api-tokens.md#scope-reference) lists every permission.
 
 ## What it is
 
-cohory serves MCP at `<APP_URL>/mcp`, for example `https://learn.example.com/mcp`, inside the web app. There is no separate server to run.
+Cohory serves MCP at `<APP_URL>/mcp`, for example `https://learn.example.com/mcp`, inside the web app. There is no separate server to run.
 
 | Item                  | Value                                                                                                                                                                                             |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Protocol revisions    | `2026-07-28` (the current revision, stateless requests with per request metadata) and the handshake revisions `2025-11-25`, `2025-06-18`, `2025-03-26`, and `2024-11-05` that today's clients use |
 | Transport             | Streamable HTTP, stateless: every request is a `POST` with JSON, no session id, no event stream (`GET` answers 405)                                                                               |
-| Authentication        | OAuth 2.1 access tokens from cohory's own authorization server, or an agent or personal API token, sent as `Authorization: Bearer <token>`                                                        |
-| Server library        | `@modelcontextprotocol/sdk` 1.32.1 for the handshake revisions; cohory answers `2026-07-28` requests itself because no official SDK speaks that revision yet                                      |
+| Authentication        | OAuth 2.1 access tokens from Cohory's own authorization server, or an agent or personal API token, sent as `Authorization: Bearer <token>`                                                        |
+| Server library        | `@modelcontextprotocol/sdk` 1.32.1 for the handshake revisions; Cohory answers `2026-07-28` requests itself because no official SDK speaks that revision yet                                      |
 | Resources and prompts | Not offered. Only tools.                                                                                                                                                                          |
 
 Every tool is one REST operation. A tool call becomes the matching `/api/v1` request with your token, inside the server, and runs through the same token check, scope check, rate limits, approval rules, and handler as a direct API call. A tool can never do more than the same call to the REST API.
@@ -22,7 +22,7 @@ Every tool is one REST operation. A tool call becomes the matching `/api/v1` req
 
 Two ways, both ending in an agent that belongs to you:
 
-- **Sign in with OAuth.** The assistant opens a cohory page in your browser, you approve, and it gets its own tokens. Nothing to copy. This is the only way for clients that support MCP authorization only, such as custom connectors in Claude apps.
+- **Sign in with OAuth.** The assistant opens a Cohory page in your browser, you approve, and it gets its own tokens. Nothing to copy. This is the only way for clients that support MCP authorization only, such as custom connectors in Claude apps.
 - **Paste an agent token.** Create an agent and a token in Manage, Settings, Agents (owners and admins) or in Account, Agents (every member, read only agents for members and moderators), choose the permissions, and give the token to the assistant. Keep it in an environment variable, not in a file you share.
 
 Only owners and admins can connect apps through OAuth. Members can create an agent by hand in Account, Agents and give the assistant its token; signing in with OAuth as a member is not offered (product decision, 2026-10-22). The consent screen and Account, Agents say so.
@@ -39,7 +39,7 @@ Claude Code with OAuth:
 claude mcp add --transport http cohory https://learn.example.com/mcp
 ```
 
-Then run `/mcp` inside Claude Code and choose cohory to sign in. With an agent token instead:
+Then run `/mcp` inside Claude Code and choose Cohory to sign in. With an agent token instead:
 
 ```sh
 claude mcp add --transport http cohory https://learn.example.com/mcp \
@@ -92,13 +92,13 @@ What happens when an assistant connects:
 The screen shows:
 
 - the instance name and logo above the card, the app's name as the app reported it, its website host when it registered a `client_uri`, and the address the browser returns to (for a desktop app, `127.0.0.1` and a port on your own computer),
-- a warning that cohory has not verified the app; approve only if you started the connection yourself, because any app can call itself "Claude",
+- a warning that Cohory has not verified the app; approve only if you started the connection yourself, because any app can call itself "Claude",
 - the community, with its logo,
 - the agent: create a new one (named after the app by default) or reuse one of your active agents in that community. When an earlier connection of the same app (the same client, or a client with the same name that returns to the same host) used one of your active agents there, that agent is preselected and the screen names the app and host it is reused for, so reconnecting does not create a second agent. A client that only copies the app's name gets no agent preselected. A new agent named like one you already have shows a hint, and agent cards with the same name show the app that connected them (or "Created by hand") and the creation date,
 - what the app can do, in plain words: "It can" lists the permissions that will be granted, "It also asked to" lists write permissions the app requested that stay off, and "It cannot" names the main permissions it will not get. Read permissions the app asked for are preselected, write permissions never are. "Change permissions" opens the full picker, limited to permissions your role can give. A new agent gets only permissions your role can give, and a reused agent can use only permissions it already has,
 - "Access renews while you use it. Disconnect any time in Account, Connected apps."
 
-"Allow access to" and the community name sends you back to the app. Cancel tells the app you said no. The page cannot be shown inside a frame on another site, and approving works only from cohory's own pages.
+"Allow access to" and the community name sends you back to the app. Cancel tells the app you said no. The page cannot be shown inside a frame on another site, and approving works only from Cohory's own pages.
 
 The agent belongs to you. Everything it does carries the Agent badge and is in the audit log, it can never do more than your current role, and actions that need approval wait in Manage, Inbox, Agent approvals.
 
@@ -112,7 +112,7 @@ The agent belongs to you. Everything it does carries the Agent badge and is in t
 
 Access tokens are issued for the `<APP_URL>/mcp` resource, so the REST API refuses them with 401 `invalid_token` (`details.reason` `wrong_resource`). Use an agent token from the Agents page for scripts that call `/api/v1`.
 
-cohory stores only SHA-256 hashes of all three. If a used refresh token is presented again, cohory treats it as stolen and ends the whole connection: every token of that connection stops working, and the app has to ask you again. The same happens when a code is used twice. The hourly access tokens are not listed on the Agents pages; the agent card shows the connection instead.
+Cohory stores only SHA-256 hashes of all three. If a used refresh token is presented again, Cohory treats it as stolen and ends the whole connection: every token of that connection stops working, and the app has to ask you again. The same happens when a code is used twice. The hourly access tokens are not listed on the Agents pages; the agent card shows the connection instead.
 
 ### Disconnecting
 
@@ -212,16 +212,16 @@ A successful call returns `structuredContent` and the same JSON as text:
 | 401 with `WWW-Authenticate: Bearer resource_metadata=..., scope=...`                               | No token, or a token that is unknown, expired, revoked, paused, or whose owner left (`error="invalid_token"`)                                                                                                                                                                                                                                                                    |
 | 403 with `WWW-Authenticate: Bearer error="insufficient_scope", scope="...", resource_metadata=...` | An OAuth access token calls a tool it lacks the scope for. `scope` names every scope the call needs (for a proposal, the area scope and `proposals:write`), so the client can ask you for more. The JSON-RPC error has code `-32003` and the REST error in `data`. Pasted agent and personal tokens get the usual tool error instead, since they cannot be widened by the client |
 | 403                                                                                                | A browser sends an `Origin` other than `APP_URL` (protection against DNS rebinding)                                                                                                                                                                                                                                                                                              |
-| 400 with JSON-RPC `-32022`                                                                         | `MCP-Protocol-Version` names a revision cohory does not speak; `data.supported` lists the ones it does                                                                                                                                                                                                                                                                           |
+| 400 with JSON-RPC `-32022`                                                                         | `MCP-Protocol-Version` names a revision Cohory does not speak; `data.supported` lists the ones it does                                                                                                                                                                                                                                                                           |
 | 400 with JSON-RPC `-32020`                                                                         | A `2026-07-28` request whose `MCP-Protocol-Version`, `Mcp-Method`, or `Mcp-Name` header is missing or differs from the body                                                                                                                                                                                                                                                      |
-| 404 with JSON-RPC `-32601`                                                                         | A `2026-07-28` request for a method cohory does not offer, such as `resources/list`                                                                                                                                                                                                                                                                                              |
+| 404 with JSON-RPC `-32601`                                                                         | A `2026-07-28` request for a method Cohory does not offer, such as `resources/list`                                                                                                                                                                                                                                                                                              |
 | 405                                                                                                | `GET` or `DELETE`: there are no sessions and no event stream                                                                                                                                                                                                                                                                                                                     |
 | 413                                                                                                | The request body is larger than 256 KiB                                                                                                                                                                                                                                                                                                                                          |
 | 429                                                                                                | Rate limited (see below)                                                                                                                                                                                                                                                                                                                                                         |
 
 ## Protocol revisions
 
-cohory serves both eras of the protocol on the same address:
+Cohory serves both eras of the protocol on the same address:
 
 - A request whose `MCP-Protocol-Version` header (or `_meta` field `io.modelcontextprotocol/protocolVersion`) is `2026-07-28` is answered statelessly by that revision: `server/discover` returns the supported versions, capabilities, and instructions; `tools/list` and `tools/call` work as above; every result carries `resultType: "complete"` and `_meta["io.modelcontextprotocol/serverInfo"]`, and `tools/list` carries `ttlMs` and `cacheScope: "private"` because the list depends on the token.
 - An `initialize` request, or a request with an older revision in the header, is served by the official SDK in stateless JSON mode for that revision.
@@ -249,7 +249,7 @@ The server logs one line per tool call with the tool, the operation id, the agen
 
 - Give each assistant its own agent with the fewest permissions it needs. Read only is the default for a reason. Add `proposals:write` only when you want the assistant to ask for removals, settings changes, or scheduled posts.
 - Approve an OAuth connection only when you started it yourself and the return address is what you expect. App names are not verified.
-- Treat everything inside `untrusted_content` as text a stranger wrote. A post can contain "ignore your instructions"; cohory never acts on it, and your assistant should not either. Since 0.9 every tool result, write tools included, and every error carries `untrusted_content`, because a created draft or a validation message can echo text a person wrote. Zero width spaces, word joiners, byte order marks, bidirectional controls, and Unicode tag characters are removed from every string in a result before it is sent; joiners that shape emoji and scripts stay.
+- Treat everything inside `untrusted_content` as text a stranger wrote. A post can contain "ignore your instructions"; Cohory never acts on it, and your assistant should not either. Since 0.9 every tool result, write tools included, and every error carries `untrusted_content`, because a created draft or a validation message can echo text a person wrote. Zero width spaces, word joiners, byte order marks, bidirectional controls, and Unicode tag characters are removed from every string in a result before it is sent; joiners that shape emoji and scripts stay.
 - Removals, bans, settings changes, deleting an event series, and scheduled posts by an agent always wait for a person, and money, roles, and deletions are never possible without one. An injected instruction can at most create a request that a person sees in Manage, Inbox, Agent approvals, where they can reject it.
 - Approving needs a sign in from the last 10 minutes. Read the summary and the list of changes before you approve.
 - Disconnect apps and revoke agents as soon as an assistant is no longer used. The next call is refused with 401.

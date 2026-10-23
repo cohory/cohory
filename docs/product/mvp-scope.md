@@ -267,7 +267,7 @@ These are hypotheses to test after launch. None is validated. Numbers are starti
 | Spam and abuse on Cloud | Open signup invites abuse. | Rate limits, verified email for payments, reports queue, ban. |
 | Video embeds only | Some creators expect upload. | Clear messaging. Upload is Post-MVP once storage costs are understood. |
 | Fee rules not final | Fee base and tax treatment are open. Rounding, refunds, and disputes have proposed rules in [../foundation/business-model.md](../foundation/business-model.md). | Block Cloud production payments until the rules are accepted and tested. |
-| Name and brand | Renaming late touches code, domains, and docs. | Resolved: "cohory" is the final name (founder decision, 2026-10-19). |
+| Name and brand | Renaming late touches code, domains, and docs. | Resolved: "Cohory" is the final name (founder decision, 2026-10-19). |
 
 ## 9. Decisions and open questions
 

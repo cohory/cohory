@@ -1,6 +1,6 @@
 # Business model
 
-How cohory is offered, how it earns money, what the fee rules are, and what must be settled before charging real customers.
+How Cohory is offered, how it earns money, what the fee rules are, and what must be settled before charging real customers.
 
 Status: Draft, 2026-10-20
 
@@ -31,7 +31,7 @@ Adapted from the founder's pricing table.
 
 | | Community Edition | Cloud, Bring Your Own Provider | Cloud, Stripe Connect |
 |---|---|---|---|
-| Hosting | Creator or operator | cohory | cohory |
+| Hosting | Creator or operator | Cohory | Cohory |
 | Monthly subscription | $0 | $0 | $0 |
 | Platform fee | 0% | 2% | 2% |
 | Payment processing | Creator pays provider | Creator pays provider | Creator pays Stripe |
@@ -65,7 +65,7 @@ flowchart TD
     FL --> REV["Platform revenue"]
 ```
 
-**Confirmed.** Every path writes to the fee ledger. The ledger is the single source of truth for what cohory earned, whether the money arrived automatically or through an invoice.
+**Confirmed.** Every path writes to the fee ledger. The ledger is the single source of truth for what Cohory earned, whether the money arrived automatically or through an invoice.
 
 ### Option A: Stripe Connect (MVP)
 
@@ -112,7 +112,7 @@ flowchart LR
 - Billing period: calendar month.
 - Minimum invoice (**Confirmed**, founder, 2026-10-19): accrued fees below 5 USD, or a fixed equivalent in the invoice currency, carry forward to the next period with no limit on the number of periods. Nothing is invoiced until the balance reaches the minimum.
 - Revenue verification (**Confirmed**, founder, 2026-10-19): no creator revenue attestation. Signed provider data (webhooks and API listings) plus the daily reconciliation are enough.
-- Payment: a card or bank method kept on file by cohory's own billing account (this is the only relationship where the creator pays cohory directly).
+- Payment: a card or bank method kept on file by Cohory's own billing account (this is the only relationship where the creator pays Cohory directly).
 - Non-payment: reminders at 7 and 14 days. After 30 days, new paid signups are paused. Existing members keep access, and exports stay available. We never hold a creator's members hostage over an unpaid fee invoice.
 
 ## What "no mandatory monthly subscription" means
@@ -169,7 +169,7 @@ Examples: a $49.00 charge gives 4900 / 100 = 49 cents. A $12.34 charge gives 123
 
 ### 3. Taxes
 
-Proposed default: the creator, as intended merchant of record, is responsible for tax on their sales. cohory may offer tax calculation through the provider (for example Stripe Tax) as an option the creator enables. The platform fee is calculated on the pre-tax amount. Whether cohory must charge VAT or sales tax on the platform fee itself, by creator location, is deferred (**Confirmed**, founder, 2026-10-19): no tax is added to platform fee invoices until the Cloud Edition has revenue, and tax registration and the tax treatment of the fee are a pre launch accounting task ([../operations/platform-billing.md](../operations/platform-billing.md#open-questions)).
+Proposed default: the creator, as intended merchant of record, is responsible for tax on their sales. Cohory may offer tax calculation through the provider (for example Stripe Tax) as an option the creator enables. The platform fee is calculated on the pre-tax amount. Whether Cohory must charge VAT or sales tax on the platform fee itself, by creator location, is deferred (**Confirmed**, founder, 2026-10-19): no tax is added to platform fee invoices until the Cloud Edition has revenue, and tax registration and the tax treatment of the fee are a pre launch accounting task ([../operations/platform-billing.md](../operations/platform-billing.md#open-questions)).
 
 ### 4. Refunds
 
@@ -247,7 +247,7 @@ Processing fees are separate and paid to the provider. As an illustrative assump
 
 ### Comparison with a fixed monthly plan (illustrative)
 
-For a creator, a fixed plan priced at P per month costs the same as the 2% fee at a monthly gross of P / 0.02 (50 times P). Using the unverified prices in [target-audience.md](target-audience.md): a $49 plan matches the fee at $2,450 monthly gross, and an $89 plan at $4,450. Creators below that level pay less with cohory Cloud. Above it, they pay more than a fixed plan, which is when self-hosting becomes attractive. This is intended, and the honest framing is: "Cloud is cheaper while you are growing. Self-hosting is free when you are large."
+For a creator, a fixed plan priced at P per month costs the same as the 2% fee at a monthly gross of P / 0.02 (50 times P). Using the unverified prices in [target-audience.md](target-audience.md): a $49 plan matches the fee at $2,450 monthly gross, and an $89 plan at $4,450. Creators below that level pay less with Cohory Cloud. Above it, they pay more than a fixed plan, which is when self-hosting becomes attractive. This is intended, and the honest framing is: "Cloud is cheaper while you are growing. Self-hosting is free when you are large."
 
 ### Cost side (illustrative)
 

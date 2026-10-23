@@ -15,7 +15,7 @@ Both kinds:
 
 - work in exactly one community,
 - look like `cohory_` followed by 43 characters,
-- are shown once, in a dialog right after you create them, with a curl example and the MCP address; cohory stores only a hash and the first 12 characters,
+- are shown once, in a dialog right after you create them, with a curl example and the MCP address; Cohory stores only a hash and the first 12 characters,
 - expire after 90 days by default (you can choose 30 days to 1 year),
 - stop working on the next request after you revoke them.
 
@@ -135,7 +135,7 @@ High priority tasks from [../architecture/agent-integrations.md](../architecture
 | Export the members CSV | `GET /communities/{slug}/manage/export/members.csv`, then the download link | `members:export`, `proposals:write` | Yes |
 | Add a webhook endpoint | `POST /communities/{slug}/manage/webhooks` | `webhooks:write`, `proposals:write` | Yes (the signing secret is shown once to the approver) |
 
-Not available to agents: creating a community (a token belongs to one community) and emailing all members (not built in cohory yet).
+Not available to agents: creating a community (a token belongs to one community) and emailing all members (not built in Cohory yet).
 
 Posts written by an agent are saved as drafts. They appear under "Drafts waiting for you" on the Agents page, where the owner or an admin publishes or discards them (Discard draft asks first). Published posts and agent comments show an Agent badge with the agent's name.
 
@@ -178,9 +178,9 @@ Every write through a token is in Manage, Settings, Audit log with the owning pe
 - Pick a short expiry for experiments and rotate long lived tokens with Regenerate, then update the tool right away.
 - Pause an agent you are not using. Revoke it if a token may have leaked; that ends every token of the agent on its next request.
 - Review the audit log filtered to Agents now and then.
-- cohory never logs tokens. If you report a problem, share the 12 character prefix, never the token.
+- Cohory never logs tokens. If you report a problem, share the 12 character prefix, never the token.
 
-### What cohory guarantees
+### What Cohory guarantees
 
 These are checked by tests that walk every route in `/api/openapi.json` (`packages/api/src/agent-safety.integration.test.ts`), so a new route cannot skip them:
 

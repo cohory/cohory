@@ -1,6 +1,6 @@
 ---
 name: engineering-principles
-description: Use when choosing a data shape, sizing a diff, placing validation, designing a migration, deciding whether to ask the human, or justifying a design choice in a review or PR. Index of cohory's engineering principles with when each applies.
+description: Use when choosing a data shape, sizing a diff, placing validation, designing a migration, deciding whether to ask the human, or justifying a design choice in a review or PR. Index of Cohory's engineering principles with when each applies.
 ---
 
 # Engineering principles

@@ -1,6 +1,6 @@
 # Feature inventory
 
-Every planned cohory feature, grouped by module, with its product phase and roadmap phase.
+Every planned Cohory feature, grouped by module, with its product phase and roadmap phase.
 
 Status: Draft, 2026-10-19 (labels checked against the code for 0.1.0; payments rows checked for 0.5.0; roadmap phase 7 rows checked for 0.8.0; statuses checked against 0.11.0 on 2026-10-23)
 
@@ -212,8 +212,8 @@ Modules match the modular monolith described in the architecture docs (see [../a
 | Stripe Checkout | Hosted payment page | MVP | 3 | **Built**. The Membership page names the seller and the creator's refund rule (set in Manage, Payments) before checkout ([0039](../decisions/0039-legal-pages-and-data-rights.md)) |
 | Payments list | Recent payments in Manage | MVP | 3 | **Partly built** (paid members and totals per currency in Manage, Payments). Read from local records |
 | Webhook processing | Idempotent, reconciled | MVP | 3 | **Built** (idempotent inbox; a daily `payments.reconcile` job at 03:45 checks each connection against Stripe). See [../architecture/payments.md](../architecture/payments.md) |
-| Bring Your Own Payment Provider | Other providers, ledger billing when no split | Post-MVP | 5 | **Built** for Polar on both editions (REQ-PAY-008), off by default since [ADR 0027](../decisions/0027-safe-exit-and-2-percent-fee.md) (`COHORY_ENABLE_POLAR`) because Polar's acceptable use policy does not allow community access. Limits: no fee split, so Cloud records the 2% as `fee_accrued` and bills it monthly; no linking of existing Polar subscriptions; refunds from cohory, disputes, and trials not built; live Polar sandbox run pending. See [../operations/payment-providers.md](../operations/payment-providers.md) |
-| Periodic platform billing | Invoice creators for ledger fees | Post-MVP | 5 | **Built** (since 0.5.0). Monthly Stripe invoice per community and currency on the platform account, 5 USD equivalent minimum with carry forward, card on file or an invoice Stripe emails with its PDF (no second copy from cohory), daily reconciliation, new paid signups on Polar paused after 30 days past due (Stripe Connect checkout stays open, existing members keep access). Manage, Payments, Platform fees. See [platform-billing](../operations/platform-billing.md) |
+| Bring Your Own Payment Provider | Other providers, ledger billing when no split | Post-MVP | 5 | **Built** for Polar on both editions (REQ-PAY-008), off by default since [ADR 0027](../decisions/0027-safe-exit-and-2-percent-fee.md) (`COHORY_ENABLE_POLAR`) because Polar's acceptable use policy does not allow community access. Limits: no fee split, so Cloud records the 2% as `fee_accrued` and bills it monthly; no linking of existing Polar subscriptions; refunds from Cohory, disputes, and trials not built; live Polar sandbox run pending. See [../operations/payment-providers.md](../operations/payment-providers.md) |
+| Periodic platform billing | Invoice creators for ledger fees | Post-MVP | 5 | **Built** (since 0.5.0). Monthly Stripe invoice per community and currency on the platform account, 5 USD equivalent minimum with carry forward, card on file or an invoice Stripe emails with its PDF (no second copy from Cohory), daily reconciliation, new paid signups on Polar paused after 30 days past due (Stripe Connect checkout stays open, existing members keep access). Manage, Payments, Platform fees. See [platform-billing](../operations/platform-billing.md) |
 | Coupons and discounts | Promotion codes | Post-MVP | 3 (follow-up) | |
 | Tax handling guidance | Stripe Tax configuration help | Post-MVP | 3 (follow-up) | Open question on fee base |
 
