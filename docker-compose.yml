@@ -77,7 +77,7 @@ services:
         condition: service_completed_successfully
 
   redis:
-    image: redis:7.4.11
+    image: redis:8.10.1
     profiles: ["redis"]
     restart: unless-stopped
     command: ["redis-server", "--appendonly", "yes"]
