@@ -1,0 +1,26 @@
+{
+  "id": "4b3a2918-7f6e-4d5c-8b4a-392817160501",
+  "created_at": "2026-10-19T10:05:00Z",
+  "modified_at": null,
+  "status": "open",
+  "url": "https://sandbox.polar.sh/checkout/polar_c_fixture",
+  "client_secret": "polar_c_fixture",
+  "expires_at": "2026-10-19T11:05:00Z",
+  "success_url": "http://localhost:3000/c/paid/membership?checkout=success&checkout_id={CHECKOUT_ID}",
+  "return_url": "http://localhost:3000/c/paid/membership?checkout=cancel",
+  "amount": 2900,
+  "net_amount": 2900,
+  "tax_amount": null,
+  "total_amount": 2900,
+  "currency": "usd",
+  "product_id": "2c1d0b9a-8e7f-4a6b-9c5d-3e2f1a0b9c01",
+  "customer_id": null,
+  "customer_email": "buyer@example.test",
+  "external_customer_id": "0199f000-0000-7000-8000-0000000000b1",
+  "subscription_id": null,
+  "metadata": {
+    "cohory_community_id": "0199f000-0000-7000-8000-000000000001",
+    "cohory_user_id": "0199f000-0000-7000-8000-0000000000b1",
+    "cohory_plan_id": "0199f000-0000-7000-8000-0000000000p1"
+  }
+}

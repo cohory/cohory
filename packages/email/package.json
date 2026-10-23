@@ -1,0 +1,34 @@
+{
+  "name": "@cohory/email",
+  "version": "0.0.0",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --project unit",
+    "test:integration": "vitest run --project integration --passWithNoTests",
+    "email:test": "node --env-file-if-exists=../../.env --import tsx scripts/send-test.ts",
+    "email:suppress": "node --env-file-if-exists=../../.env --import tsx scripts/suppress.ts"
+  },
+  "dependencies": {
+    "@cohory/config": "workspace:*",
+    "@cohory/db": "workspace:*",
+    "@cohory/infra": "workspace:*",
+    "@cohory/storage": "workspace:*",
+    "drizzle-orm": "0.45.4",
+    "nodemailer": "10.1.7",
+    "pg-boss": "12.38.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5"
+  }
+}

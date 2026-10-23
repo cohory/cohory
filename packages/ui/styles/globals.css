@@ -1,0 +1,99 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+@source "../src";
+
+@layer base {
+  html {
+    color-scheme: light;
+    -webkit-tap-highlight-color: color-mix(in srgb, var(--color-accent) 12%, transparent);
+    scroll-padding-top: 4rem;
+    scroll-padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+  }
+
+  :root {
+    --toast-offset-bottom: calc(5rem + env(safe-area-inset-bottom));
+  }
+
+  @media (width >= 48rem) {
+    html {
+      scroll-padding-bottom: 0;
+    }
+
+    :root {
+      --toast-offset-bottom: 2rem;
+    }
+  }
+
+  html[data-theme="dark"] {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    text-wrap: balance;
+  }
+
+  a,
+  button,
+  input,
+  label,
+  select,
+  summary,
+  textarea,
+  [role="button"] {
+    touch-action: manipulation;
+  }
+
+  *,
+  ::after,
+  ::before {
+    border-color: var(--color-border);
+  }
+}
+
+/* Keeps the visual size of small controls while giving touch a 44px target (visual-identity). */
+@utility touch-hit {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, 2.75rem);
+    height: max(100%, 2.75rem);
+    transform: translate(-50%, -50%);
+  }
+}
+
+@utility text-link {
+  border-radius: var(--radius-sm);
+  color: var(--color-accent);
+  text-decoration-line: underline;
+  text-underline-offset: 4px;
+  outline: none;
+
+  &:hover {
+    color: var(--color-accent-hover);
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 2px var(--color-ring);
+  }
+}
+
+/* Unlayered so it beats the animate-spin utility on spinners without motion-reduce:animate-none. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin {
+    animation: none;
+  }
+}

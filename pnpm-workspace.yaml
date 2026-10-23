@@ -1,0 +1,27 @@
+packages:
+  - apps/*
+  - packages/*
+
+saveExact: true
+
+minimumReleaseAge: 1440
+
+trustPolicy: no-downgrade
+
+trustPolicyIgnoreAfter: 43200
+
+# braces has no patched release yet; it is reached only through the Next.js ESLint plugin in
+# @cohory/config, which globs our own source files at lint time and never ships in the image.
+auditConfig:
+  ignoreGhsas:
+    - GHSA-vfj7-8cjw-p6xm
+
+# drizzle-kit still depends on @esbuild-kit, which pins an esbuild affected by GHSA-67mh-4wv8-2f99.
+# express 5.3.0 (through the MCP SDK) allows a body-parser affected by GHSA-27r3-jxmh-p828.
+overrides:
+  "@esbuild-kit/core-utils>esbuild": 0.25.12
+  "express>body-parser": ^2.4.0
+
+allowBuilds:
+  esbuild: true
+  sharp: true

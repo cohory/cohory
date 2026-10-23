@@ -1,0 +1,12 @@
+{
+  "records": [
+    {
+      "id": 5001,
+      "post_id": 9001,
+      "body": { "body": "<p>Thanks for writing this up</p>" },
+      "user_email": "maya@circle-fixture.test",
+      "user_name": "Maya Rivera",
+      "created_at": "2025-04-01T11:00:00.000Z"
+    }
+  ]
+}

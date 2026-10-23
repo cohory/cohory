@@ -1,0 +1,36 @@
+{
+  "name": "@cohory/webhooks",
+  "version": "0.0.0",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./signature": "./src/signature.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --project unit",
+    "test:integration": "vitest run --project integration --passWithNoTests"
+  },
+  "dependencies": {
+    "@cohory/authz": "workspace:*",
+    "@cohory/communities": "workspace:*",
+    "@cohory/db": "workspace:*",
+    "@cohory/egress": "workspace:*",
+    "@cohory/email": "workspace:*",
+    "@cohory/events": "workspace:*",
+    "@cohory/payments": "workspace:*",
+    "drizzle-orm": "0.45.4",
+    "pg-boss": "12.38.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@cohory/config": "workspace:*",
+    "@types/node": "22.20.5",
+    "standardwebhooks": "1.1.1",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5"
+  }
+}

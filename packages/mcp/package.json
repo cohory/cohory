@@ -1,0 +1,45 @@
+{
+  "name": "@cohory/mcp",
+  "version": "0.0.0",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --project unit",
+    "test:integration": "vitest run --project integration --passWithNoTests",
+    "reference": "node --import tsx scripts/reference.ts",
+    "reference:check": "node --import tsx scripts/reference.ts --check"
+  },
+  "dependencies": {
+    "@cohory/agents": "workspace:*",
+    "@cohory/api": "workspace:*",
+    "@cohory/authz": "workspace:*",
+    "@cohory/config": "workspace:*",
+    "@cohory/infra": "workspace:*",
+    "@cohory/rate-limit": "workspace:*",
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@cohory/auth": "workspace:*",
+    "@cohory/communities": "workspace:*",
+    "@cohory/courses": "workspace:*",
+    "@cohory/db": "workspace:*",
+    "@cohory/entitlements": "workspace:*",
+    "@cohory/payments": "workspace:*",
+    "@cohory/posts": "workspace:*",
+    "@cohory/storage": "workspace:*",
+    "@types/node": "22.20.5",
+    "drizzle-orm": "0.45.4",
+    "fflate": "0.8.3",
+    "prettier": "3.9.10",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5"
+  }
+}

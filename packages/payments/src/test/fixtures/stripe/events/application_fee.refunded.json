@@ -1,0 +1,49 @@
+{
+  "id": "evt_1UTCFoFx0PlatfrmXP3C3kRp",
+  "object": "event",
+  "api_version": "2026-09-30.endive",
+  "created": 1792638079,
+  "data": {
+    "object": {
+      "id": "fee_1UTCFkFx0CreatorOrT6zo3q",
+      "object": "application_fee",
+      "account": "acct_1Fake0Creator01",
+      "amount": 98,
+      "amount_refunded": 20,
+      "application": "ca_FakeConnectClient0000000000000",
+      "balance_transaction": "txn_1UTCFnFx0PlatfrmGQxgTooD",
+      "charge": "ch_3UTCFkFx0Creator08vaUZIY",
+      "created": 1792638076,
+      "currency": "gbp",
+      "fee_source": {
+        "charge": "ch_3UTCFkFx0Creator08vaUZIY",
+        "type": "charge"
+      },
+      "livemode": false,
+      "originating_transaction": null,
+      "refunded": false,
+      "refunds": {
+        "object": "list",
+        "data": [
+          {
+            "id": "fr_1UTCFnFx0CreatorSh0PlRwN",
+            "object": "fee_refund",
+            "amount": 20,
+            "balance_transaction": "txn_1UTCFnFx0PlatfrmCCr0LJhG",
+            "created": 1792638079,
+            "currency": "gbp",
+            "fee": "fee_1UTCFkFx0CreatorOrT6zo3q",
+            "metadata": {}
+          }
+        ],
+        "has_more": false,
+        "total_count": 1,
+        "url": null
+      }
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 0,
+  "request": null,
+  "type": "application_fee.refunded"
+}

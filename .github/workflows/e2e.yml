@@ -1,0 +1,127 @@
+name: E2E
+
+# Pull requests run the critical journeys (smoke). The full suite runs nightly on main, on
+# release tags, on demand, and on pull requests labelled full-e2e, split across three jobs.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
+    paths-ignore:
+      - "docs/**"
+      - "**/*.md"
+      - ".claude/**"
+  push:
+    tags: ["v*"]
+  schedule:
+    - cron: "23 2 * * *"
+  workflow_dispatch:
+    inputs:
+      suite:
+        description: Which suite to run
+        type: choice
+        options: [full, smoke]
+        default: full
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+
+jobs:
+  e2e:
+    name: Playwright on Compose (${{ matrix.part }})
+    if: github.event.action != 'labeled' || github.event.label.name == 'full-e2e'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        part: ${{ fromJSON((github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.suite == 'full') || contains(github.event.pull_request.labels.*.name, 'full-e2e')) && '["1/3","2/3","3/3"]' || '["smoke"]') }}
+    env:
+      CI: "true"
+      E2E_WORKERS: "2"
+      COHORY_VERSION: e2e
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3.12.0
+      - name: Build the image once
+        uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8 # v6.19.2
+        with:
+          context: .
+          load: true
+          push: false
+          tags: cohory:e2e
+          cache-from: type=gha,scope=e2e
+          cache-to: type=gha,mode=max,scope=e2e
+
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+      - name: Install Chromium
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: pnpm --filter @cohory/e2e exec playwright install --with-deps chromium
+      - name: Install Chromium system dependencies
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: pnpm --filter @cohory/e2e exec playwright install-deps chromium
+
+      - name: Run the tests (stack up, test, stack down)
+        env:
+          PART: ${{ matrix.part }}
+        run: |
+          if [ "$PART" = "smoke" ]; then
+            E2E_SKIP_BUILD=1 pnpm e2e journey- payments.spec seed.spec
+          else
+            E2E_SKIP_BUILD=1 pnpm e2e --shard="$PART"
+          fi
+
+      - name: Upload the HTML report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: playwright-report-${{ strategy.job-index }}
+          path: apps/e2e/playwright-report
+          retention-days: 14
+      - name: Upload traces and failure screenshots
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: playwright-test-results-${{ strategy.job-index }}
+          path: apps/e2e/test-results
+          retention-days: 14
+
+  upgrade:
+    name: Upgrade path
+    if: github.event.action != 'labeled'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      COHORY_VERSION: e2e
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3.12.0
+      - uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8 # v6.19.2
+        with:
+          context: .
+          load: true
+          push: false
+          tags: cohory:e2e
+          cache-from: type=gha,scope=e2e
+      - run: bash scripts/upgrade-check.sh

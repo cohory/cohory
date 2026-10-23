@@ -1,0 +1,150 @@
+x-e2e-env: &e2e-env
+  BETTER_AUTH_SECRET: e2e-only-secret-not-for-production-use-0123456789
+  APP_URL: ${E2E_BASE_URL:-http://localhost:3310}
+  BETTER_AUTH_URL: ${E2E_BASE_URL:-http://localhost:3310}
+  NEXT_PUBLIC_APP_URL: ${E2E_BASE_URL:-http://localhost:3310}
+  DATABASE_URL: postgres://cohory_app:cohory_app@postgres:5432/cohory
+  COHORY_EDITION: cloud
+  PLATFORM_FEE_BPS: "200"
+  STRIPE_SECRET_KEY: sk_test_e2e_fake_key
+  STRIPE_WEBHOOK_SECRET: ${E2E_STRIPE_WEBHOOK_SECRET:-whsec_e2e_only_not_a_real_secret}
+  STRIPE_API_BASE_URL: http://fake-stripe:12111
+  POLAR_API_BASE_URL: http://fake-polar:12112
+  PAYMENTS_ENCRYPTION_KEY: ZTJlLW9ubHktcGF5bWVudHMta2V5LTMyLWJ5dGVzISE=
+  RATE_LIMIT_DISABLED: "true"
+  EGRESS_ALLOW_PRIVATE_HOSTS: webhook-receiver
+  EMAIL_DRIVER: log
+  CONTACT_EMAIL: contact@e2e.example.test
+  CREATORS_COMMUNITY_SLUG: e2e-creators
+  STORAGE_DRIVER: local
+  STORAGE_LOCAL_PATH: /data/uploads
+
+x-e2e-image: &e2e-image ${COHORY_IMAGE:-cohory}:${COHORY_VERSION:-e2e}
+
+services:
+  # Next listens on APP_PORT inside the container too, so the app can reach its own public
+  # URL (the provider "Send test event" check posts to APP_URL).
+  web:
+    environment:
+      <<: *e2e-env
+      PORT: ${APP_PORT:-3310}
+      COHORY_ENABLE_POLAR: "true"
+    ports: !override
+      - "127.0.0.1:${APP_PORT:-3310}:${APP_PORT:-3310}"
+    depends_on:
+      fake-stripe:
+        condition: service_healthy
+      fake-polar:
+        condition: service_healthy
+  worker:
+    environment:
+      <<: *e2e-env
+
+  # The same image as web with COHORY_EDITION=community, on the same database, so one run
+  # also checks the Community Edition payments copy.
+  web-community:
+    image: *e2e-image
+    command: ["node", "apps/web/server.js"]
+    restart: unless-stopped
+    ports:
+      - "${E2E_COMMUNITY_PORT:-3311}:3000"
+    environment:
+      <<: *e2e-env
+      APP_URL: ${E2E_COMMUNITY_URL:-http://localhost:3311}
+      BETTER_AUTH_URL: ${E2E_COMMUNITY_URL:-http://localhost:3311}
+      NEXT_PUBLIC_APP_URL: ${E2E_COMMUNITY_URL:-http://localhost:3311}
+      COHORY_EDITION: community
+      CREATORS_COMMUNITY_SLUG: ""
+    volumes:
+      - uploads:/data/uploads
+    depends_on:
+      migrations:
+        condition: service_completed_successfully
+
+  # Cloud with community creation limited to one operator (ADR 0050), so one run checks both
+  # the open landing and the early access landing.
+  web-beta:
+    image: *e2e-image
+    command: ["node", "apps/web/server.js"]
+    restart: unless-stopped
+    ports:
+      - "${E2E_BETA_PORT:-3315}:3000"
+    environment:
+      <<: *e2e-env
+      APP_URL: ${E2E_BETA_URL:-http://localhost:3315}
+      BETTER_AUTH_URL: ${E2E_BETA_URL:-http://localhost:3315}
+      NEXT_PUBLIC_APP_URL: ${E2E_BETA_URL:-http://localhost:3315}
+      COMMUNITY_CREATION: operators
+      OPERATOR_EMAILS: ${E2E_BETA_OPERATOR_EMAIL:-beta-operator@e2e.example.test}
+    volumes:
+      - uploads:/data/uploads
+    depends_on:
+      migrations:
+        condition: service_completed_successfully
+
+  fake-stripe:
+    image: *e2e-image
+    command: ["node", "/fake-stripe/server.mts"]
+    restart: unless-stopped
+    environment:
+      FAKE_STRIPE_PORT: "12111"
+    ports:
+      - "127.0.0.1:${E2E_FAKE_STRIPE_PORT:-3312}:12111"
+    volumes:
+      - ./apps/e2e/support/fake-stripe:/fake-stripe:ro
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:12111/__control/health').then((r) => process.exit(r.ok ? 0 : 1), () => process.exit(1))",
+        ]
+      interval: 2s
+      timeout: 5s
+      retries: 30
+
+  webhook-receiver:
+    image: *e2e-image
+    command: ["node", "/webhook-receiver/server.mts"]
+    restart: unless-stopped
+    environment:
+      WEBHOOK_RECEIVER_PORT: "12113"
+    ports:
+      - "127.0.0.1:${E2E_WEBHOOK_RECEIVER_PORT:-3314}:12113"
+    volumes:
+      - ./apps/e2e/support/webhook-receiver:/webhook-receiver:ro
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:12113/__health').then((r) => process.exit(r.ok ? 0 : 1), () => process.exit(1))",
+        ]
+      interval: 2s
+      timeout: 5s
+      retries: 30
+
+  fake-polar:
+    image: *e2e-image
+    command: ["node", "/fake-polar/server.mts"]
+    restart: unless-stopped
+    environment:
+      FAKE_POLAR_PORT: "12112"
+      FAKE_POLAR_PUBLIC_URL: ${E2E_FAKE_POLAR_URL:-http://127.0.0.1:3313}
+    ports:
+      - "127.0.0.1:${E2E_FAKE_POLAR_PORT:-3313}:12112"
+    volumes:
+      - ./packages/payments/support/fake-polar:/fake-polar:ro
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:12112/__fixtures/health').then((r) => process.exit(r.ok ? 0 : 1), () => process.exit(1))",
+        ]
+      interval: 2s
+      timeout: 5s
+      retries: 30

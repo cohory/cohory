@@ -1,0 +1,28 @@
+node_modules/
+.DS_Store
+.env
+.env.*
+!.env.example
+!.env.production.example
+.learnings/
+.worktrees/
+.agents/
+.next/
+.turbo/
+dist/
+coverage/
+next-env.d.ts
+*.tsbuildinfo
+data/
+scripts/load/out/
+
+# Local plugin state
+.superpowers/
+
+# Local design specs and plans
+docs/superpowers/
+
+# Agent worktrees and local settings
+.claude/worktrees/
+.claude/settings.local.json
+__pycache__/

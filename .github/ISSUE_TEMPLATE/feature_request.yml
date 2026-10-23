@@ -1,0 +1,46 @@
+name: Feature request
+description: Suggest a change or a new capability.
+title: "feat: "
+labels: ["enhancement", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please check docs/product/mvp-scope.md and docs/foundation/roadmap.md first. Many features are already planned for a later phase.
+        Members see four tabs (Community, Classroom, Calendar, Members). Proposals that add a fifth tab are unlikely to be accepted.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What are you trying to do, and what stops you today? Describe the problem before the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: dropdown
+    id: who
+    attributes:
+      label: Who benefits
+      multiple: true
+      options:
+        - Creators
+        - Members
+        - Self-hosters
+        - Developers and integrators
+        - Agents
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues and discussions.
+          required: true
+        - label: This involves payments, permissions, or member data (it will likely need a decision record).

@@ -1,0 +1,24 @@
+{
+  "name": "@cohory/authz",
+  "version": "0.0.0",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@cohory/config": "workspace:*",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "name": "@cohory/migration",
+  "version": "0.0.0",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./format": "./src/format/index.ts",
+    "./cli": "./src/cli.ts",
+    "./importers": "./src/importers/catalog.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --project unit",
+    "test:integration": "vitest run --project integration --passWithNoTests"
+  },
+  "dependencies": {
+    "@cohory/authz": "workspace:*",
+    "@cohory/calendar": "workspace:*",
+    "@cohory/communities": "workspace:*",
+    "@cohory/config": "workspace:*",
+    "@cohory/content": "workspace:*",
+    "@cohory/courses": "workspace:*",
+    "@cohory/db": "workspace:*",
+    "@cohory/email": "workspace:*",
+    "@cohory/fair-use": "workspace:*",
+    "@cohory/gamification": "workspace:*",
+    "@cohory/posts": "workspace:*",
+    "@cohory/storage": "workspace:*",
+    "drizzle-orm": "0.45.4",
+    "fflate": "0.8.3",
+    "markdown-it": "14.3.3",
+    "parse5": "8.0.1",
+    "pg-boss": "12.38.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@cohory/courses": "workspace:*",
+    "@cohory/entitlements": "workspace:*",
+    "@types/markdown-it": "14.2.0",
+    "@types/node": "22.20.5",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5"
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1792272695257,
+      "tag": "0000_enable_citext",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1792272695784,
+      "tag": "0001_communities_and_auth",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792272701005,
+      "tag": "0002_force_memberships_rls",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1792274659618,
+      "tag": "0003_communities_rls",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1792280324035,
+      "tag": "0004_posts_comments_reactions",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1792281545990,
+      "tag": "0005_notifications",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1792283700369,
+      "tag": "0006_gamification_and_member_profiles",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1792288067139,
+      "tag": "0007_courses_and_lessons",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1792290711690,
+      "tag": "0008_events_occurrences_rsvps",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1792291710901,
+      "tag": "0009_manage_invites_audit_appearance",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1792293362794,
+      "tag": "0010_payments_subscriptions_ledger",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1792305211246,
+      "tag": "0011_outbox_and_deleted_by",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "7",
+      "when": 1792330236281,
+      "tag": "0012_identity_and_notification_email",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1792332661808,
+      "tag": "0013_join_categories_feed_search",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1792333193745,
+      "tag": "0014_moderation_comps_membership_notifications",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "7",
+      "when": 1792342470216,
+      "tag": "0015_migration_jobs",
+      "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "7",
+      "when": 1792347313459,
+      "tag": "0016_subscription_links",
+      "breakpoints": true
+    },
+    {
+      "idx": 17,
+      "version": "7",
+      "when": 1792360547369,
+      "tag": "0017_payment_providers",
+      "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "7",
+      "when": 1792363294074,
+      "tag": "0018_platform_billing",
+      "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "7",
+      "when": 1792364000000,
+      "tag": "0019_agents_api_tokens",
+      "breakpoints": true
+    },
+    {
+      "idx": 20,
+      "version": "7",
+      "when": 1792365000000,
+      "tag": "0020_automation",
+      "breakpoints": true
+    },
+    {
+      "idx": 21,
+      "version": "7",
+      "when": 1792368792747,
+      "tag": "0021_approvals",
+      "breakpoints": true
+    },
+    {
+      "idx": 22,
+      "version": "7",
+      "when": 1792378038091,
+      "tag": "0022_oauth_authorization_server",
+      "breakpoints": true
+    },
+    {
+      "idx": 23,
+      "version": "7",
+      "when": 1792380760497,
+      "tag": "0023_agent_material",
+      "breakpoints": true
+    },
+    {
+      "idx": 24,
+      "version": "7",
+      "when": 1792383336014,
+      "tag": "0024_agent_course_delegation",
+      "breakpoints": true
+    },
+    {
+      "idx": 25,
+      "version": "7",
+      "when": 1792415090326,
+      "tag": "0025_hardening",
+      "breakpoints": true
+    },
+    {
+      "idx": 26,
+      "version": "7",
+      "when": 1792494332930,
+      "tag": "0026_about_gallery",
+      "breakpoints": true
+    },
+    {
+      "idx": 27,
+      "version": "7",
+      "when": 1792497197407,
+      "tag": "0027_reviews",
+      "breakpoints": true
+    },
+    {
+      "idx": 28,
+      "version": "7",
+      "when": 1792504661388,
+      "tag": "0028_gallery_thumbnails",
+      "breakpoints": true
+    },
+    {
+      "idx": 29,
+      "version": "7",
+      "when": 1792528048219,
+      "tag": "0029_safe_exit_payments",
+      "breakpoints": true
+    },
+    {
+      "idx": 30,
+      "version": "7",
+      "when": 1792582962976,
+      "tag": "0030_member_removal_reason",
+      "breakpoints": true
+    },
+    {
+      "idx": 31,
+      "version": "7",
+      "when": 1792595848813,
+      "tag": "0031_community_slug_history",
+      "breakpoints": true
+    },
+    {
+      "idx": 32,
+      "version": "7",
+      "when": 1792615584745,
+      "tag": "0032_comp_invitations",
+      "breakpoints": true
+    },
+    {
+      "idx": 33,
+      "version": "7",
+      "when": 1792632416217,
+      "tag": "0033_payment_disputes",
+      "breakpoints": true
+    },
+    {
+      "idx": 34,
+      "version": "7",
+      "when": 1792636944081,
+      "tag": "0034_review_indexes_and_expand",
+      "breakpoints": true
+    },
+    {
+      "idx": 35,
+      "version": "7",
+      "when": 1792658043484,
+      "tag": "0035_review_w4_expand",
+      "breakpoints": true
+    },
+    {
+      "idx": 36,
+      "version": "7",
+      "when": 1792666698966,
+      "tag": "0036_review_r37_holds_and_groups",
+      "breakpoints": true
+    },
+    {
+      "idx": 37,
+      "version": "7",
+      "when": 1792780803364,
+      "tag": "0037_creator_feedback",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "@cohory/config",
+  "version": "0.0.0",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "exports": {
+    "./edition": "./src/edition.ts",
+    "./legal": "./src/legal.ts",
+    "./platform": "./src/platform.ts",
+    "./eslint": "./eslint.js",
+    "./prettier": "./prettier.js",
+    "./tsconfig/base.json": "./tsconfig/base.json",
+    "./tsconfig/nextjs.json": "./tsconfig/nextjs.json",
+    "./tsconfig/node.json": "./tsconfig/node.json",
+    "./tsconfig/react-library.json": "./tsconfig/react-library.json",
+    "./vitest": {
+      "types": "./vitest.d.ts",
+      "default": "./vitest.js"
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "@next/eslint-plugin-next": "16.4.2",
+    "@types/node": "22.20.5",
+    "eslint": "9.39.5",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "17.13.0",
+    "prettier": "3.9.10",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.0",
+    "vitest": "5.0.5"
+  }
+}

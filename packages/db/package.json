@@ -1,0 +1,49 @@
+{
+  "name": "@cohory/db",
+  "version": "0.0.0",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema/index.ts",
+    "./seed": "./src/seed/dev-data.ts",
+    "./migrations": "./src/migrations.ts",
+    "./test-global-setup": "./src/test/global-setup.ts"
+  },
+  "imports": {
+    "#server-only": {
+      "browser": "server-only",
+      "default": "./src/server-environment.ts"
+    }
+  },
+  "scripts": {
+    "build": "esbuild src/migrate.ts --bundle --platform=node --target=node22 --format=esm --packages=external --outfile=dist/migrate.js",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --project unit",
+    "test:integration": "vitest run --project integration --passWithNoTests",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "node --env-file-if-exists=../../.env --import tsx src/migrate.ts",
+    "db:seed": "node --env-file-if-exists=../../.env --import tsx src/seed.ts",
+    "db:reset:local": "node --env-file-if-exists=../../.env --import tsx src/reset-local-cli.ts"
+  },
+  "dependencies": {
+    "drizzle-orm": "0.45.4",
+    "pg": "8.23.1",
+    "server-only": "0.0.1",
+    "uuid": "14.0.3",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@cohory/config": "workspace:*",
+    "@types/node": "22.20.5",
+    "@types/pg": "8.23.1",
+    "better-auth": "1.7.12",
+    "drizzle-kit": "0.31.11",
+    "esbuild": "0.28.2",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5"
+  }
+}

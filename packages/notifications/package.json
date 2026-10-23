@@ -1,0 +1,39 @@
+{
+  "name": "@cohory/notifications",
+  "version": "0.0.0",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./contact": "./src/contact/index.ts",
+    "./early-access": "./src/early-access/index.ts",
+    "./creator-feedback": "./src/creator-feedback/index.ts",
+    "./creator-feedback/copy": "./src/creator-feedback/copy.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --project unit",
+    "test:integration": "vitest run --project integration --passWithNoTests"
+  },
+  "dependencies": {
+    "@cohory/authz": "workspace:*",
+    "@cohory/calendar": "workspace:*",
+    "@cohory/communities": "workspace:*",
+    "@cohory/db": "workspace:*",
+    "@cohory/email": "workspace:*",
+    "@cohory/entitlements": "workspace:*",
+    "@cohory/events": "workspace:*",
+    "@cohory/posts": "workspace:*",
+    "@cohory/rate-limit": "workspace:*",
+    "drizzle-orm": "0.45.4",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@cohory/config": "workspace:*",
+    "@types/node": "22.20.5",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5"
+  }
+}
