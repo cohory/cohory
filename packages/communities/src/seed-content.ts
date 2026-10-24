@@ -66,26 +66,30 @@ export const creatorsAbout = {
 
 export const proAbout = {
   whatYouGet: [
-    "A private feed for paying members",
-    "Monthly and yearly plans, cancel anytime",
-    "Everything a paid community gets on Cohory",
+    "A live session every week on one part of running a paid community",
+    "Playbooks for pricing, launch posts, onboarding, and renewals",
+    "A review of your About page and pricing from the host",
   ],
   hostBio,
   hostCredential: "Founder of Cohory",
   faq: [
     {
-      q: "Is this a real paid community?",
-      a: "It is a test community. On a local stack, checkout runs in Stripe test mode, so use a test card such as 4242 4242 4242 4242.",
+      q: "Can I cancel anytime?",
+      a: "Yes. Cancel from the billing portal and you keep access until the end of the period you paid for.",
+    },
+    {
+      q: "Is it for me if I have no paying members yet?",
+      a: "Yes. Many members join while they plan their first paid launch.",
     },
   ],
   detailedDescription: {
     type: "doc",
     content: [
       paragraph(
-        "Cohory Pro is a private paid community for trying memberships end to end: the price on the About page, checkout, the Membership page, and the billing portal.",
+        "Cohory Pro is for creators who charge for their community, or plan to. Each week there is a live session on one topic: setting a price, writing the launch post, welcoming new members, or keeping them past the first month.",
       ),
       paragraph(
-        "Join with a Stripe test card. Nothing here is charged for real, and the content is for testing only.",
+        "Members get the playbook from every session and can ask for a review of their About page and pricing.",
       ),
     ],
   },

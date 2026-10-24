@@ -151,7 +151,7 @@ export const devPaidSeed = {
   communitySlug: communitySlugSchema.parse("cohory-pro"),
   communityName: "Cohory Pro",
   communityDescription:
-    "A private paid community for trying memberships, checkout, and the billing portal on a local stack.",
+    "Weekly live sessions and playbooks for creators who run a paid community: pricing, launches, and keeping members.",
   inviteToken: "cohory-pro-invite-link-for-local-paid-tests",
   planName: "Cohory Pro membership",
   currency: "usd",

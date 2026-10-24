@@ -9,7 +9,6 @@ All notable changes to Cohory are recorded here. The format follows [Keep a Chan
 ### Added
 
 - The third party agent skills in `.claude/skills`, with their sources and terms in `THIRD_PARTY_NOTICES.md`.
-
 - On Cloud with `COMMUNITY_CREATION=operators`, the landing and pricing pages offer Request early access and Self-host now instead of Create your community, and a short form at `/early-access` emails the request to `CONTACT_EMAIL`.
 - A Contact page at `/contact`, linked from the footer, emails the operator with your account details when signed in, and is spam protected and rate limited.
 - On Cloud, creators get one optional question after their first post, first paid member, and first course, and an optional reason when they archive, delete, disconnect Stripe, or delete their account; answers go to the operator and can be turned off.
@@ -91,3 +90,6 @@ The first summarized release. Cohory 0.11.0 is an open source community platform
 - One authorization module for people, API tokens, and agents.
 - Rate limits on sign in, invitations, and public writes, and a structured logger that redacts secrets.
 - Account deletion, data download, legal pages, and consent at sign up.
+
+[Unreleased]: https://github.com/cohory/cohory/compare/v0.12.0...HEAD
+[0.12.0]: https://github.com/cohory/cohory/releases/tag/v0.12.0

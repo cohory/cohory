@@ -2,6 +2,11 @@
 
 The open source alternative to Skool. Run your community, courses, events, and paid memberships on software you own.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/tour-dark.webp">
+  <img src="assets/screenshots/tour-light.webp" alt="A one minute tour of Cohory with captions: the About page of a private paid community as a visitor sees it, the Community feed and a post with its comments, a course in Classroom, the Calendar and an event, Members and the leaderboard, then every Manage page in sidebar order: Overview, Inbox, People, Payments, Appearance, Settings, and Migration." width="100%">
+</picture>
+
 Cohory gives a creator one calm place for a community, courses, events, and paid memberships. Members see four tabs (Community, Classroom, Calendar, Members), and the creator runs everything from Manage. Members pay through the creator's own Stripe account, so the subscriptions stay with the creator, and the whole community exports as an archive that another Cohory server imports. You can run it yourself for free, or use the hosted Cloud Edition, which takes 2% of each successful payment and no monthly fee.
 
 > **Version 0.12.0.** [CHANGELOG.md](CHANGELOG.md) lists what each release contains, and the [feature inventory](docs/product/feature-inventory.md) marks every feature as Built, Partly built, or planned. No image has been published yet, so the quickstart builds the image from source.
@@ -57,6 +62,57 @@ Self-hosted creators connect their own Stripe keys. The Cloud Edition uses Strip
 | Portability | Member CSV export and import, a versioned community archive, Skool and Circle importers, and moving existing Stripe subscribers |
 | Agents and API | A REST API under `/api/v1` with an OpenAPI document, scoped API tokens, agent identities with an approval queue, outgoing webhooks, an MCP server at `/mcp`, and agent ready courses |
 | Operations | Docker Compose with a production overlay, backups and restores, fair use limits, rate limits, legal page settings, and a worker healthcheck |
+
+<table>
+  <tr>
+    <td width="50%">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/about-dark.webp">
+        <img src="assets/screenshots/about-light.webp" alt="About, as a signed out visitor sees a private paid community: cover image, Join for $19.00/month, the yearly price, and what members get.">
+      </picture>
+      <p align="center"><b>About.</b> What visitors see before they join a private, paid community.</p>
+    </td>
+    <td width="50%">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/feed-dark.webp">
+        <img src="assets/screenshots/feed-light.webp" alt="Community feed: sort tabs, category filters, a post composer, a pinned post, and side cards for the next event, top members this week, and new members.">
+      </picture>
+      <p align="center"><b>Community.</b> Posts, categories, likes, and comments, with the next event and the week's top members.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/classroom-dark.webp">
+        <img src="assets/screenshots/classroom-light.webp" alt="Classroom: a course page with its description, progress bar, publish status, and lesson outline.">
+      </picture>
+      <p align="center"><b>Classroom.</b> Courses with modules, lessons, and progress.</p>
+    </td>
+    <td width="50%">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/calendar-dark.webp">
+        <img src="assets/screenshots/calendar-light.webp" alt="Calendar: the next event with Going and Not going buttons above a month view.">
+      </picture>
+      <p align="center"><b>Calendar.</b> Weekly events with RSVP and reminders.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/members-dark.webp">
+        <img src="assets/screenshots/members-light.webp" alt="Members: a searchable directory of member cards with levels, points, and join dates.">
+      </picture>
+      <p align="center"><b>Members.</b> Directory, levels, and points.</p>
+    </td>
+    <td width="50%">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/manage-dark.webp">
+        <img src="assets/screenshots/manage-light.webp" alt="Manage: the overview with a setup checklist and links to Inbox, People, Payments, Appearance, Settings, and Migration.">
+      </picture>
+      <p align="center"><b>Manage.</b> A setup checklist and every creator setting in one place.</p>
+    </td>
+  </tr>
+</table>
 
 ## Documentation
 

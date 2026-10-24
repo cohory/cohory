@@ -236,8 +236,8 @@ export const proPosts: readonly SeedPost[] = [
     title: "Welcome to Cohory Pro",
     pinned: true,
     body: doc(
-      "This private paid community is for trying memberships on a local stack.",
-      "Join from the About page or with the invite link, then pay with a Stripe test card such as 4242 4242 4242 4242. Nothing is charged for real.",
+      "Welcome to Cohory Pro. Introduce yourself in General and tell us what you charge today, or what you plan to charge.",
+      "On a local stack, checkout runs in Stripe test mode: join from the About page or the invite link and pay with a test card such as 4242 4242 4242 4242.",
     ),
   },
 ];
