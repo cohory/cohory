@@ -2,7 +2,7 @@
 
 Post events go to one pg-boss queue per consuming module, chosen by a routing table in `@cohory/events`.
 
-- ADR status: Proposed
+- ADR status: Accepted (founder, 2026-10-25)
 - Date: 2026-10-18
 - Deciders: engineering (0.1.0)
 - Related: [0005](0005-postgres-job-queue.md), [0014](0014-transactional-outbox.md) (replaces the after commit publish described here with an outbox), [../architecture/overview.md](../architecture/overview.md) section 3, [../architecture/data-model.md](../architecture/data-model.md) section 8, REQ-GAM-001

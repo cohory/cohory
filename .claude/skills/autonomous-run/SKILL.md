@@ -9,7 +9,7 @@ You own the exit condition. Define done, then drive to it without stopping.
 
 ## 1. Frame before the first iteration
 
-- **Exit predicate.** A checkable statement: "all tests in `packages/modules/payments` pass and the checkout flow completes in the running app", "PRs 12 to 15 are merge-ready". Never relax it to declare victory.
+- **Exit predicate.** A checkable statement: "all tests in `packages/payments` pass and the checkout flow completes in the running app", "PRs 12 to 15 are merge-ready". Never relax it to declare victory.
 - **Scope.** Rough units of work and the blockers you already see.
 - **Rigor.** Higher for one-way doors (schema migrations on real data, payment flows, auth) and wide blast radius. Rigor means gates and artifacts, not effort.
 - **Plan.** For multi-step work, write it with `superpowers:writing-plans`. If no plan exists and the task is large, design the phases yourself: riskiest unknown first, verification harness before the work, scaffold before features.

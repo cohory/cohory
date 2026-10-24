@@ -2,7 +2,7 @@
 
 Record every Cloud platform fee, fee refund, and adjustment as an append-only ledger entry, whatever the payment provider, and bill ledger balances monthly when a provider cannot split fees.
 
-- ADR status: Accepted (ledger concept and periodic billing are Confirmed). Billing parameters are Proposed.
+- ADR status: Accepted (ledger concept and periodic billing are Confirmed; the billing parameters were settled by the founder on 2026-10-19, see [../architecture/payments.md](../architecture/payments.md) section 9 and [0051](0051-payment-provider-decisions-without-records.md)).
 - Date: 2026-10-17
 - Deciders: founder (ledger, periodic billing), foundation docs wave (billing parameters)
 - Related: [../architecture/payments.md](../architecture/payments.md) sections 7 to 9, [../foundation/business-model.md](../foundation/business-model.md)

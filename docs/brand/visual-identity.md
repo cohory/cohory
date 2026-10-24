@@ -79,7 +79,7 @@ Shadows, minimal: two levels only, plus the resting shadow of the Soft card styl
 
 ## Imagery and illustration
 
-- Creator imagery leads: community cover (shown at 4:1, recommended 1600 × 400 or larger; link previews may crop the sides), course thumbnails (16:9), avatars (square, displayed round).
+- Creator imagery leads: community cover (shown at 4:1, and 3:1 on the About hero below 768px, recommended 1600 × 400 or larger; link previews may crop the sides), course thumbnails (16:9), avatars (square, displayed round).
 - Missing images fall back to a flat tile in `accent-muted` with the first letter of the name in `accent`, never a stock photo.
 - **Recommendation:** our own marketing illustration is minimal line work using the Lucide stroke style, neutral strokes with one accent fill. No 3D renders, no mascots, no people illustrations that imply a demographic.
 - Screenshots in marketing show real product UI with clearly fictional sample data.
@@ -135,7 +135,7 @@ Shadows, minimal: two levels only, plus the resting shadow of the Soft card styl
 ## Responsive behavior
 
 - Breakpoints (Tailwind defaults): sm 640px, md 768px, lg 1024px, xl 1280px.
-- **Confirmed:** below 768px the four member tabs (Community, Classroom, Calendar, Members) move to a fixed bottom navigation bar with icon and label, 64px tall plus the safe area inset. Manage is reached from the account menu in the top bar, never as a fifth tab.
+- **Confirmed:** below 768px the four member tabs (Community, Classroom, Calendar, Members) move to a fixed bottom navigation bar with icon and label, 64px tall plus the safe area inset. Manage is a button in the community top for owners, admins, and moderators, never a fifth tab.
 - Below 768px: single column, right rail content moves into the feed (pinned event card) or into its tab, dialogs become bottom sheets, the composer opens full screen.
 - 768px to 1023px: top bar with tabs, single content column, no right rail.
 - 1024px and up: reading column plus right rail.

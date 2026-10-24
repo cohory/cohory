@@ -133,7 +133,7 @@ High priority tasks from [../architecture/agent-integrations.md](../architecture
 | Export the members CSV | `GET /communities/{slug}/manage/export/members.csv`, then the download link | `members:export`, `proposals:write` | Yes |
 | Add a webhook endpoint | `POST /communities/{slug}/manage/webhooks` | `webhooks:write`, `proposals:write` | Yes (the signing secret is shown once to the approver) |
 
-Not available to agents: creating a community (a token belongs to one community) and emailing all members (not built in Cohory yet).
+Not available to agents: creating a community (a token belongs to one community). Emailing all members is an approval request in the publishing category, so an agent can propose it but not send it.
 
 Posts written by an agent are saved as drafts. They appear under "Drafts waiting for you" on the Agents page, where the owner or an admin publishes or discards them (Discard draft asks first). Published posts and agent comments show an Agent badge with the agent's name.
 
@@ -191,3 +191,10 @@ These are checked by tests that walk every route in `/api/openapi.json` (`packag
 - Webhook endpoints cannot point at loopback, private, link local, or metadata addresses, delivery never follows a redirect, and signatures verify with the reference Standard Webhooks library. Signing secrets are encrypted at rest and never logged.
 
 Known limits: approval needs a recent sign in but no second factor, because two factor authentication does not exist yet. User text fields are marked as untrusted in the API schemas, invisible characters are stripped from stored and returned text, and every result and error from the MCP server ([mcp.md](mcp.md)) is wrapped as untrusted. Open items are in [../product/backlog.md](../product/backlog.md).
+
+## Decisions and open questions
+
+- **Confirmed** ([0017](../decisions/0017-bearer-api-tokens.md)): bearer tokens with explicit scopes, hashed at rest, one community per token.
+- **Confirmed** ([0018](../decisions/0018-approvals-replay-recorded-requests.md)): an approval replays the recorded request once, as the approver.
+- **Confirmed** (founder, 2026-10-19): agents can never archive, restore, delete, or transfer a community, not even through an approval request.
+- **Open question:** a second factor for approvals, once two factor authentication exists ([backlog](../product/backlog.md)).

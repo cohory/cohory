@@ -21,13 +21,13 @@ The usual rules invert here. Speed beats polish. No tests, no abstractions, no p
 
 ## Cohory design direction
 
-Check every visual variant against the project's direction. If `docs/architecture/design-system.md` or the `packages/ui` theme exists, it overrides this list.
+Check every visual variant against the project's direction. `docs/brand/design-tokens.md`, `docs/brand/visual-identity.md`, and the `packages/ui` theme override this list.
 
 - Skool's simplicity, Linear's polish, Notion's minimalism.
 - White and light-gray surfaces (`#F8FAFC` background, `#FFFFFF` cards), subtle borders (`#E5E7EB`) instead of heavy shadows.
 - One primary accent (`#2563EB`). Primary text `#111827`, secondary `#64748B`.
 - Rounded cards (12px radius), generous spacing on a 4px and 8px scale.
-- Inter or Geist type, Lucide icons, shadcn/ui and Radix primitives.
+- Inter type, Lucide icons, shadcn/ui and Radix primitives.
 - Every screen has designed empty, loading, and error states. Keyboard focus is visible. Contrast meets WCAG AA.
 
 ## Reply

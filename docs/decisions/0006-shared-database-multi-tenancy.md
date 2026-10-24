@@ -2,7 +2,7 @@
 
 Store all communities in one PostgreSQL schema, scope every tenant table by `community_id`, enforce it in a repository layer, and add row level security as defense in depth.
 
-- ADR status: Proposed
+- ADR status: Accepted (founder, 2026-10-25)
 - Date: 2026-10-17
 - Deciders: architecture docs wave
 - Related: [../architecture/multi-tenancy.md](../architecture/multi-tenancy.md)

@@ -39,7 +39,7 @@ When a new agent or session adds to an existing log, its first row has phase `st
 
 ## Where it lives
 
-Default: `.agents/logs/<task-slug>.tsv`, kept out of git. Commit it (for example under `docs/decisions/`) only when the work is large enough that a reviewer needs the trail to trust the result, such as a migration or a big refactor.
+Default: `.agents/logs/<task-slug>.tsv`, kept out of git. Commit it only when the work is large enough that a reviewer needs the trail to trust the result, such as a migration or a big refactor. Attach it to the PR or keep it next to the plan, not under `docs/decisions/`, which holds decision records only.
 
 ## Rules
 

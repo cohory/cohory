@@ -58,7 +58,9 @@ Run these from the repository with the production environment loaded (`pnpm bill
 | `pnpm billing void <communityId> <invoiceId>` | Void the invoice in Stripe and in Cohory |
 | `pnpm billing replay-webhook <eventId>` | Queue one stored Stripe webhook event again (see the [operator guide](operator-guide.md#payment-webhooks-that-did-not-process)) |
 
-Ids are the Cohory ids shown in the `platform_invoices` table and in the log lines. Voiding waives the fees on that invoice: its ledger entries stay attached and are never billed again. To bill a corrected amount after voiding, record an `adjustment` entry in the ledger; it is picked up by the next monthly run.
+Ids are the Cohory ids shown in the `platform_invoices` table and in the log lines. Voiding waives the fees on that invoice: its ledger entries stay attached and are never billed again. To bill a corrected amount after voiding, record an `adjustment` entry in the ledger; it is picked up by the next monthly run. A run that stops halfway (for example a Stripe outage after the Cohory rows were written) leaves a Preparing invoice that the next `invoice` or `reconcile` run resumes with the same idempotency keys, so repeating a command never creates a second Stripe invoice.
+
+Not available: credit notes and partial voids, invoice reminders sent by Cohory (turn on Stripe's), tax on the platform fee, and an operator screen. The commands above are the operator surface.
 
 ## Billing checks
 
@@ -71,10 +73,10 @@ Ids are the Cohory ids shown in the `platform_invoices` table and in the log lin
 
 Checks resolve themselves when the next daily run no longer finds the difference.
 
-## Open questions
+## Decisions and open questions
 
 Resolved questions are in [../product/decisions-log.md](../product/decisions-log.md) and open items in [../product/backlog.md](../product/backlog.md).
 
-- **Decided** (founder, 2026-10-19): the minimum is 5 USD or a fixed equivalent, and smaller balances carry forward with no limit.
-- **Decided** (founder, 2026-10-19): no creator attestation of revenue on BYO providers. Signed provider data and the daily reconciliation are enough.
-- **Pre launch accounting task** (founder, 2026-10-19): tax on platform fee invoices is deferred until the Cloud Edition has revenue. Before Cloud revenue, an accountant decides whether the fee carries VAT or sales tax by creator location, and Cohory registers where needed (human gate). Until then invoices carry no tax.
+- **Confirmed** (founder, 2026-10-19): the minimum is 5 USD or a fixed equivalent, and smaller balances carry forward with no limit.
+- **Confirmed** (founder, 2026-10-19): no creator attestation of revenue on BYO providers. Signed provider data and the daily reconciliation are enough.
+- **Open question** (founder, 2026-10-19, deferred until the Cloud Edition has revenue): whether platform fee invoices carry VAT or sales tax by creator location. An accountant decides, and Cohory registers where needed (human gate). Until then invoices carry no tax.

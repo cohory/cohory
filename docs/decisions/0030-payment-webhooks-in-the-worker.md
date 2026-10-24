@@ -5,7 +5,7 @@ The webhook request only verifies and stores a payment event and queues a job. T
 - ADR status: Accepted
 - Date: 2026-10-22
 - Deciders: coordinator as product owner under the founder's mandate (founder decision, 2026-10-22)
-- Related: [0007](0007-stripe-connect-direct-charges.md), [0028](0028-stripe-disputes.md), [../architecture/payments.md](../architecture/payments.md) (sections 4.3, 13.3, 13.6), AGENTS.md sections 4 and 7
+- Related: [0007](0007-stripe-connect-direct-charges.md), [0028](0028-stripe-disputes.md), [../architecture/payments.md](../architecture/payments.md) (sections 4.3, 12.3, 12.6), AGENTS.md sections 4 and 7
 
 ## Context
 

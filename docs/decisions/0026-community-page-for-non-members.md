@@ -2,9 +2,9 @@
 
 People who are not members see a join hero and a navbar that starts with About; members keep exactly four tabs. A signed out visitor who presses Join is sent to sign up and the join finishes on its own afterwards.
 
-- ADR status: Draft
+- ADR status: Accepted (founder, 2026-10-25) (one join button and the About section contents superseded by [0036](0036-about-page-that-sells.md))
 - Date: 2026-10-20
-- Deciders: Step 17c unit X1 (proposed), founder to confirm
+- Deciders: Step 17c unit X1 (proposed), founder (accepted 2026-10-25)
 - Related: [../product/information-architecture.md](../product/information-architecture.md), [../product/user-journeys.md](../product/user-journeys.md), [../architecture/authorization.md](../architecture/authorization.md), [0025](0025-reviews-module-boundary.md)
 
 ## Context

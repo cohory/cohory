@@ -2,7 +2,7 @@
 
 The public, versioned file format that Cohory uses to export a whole community and import it into another instance (REQ-MIG-001, REQ-MIG-002, REQ-CRS-007).
 
-This page describes format version **1.6.0**, which is built: the owner exports it from Manage, Migration, or with `pnpm migration` (`apps/worker/src/migration-cli.ts`), and imports it the same way. Other tools may read and write the format. Linking existing Stripe subscriptions ([payments.md](payments.md) section 13.9) and third party importers (Skool, Circle) are not part of this format version.
+This page describes format version **1.6.0**, which is built: the owner exports it from Manage, Migration, or with `pnpm migration` (`apps/worker/src/migration-cli.ts`), and imports it the same way. Other tools may read and write the format. Linking existing Stripe subscriptions ([payments.md](payments.md) section 12.9) and third party importers (Skool, Circle) are not part of this format version.
 
 ## 1. Versioning
 
@@ -161,7 +161,7 @@ Reports on reviews are not exported, like content reports. The reviewer status (
 | `subscriptions.jsonl` | `id`, `userId`, `planId` (nullable), `externalSubscriptionId`, `externalCustomerId`, `providerStatus`, `accessState` (`none`, `granted`, `grace`, `revoked`), `interval` (nullable), `currentPeriodEnd` (nullable), `cancelAtPeriodEnd`, `endedAt` (nullable), `origin` |
 | `comped_memberships.jsonl` | `id`, `userId`, `grantedBy`, `note`, `expiresAt`, `endedAt`, `endReason`, `endedBy` (nullable), `createdAt` |
 
-The payment files are a summary for moving paying members, not a financial record. The Stripe ids let the creator, and the subscription link step ([payments.md](payments.md) section 13.9), find the same customers and subscriptions in the creator's own Stripe account.
+The payment files are a summary for moving paying members, not a financial record. The Stripe ids let the creator, and the subscription link step ([payments.md](payments.md) section 12.9), find the same customers and subscriptions in the creator's own Stripe account.
 
 ### 4.7 Uploads
 
@@ -177,7 +177,7 @@ The importer in `@cohory/migration` follows these rules. Another implementation 
 4. **One owner.** The person importing stays the owner of the target community. The archive owner is linked as owner when it is the same email, otherwise imported as an admin.
 5. **Dependency order.** Users, community settings, gallery, memberships, categories, posts, post images, comments, reactions, courses, modules, lessons, progress, events, occurrences, RSVPs, ledger, stats, comped access, invite links, join requests, reviews, review replies, audit log, uploads. Rows are written in batches of 500, each batch in one transaction with its id mapping rows.
 6. **Content is data.** Post and comment bodies go through the same parser and renderer as new posts, so only allowlisted nodes, marks, links, and embeds survive. Mentions and image keys are rewritten to the new ids. HTML in the archive is never trusted because the archive contains none. Lesson Markdown is rendered by the classroom pipeline when read. Nothing in an archive is executed or followed as an instruction.
-7. **Entitlements.** Comped access is restored as is. A subscription with access `granted` or `grace` becomes comped access with a note naming the Stripe subscription id, so the member keeps access without paying twice. It has no end date unless the subscription was set to cancel at the period end. Linking the real Stripe subscription replaces it ([payments.md](payments.md) section 13.9). Plans are not recreated, because a plan needs a connected payment account on the new instance; the import summary lists them.
+7. **Entitlements.** Comped access is restored as is. A subscription with access `granted` or `grace` becomes comped access with a note naming the Stripe subscription id, so the member keeps access without paying twice. It has no end date unless the subscription was set to cancel at the period end. Linking the real Stripe subscription replaces it ([payments.md](payments.md) section 12.9). Plans are not recreated, because a plan needs a connected payment account on the new instance; the import summary lists them.
 8. **Invite links.** Tokens are kept so shared links keep working after a move. A token that already exists on the target instance gets a new token, and the summary says so.
 9. **Emails.** The owner confirms the import with `emailChoice`: `now` emails people when the import finishes, `later` waits until the owner sends the emails from Import history, and `never` sends none (`notifyNewUsers: true` is the older spelling of `now`). Only people who were active members at the source get an email. A new account gets a direct link to choose a password (valid 7 days; a new link deletes the earlier ones) and a placeholder gets its invite link. The owner's optional note (up to 500 characters, links and addresses removed) is added as plain text. Each person is emailed at most once per import, recorded in the id map as `moved_email` or `moved_email_suppressed`; an address on the suppression list counts as not sent (`emailsNotSent`). The owner can resend one person's email from People. On Cloud one import emails at most as many people as the plan allows members (`emailsOverLimit` counts the rest), and a community sends at most 1,000 import emails per UTC day (`emailsByDay`); the rest go out the next day.
 10. **Report, do not guess.** Anything skipped (an invalid body, a missing upload, a reference to a row that is not in the archive) is listed in the job summary with its entity, archive id, and reason.
@@ -199,7 +199,7 @@ The importer in `@cohory/migration` follows these rules. Another implementation 
 | Limit | Default | Setting |
 |-------|---------|---------|
 | Archive size | 512 MiB | `MIGRATION_ARCHIVE_MAX_BYTES` |
-| One upload inside the archive | `STORAGE_MAX_UPLOAD_BYTES` (25 MiB) | same as uploads |
+| One upload inside the archive | `STORAGE_MAX_UPLOAD_BYTES` (25 MiB when unset; `.env.example` sets 10 MB) | same as uploads |
 
 Stored files do not stay forever. An export is deleted 30 days after it finishes (the owner can delete it sooner), and an uploaded archive or platform preview that is not confirmed is deleted after 7 days, together with its preview. A finished import deletes its upload at once. The worker job `migration.files-expiry` does this once a day. When an import succeeds, the worker job `migration.import-finished` emails the owner once with links to the import report and to Manage, Migration, and says whether the import emails went out. It also sends emails chosen for later, tells the owner when an import stops after its last retry, and emails the owner a download link when an export is ready or a note when it stops. A members spreadsheet import keeps only the counts of its preview once it succeeds, fails, or expires, so no emails stay in the history. The sweep also marks a job failed when it has been running for more than 6 hours, and a job whose file was deleted cannot be tried again.
 
@@ -218,7 +218,7 @@ The commands are described in [../operations/offboarding.md](../operations/offbo
 ## Decisions and open questions
 
 - **Confirmed** (gate): zip with manifest, JSON lines per entity, uploads folder, semver from 1.0.0, public format.
-- **Recommendation:** subscriptions become comped access until the Stripe link step ([payments.md](payments.md) section 13.9) replaces them.
+- **Recommendation:** subscriptions become comped access until the Stripe link step ([payments.md](payments.md) section 12.9) replaces them.
 - **Recommendation:** invite link tokens are exported so shared links keep working after a move.
 - **Recommendation:** content reports, payments history, and credentials are excluded (section 6).
 - **Open question:** whether a later minor version should carry password hashes for same software moves, so members can keep their passwords.

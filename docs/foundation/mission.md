@@ -77,7 +77,7 @@ These are things we will not do this year, and in several cases ever. Each has a
 | Edition | First-year state | What it costs the creator |
 |---|---|---|
 | Community Edition | Public release at the end of Phase 4. Earlier builds available to early self-hosters from Phase 1. | Nothing from us. Server costs and payment processing fees are the creator's. 0% platform fee. |
-| Cloud Edition | Private beta during Phase 3, public at the end of Phase 4. | No monthly subscription. 2% platform fee on successful transactions. Processing fees separate. Fair-use limits apply (see [business-model.md](business-model.md)). |
+| Cloud Edition | Private beta during Phase 3, public at the end of Phase 4. As of 0.12.0, sign up is open and community creation is limited to a small group of creators ([0050](../decisions/0050-restricted-cloud-community-creation.md)). | No monthly subscription. 2% platform fee on successful transactions. Processing fees separate. Fair-use limits apply (see [business-model.md](business-model.md)). |
 
 **Recommendation.** The Cloud Edition does not process live payments until the fee base, rounding, taxes, refunds, and disputes in [business-model.md](business-model.md) have been reviewed by legal and accounting advisors.
 
@@ -92,7 +92,7 @@ Open-source contributors are part of the mission, not an afterthought. In the fi
 
 In return, contributions must:
 
-- Keep the four member tabs and five Manage sections intact.
+- Keep the four member tabs and the Manage sections intact.
 - Include tests for any change touching money, authentication, permissions, or subscriptions.
 - Pass accessibility and performance checks in CI.
 - Avoid adding a hosted dependency to the Community Edition.
@@ -125,4 +125,4 @@ In return, contributions must:
 | Recommendation | One currency per community in MVP. |
 | Open question | Which OAuth providers ship first after MVP (Google only, or Google plus GitHub)? |
 | Confirmed | No contributor license agreement; contributions use a DCO sign-off (founder decision, 2026-10-19). |
-| Open question | Is a creator allowed to run more than one community under one account at MVP? (Proposed default: yes, each with its own payment connection.) |
+| Confirmed (built) | A creator can run more than one community under one account, each with its own payment connection, within the Cloud fair use limits ([feature-inventory.md](../product/feature-inventory.md)). |

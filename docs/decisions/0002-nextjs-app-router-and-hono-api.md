@@ -2,7 +2,7 @@
 
 Render the UI with Next.js App Router server components and serve the HTTP API with Hono and Zod inside the same Next.js app, both calling the same domain services.
 
-- ADR status: Proposed
+- ADR status: Accepted (founder, 2026-10-25)
 - Date: 2026-10-17
 - Deciders: founder (Next.js is Confirmed as initial preference), architecture docs wave (Hono)
 - Related: [../architecture/overview.md](../architecture/overview.md) section 6, [../architecture/agent-integrations.md](../architecture/agent-integrations.md) sections 2 and 3

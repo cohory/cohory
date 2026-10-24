@@ -2,7 +2,7 @@
 
 The About page keeps the join action in reach after the hero (a bar on phones, a card on wide screens, a closing block at the end) and gains three optional blocks that every community gets without writing free text: What you get, About the host, and Questions. Owners edit all of the page text in one form in Manage, Appearance.
 
-- ADR status: Accepted
+- ADR status: Accepted (private community sharing superseded by [0041](0041-private-community-link-previews.md))
 - Date: 2026-10-22
 - Deciders: founder (approved every item of About page review 11, including the sticky join bar and card, the closing call to action, and What you get), coordinator as product owner for the details
 - Supersedes: the parts of [0026](0026-community-page-for-non-members.md) listed under Decision

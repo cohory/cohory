@@ -2,7 +2,7 @@
 
 Store post and comment bodies as a constrained JSON document, with a server-rendered sanitized HTML cache and a plain text column next to it.
 
-- ADR status: Proposed
+- ADR status: Accepted (founder, 2026-10-25)
 - Date: 2026-10-18
 - Deciders: engineering (posts module, 0.1.0)
 - Related: [../architecture/data-model.md](../architecture/data-model.md) sections 1 and 5, [../product/mvp-scope.md](../product/mvp-scope.md) section 2.4, [../architecture/agent-integrations.md](../architecture/agent-integrations.md) section 9, [0003](0003-drizzle-orm.md), [0011](0011-mcp-first-class-api-surface.md)

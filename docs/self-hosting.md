@@ -2,7 +2,7 @@
 
 How to run Cohory on your own server with Docker Compose. This page is the index for self-hosting and the reference for services, data, backups, upgrades, limits, and the reverse proxy.
 
-No image is published yet, so Compose builds the image from this repository. The design behind this setup is in [architecture/overview.md](architecture/overview.md) section 12 and [ADR 0005](decisions/0005-postgres-job-queue.md).
+Both Compose files run the image named by `COHORY_IMAGE`, built from this repository in development and pulled from `ghcr.io/cohory/cohory` in production by default ([operations/install.md](operations/install.md)). The design behind this setup is in [architecture/overview.md](architecture/overview.md) section 12 and [ADR 0005](decisions/0005-postgres-job-queue.md).
 
 ## Guides
 
@@ -27,7 +27,7 @@ One image (`cohory:local` by default) is started with three commands, so web, wo
 | `worker` | `node apps/worker/dist/index.js` | Background jobs on pg-boss. Starts after migrations succeed. |
 | `redis` | Redis 7, profile `redis` | Optional. Nothing uses it yet. |
 | `mailpit` | Mailpit, profile `mail` | Optional local inbox for testing email. |
-| `caddy` | Caddy 2.10.2, production overlay only | Reverse proxy with automatic HTTPS. See [Reverse proxy and TLS](#reverse-proxy-and-tls). |
+| `caddy` | Caddy 2.11, production overlay only | Reverse proxy with automatic HTTPS. See [Reverse proxy and TLS](#reverse-proxy-and-tls). |
 
 No outside account or hosted service is needed. Containers run as a non-root user (uid 1001).
 
@@ -37,7 +37,7 @@ The Compose file publishes PostgreSQL on `127.0.0.1:5433` (host side) so local t
 
 ## Cleaning up
 
-Repeated builds leave dangling images and build cache behind. Run `scripts/docker-clean.sh` to stop the Cohory stack (including its volumes), prune dangling images and the build cache, and remove volumes no container uses. It never touches other projects. Note that it deletes the local database volume. When you start throwaway containers by hand, use `docker run --rm` and `docker rm -fv` so no anonymous volume is left behind.
+Repeated builds leave dangling images and build cache behind. Run `scripts/docker-clean.sh` to stop the Cohory stack (including its volumes), prune dangling images and the build cache, and remove volumes no container uses. It never touches other projects. It deletes the local database volume. When you start throwaway containers by hand, use `docker run --rm` and `docker rm -fv` so no anonymous volume is left behind.
 
 ## Requirements
 
@@ -48,7 +48,7 @@ Repeated builds leave dangling images and build cache behind. Run `scripts/docke
 ## First start
 
 ```sh
-git clone <repository-url> cohory
+git clone https://github.com/cohory/cohory.git
 cd cohory
 cp .env.example .env
 ```
@@ -187,7 +187,7 @@ How it was tested (0.2.0, on a laptop with Docker Desktop): seed a stack, create
 
 Compose runs `migrations` first. If it fails, `web` and `worker` do not start; read `docker compose logs migrations`, fix the cause, and run `docker compose up -d` again. Release notes will list any manual step.
 
-Once images are published (the `Docker` workflow in `.github/workflows/docker.yml` pushes them to GitHub Container Registry when a release tag such as `v0.1.0` is pushed, with the tags listed in [open-source/release-strategy.md](open-source/release-strategy.md)), upgrades will become: set `COHORY_IMAGE` and `COHORY_VERSION` in `.env`, then `docker compose pull` and `docker compose up -d`. Pin an exact version or a minor tag, never `latest` or `edge`.
+With a pulled image (`COHORY_IMAGE=ghcr.io/cohory/cohory` in `.env`), step 3 is instead: set `COHORY_VERSION` to the new release, then `docker compose pull` and `docker compose up -d`. Pin an exact version or a minor tag, never `latest` or `edge`. The `Docker` workflow pushes the image to `ghcr.io/cohory/cohory` on every release tag. The tags are listed in [open-source/release-strategy.md](open-source/release-strategy.md).
 
 Migrations are forward only, so an upgrade never needs a down step, and going back to an older version means restoring the backup from step 1.
 
@@ -388,7 +388,7 @@ What `docker-compose.prod.yml` changes:
 
 | Area | Setting |
 |---|---|
-| TLS | Caddy 2.10.2 on ports 80 and 443 (`HTTP_BIND`, `HTTPS_BIND`) gets and renews a certificate for `DOMAIN` from Let's Encrypt, redirects HTTP to HTTPS, and keeps certificates in the `caddy_data` volume. The site lives in `docker/Caddyfile`. |
+| TLS | Caddy 2.11 on ports 80 and 443 (`HTTP_BIND`, `HTTPS_BIND`) gets and renews a certificate for `DOMAIN` from Let's Encrypt, redirects HTTP to HTTPS, and keeps certificates in the `caddy_data` volume. The site lives in `docker/Caddyfile`. |
 | Public URL | `APP_URL`, `BETTER_AUTH_URL`, and `NEXT_PUBLIC_APP_URL` default to `https://$DOMAIN`. |
 | Image | `web`, `worker`, and `migrations` run `${COHORY_IMAGE}:${COHORY_VERSION}`. Compose refuses to start without `COHORY_VERSION`. |
 | Network | `web` and `postgres` publish no host ports; only Caddy is reachable. |
@@ -404,3 +404,8 @@ The overlay needs Docker Compose 2.24 or newer (it uses `!reset` to remove ports
 ## Resource expectations
 
 The reference size is 2 vCPU and 4 GB of RAM for one community (REQ-NFR-HOST-001). The app image is about 330 MB. Database size grows with members, posts, and job history; uploads grow with what members attach.
+
+## Decisions and open questions
+
+- **Recommendation** (applied since 0.1.0): row level security is on and forced on every community table, so web and worker run as a database role without `BYPASSRLS` ([architecture/multi-tenancy.md](architecture/multi-tenancy.md) section 3.4).
+- **Recommendation:** Caddy as the bundled reverse proxy, and one `web` instance, because rate limit counters live in the memory of that process ([operations/install.md](operations/install.md)).

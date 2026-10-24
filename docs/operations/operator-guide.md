@@ -35,7 +35,7 @@ When you switch an existing server to `smtp`, accounts that were never confirmed
 docker compose exec worker node apps/worker/dist/accounts-cli.js mark-verified --created-before 2026-10-22T09:00:00Z
 ```
 
-This changes nothing. It prints the number of unconfirmed accounts created before that time and the earliest and latest creation time among them. If that looks right, run the same command with `--yes` at the end. It marks those accounts as confirmed, writes an entry to each account's audit log, and prints the same numbers. (`pnpm accounts mark-verified --created-before … [--yes]` on a source checkout.) Accounts created after that time still confirm their email themselves.
+This changes nothing. It prints the number of unconfirmed accounts created before that time and the earliest and latest creation time among them. If that looks right, run the same command with `--yes` at the end. It marks those accounts as confirmed, writes an entry to each account's audit log, and prints the same numbers. (`pnpm accounts mark-verified --created-before <ISO time> [--yes]` on a source checkout.) Accounts created after that time still confirm their email themselves.
 
 ## Health and logs
 
@@ -85,7 +85,7 @@ Keep `.env` with the backups but in a separate place: a dump without the matchin
 1. Read the release notes for breaking changes and new variables.
 2. Take a backup: `scripts/backup.sh /srv/cohory-backups`.
 3. Set `COHORY_VERSION` in `.env` to the new release, and `git checkout v<version>` so the Compose files and scripts match.
-4. Build or pull: `docker compose build web` (or `docker compose pull` once images are published).
+4. Pull or build: `docker compose pull` with the default `COHORY_IMAGE=ghcr.io/cohory/cohory`, or `docker compose build web` when `COHORY_IMAGE=cohory` and you build on the server ([install guide](install.md) section 3).
 5. Start: `docker compose up -d`. `migrations` runs first; `web` and `worker` start only if it exits with code 0.
 6. Check `docker compose ps` and the health endpoint.
 
@@ -123,5 +123,5 @@ The overlay limits memory to the REQ-NFR-HOST-002 budget: web 1 GB, worker 512 M
 ## Decisions and open questions
 
 - **Recommendation:** run every command from the repository folder with `COMPOSE_FILE` in `.env`, so scripts and plain `docker compose` see the same stack.
-- **Recommendation:** stored secrets carry the id of the key that sealed them (`v2.<key id>.…`), so the worker knows which rows still use an old key. Values written before 0.9 (`v1`) are tried with every key and re-encrypted by the next sweep.
+- **Recommendation:** stored secrets carry the id of the key that sealed them (`v2.<key id>.<ciphertext>`), so the worker knows which rows still use an old key. Values written before 0.9 (`v1`) are tried with every key and re-encrypted by the next sweep.
 - **Recommendation:** the worker heartbeat is a file, not an HTTP port, so the worker opens no listener.

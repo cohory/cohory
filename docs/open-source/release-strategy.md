@@ -2,7 +2,7 @@
 
 How Cohory will version, release, and support the Community Edition, and how security fixes ship.
 
-The repository is at version 0.12.0, but no version has been tagged and no image has been published yet. Everything here is a **Recommendation** unless marked otherwise, and takes effect with the first tagged release.
+The repository is at version 0.12.0, the first tagged release (`v0.12.0`). The `Docker` workflow pushes its image to `ghcr.io/cohory/cohory`, a public package that anyone can pull. Everything here is a **Recommendation** unless marked otherwise.
 
 ## What gets released
 
@@ -39,7 +39,7 @@ Internal package APIs inside the monorepo are not part of the contract.
 
 ## Release cadence
 
-- Minor releases about every four weeks once code exists, when there is something worth releasing. No release just to keep a schedule.
+- Minor releases about every four weeks, when there is something worth releasing. No release just to keep a schedule.
 - Patch releases as needed for bug fixes.
 - Security releases outside the cadence (see below).
 - Release candidates (`0.x.0-rc.1`) for any minor that contains migrations or payment changes, available for at least one week.

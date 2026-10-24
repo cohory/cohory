@@ -9,7 +9,7 @@ The open source alternative to Skool. Run your community, courses, events, and p
 
 Cohory gives a creator one calm place for a community, courses, events, and paid memberships. Members see four tabs (Community, Classroom, Calendar, Members), and the creator runs everything from Manage. Members pay through the creator's own Stripe account, so the subscriptions stay with the creator, and the whole community exports as an archive that another Cohory server imports. You can run it yourself for free, or use the hosted Cloud Edition, which takes 2% of each successful payment and no monthly fee.
 
-> **Version 0.12.0.** [CHANGELOG.md](CHANGELOG.md) lists what each release contains, and the [feature inventory](docs/product/feature-inventory.md) marks every feature as Built, Partly built, or planned. No image has been published yet, so the quickstart builds the image from source.
+> **Version 0.12.0.** [CHANGELOG.md](CHANGELOG.md) lists what each release contains, and the [feature inventory](docs/product/feature-inventory.md) marks every feature as Built, Partly built, or planned. The quickstart builds the image from source. The [install guide](docs/operations/install.md) pulls the published image `ghcr.io/cohory/cohory` for a public server.
 
 ## Quickstart with Docker (about 5 minutes)
 

@@ -129,7 +129,7 @@ Known limits: `text-muted` is close to the threshold on `bg` (4.55) and fails on
 
 Weights: `--font-weight-normal` 400, `--font-weight-medium` 500, `--font-weight-semibold` 600. Inputs are 16px on mobile so iOS does not zoom on focus.
 
-**Image ratios:** the community cover is shown at a fixed 4:1 crop (`aspect-[4/1]`, uploaded at 1600 × 400 or larger) with `object-cover`, on the About hero at every screen size, on "Your communities" cards, and in the Manage, Appearance preview. It is also the Open Graph and Twitter card image of a public community, where link previews may crop the sides. Member pages show no cover.
+**Image ratios:** the community cover is shown at a fixed 4:1 crop (`aspect-[4/1]`, uploaded at 1600 × 400 or larger) with `object-cover`, on the About hero from 768px (3:1 below that, decisions log J6), on "Your communities" cards, and in the Manage, Appearance preview. It is also the Open Graph and Twitter card image of a public community, where link previews may crop the sides. Member pages show no cover.
 
 **Breakpoints:** `--breakpoint-sm` 40rem (640px), `--breakpoint-md` 48rem (768px, bottom nav below this), `--breakpoint-lg` 64rem (1024px, right rail appears), `--breakpoint-xl` 80rem (1280px).
 
@@ -199,7 +199,7 @@ This yields utilities such as `bg-bg`, `bg-surface`, `text-text-muted`, `border-
 
 ### shadcn/ui mapping
 
-**Recommendation:** we do not register shadcn's variable names as a second vocabulary. When a shadcn component is added to `packages/ui/primitives`, its classes are rewritten once using this table, and a lint check flags the left column in our code.
+**Recommendation:** we do not register shadcn's variable names as a second vocabulary. When a shadcn component is added to `packages/ui/src/primitives`, its classes are rewritten once using this table, and a lint check flags the left column in our code.
 
 | shadcn/ui | Cohory |
 | --- | --- |
@@ -430,7 +430,7 @@ The sketch changed in 0.1.0. The Members tab spec in the information architectur
 - **Anatomy:** date block (weekday, day, month), title, start and end time with time zone, recurrence marker, "Online" or "In person", going count, RSVP buttons, overflow menu.
 - **States:** default, hover, focus, loading (skeleton), going (pressed "Going" with "Can't go" to change), canceled (muted title with strike, "Canceled" label, no RSVP). Live and past states, the join button, and the recording link live on the event details screen.
 - **Behavior:** times render in the time zone the caller passes, with the zone abbreviation shown; "Going" is the single primary action until the viewer is going; the "Join call" button on event details appears 15 minutes before start.
-- **Accessibility:** date and time in a `time` element with ISO `datetime`; status written in text; RSVP buttons are toggle buttons with `aria-pressed` in a labelled group.
+- **Accessibility:** date and time in a `time` element with ISO `datetime`; status written in text; RSVP buttons are toggle buttons with `aria-pressed` in a labeled group.
 - **Responsive:** list row in Calendar, compact row in the feed rail.
 
 ```ts
@@ -470,7 +470,7 @@ interface PricingCardProps {
 - **Purpose:** let a creator choose how they get paid in Manage, Payments.
 - **Anatomy:** option list (Stripe Connect; Bring your own provider marked "Planned"), each with a plain description, fee line ("Platform fee: 2%. Processing fees charged by the provider."), and a status (Not connected, Connected, Needs attention).
 - **States:** default, focus, connecting (pending button), connected (success text with account name), needs attention (warning with the exact fix), error, disabled (planned options and self-hosted editions show the reason).
-- **Behavior:** **Confirmed:** Stripe Connect is the MVP option; BYO provider is post-MVP and renders as disabled with "Planned". Self-hosted Community Edition shows "No platform fee" instead of the 2% line. Disconnect requires a confirmation that states what stops and what stays (see [voice and tone](./voice-and-tone.md)).
+- **Behavior:** **Confirmed:** Stripe Connect is the MVP option; BYO provider was post-MVP and, as built since 0.5.0, the selector offers Polar only when the operator turns it on (`COHORY_ENABLE_POLAR`, off by default since [ADR 0027](../decisions/0027-safe-exit-and-2-percent-fee.md)). Self-hosted Community Edition shows "No platform fee" instead of the 2% line. Disconnect requires a confirmation that states what stops and what stays (see [voice and tone](./voice-and-tone.md)).
 - **Accessibility:** RadioGroup with descriptions linked by `aria-describedby`; status changes announced.
 - **Responsive:** single column at all sizes.
 
@@ -478,7 +478,7 @@ interface PricingCardProps {
 interface PaymentProviderSelectorProps {
   edition: "community" | "cloud";
   options: Array<{ id: "stripe_connect" | "byo"; availability: "available" | "planned"; status: "not_connected" | "connected" | "needs_attention"; accountLabel?: string; attentionMessage?: string }>;
-  platformFeeBasisPoints: number; // 100 on cloud, 0 on community
+  platformFeeBasisPoints: number; // 200 on cloud, 0 on community
   onConnect(id: "stripe_connect" | "byo"): Promise<void>;
   onDisconnect(id: "stripe_connect" | "byo"): Promise<void>;
 }

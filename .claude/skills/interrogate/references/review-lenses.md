@@ -19,7 +19,7 @@ Read beyond the diff. Look for guards that mask a broken invariant, retries that
 ## Structure
 
 - Validation at boundaries, not scattered through business logic.
-- Logic in the right package. Feature logic does not leak into `packages/kernel`, `packages/infra`, or `packages/ui`.
+- Logic in the right package. Feature logic does not leak into `packages/db`, `packages/infra`, or `packages/ui`.
 - Data model fits the access pattern. Indexes exist for the queries.
 - Bolted on versus integrated: would the code look like this if the requirement had been known from the start?
 - Legacy dual paths: a new API added while the old one stays alive with no external consumer.
@@ -58,7 +58,7 @@ Be ambitious about structure. Look for restructurings that keep behavior and mak
 3. Prefer cleaning the design over accepting working code, when the cleaner version removes moving parts.
 4. Prefer boring code over magic. Flag thin wrappers and pass-through helpers.
 5. Question unnecessary optionality, `any`, `unknown` left unparsed, and cast-heavy code.
-6. Reuse existing helpers and components (`packages/ui`, `packages/kernel`) instead of writing one-offs.
+6. Reuse existing helpers and components (`packages/ui`, `packages/db`, `packages/content`) instead of writing one-offs.
 7. Flag needless sequential awaits and non-atomic multi-row updates.
 
 Presumptive blockers unless justified: a missed simplification that would delete a lot of complexity, a file pushed past the size threshold, ad hoc branching in a shared flow, a duplicated helper, logic in the wrong package.

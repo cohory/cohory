@@ -62,7 +62,7 @@ Other issues are rated with CVSS as a guide.
 In scope:
 
 - Code in this repository, including the Docker Compose setup and default configuration
-- The Cloud Edition, once it exists, within the rules below
+- The Cloud Edition at cohory.org, within the rules below
 
 Out of scope:
 
@@ -93,5 +93,5 @@ If you are unsure whether something is allowed, ask first through the private re
 
 - **Recommendation:** GitHub private vulnerability reporting as the main channel, response targets above, supported version policy.
 - **Confirmed** (decision [0039](docs/decisions/0039-legal-pages-and-data-rights.md)): every server serves `/.well-known/security.txt` from `SECURITY_CONTACT`, falling back to `CONTACT_EMAIL`.
-- **Open question:** the project's security contact email and whether to publish a PGP key.
-- **Open question:** whether to run a paid bug bounty after the Cloud Edition launches.
+- **Open question:** whether to publish a PGP key for the security contact.
+- **Open question:** whether to run a paid bug bounty once the Cloud Edition opens to the public ([0050](docs/decisions/0050-restricted-cloud-community-creation.md)).

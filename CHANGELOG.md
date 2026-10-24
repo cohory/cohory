@@ -4,6 +4,11 @@ All notable changes to Cohory are recorded here. The format follows [Keep a Chan
 
 ## [Unreleased]
 
+### Changed
+
+- The published Docker image `ghcr.io/cohory/cohory` is public. The production env example pulls it by default, and the install guide explains how to build on the server instead.
+- Custom domains per community moved from the MVP to a later phase, and every decision record up to 0052 is accepted.
+
 ## [0.12.0] - 2026-10-24
 
 ### Added

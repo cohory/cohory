@@ -5,7 +5,7 @@ When a member disputes a payment, Cohory records the dispute on the payment, tel
 - ADR status: Accepted
 - Date: 2026-10-22
 - Deciders: coordinator as product owner under the founder's mandate (founder decision, 2026-10-22)
-- Related: [0007](0007-stripe-connect-direct-charges.md), [0027](0027-safe-exit-and-2-percent-fee.md), [../architecture/payments.md](../architecture/payments.md) sections 6 and 13.5, [../foundation/business-model.md](../foundation/business-model.md) section 5
+- Related: [0007](0007-stripe-connect-direct-charges.md), [0027](0027-safe-exit-and-2-percent-fee.md), [../architecture/payments.md](../architecture/payments.md) sections 6 and 12.5, [../foundation/business-model.md](../foundation/business-model.md) section 5
 
 ## Context
 

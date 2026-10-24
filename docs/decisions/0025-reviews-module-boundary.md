@@ -2,9 +2,9 @@
 
 The reviews module owns its tables and reads subscription facts only through a Payments service function, learns about removals and bans from a membership trigger, and keeps review reports in its own table that the existing moderation screen lists.
 
-- ADR status: Draft
+- ADR status: Accepted (founder, 2026-10-25)
 - Date: 2026-10-20
-- Deciders: Step 17 unit V3 (proposed), founder to confirm
+- Deciders: Step 17 unit V3 (proposed), founder (accepted 2026-10-25)
 - Related: [0016](0016-database-triggers-append-domain-events.md), [0015](0015-migration-module-direct-table-access.md), [0014](0014-transactional-outbox.md), [../architecture/data-model.md](../architecture/data-model.md), [../architecture/authorization.md](../architecture/authorization.md)
 
 ## Context

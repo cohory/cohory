@@ -42,9 +42,9 @@ Docker publishes ports around `ufw`, which is why the Compose files publish only
 
 ```sh
 sudo mkdir -p /opt/cohory && sudo chown "$USER" /opt/cohory
-git clone <repository-url> /opt/cohory
+git clone https://github.com/cohory/cohory.git /opt/cohory
 cd /opt/cohory
-git checkout v0.12.0  # or stay on main if the tag has not been pushed yet
+git checkout v0.12.0
 cp .env.production.example .env
 chmod 600 .env
 ```
@@ -56,7 +56,7 @@ Fill in `.env`. Generate `BETTER_AUTH_SECRET` and `PAYMENTS_ENCRYPTION_KEY` with
 | `DOMAIN` | `community.example.com` |
 | `ACME_EMAIL` | An address Let's Encrypt can reach |
 | `COHORY_VERSION` | `0.12.0` |
-| `COHORY_IMAGE` | `cohory` to build here, or the published image name once there is one |
+| `COHORY_IMAGE` | `ghcr.io/cohory/cohory` (the default) to pull the published image, or `cohory` to build it on this server |
 | `BETTER_AUTH_SECRET` | A random value |
 | `ALLOW_INSECURE_HTTP` | Leave unset. Set `true` only when `APP_URL` is an `http://` address on a private network; anyone on that network can then read session cookies in transit. |
 | `POSTGRES_PASSWORD`, `POSTGRES_APP_PASSWORD` | Two different random values from `openssl rand -hex 32` (letters and digits only) |
@@ -71,15 +71,21 @@ echo 'COMPOSE_FILE=docker-compose.yml:docker-compose.prod.yml' >> .env
 
 Compose reads `COMPOSE_FILE` from `.env` in the project folder, so the rest of this guide uses plain `docker compose`.
 
-## 3. Build or pull the image
+## 3. Pull or build the image
 
-No image is published yet. Build it on the server (or build elsewhere and `docker load` it):
+The `Docker` workflow publishes `ghcr.io/cohory/cohory` on every release tag, and the package is public, so no token is needed. With the default `COHORY_IMAGE=ghcr.io/cohory/cohory`, fetch the release:
+
+```sh
+docker compose pull
+```
+
+With `COHORY_IMAGE=cohory`, build the image on the server instead (or build it elsewhere and `docker load` it):
 
 ```sh
 docker compose build web
 ```
 
-The build tags `cohory:0.12.0` from `COHORY_IMAGE` and `COHORY_VERSION`. Once releases are on a registry, set `COHORY_IMAGE` to it and run `docker compose pull` instead.
+Either way the image is tagged from `COHORY_IMAGE` and `COHORY_VERSION`, for example `ghcr.io/cohory/cohory:0.12.0` or `cohory:0.12.0`.
 
 ## 4. Start
 
@@ -134,7 +140,6 @@ The `migrations` service runs without the statement and idle timeouts, but waits
 | `required variable COHORY_VERSION is missing` (or `DOMAIN`, `ACME_EMAIL`) | The value is missing from `.env`. |
 | `migrations` exited with a non zero code | `docker compose logs migrations`. Usually a wrong `POSTGRES_PASSWORD` after the volume was created with another one. |
 | `migrations` logs `Invalid URL` for `DATABASE_URL` | A database password contains `/`, `+`, `=`, `@`, or `:`. Generate it with `openssl rand -hex 32`, run `docker compose down -v` (the volume was created with the old password), and start again. |
-| `git checkout v0.12.0` fails with `did not match any file(s)` | The release tag has not been pushed yet. Stay on `main` and keep `COHORY_VERSION` at the version in `package.json`. |
 | Caddy logs `challenge failed` | DNS does not point at this server yet, or ports 80 and 443 are blocked. |
 | Sign in fails with "Invalid origin" | `APP_URL` (or `DOMAIN`) does not match the address in the browser. |
 | No emails | Run `pnpm email:test you@example.com` from the checkout; it prints the error code and reason. The `email_log` table lists every send with its status and error code ([Email](../self-hosting.md#email)). |
@@ -146,4 +151,5 @@ The `migrations` service runs without the statement and idle timeouts, but waits
 
 - **Recommendation:** Ubuntu 24.04 LTS as the documented host, Caddy as the bundled proxy, backups to a local folder copied off the server.
 - **Assumption:** a fresh VPS reaches a working community in under 30 minutes with this guide; not yet timed on a real VPS.
-- **Open question:** the public registry and image name, which decide whether step 3 becomes `docker compose pull`.
+- **Assumption:** GitHub Container Registry (`ghcr.io/cohory/cohory`) stays the image registry ([release-strategy](../open-source/release-strategy.md)).
+- **Confirmed** (founder, 2026-10-25): the `ghcr.io/cohory/cohory` package is public, so `docker compose pull` works without a token.

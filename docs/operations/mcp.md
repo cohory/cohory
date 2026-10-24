@@ -283,3 +283,11 @@ Rules:
 Set `APP_URL` to the public `https` address of your server. The issuer, the `/mcp` resource, and the allowed `Origin` are derived from it, and assistants refuse metadata whose issuer does not match the address they used. Nothing else needs configuring; there is no outside service.
 
 Data lives in `oauth_clients` (public client metadata, not tied to a community), `oauth_grants`, `oauth_authorization_codes`, and `oauth_refresh_tokens` (row level security by community), and `api_tokens.oauth_grant_id`. The worker job `agents.oauth_clients_prune` runs daily at 03:55 UTC and deletes up to 500 unused clients per run, with the rule above; it logs only counts.
+
+## Decisions and open questions
+
+- **Confirmed** ([0019](../decisions/0019-mcp-dispatch-through-http-handlers.md)): every tool runs its REST operation through the same handler, checks, and limits.
+- **Confirmed** ([0020](../decisions/0020-oauth-authorization-server.md)): Cohory is its own OAuth 2.1 authorization server for MCP clients.
+- **Confirmed** (founder, 2026-10-19): custom redirect schemes are refused; native apps use a loopback redirect.
+- **Confirmed** (product decision, 2026-10-22): only owners and admins connect apps through OAuth; members paste an agent token.
+- **Open question:** Client ID Metadata Documents, which the `2026-07-28` revision prefers over dynamic registration.

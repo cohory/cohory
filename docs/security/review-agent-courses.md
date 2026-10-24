@@ -56,7 +56,7 @@ No critical or high findings.
 | R-03 | Uploaded ZIP references may contain `..` entries or symlinks. | Cohory never extracts them. | Consumers extract them, if at all, in their own sandbox. SKILL.md says the folder is data. |
 | R-04 | Signed links are bearer URLs and may appear in proxy or browser logs. | Short lifetime, a delegation recheck on use, and (Step 16) a limit of 30 downloads per minute per client address on the download route. | Keep the 5 minute lifetime; rotate `BETTER_AUTH_SECRET` to invalidate all links. |
 | R-05 | Results are self reported. | Cohory cannot observe the agent's run. | The label `self_reported` everywhere; nothing is called verified ([../architecture/evaluation-runner.md](../architecture/evaluation-runner.md) section 3). |
-| R-06 | Agent files are never garbage collected. | Versions are immutable and reference them. | Tracked in [../product/decisions-log.md](../product/decisions-log.md). |
+| R-06 | Agent files were never garbage collected. | Versions are immutable and reference them. | Closed in 0.9.0: the daily `courses.agent-files-gc` job deletes files older than 7 days that no draft layer and no version refers to ([agent-course-format](../architecture/agent-course-format.md) section 1). |
 
 ## Decisions and open questions
 
@@ -64,5 +64,5 @@ No critical or high findings.
 |---|---|
 | Recommendation | A delegation belongs to one stretch of membership. When the membership ends and later returns, the member gives access again. |
 | Recommendation | Pausing an agent pauses its delegations until they expire; revoking it ends them. |
-| Open question | Whether to add a per link or per address rate limit to signed downloads. |
+| Open question | Whether to add a per link or per address rate limit to signed downloads. Answered in Step 16: 30 downloads per minute per client address (F-AC-02). |
 | Open question | Whether an external review covers Phase 7 before Cloud agent features are offered. |

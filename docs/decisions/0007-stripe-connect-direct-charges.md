@@ -2,7 +2,7 @@
 
 On Cloud, create checkouts and subscriptions on the creator's own connected Stripe account with direct charges and collect the 2% platform fee as an application fee.
 
-- ADR status: Accepted (charge model and fee rate are Confirmed). The account configuration and the tax mechanism inside it are Proposed.
+- ADR status: Accepted (charge model and fee rate are Confirmed; the fee rate is 2% since [0027](0027-safe-exit-and-2-percent-fee.md); the account configuration is settled in [0051](0051-payment-provider-decisions-without-records.md)). The tax mechanism inside the account configuration is not built.
 - Date: 2026-10-17
 - Deciders: founder (charge model, fee), architecture docs wave (configuration details)
 - Related: [../architecture/payments.md](../architecture/payments.md), [../foundation/business-model.md](../foundation/business-model.md)

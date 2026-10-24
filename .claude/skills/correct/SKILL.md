@@ -25,9 +25,9 @@ Read recent commits, reverts, PR review comments (`gh pr list --state merged --l
 
 One commit per class. Prove each new check fails on a real past mistake (check out or recreate the bad code, run the check, show the failure). Run the same command locally and in CI. Exceptions go on the offending line with a reason.
 
-## 4. Keep the rule table
+## 4. Keep the rules enforceable
 
-Keep a table in `AGENTS.md` pairing each rule with what enforces it (lint rule name, type, test file, or "judgment"). When the human corrects you, fix the mistake and add the rule. If the rule was already there and nothing enforces it, that is a repeat. Move it up a level in the same change. Drop a rule once its mistake cannot happen.
+When the human corrects you, fix the mistake and add the rule to the matching section of `AGENTS.md`, naming what enforces it (a lint rule, a type, a test file, or "judgment"). If the rule was already there and nothing enforces it, that is a repeat. Move it up a level in the same change. Drop a rule once its mistake cannot happen.
 
 ## After a long task
 

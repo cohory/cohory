@@ -2,7 +2,7 @@
 
 The rich text document format moves from `@cohory/posts` into its own package, `@cohory/content`, so modules other than posts can validate and render the same format.
 
-- ADR status: Proposed
+- ADR status: Accepted (founder, 2026-10-25)
 - Date: 2026-10-20
 - Deciders: Step 17 unit V2 (proposed)
 - Related: [0012](0012-post-content-format.md), [../architecture/overview.md](../architecture/overview.md), [../architecture/data-model.md](../architecture/data-model.md)
