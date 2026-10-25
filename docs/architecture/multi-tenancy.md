@@ -69,9 +69,9 @@ Middleware determines the community from the request:
 3. Single-community mode: `COHORY_DEFAULT_COMMUNITY` maps `/` to that community (section 11).
 4. API routes take the community as a path parameter (`/api/v1/communities/{communityId}/...`). Tokens are bound to one community, and a mismatch is rejected.
 
-As built in 0.12.0: custom domains are not built; old slugs live in `community_slug_history` and redirect to the current slug; `HOME_COMMUNITY` sends signed out visitors who open `/` to that community's About page instead of the single community mode above; most API routes take `{slug}`, and payments routes take `{communityId}`.
+As built: custom domains are not built; old slugs live in `community_slug_history` and redirect to the current slug; `HOME_COMMUNITY` sends signed out visitors who open `/` to that community's About page instead of the single community mode above; most API routes take `{slug}`, and payments routes take `{communityId}`.
 
-The result is a `TenantContext { communityId, slug, source }` placed on the request context. Lookups are cached in process for 60 seconds, invalidated on slug or domain change.
+The result is a `TenantContext { communityId, slug, source }` placed on the request context. **Recommendation**, not built: cache lookups in process for 60 seconds and invalidate them on a slug or domain change.
 
 ### 3.2 Policy
 
@@ -119,6 +119,17 @@ How it works:
 - Financial records (`payments`, `fee_ledger_entries`, `platform_billing_accounts`, `platform_invoices`, `platform_invoice_lines`) keep their rows when a community is deleted (migration 0029). Their `community_id` becomes null and a `former_community_id` and `former_community_name` snapshot stays. Every tenant policy compares `community_id` with `app.community_id`, so detached rows are invisible to tenant reads and writes, including for managers of the former community. Only the `app.platform_billing` read policies and the schema owner still see them, and the billing sweeps filter out rows without a community.
 - Platform paths that must read across communities will use a separate role with `BYPASSRLS`, reached only through `platformDb`. That role does not exist. Worker jobs that read across communities use narrow policies behind settings such as `app.calendar_jobs` or `app.payments_webhook` instead.
 
+Session settings the policies read, all typed in `packages/db/src/tenancy/session.ts` (a policy that names a setting not in these lists fails typecheck):
+
+| Kind | Settings | Who sets them |
+|---|---|---|
+| Values | `app.community_id`, `app.user_id` | Every scoped transaction (`runInCommunity`) |
+| Values | `app.api_token_hash`, `app.api_token_owner`, `app.oauth_secret_hash`, `app.oauth_grant_owner`, `app.invite_token` | Token, OAuth, and invite lookups that run before a membership is known |
+| Values | `app.member_removal_reason` | Membership removal, read by the trigger that records why a member left |
+| Manager flags | `app.community_manager`, `app.course_manager`, `app.calendar_manager`, `app.payments_manager`, `app.migration_manager`, `app.webhooks_manager` | Services acting for an owner or admin on rows a plain member may not touch |
+| Job flags | `app.approval_jobs`, `app.calendar_jobs`, `app.delegation_jobs`, `app.notification_jobs`, `app.webhook_jobs`, `app.posts_scheduler`, `app.outbox_relay`, `app.email_delivery`, `app.payments_webhook`, `app.platform_billing`, `app.membership_hold_sweep`, `app.feedback_retention` | Worker jobs that read across communities through narrow policies |
+| Lifecycle flags | `app.account_purge`, `app.community_purge`, `app.payments_detach` | Account erasure, community deletion, and the safe exit that detaches payment records |
+
 Tradeoffs:
 
 | Benefit | Cost |
@@ -153,7 +164,7 @@ Resolved (2026-10-18): RLS is required on both editions, there is no `COHORY_RLS
 | | membership plans, payment connections, customers, subscriptions, payments, fee ledger, entitlements |
 | | notifications and preferences |
 | | api tokens, agent identities, grants, approvals (Phase 6) |
-| | audit log (nullable community for platform actions), import jobs, custom domains |
+| | audit log, migration jobs, custom domains (not built) |
 
 Notifications are community-scoped even though they belong to a user, because the bell is scoped to the current community (information-architecture.md) and community deletion must remove them.
 
@@ -180,7 +191,7 @@ Rules: one community per hostname, platform domains and their subdomains cannot 
 - Keys are never derived from user input (no original filenames in keys). The original name is stored in the database for download headers.
 - Downloads go through the app: it checks policy (for example, lesson attachments need the entitlement) and returns a short-lived signed URL (S3) or streams the file (local disk). Buckets are private.
 - Public branding assets (logo, cover) may be served through a public CDN path because they appear on public About pages.
-- Exports are stored under the community prefix, expire after 7 days, and are downloadable only by the owner.
+- Exports are stored under the community prefix, expire after 7 days, and are downloadable only by the owner. As built, archives live under `migration/{communityId}/`, outside the community prefix, and an export is deleted 30 days after it finishes ([archive-format.md](archive-format.md) section 7).
 - Community deletion enqueues deletion of the whole prefix.
 
 ## 7. Rate limits and fair use per community
@@ -232,7 +243,7 @@ As built (Step 18, [payments.md](payments.md)): only the owner can delete, and o
 
 ## 10. Platform administration
 
-Platform admins (operators on Community Edition, Cohory staff on Cloud) act through `platformDb` and audited tools only. Every platform admin read of community content is written to the audit log of that community with `actorType = platform_admin`. Platform admins do not appear as community members. Support access to a community's private content on Cloud requires the owner's consent, recorded in the audit log (**Recommendation**).
+**Recommendation.** No platform admin tooling exists yet: `platformAdmin` is always false and there is no `platformDb` ([threat-model](../security/threat-model.md) section 6). Platform admins (operators on Community Edition, Cohory staff on Cloud) act through `platformDb` and audited tools only. Every platform admin read of community content is written to the audit log of that community with `actorType = platform_admin`. Platform admins do not appear as community members. Support access to a community's private content on Cloud requires the owner's consent, recorded in the audit log (**Recommendation**).
 
 ## 11. Self-hosted single-community and multi-community modes
 
@@ -241,7 +252,7 @@ Platform admins (operators on Community Edition, Cohory staff on Cloud) act thro
 | Single community | `COHORY_DEFAULT_COMMUNITY=<slug>` and optionally `COHORY_SIGNUP_CREATE_COMMUNITY=false` | `/` serves the community. Platform home and "Create community" are hidden for non-admins. Typical for one creator on one VPS. |
 | Multi community | Default | Platform home lists the user's communities. The operator decides whether any signed-up user can create communities (`instance_settings.community_creation = anyone|admins`). Typical for agencies or groups. |
 
-As built in 0.12.0 these are environment variables, not instance settings: `HOME_COMMUNITY` (signed out visitors to `/` go to that community's About page), `SIGNUP_MODE` (`open`, `invite`, or `closed`), and `COMMUNITY_CREATION` with `OPERATOR_EMAILS` ([../self-hosting.md](../self-hosting.md)). There is no `instance_settings` table.
+As built, these are environment variables, not instance settings: `HOME_COMMUNITY` (signed out visitors to `/` go to that community's About page), `SIGNUP_MODE` (`open`, `invite`, or `closed`), and `COMMUNITY_CREATION` with `OPERATOR_EMAILS` ([../self-hosting.md](../self-hosting.md)). There is no `instance_settings` table.
 
 Both modes use the same tenant model and the same tests. Switching modes changes routing only, never data.
 
@@ -252,7 +263,7 @@ Both modes use the same tenant model and the same tests. Switching modes changes
 | Recommendation | Community is the tenant. Users are platform-level. |
 | Recommendation | Shared database and schema with `community_id` on every tenant table. Schema per tenant rejected. |
 | Recommendation | Scoped repository helper as the primary enforcement point, with a lint-guarded `platformDb` escape hatch. |
-| Recommendation | PostgreSQL RLS as defense in depth, on Cloud from Phase 4. |
+| Recommendation | PostgreSQL RLS as defense in depth. Built on both editions since 0.1.0 (see the decisions below). |
 | Decision (2026-10-18) | RLS is enabled and forced on `memberships` from the first migration, with policy `memberships_tenant_isolation` on `app.community_id`. The scoped helper (`runInCommunity` in `packages/db/src/tenancy`) sets the variable in every transaction, so it already works under a role without `BYPASSRLS`. Superusers bypass RLS, so web and worker connect as a `NOBYPASSRLS` application role (`DATABASE_URL`) that the migration runner creates from the schema owner connection (`DATABASE_ADMIN_URL`). Compose ships this split by default. The `BYPASSRLS` role behind `platformDb` is created when the first platform path needs it. |
 | Recommendation | Generated cross-tenant tests for every API route, merge-blocking. |
 | Recommendation | Tenant-prefixed storage keys, private buckets, signed URLs after policy checks. |

@@ -2,10 +2,10 @@
 
 Creators can lock a course until a member reaches a level. Points for finished lessons and attended events are built but off in every community: no creator can turn them on until the switch is added to Manage, Settings (see Consequences). The leaderboard shows the level ladder and how points are earned.
 
-- ADR status: Accepted
+- ADR status: Accepted (the switches, the MCP fields, and the archive fields described below as pending are built; see [0052](0052-safe-exit-and-learning-points-built.md))
 - Date: 2026-10-22
 - Deciders: founder (approved review 12 items, 2026-10-22), coordinator as product owner for the details below
-- Related: [../product/mvp-scope.md](../product/mvp-scope.md) section 2.7, [0031](0031-community-access-module.md), [../architecture/data-model.md](../architecture/data-model.md) section 14.2
+- Related: [../product/mvp-scope.md](../product/mvp-scope.md) section 2.7, [0031](0031-community-access-module.md), [../architecture/data-model.md](../architecture/data-model.md) sections 6 and 8
 
 ## Context
 

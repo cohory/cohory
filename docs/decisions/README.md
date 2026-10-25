@@ -75,18 +75,18 @@ What is still undecided and who decides.
 | ADR | Title | Status |
 |---|---|---|
 | [0001](0001-modular-monolith.md) | Modular monolith | Accepted |
-| [0002](0002-nextjs-app-router-and-hono-api.md) | Next.js App Router with a Hono API | Proposed |
+| [0002](0002-nextjs-app-router-and-hono-api.md) | Next.js App Router with a Hono API | Accepted (founder, 2026-10-25) |
 | [0003](0003-drizzle-orm.md) | Drizzle ORM over Prisma | Accepted |
 | [0004](0004-better-auth.md) | Better Auth for authentication | Accepted |
-| [0005](0005-postgres-job-queue.md) | pg-boss job queue by default, BullMQ optional | Proposed |
-| [0006](0006-shared-database-multi-tenancy.md) | Shared database multi-tenancy with `community_id` and RLS | Proposed |
+| [0005](0005-postgres-job-queue.md) | pg-boss job queue by default, BullMQ optional | Accepted (founder, 2026-10-25) |
+| [0006](0006-shared-database-multi-tenancy.md) | Shared database multi-tenancy with `community_id` and RLS | Accepted (founder, 2026-10-25) |
 | [0007](0007-stripe-connect-direct-charges.md) | Stripe Connect with direct charges and a 2% application fee | Accepted |
 | [0008](0008-platform-fee-ledger.md) | Platform fee ledger | Accepted |
 | [0009](0009-license.md) | License: AGPL-3.0 core and MIT SDK | Accepted (founder, 2026-10-19; plugin exception wording awaits legal review) |
-| [0010](0010-uuidv7-primary-keys.md) | UUIDv7 primary keys | Proposed |
+| [0010](0010-uuidv7-primary-keys.md) | UUIDv7 primary keys | Accepted (founder, 2026-10-25) |
 | [0011](0011-mcp-first-class-api-surface.md) | MCP as a first-class API surface | Accepted |
-| [0012](0012-post-content-format.md) | Post content format | Proposed |
-| [0013](0013-domain-event-dispatch.md) | Domain event dispatch | Proposed |
+| [0012](0012-post-content-format.md) | Post content format | Accepted (founder, 2026-10-25) |
+| [0013](0013-domain-event-dispatch.md) | Domain event dispatch | Accepted (founder, 2026-10-25) |
 | [0014](0014-transactional-outbox.md) | Transactional outbox for domain events | Accepted |
 | [0015](0015-migration-module-direct-table-access.md) | Migration module reads and writes module tables directly | Accepted |
 | [0016](0016-database-triggers-append-domain-events.md) | Database triggers append membership, lesson, RSVP, and subscription events | Accepted (founder, 2026-10-19) |
@@ -97,9 +97,9 @@ What is still undecided and who decides.
 | [0021](0021-agent-course-format-and-storage.md) | Agent course format 1.0.0, immutable snapshots, and Agent Skills export | Accepted (founder, 2026-10-19) |
 | [0022](0022-delegated-entitlements.md) | Delegated course entitlements derived on every check | Accepted (founder, 2026-10-19) |
 | [0023](0023-agent-course-delivery.md) | Agent course delivery: tools on REST routes, signed links, one license source, and lapsed agents | Accepted (founder, 2026-10-19) |
-| [0024](0024-shared-content-package.md) | Shared content package | Proposed |
-| [0025](0025-reviews-module-boundary.md) | Reviews module: tenure from Payments, standing from a membership trigger, and its own report table | Draft |
-| [0026](0026-community-page-for-non-members.md) | Community page for non-members: an About tab first, a join hero, and join continuation after sign up | Draft (one join button and the About section contents superseded by 0036) |
+| [0024](0024-shared-content-package.md) | Shared content package | Accepted (founder, 2026-10-25) |
+| [0025](0025-reviews-module-boundary.md) | Reviews module: tenure from Payments, standing from a membership trigger, and its own report table | Accepted (founder, 2026-10-25) |
+| [0026](0026-community-page-for-non-members.md) | Community page for non-members: an About tab first, a join hero, and join continuation after sign up | Accepted (founder, 2026-10-25) (one join button and the About section contents superseded by 0036) |
 | [0027](0027-safe-exit-and-2-percent-fee.md) | Safe exit for paid communities, the 2% Cloud fee, and Polar off by default | Accepted (founder, 2026-10-20) |
 | [0028](0028-stripe-disputes.md) | Stripe disputes: notify the owner, mark the payment disputed, refund the platform fee on a lost dispute, never revoke access | Accepted (founder, 2026-10-22) |
 | [0029](0029-remove-or-ban-ends-billing.md) | Removing or banning a paying member ends their subscription now, without proration or refund | Accepted (founder, 2026-10-22) |
@@ -122,8 +122,10 @@ What is still undecided and who decides.
 | [0046](0046-test-slots-and-host-e2e.md) | A machine wide pool of 2 test slots, `pnpm e2e:host` against the cached build for the inner loop, `pnpm e2e` on the image as the gate, and `pnpm stack:dev` | Accepted (founder, 2026-10-22) |
 | [0047](0047-cloud-marketing-in-the-app.md) | Cloud marketing pages (`/` signed out, `/pricing`, `/open-source`) in the app, shown only on the Cloud Edition, with the fee and limits read from config; `MARKETING_URL` removed (supersedes part of 0033) | Accepted (founder, 2026-10-23) |
 | [0048](0048-creators-community-invitation.md) | `CREATORS_COMMUNITY_SLUG` adds the creators community to every footer and invites each new creator once (after the first published post or course, or after 3 days) through an ordinary single use invite link whose token is derived from the person | Accepted (founder, 2026-10-23) |
-| [0049](0049-creator-feedback.md) | Cloud only creator feedback: moment questions after a first post, paid member, and course, optional exit reasons, a user owned `creator_feedback` table with forced RLS on `app.user_id`, 24 month retention, and answers emailed to `CONTACT_EMAIL` | Proposed |
-| [0050](0050-restricted-cloud-community-creation.md) | Cloud keeps sign up open but limits community creation to design partners (`COMMUNITY_CREATION=operators`) until it opens; the landing page shows Request early access and Self-host now while creation is restricted | Proposed |
+| [0049](0049-creator-feedback.md) | Cloud only creator feedback: moment questions after a first post, paid member, and course, optional exit reasons, a user owned `creator_feedback` table with forced RLS on `app.user_id`, 24 month retention, and answers emailed to `CONTACT_EMAIL` | Accepted (founder, 2026-10-25) |
+| [0050](0050-restricted-cloud-community-creation.md) | Cloud keeps sign up open but limits community creation to design partners (`COMMUNITY_CREATION=operators`) until it opens; the landing page shows Request early access and Self-host now while creation is restricted | Accepted (founder, 2026-10-25) |
+| [0051](0051-payment-provider-decisions-without-records.md) | Payment decisions from 0.2.0 and 0.5.0 written up: Accounts v2, Polar as the first bring your own provider, accrued fees billed monthly, the accrued fee base, per connection webhook URLs, and no checkout pause for Stripe while an invoice is past due | Accepted (founder, 2026-10-25) |
+| [0052](0052-safe-exit-and-learning-points-built.md) | The safe exit paths and the learning points follow-ups described as pending in 0027 and 0045 are built in 0.12.0 | Accepted (founder, 2026-10-25) |
 
 ## Decisions and open questions
 

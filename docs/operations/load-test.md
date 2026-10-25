@@ -52,7 +52,7 @@ No N+1 query or missing index showed: medians stayed between 19 and 28 ms for ev
 
 - Warm, the targets are met with room to spare, also inside a 2 vCPU split: worst read p95 148 ms against 300, post create 177 ms against 500.
 - Cold, right after a start under a loaded host, the first 3 minutes missed every read target by about 2 times. Restarts and deploys will see a short window of slower responses until the process warms up.
-- This is not the reference deployment. CPU quotas on an M1 are not 2 shared vCPU on a VPS, and Docker Desktop adds a VM. The requirement stays **to be confirmed** on a real 2 vCPU, 4 GB VPS with the production overlay (Caddy adds TLS and a hop). The capacity in REQ-NFR-PERF-005 is kept as is until then.
+- This is not the reference deployment. CPU quotas on an M1 are not 2 shared vCPU on a VPS, and Docker Desktop adds a VM. The requirement stays to be confirmed on a real 2 vCPU, 4 GB VPS with the production overlay (Caddy adds TLS and a hop). The capacity in REQ-NFR-PERF-005 is kept as is until then.
 - Not covered: page loads and server rendering (only the API was measured), media uploads, comments, likes, notifications, and the worker under load.
 
 ## Decisions and open questions

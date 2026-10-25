@@ -5,7 +5,7 @@ Every service and web loader asks Entitlements who the viewer is in a community 
 - ADR status: Accepted (decision 1 wiring superseded by [0044](0044-composition-roots-and-shared-infrastructure.md))
 - Date: 2026-10-22
 - Deciders: coordinator as product owner under the founder's mandate (review of 2026-10-21)
-- Related: [0022](0022-delegated-entitlements.md), [0029](0029-remove-or-ban-ends-billing.md), [../architecture/authorization.md](../architecture/authorization.md) section 4, [../architecture/payments.md](../architecture/payments.md) section 13.4, AGENTS.md section 2
+- Related: [0022](0022-delegated-entitlements.md), [0029](0029-remove-or-ban-ends-billing.md), [../architecture/authorization.md](../architecture/authorization.md) section 4, [../architecture/payments.md](../architecture/payments.md) section 12.4, AGENTS.md section 2
 
 ## Context
 

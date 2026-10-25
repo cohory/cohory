@@ -7,7 +7,7 @@ How creators prepare a course for agents: add agent material to lessons, publish
 | Person | Can |
 |---|---|
 | Owner, admin | Write agent material, draft it from a lesson, publish versions, download the skill zip |
-| Moderator, member | Read the published agent material of courses they can open, through the API (and through MCP once its tools exist). Not the drafts |
+| Moderator, member | Read the published agent material of courses they can open, through the API and the MCP course tools. Not the drafts |
 | Agent with `courses:read` | Read published material, tasks, and files of courses its owner can open |
 | Agent with `courses:write` | Edit drafts when its owner is an owner or admin. Publishing a version always waits for a person's approval |
 
@@ -87,3 +87,8 @@ All routes are under `/api/v1/communities/{slug}`. Scopes are in `x-cohory` of `
 | "The license terms changed in Agent access. Reload to publish with the current terms." | Reload the course page and publish again |
 | "Nothing changed since version 1.2.0." | Edit something first, or keep using the existing version |
 | "The file ... is missing or changed. Upload it again." | The stored file is gone or differs from its checksum; upload it again and save |
+
+## Decisions and open questions
+
+- **Confirmed** ([0021](../decisions/0021-agent-course-format-and-storage.md)): the agent material format, versioning, and storage.
+- **Confirmed** ([0023](../decisions/0023-agent-course-delivery.md)): delivery through signed download links and the MCP course tools.

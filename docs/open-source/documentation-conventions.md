@@ -2,7 +2,7 @@
 
 The rules every Cohory doc follows: structure, labels, punctuation, links, terminology, diagrams, length, and where each kind of doc lives.
 
-The product name is written "Cohory" in prose, UI copy, emails, and page titles. Write "Cohory" only in code, paths, package names, URLs, CLI commands, and other technical strings (founder decisions, 2026-10-19 and 2026-10-20).
+The product name is written "Cohory" in prose, UI copy, emails, and page titles. Write the lowercase `cohory` only in code, paths, package names, URLs, CLI commands, and other technical strings (founder decisions, 2026-10-19 and 2026-10-20).
 
 These rules apply to everything under `docs/`, the root Markdown files, and PR and issue text where it makes sense. They are **Confirmed** for the foundation phase and can change only through a decision record.
 
@@ -15,7 +15,9 @@ Every doc starts with:
 
 Docs carry no status or date line; git history and the CHANGELOG record when they change.
 
-Every doc ends with a short "Decisions and open questions" section that lists the labeled statements in the doc.
+Every doc ends with a short "Decisions and open questions" section that lists the labeled statements in the doc. The files written for visitors rather than contributors are exempt: `README.md`, `CHANGELOG.md`, `CODE_OF_CONDUCT.md`, and the GitHub issue and pull request templates.
+
+The current release number is written only in `CHANGELOG.md`, decision records, the decisions log, dated reviews, and the env examples. Everywhere else write "today", "as built", or "not built yet", so a release does not touch the docs. History such as "since 0.8.0" may stay. The `docs-audit` skill checks this, with links, style, and structure, before each release.
 
 Decision records in `docs/decisions` use their own template described in [decisions/README.md](../decisions/README.md), with the states Proposed, Accepted, Rejected, and Superseded.
 

@@ -128,7 +128,7 @@ Subject lines name the community and the event: "[Design Club] Alex replied to y
 
 ## Writing for agents
 
-**Recommendation:** API and MCP text is read by programs and language models as well as people. It must be unambiguous. (MCP and agent identities are planned post-MVP; the REST API rules apply from MVP.)
+**Recommendation:** API and MCP text is read by programs and language models as well as people. It must be unambiguous. These rules apply to the REST API, the MCP server, and agent identities, all built.
 
 - **Error messages** have a stable machine `code`, a human `message`, and structured `details`. The message states the cause and the fix in one sentence. Example: `code: "membership_plan_archived"`, `message: "Membership plan 'Premium' is archived and cannot accept new members. Use an active plan or unarchive it."`.
 - **Name things once.** Use the terminology from the conventions (community, member, membership, subscription, entitlement, platform fee) identically in UI, API fields, and docs. Never alias "member" as "user" or "customer" in one place.

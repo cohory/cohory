@@ -2,10 +2,10 @@
 
 The Cloud Edition asks community owners one short question after their first post, first paid member, and first course, and offers an optional reason when they archive, delete, disconnect Stripe, or delete their account. Answers are stored per person and emailed to the operator.
 
-- ADR status: Proposed
+- ADR status: Accepted (founder, 2026-10-25)
 - Date: 2026-10-23
 - Deciders: founder (what to ask and when), coordinator as product owner for the details
-- Related: [0048](0048-creators-community-invitation.md), [0027](0027-safe-exit-and-2-percent-fee.md), [0033](0033-platform-config-and-neutral-home.md), [0039](0039-legal-pages-and-data-rights.md), [../architecture/multi-tenancy.md](../architecture/multi-tenancy.md), [../architecture/data-model.md](../architecture/data-model.md) section 14.4
+- Related: [0048](0048-creators-community-invitation.md), [0027](0027-safe-exit-and-2-percent-fee.md), [0033](0033-platform-config-and-neutral-home.md), [0039](0039-legal-pages-and-data-rights.md), [../architecture/multi-tenancy.md](../architecture/multi-tenancy.md), [../architecture/data-model.md](../architecture/data-model.md) section 11.2
 
 ## Context
 

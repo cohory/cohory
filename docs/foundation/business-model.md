@@ -9,7 +9,7 @@ Payment implementation details live in [../architecture/payments.md](../architec
 **Confirmed.**
 
 - **Community Edition.** Open source, self-hosted, free. 0% platform fee. Includes community, courses, gamification, events, member management, payment integrations, API access, and agent integrations as they ship.
-- **Cloud Edition.** Managed hosting. No mandatory monthly subscription. 2% platform fee on successful transactions. Payment processing fees are separate and charged by the provider. Creator-owned payment accounts, custom domains, automatic updates, managed infrastructure.
+- **Cloud Edition.** Managed hosting. No mandatory monthly subscription. 2% platform fee on successful transactions. Payment processing fees are separate and charged by the provider. Creator-owned payment accounts, custom domains (not built yet), automatic updates, managed infrastructure.
 
 The founder's tagline candidate captures it: "Free to start. Just 2% when you earn. Own your community." Final messaging belongs to [../brand/brand-strategy.md](../brand/brand-strategy.md).
 
@@ -36,9 +36,9 @@ Adapted from the founder's pricing table.
 | Payment integration | Self-managed | Creator's own provider | Stripe Connect |
 | Subscription ownership | Creator | Creator | Creator (connected account) |
 | Infrastructure | Self-managed | Managed | Managed |
-| Availability | MVP | Post-MVP | MVP |
+| Availability | MVP | Post-MVP (Polar built in 0.5.0, off by default, [ADR 0027](../decisions/0027-safe-exit-and-2-percent-fee.md)) | MVP |
 
-**Confirmed.** The Cloud Edition sells convenience, not features. **Recommendation.** No core product feature is exclusive to the Cloud Edition. Cloud-only items are operational: managed hosting, automatic updates, managed backups, automatic TLS for custom domains, and the Stripe Connect onboarding flow.
+**Confirmed.** The Cloud Edition sells convenience, not features. **Recommendation.** No core product feature is exclusive to the Cloud Edition. Cloud-only items are operational: managed hosting, automatic updates, managed backups, automatic TLS for custom domains (Post-MVP), and the Stripe Connect onboarding flow.
 
 ## How money flows
 
@@ -158,16 +158,16 @@ Note (**Assumption**, verify with current Stripe documentation): a subscription 
 Proposed default:
 
 - Calculate in integer minor units of the charge currency (cents, or whole units for zero-decimal currencies such as JPY).
-- `fee = round_half_up(base_minor_units / 100)`.
+- `fee = round_half_up(base_minor_units * 200 / 10000)`, which is 2% ([0027](../decisions/0027-safe-exit-and-2-percent-fee.md)); the rate comes from `PLATFORM_FEE_BPS` in basis points and is never hard coded elsewhere.
 - No minimum fee and no maximum fee. A computed fee of zero is recorded as zero.
 - The fee is collected in the same currency as the charge. No currency conversion by Cohory.
 - When Stripe computes the fee itself, Stripe's amount is authoritative and the ledger records both values. Any difference larger than one minor unit raises an alert.
 
-Examples: a $49.00 charge gives 4900 / 100 = 49 cents. A $12.34 charge gives 1234 / 100 = 12.34, rounded to 12 cents. A $0.50 charge gives 0.5, rounded half up to 1 cent.
+Examples at 2%: a $49.00 charge gives 4900 * 200 / 10000 = 98 cents. A $12.34 charge gives 24.68, rounded to 25 cents. A $0.50 charge gives 1 cent exactly.
 
 ### 3. Taxes
 
-Proposed default: the creator, as intended merchant of record, is responsible for tax on their sales. Cohory may offer tax calculation through the provider (for example Stripe Tax) as an option the creator enables. The platform fee is calculated on the pre-tax amount. Whether Cohory must charge VAT or sales tax on the platform fee itself, by creator location, is deferred (**Confirmed**, founder, 2026-10-19): no tax is added to platform fee invoices until the Cloud Edition has revenue, and tax registration and the tax treatment of the fee are a pre launch accounting task ([../operations/platform-billing.md](../operations/platform-billing.md#open-questions)).
+Proposed default: the creator, as intended merchant of record, is responsible for tax on their sales. Cohory may offer tax calculation through the provider (for example Stripe Tax) as an option the creator enables. The platform fee is calculated on the pre-tax amount. Whether Cohory must charge VAT or sales tax on the platform fee itself, by creator location, is deferred (**Confirmed**, founder, 2026-10-19): no tax is added to platform fee invoices until the Cloud Edition has revenue, and tax registration and the tax treatment of the fee are a pre launch accounting task ([../operations/platform-billing.md](../operations/platform-billing.md#decisions-and-open-questions)).
 
 ### 4. Refunds
 

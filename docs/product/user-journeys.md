@@ -40,8 +40,8 @@ Steps:
 1. **Sign up** (`/sign-up`). From the signed out home page, Create your community opens `/sign-up?next=/communities/new`, which says "Create your account, then name your community." and goes to the create form after sign up. Creator enters email and password. System creates the account and sends a verification email. When the server sends email ([0038](../decisions/0038-email-verification-required.md)), the form shows "Check your email" ("We sent a link to {email} to confirm it. Open it within 1 hour"), and the creator confirms the email before the first sign in; the link opens `/verified`, which says "Email confirmed" and offers Sign in back to the create form. A sign in before that says "Confirm your email first" with "Send a new link". Without a mail server (`EMAIL_DRIVER=log`) the form signs the creator in with the password just entered. Sign up answers the same whether or not the address already has an account; when it does, the form shows "Check your email" and the owner of the address gets an email that someone tried to sign up, with Sign in as the main link and "Forgot your password?" second. The verification link never signs anyone in. Connecting a payment account needs a confirmed email when the server sends email.
 2. **Create Community** (`/communities/new`), step 1. Creator types a name. System proposes a slug from the name, checks availability 300 ms after typing stops, and shows the full address (`{APP_URL host}/c/{slug}`). As built, a taken or reserved URL shows three free options to pick from.
 3. Step 2. Creator picks "Free" or "Paid". Paid communities start as "Free until payments are set up" so the creator is never blocked (Recommendation). As built, the choice is asked on the same form and not stored: Paid creates the community as free and lands the creator on Manage, Payments instead of the feed, with the Payment account card highlighted.
-4. Step 3 (optional). Creator uploads a logo and picks an accent color, or presses "Skip". System validates image type and size and stores it in S3-compatible storage.
-5. System creates the community with defaults: private, join by approval off (open join for free, checkout for paid), three categories ("General", "Introductions", and admin-only "Announcements"), four tabs, level names from the default ladder, owner role for the creator.
+4. Step 3 (optional). Creator uploads a logo and picks an accent color, or presses "Skip". System validates image type and size and stores it in S3-compatible storage. (Recommendation. As built, logo and accent are set later in Manage, Appearance.)
+5. System creates the community with defaults: private (a private community starts with join by approval, a public one with open join; a paid one uses checkout), three categories ("General", "Introductions", and the staff only "Announcements"), four tabs, level names "Level 1" to "Level 9", owner role for the creator.
 6. **Feed** (`/c/{slug}`). Creator lands on the empty feed with the creator empty state and a suggested introduction post. Above the feed the owner sees "Get your community ready" with the feed relevant setup steps (a pinned welcome post, logo and cover, About page, sharing the link with "Copy community link", and Stripe once payments are started), "Hide checklist", and "All setup steps"; it disappears when those steps are done or hidden. The full setup checklist appears at the top of Manage, Overview, ticked from real data: import first or start fresh, logo and cover, About page, (paid) price and Stripe, a pinned welcome post, a first course or call, preview the About page, share the link, and (paid) a test purchase before going live.
 
 7. On the Cloud Edition, after the first published post the owner sees a small card on the next visit to the feed or Manage: "How easy was it to publish your first post?" with 1 (Very hard) to 5 (Very easy), an optional "What would have made it easier?", Send, Not now, a close button, and "Don't ask me again". The same card follows the first paid member and the first published course, at most one question in 30 days ([0049](../decisions/0049-creator-feedback.md)).
@@ -105,7 +105,7 @@ Failure and edge cases:
 - Banned person: About page with no Join button and no reason shown.
 - Request rejected: the About page shows "Your request was not approved" with the optional note, no reason required. The requester gets a notification for an approved or declined request (`join_request_approved`, `join_request_declined`), and the owner, admins, and moderators get a `join_request` notification (email right away for the owner, in the daily summary for others by default). The team also sees the count next to Inbox in the Manage navigation and on the Requests tab.
 - Deep link to a lesson: after joining, the member lands on that lesson, not the feed.
-- No platform directory: discovery happens by shared link, search engines (About page only), or custom domain. A community directory is deliberately excluded from MVP.
+- No platform directory: discovery happens by shared link or search engines (About page only); custom domains are Post-MVP. A community directory is deliberately excluded from MVP.
 
 ## 4. Member buys a paid membership
 
@@ -127,7 +127,7 @@ Success criteria: paying member reaches the feed without manual steps. Subscript
 Failure and edge cases:
 - Card declined: member stays in Stripe Checkout with Stripe's message.
 - Member closes Checkout: no membership. Stripe returns to `/c/{slug}/membership?checkout=cancel`, which says "Checkout canceled" and shows the PricingCard again.
-- Webhook arrives late: success page shows "Finishing setup" and retries for up to 60 seconds, then shows "We'll email you when access is ready". Background job reconciles.
+- Webhook arrives late: success page shows "Finishing setup" and retries for up to 60 seconds, then shows "Your payment is still being confirmed" and asks the member to refresh the page in a few minutes. Background job reconciles.
 - Duplicate checkout (double click, second tab): every press opens a new Checkout page and expires the member's earlier open one, so only the last page can be paid. If two payments still go through, the system keeps the first subscription, cancels the second at once, refunds it in full, and emails the member "We refunded your second payment of {amount}".
 - Invite link to a paid community: the link does not waive the price (confirmed by the founder, 2026-10-19). After sign in the person lands on the Membership page with the PricingCard (since 0.1.0). The invite dialog tells the owner "People with this link still pay to join." In an Invite only paid community, people without an invite see "Invite only" on the About and Membership pages and no price button, and checkout refuses them (`invite_required`); redeeming an invite holds a pending membership that lets that person check out. Someone who paid before (for example after a failed card) can pay again without a new invite.
 - Join questions in a paid community: the Membership page asks them under "A few questions before you pay", a required question left empty shows "Answer this question to join.", and the answers are stored with the membership when the payment completes. People who were members or paid before are not asked again when they subscribe again. Free access for selected people is a comp grant (Manage, Payments, Free access). On Cloud the owner sends an offer by email; the person signs in with that confirmed address, opens the Membership page, and presses "Accept free access" before they become a member.
@@ -245,7 +245,7 @@ Steps:
 
 1. Member posts or comments (journey 5).
 2. Another member likes the post or comment. System adds 1 point to the author for that community, records the point event, and updates level if a threshold is crossed.
-3. On level up, system shows a small in-app notification ("You reached Level 3: Regular").
+3. On level up, system shows a small in-app notification ("You reached Level 3"). Recommendation, not built yet; the new level shows on the avatar badge and the leaderboard.
 4. **Members, Leaderboard** (`/c/{slug}/members/leaderboard`) shows the level ladder with how many members are at each level, the 7-day ranking, the all-time ranking, and the member's own rank pinned at the bottom if outside the top 10.
 5. Member's level shows on their avatar across the community and on their profile.
 
@@ -298,11 +298,11 @@ Steps (MVP):
 2. System generates a CSV with one row per member and these columns in this order: `email`, `name`, `username`, `role`, `joined_at`, `level`, `points`, `status`, `stripe_customer_id`, `stripe_subscription_id`, `last_active_at` (the latest post, comment, like, lesson progress, or RSVP in the community, or a sign in anywhere on the platform), `access` (paying_monthly, paying_yearly, free_access, past_due, cancelling, or none), `signed_in` (yes when the person ever signed in, confirmed their email, or has a password or social login; no for imported members who have not). The file is UTF-8 with a byte order mark, cells that start with `=`, `+`, `-`, `@`, or a tab are prefixed with `'` so spreadsheets do not run them, and the file is named `{slug}-members-YYYY-MM-DD.csv`.
 3. Download starts. System records the export in the audit log.
 
-Steps (Post-MVP full archive):
+Steps (full archive, built in 0.4.0):
 
-1. **Manage, Settings, Data export.** Owner presses "Export everything".
-2. System queues a background job that writes a documented archive: JSON files for members, posts, comments, courses, modules, lessons, events, and point events, plus media files and a manifest with schema version.
-3. System emails the owner a signed download link valid for 7 days (Recommendation).
+1. **Manage, Migration, Cohory archives.** Owner presses "Start export".
+2. System runs a worker job that writes the documented archive ([../architecture/archive-format.md](../architecture/archive-format.md)): JSON files for members, posts, comments, courses, modules, lessons, events, and point events, plus media files, spreadsheets, a README, and a manifest with the schema version. The card shows the step and count while it runs.
+3. The owner downloads the zip from the card. The export is kept for 30 days, and the owner can delete it sooner. Export history lists what each export holds.
 
 Success criteria: the export opens in common tools (spreadsheet for CSV, any JSON reader for the archive) and the format is documented.
 
@@ -326,7 +326,7 @@ Steps:
 3. On the self-hosted instance, owner creates an empty community, opens Manage, Migration, Import archive, and uploads the zip. System checks the archive and shows a preview: counts, how many people already have an account and are linked by email, how many get a new account, and warnings. Only accounts with a confirmed email are linked; other people who already have an account become unlinked placeholders that hold their content, and can be emailed an invite link to join with their own account. When the import runs on Cloud instead, every person except the owner becomes such a placeholder and is invited ([../architecture/archive-format.md](../architecture/archive-format.md) rule 3, [0043](../decisions/0043-import-invitations-and-emails.md)).
 4. Owner chooses **Email these people?**: Email everyone now, I will send emails later (the default), or Do not email, adds an optional note, can **Preview email** and **Send me a test**, and confirms. New accounts get a direct link to choose a password (7 days) and placeholders get their invitation (30 days). At most 1,000 import emails go out per community per day; the rest follow the next day. System restores members, roles, content, courses, progress, events, RSVPs, points, comped access, invite links, and the audit log, turns active paid subscriptions into free access with the Stripe subscription id in the note, and reports anything skipped. The command line (`migration-cli.js import`) does the same and creates the community when needed.
 5. Owner connects the same Stripe account to the self-hosted instance using their own API keys and recreates the plan. On "Bring your existing subscribers", system lists the subscriptions on that account, matches them to members by confirmed email, and links them with no member action ([../operations/payment-migration.md](../operations/payment-migration.md)). The owner ends the free access from the import afterwards.
-6. On Cloud, owner disconnects Stripe (Manage, Payments) and keeps "Take my members with me". Cloud removes the application fee from existing subscriptions first, then closes the connection and tells members the creator bills them directly ([../architecture/payments.md](../architecture/payments.md) section 13.8).
+6. On Cloud, owner disconnects Stripe (Manage, Payments) and keeps "Take my members with me". Cloud removes the application fee from existing subscriptions first, then closes the connection and tells members the creator bills them directly ([../architecture/payments.md](../architecture/payments.md) section 12.8).
 7. Owner points the domain at the new server. Members sign in again (sessions do not transfer). Passwords are not exported: members without an account on the new server choose one through Forgot password.
 
 Success criteria: same members, content, and access on the self-hosted instance, no new platform fees on Cloud. The automated round trip test in `packages/migration` exports a seeded community and imports it into a second database with counts, roles, progress, RSVPs, points, entitlements, and files matching.
@@ -360,7 +360,7 @@ Steps:
 9. The member opens the membership page, signs in or signs up, and sees "Your current subscription ends on {date}" with "Subscribe again". Checkout starts with a free period until that date.
 10. When the new subscription starts, the list shows "Moved. Cancel their old subscription"; people whose date passed show "Free time ended".
 
-Success criteria: imported members get access without paying again or re-entering a card. Verified with recorded fakes in `packages/payments/src/linking.integration.test.ts` and against a Stripe sandbox ([payments.md](../architecture/payments.md) section 13.10).
+Success criteria: imported members get access without paying again or re-entering a card. Verified with recorded fakes in `packages/payments/src/linking.integration.test.ts` and against a Stripe sandbox ([payments.md](../architecture/payments.md) section 12.10).
 
 Failure and edge cases:
 - Subscriptions owned by the previous platform's Stripe account (not the creator's): cannot be linked. Members subscribe again with free time (steps 7 to 10).
@@ -437,16 +437,16 @@ Failure and edge cases:
 
 - **Actor:** creator (owner or admin).
 - **Preconditions:** the community exists and is not archived.
-- **Phase:** Post-MVP (built in Step 17, founder decisions F6 to F10).
+- **Phase:** Post-MVP (built in Step 17, 0.10.0, founder decisions F8, F9, and G3; reshaped by [0036](../decisions/0036-about-page-that-sells.md) on 2026-10-22).
 
 Steps:
 
 1. **Manage, Appearance, About page.** In Gallery the creator presses "Upload image" and picks a PNG, JPG, WebP, or GIF up to 10 MB, or pastes a YouTube, Vimeo, or Loom link into "Video link" and presses "Add". Each item gets optional alt text, saved when the field loses focus, and an actions menu with Move up, Move down, Make hero, and Remove. The gallery holds up to 10 items and the first one is the hero.
 2. The creator drags items, or uses Move up and Move down, to change the order. One change rewrites every position.
-3. In Detailed description the creator writes the full story with **bold**, *italic*, dash lists, links, and video links, and presses "Save description". The short description stays in Manage, Settings, General.
-4. A visitor opens `/c/{slug}/about` (or `/c/{slug}` for a private community) and sees the new page; members open it from the community name or logo in the header.
+3. In Page text the creator fills Short description, What you get (up to 6 lines), Detailed description (the full story with **bold**, *italic*, dash lists, links, video links, and `## ` headings), About the host (credential and bio), and Questions (up to 8), and presses "Save About page".
+4. A visitor opens `/c/{slug}/about` (where `/c/{slug}` sends them) and sees the new page. Members can open the same URL but have no link to it; owners and admins check it with View About page in Manage, Appearance.
 
-Success criteria: the About page shows the hero and thumbnails in the saved order, the info row, the rendered description, and the join button; gallery images count toward the storage limit.
+Success criteria: the About page shows the hero and thumbnails in the saved order, What you get, the rendered description, About the host, Questions, and the join button; gallery images count toward the storage limit.
 
 Failure and edge cases:
 - A link from another host, or a Wistia link, is refused with "Paste a YouTube, Vimeo, or Loom video link."
@@ -483,8 +483,8 @@ Confirmed:
 
 Recommendation:
 - Paid communities start free until Stripe is connected. Price changes apply to new members only.
-- Weekly recurrence only for events, 12 weeks of generated occurrences.
-- Points from likes received only. Rolling 7-day leaderboard.
+- Weekly recurrence only for events, 26 weeks of generated occurrences.
+- Points from likes received, plus optional points for finished lessons and attended events ([0045](../decisions/0045-levels-that-unlock-and-learning-points.md)). Rolling 7-day leaderboard.
 - Access continues while past due. Refunds do not revoke access automatically.
 - Members CSV export in MVP. Full archive export in Phase 5.
 - Archiving a community (Manage, Settings, Danger zone) makes it read only: members keep reading everything, but new posts, comments, likes, RSVPs, lesson progress, and course or event edits are refused, as are joins, new invite links, and People or Appearance changes. Settings, restore, transfer, delete, and the members CSV keep working.
@@ -495,6 +495,4 @@ Assumption:
 
 Open question:
 - Fee base with taxes. Fee treatment on refunds and disputes is proposed in [../foundation/business-model.md](../foundation/business-model.md) (proportional refund, refund on lost disputes) and awaits sign-off.
-- Removing application fees from existing subscriptions when leaving Cloud.
 - Password portability between instances.
-- Platform fee on imported subscriptions.

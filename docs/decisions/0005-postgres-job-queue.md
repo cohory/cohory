@@ -2,7 +2,7 @@
 
 Run background jobs on PostgreSQL with pg-boss by default and switch to BullMQ on Redis when `REDIS_URL` is set.
 
-- ADR status: Proposed
+- ADR status: Accepted (founder, 2026-10-25)
 - Date: 2026-10-17
 - Deciders: founder (to confirm, since the brief and notes name Redis + BullMQ), architecture docs wave
 - Related: [../architecture/overview.md](../architecture/overview.md) sections 7 to 9 and 12

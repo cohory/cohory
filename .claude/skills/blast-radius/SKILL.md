@@ -27,10 +27,10 @@ Step 4 is usually one small script (for example `pnpm tsx scripts/check-<slug>.t
 2. **Find the one fact it is safe because of.** Most risky-looking changes are safe because of a single fact, such as "this column is only read by the admin dashboard". If that fact holds, most risks clear at once. Spend your time here.
 3. **Look where Grep stops.**
    - Data: Drizzle migrations against existing rows, nullable to non-null changes, renamed columns that raw SQL still names, enum values stored in the database.
-   - Wire formats: JSON returned by route handlers, server action return shapes cached on the client, Stripe webhook payload fields, job payloads already queued (pg-boss by default, BullMQ when Redis is enabled).
+   - Wire formats: JSON returned by route handlers, server action return shapes cached on the client, Stripe webhook payload fields, job payloads already queued in pg-boss.
    - Runtime: server versus client component boundaries, caching and revalidation in Next.js, middleware order, edge versus node runtimes.
    - Auth and tenancy: every path that reaches the changed data, and whether each still checks session, role, and community scope.
-   - Dependencies: the pinned version in `pnpm-lock.yaml` and any patch in `patches/`.
+   - Dependencies: the pinned version in `pnpm-lock.yaml`.
    - Packages: every workspace package that imports the changed export (`pnpm why`, Grep across `apps/` and `packages/`).
 4. **Be honest about each risk.** Give a real likelihood and cost. Keep confirmed risks. List checked and cleared items separately.
 5. **Prove the one fact.** Write the script or test, run it, and paste the output.

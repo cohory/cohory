@@ -50,14 +50,15 @@ The default loop is in [local workflow](docs/open-source/local-workflow.md); ful
 
 ## Pull request checklist
 
-The [PR template](.github/PULL_REQUEST_TEMPLATE.md) contains the checklist. In short:
+The [PR template](.github/PULL_REQUEST_TEMPLATE.md) has a `Summary` section, a `Verification` section (commands and results, screenshots for UI changes), and this checklist. Do not add a "Test plan" section.
 
-- The PR does one thing and links its issue.
-- Docs in the same PR describe the change. `docs/product` matches the UI.
-- Tests cover the change. Changes to money, auth, permissions, subscriptions, or entitlements must include tests.
+- The PR does one thing, links its issue, and the title follows Conventional Commits.
+- Docs in the same PR describe the change. `docs/product` matches the UI. An architectural change adds or links a decision record.
+- Tests cover the change. Changes to money, auth, permissions, subscriptions, or entitlements include tests with denied and cross-tenant cases.
+- Every new query on community data is scoped by `community_id`, and authorization is checked in the service.
 - Database migrations follow the rules in [AGENTS.md](AGENTS.md#6-database-migration-rules): forward-only, expand and contract, never edited after merge.
-- No secrets, tokens, or real customer data in code, fixtures, or screenshots.
-- Evidence of verification (commands and results) is in the `Verification` section. Do not add a "Test plan" section.
+- No secrets, tokens, live payment keys, or real customer data in code, fixtures, logs, or screenshots.
+- No planned feature is presented as available in UI or docs.
 
 ## Code review expectations
 

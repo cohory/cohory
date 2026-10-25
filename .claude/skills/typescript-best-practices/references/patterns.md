@@ -106,7 +106,7 @@ Use `safeParse` when a failure is an expected branch, such as form validation th
 ## Derive row types from Drizzle
 
 ```ts
-import { posts } from "@cohory/database/schema";
+import { posts } from "@cohory/db/schema";
 
 type Post = typeof posts.$inferSelect;
 type NewPost = typeof posts.$inferInsert;

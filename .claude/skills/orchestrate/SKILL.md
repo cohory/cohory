@@ -21,7 +21,7 @@ Route here only when the work outlives one agent session. One task driven to a p
 - **Worker.** One `Agent` subagent per unit, in its own worktree (`isolation: "worktree"`) or branch. One writer per branch. Prefer fewer, broader workers over many tiny ones.
 - **Verifier.** A separate subagent that did not write the code, on a different model when available. Only for units whose verification is expensive, judgment-heavy, or high blast radius. For a unit verified by one cheap command, the worker runs it and you spot-check the output.
 
-Cap in-flight workers at what you can review in one drain, roughly five to ten. Refill as a rolling window, not blocking batches.
+Cap in-flight workers at what you can review in one drain and what the machine can run, roughly three to five on one developer machine (heavy test commands share the test slot pool in `AGENTS.md` section 11). Refill as a rolling window, not blocking batches.
 
 ## Program store
 

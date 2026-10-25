@@ -1,4 +1,4 @@
-# Comparable Open-Source Projects: Research for Cohory
+# Comparable open-source projects
 
 Ten open-source products that overlap with Cohory, and the patterns to reuse or avoid.
 
@@ -453,7 +453,7 @@ Architecture:
 - **Recommendation:** Use Better Auth for identity and keep authorization in a single `can(actor, action, resource)` helper. Rationale: Formbricks runs Better Auth in production; NextAuth v4 is legacy.
 - **Recommendation:** Provider strategy by env var for jobs (Postgres-backed default, BullMQ when `REDIS_URL` is set), storage (local disk default, S3-compatible), email (SMTP default, Resend optional). Rationale: Documenso shows this enables a minimal self-host and a scalable cloud from the same code.
 - **Recommendation:** Treat payments as a provider interface (`stripe-connect`, `stripe-byo-keys`, later others) with a fee ledger and idempotent, order-independent webhook handlers. Rationale: Ghost's webhook rules and Dub's Connect handlers.
-- **Recommendation:** Use direct charges on creator-owned accounts with full Dashboard access (now configured through Accounts v2 as defined in [../architecture/payments.md](../architecture/payments.md); the legacy Standard type is deprecated for new platforms) with `application_fee_percent=1` for subscriptions and `application_fee_amount` for one-time sales. Rationale: this is the Stripe-documented model for creator ownership.
+- **Recommendation:** Use direct charges on creator-owned accounts with full Dashboard access (now configured through Accounts v2 as defined in [../architecture/payments.md](../architecture/payments.md); the legacy Standard type is deprecated for new platforms) with `application_fee_percent=2` for subscriptions (the rate was 1 when this was written; 2% since [ADR 0027](../decisions/0027-safe-exit-and-2-percent-fee.md)) and `application_fee_amount` for one-time sales. Rationale: this is the Stripe-documented model for creator ownership.
 - **Recommendation:** On disconnect or downgrade to self-host, automatically clear `application_fee_percent` on the creator's subscriptions and listen for `account.application.deauthorized`. Rationale: Stripe keeps collecting the fee otherwise, which would break the ownership promise.
 - **Recommendation:** For self-hosted installs, support pasting the creator's own restricted Stripe key (0% fee, no Connect) as the default, with an optional hosted relay later. Rationale: Ghost's relay depends on deprecated OAuth tokens; Discourse shows BYO keys work.
 - **Recommendation:** Ship gamification, events and subscriptions as first-party modules built on the same hook API that `@cohory/sdk` exposes (`definePlugin({ hooks })`). Rationale: Discourse and Payload prove the extension API only stays real when first-party features use it.
@@ -618,3 +618,8 @@ Stripe documentation (fetched 2026-10-17):
 - https://docs.stripe.com/billing/subscriptions/migrate-subscriptions
 - https://docs.stripe.com/billing/subscriptions/import-subscriptions-toolkit
 - https://docs.stripe.com/get-started/data-migrations/pan-copy-self-serve
+
+## Decisions and open questions
+
+- **Recommendation:** every item under "Recommendations for Cohory" (architecture, repository layout, licensing). Several became decision records; the licensing input became [ADR 0009](../decisions/0009-license.md).
+- **Open question:** the six items in Appendix D, as recorded on the research date. Item 6 was later settled by the DCO decision (founder, 2026-10-19), and item 1 is tracked in [ADR 0007](../decisions/0007-stripe-connect-direct-charges.md).

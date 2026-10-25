@@ -6,7 +6,7 @@ The eight phases from foundation to agent-ready courses, with scope, dependencie
 
 ## Overview
 
-| Phase | Name | Release | Status (0.12.0) |
+| Phase | Name | Release | Status |
 |---|---|---|---|
 | 0 | Foundation and design | Internal | Done |
 | 1 | Community core | Internal, then early self-hosters | Built (0.1.0) |
@@ -94,7 +94,7 @@ flowchart LR
 
 **Goals.** Creators build courses where content lives. Members learn and resume easily.
 
-**Scope.** Courses (REQ-CRS-001 to 005, with all-members access only), Lessons (REQ-LSN-001 to 003, 005), "Continue" on the Community homepage. Lesson comments and level-gated access (REQ-LSN-004, REQ-GAM-004) are Post-MVP.
+**Scope.** Courses (REQ-CRS-001 to 005, with all-members access only), Lessons (REQ-LSN-001 to 003, 005), "Continue" on the Community homepage. Lesson comments (REQ-LSN-004) are Post-MVP. Level-gated access (REQ-GAM-004) was Post-MVP and shipped in 0.11.0 ([0045](../decisions/0045-levels-that-unlock-and-learning-points.md)).
 
 **Dependencies.** Phase 1 (identity, communities, comments, entitlements interface).
 
@@ -136,7 +136,7 @@ flowchart LR
 
 **Goals.** Ship the MVP publicly on both editions.
 
-**Scope.** Production Docker Compose with backup, restore, and upgrade (REQ-NFR-HOST-001 to 005), Cloud operations (tenant provisioning, custom domains with TLS, managed backups, monitoring), fair-use limit enforcement, load testing, security review, public docs site.
+**Scope.** Production Docker Compose with backup, restore, and upgrade (REQ-NFR-HOST-001 to 005), Cloud operations (tenant provisioning, managed backups, monitoring; custom domains with TLS moved to a later phase, founder decision 2026-10-25), fair-use limit enforcement, load testing, security review, public docs site.
 
 **Dependencies.** Phases 1 to 3.
 
@@ -159,7 +159,7 @@ flowchart LR
 
 **Dependencies.** Phase 4 (stable data model and production payments).
 
-**Deliverables.** Migration section inside Settings ("Bring your existing subscribers"), importer framework with normalization step, offboarding guide, BYO capability record and ledger billing.
+**Deliverables.** Migration section in Manage ("Bring your existing subscribers"; its own section since 0.9.0), importer framework with normalization step, offboarding guide, BYO capability record and ledger billing.
 
 **Acceptance criteria.**
 - Automated round-trip test: Cloud export imported into a fresh Community Edition instance with content, members, and entitlements matching.
@@ -177,7 +177,7 @@ flowchart LR
 
 **Dependencies.** Phase 4 (stable REST API and audit log). Independent of Phase 5.
 
-**Deliverables.** MCP server at a documented path, agent management in Manage, Settings, approval queue in Manage, Overview, scope reference, security guidance for agent use.
+**Deliverables.** MCP server at a documented path, agent management in Manage, Settings, approval queue (as built: Manage, Inbox, Agent approvals, with a count on Overview), scope reference, security guidance for agent use.
 
 **Acceptance criteria.**
 - Every MCP tool maps to a REST operation with the same authorization.
@@ -216,6 +216,6 @@ flowchart LR
 | Recommendation | Phases 2 and 3 can run in parallel after Phase 1. Phases 5 and 6 can run in parallel after Phase 4. |
 | Recommendation | Members CSV export in MVP. Full archive export, import, and importers in Phase 5. |
 | Recommendation | Cloud stays in private beta until fee base, tax, refunds, and disputes are legally reviewed. |
-| Open question | Do Events land in Phase 2 or Phase 3? Proposed default: Phase 2 if Classroom finishes early, otherwise Phase 3. |
+| Recommendation | Events land in Phase 2. The earlier open question (Phase 2 or 3) is closed: events shipped with Phase 2 in 0.1.0. |
 | Recommendation | Polar is the first BYO provider in Phase 5 (built in 0.5.0, engineering choice). |
 | Open question | Does an external security review happen before or during the private Cloud beta? Proposed default: before any live payments. |

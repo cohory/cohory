@@ -2,7 +2,7 @@
 
 Every way an owner can leave (archive, delete, disconnect, transfer, account deletion) is made safe for paying members and honest for the creator. The Cloud platform fee becomes 2% for new subscriptions, and Polar is no longer offered unless an operator turns it on.
 
-- ADR status: Accepted
+- ADR status: Accepted (the follow-ups in Consequences are built; see [0052](0052-safe-exit-and-learning-points-built.md))
 - Date: 2026-10-20
 - Deciders: founder
 - Supersedes: the fee rate in [0007](0007-stripe-connect-direct-charges.md) (2%). The rest of 0007 stands.

@@ -2,7 +2,7 @@
 
 The operating manual for coding agents (and humans) working in the Cohory repository.
 
-The repository holds Cohory 0.12.0: the web app, the worker, and the packages listed in section 2 (see [overview](docs/architecture/overview.md) for how they fit together). Rules below apply to every package. Rules are **Confirmed** when they come from the founder brief and **Recommendation** otherwise; both are binding for agents until changed through a decision record.
+The repository holds Cohory: the web app, the worker, and the packages listed in section 2 (see [overview](docs/architecture/overview.md) for how they fit together). Rules below apply to every package. Rules are **Confirmed** when they come from the founder brief and **Recommendation** otherwise; both are binding for agents until changed through a decision record.
 
 ## 1. Read first
 
@@ -32,23 +32,23 @@ Before any task, read this file, a local progress file if the maintainer keeps o
 
 ### Modules
 
-Identity, Communities, Members, Posts, Comments, Courses, Lessons, Events, Gamification, Payments, Subscriptions, Entitlements, Notifications, Migration, Agent integrations.
+Identity, Communities, Members, Posts, Comments, Courses, Lessons, Events, Gamification, Payments, Subscriptions, Entitlements, Notifications, Reviews, Migration, Agent integrations.
 
-In code, Comments live in `@cohory/posts`, Lessons in `@cohory/courses`, Subscriptions in `@cohory/payments`, Events in `@cohory/calendar`, and Agent integrations in `@cohory/agents`, `@cohory/api`, and `@cohory/mcp`. `@cohory/events` is the domain event outbox, not the Events module. Table definitions for every module sit in `packages/db/src/schema`; the owning module is still the only one that queries them.
+In code, Comments live in `@cohory/posts`, Lessons in `@cohory/courses`, Subscriptions in `@cohory/payments`, Events in `@cohory/calendar`, Reviews in `@cohory/reviews` ([0025](docs/decisions/0025-reviews-module-boundary.md)), and Agent integrations in `@cohory/agents`, `@cohory/api`, and `@cohory/mcp`. `@cohory/events` is the domain event outbox, not the Events module. Table definitions for every module sit in `packages/db/src/schema`; the owning module is still the only one that queries them.
 
 ### Boundary rules
 
-- Each module owns its tables. Other modules read or change that data only through the owning module's exported service functions, never by querying its tables directly.
+- Each module owns its tables. Other modules read or change that data only through the owning module's exported service functions, never by querying its tables directly. The recorded exceptions are the shared repositories in `@cohory/db` (memberships, subscriptions, the audit log, [0031](docs/decisions/0031-community-access-module.md)), Migration ([0015](docs/decisions/0015-migration-module-direct-table-access.md)), and Identity erasure.
 - A package exposes its public surface through the `exports` field in `package.json`. Do not import from another package's internal paths.
 - Delivery surfaces (UI, REST API, MCP, jobs) are thin. They parse input, call a service, and shape the response. Business rules live in services.
 - Dependencies point one way: delivery surfaces depend on domain packages, domain packages depend on `db`, `authz`, and shared utilities. No cycles. A domain package never imports from `apps/*`.
 - Cross-module side effects (for example "a like awards a point") go through a domain event or a job, not a direct call that couples the two modules' transactions, unless both writes must commit together.
-- Entitlements is the only module that answers "can this member access this content". Content modules ask it through `communityAccessIn` (or `getCommunityAccess`) from `@cohory/entitlements/access`, an entry that depends only on `authz` and `db` ([0031](docs/decisions/0031-community-access-module.md)); none computes access from memberships or sets `entitled` from the role. `@cohory/entitlements` must not depend on any domain package.
+- Entitlements is the only module that answers "can this member access this content". Content modules ask it through `communityAccessIn` (or `getCommunityAccess`) from `@cohory/entitlements/access`, an entry that depends only on `db` ([0031](docs/decisions/0031-community-access-module.md)); none computes access from memberships or sets `entitled` from the role. `@cohory/entitlements` depends on `authz`, `db`, and `infra` only, never on a domain package.
 - Fee calculation lives in exactly one pure module inside Payments (section 7).
 
 ### Where code lives
 
-The layout as of 0.12.0. Packages sit flat under `packages/`, one per module or shared concern. [overview](docs/architecture/overview.md) explains how they fit together.
+The current layout. Packages sit flat under `packages/`, one per module or shared concern. [overview](docs/architecture/overview.md) explains how they fit together.
 
 | Path | Contents |
 |------|----------|
@@ -56,7 +56,7 @@ The layout as of 0.12.0. Packages sit flat under `packages/`, one per module or 
 | `apps/worker` | pg-boss job runner and operator command line tools (`pnpm migration`, `billing`, `secrets`, `accounts`), same image as web |
 | `apps/e2e` | Playwright end-to-end specs |
 | `packages/db` | Drizzle client, every table schema, SQL migrations, row level security helpers, seed scripts |
-| `packages/config` | Shared tsconfig, ESLint, Prettier, and Vitest presets, plus platform config (`@cohory/config/platform`: edition, app URL, instance branding) |
+| `packages/config` | Shared tsconfig, ESLint, Prettier, and Vitest presets, plus platform config (`@cohory/config/platform`: edition, app URL, instance branding) and legal page config (`@cohory/config/legal`) |
 | `packages/infra` | The structured logger (`@cohory/infra/logger`) |
 | `packages/auth` | Better Auth config, sessions, actor resolution, account forms |
 | `packages/authz` | The single authorization module: permission matrix, roles, scopes, `can()` and `authorize()` |
@@ -74,6 +74,7 @@ The layout as of 0.12.0. Packages sit flat under `packages/`, one per module or 
 | `packages/sdk` | Public typed API client (MIT) |
 | `packages/agent-runner` | Reference local evaluation runner for agent courses (MIT) |
 | `packages/ui` | shadcn/ui based primitives and feature components (community, classroom, calendar, members, payments, migration, account) |
+| `scripts/` | Shell scripts behind the root `pnpm` commands: verify, test services, e2e, the development stack, backup and restore, the DCO check, and Docker cleanup |
 | `docker-compose.yml`, `docker-compose.prod.yml`, `Dockerfile`, `docker/` | One image for web, worker, and migrations; Compose with postgres, a one-shot `migrations` service, and optional redis and mailpit profiles (development) or Caddy (production) |
 
 Do not create a new top-level package without checking this table and the overview. If none fits, propose one in the plan.
@@ -154,6 +155,8 @@ Rules:
 - Keep `docs/product` in sync with the UI: screens, labels, and journeys.
 - Follow [documentation-conventions](docs/open-source/documentation-conventions.md): labels, no dashes as punctuation, no emojis, relative links.
 - Do not describe planned features as implemented.
+- Keep the current release number out of docs that are not `CHANGELOG.md`, decision records, the decisions log, dated reviews, or env examples. Write "today" or "not built yet" instead, so a release does not touch the docs.
+- Run the `docs-audit` skill before each release. It checks every doc against the code and simplifies what drifted.
 - Keep `CHANGELOG.md` short: one line per user visible change under `## [Unreleased]`, grouped by Added, Changed, Fixed, and Removed. No implementation detail, ticket numbers, or file paths.
 
 ## 9. Git and pull requests
@@ -167,7 +170,7 @@ Rules:
 
 ## 10. Skills to use
 
-Project skills live in [.claude/skills](.claude/skills/README.md) and assume the superpowers plugin. Read that README for the full workflow chain.
+Project skills live in [.claude/skills](.claude/skills/README.md) and assume the superpowers plugin. Read that README for the full workflow chain. The third party skills listed there (Stripe, Better Auth, Hono, Vitest, Playwright, Postgres, Turborepo, React, security audit) load when their description matches the task; `skills-lock.json` records their sources.
 
 | Situation | Skill |
 |-----------|-------|
@@ -195,6 +198,7 @@ Project skills live in [.claude/skills](.claude/skills/README.md) and assume the
 | Pausing or resuming | `session-handoff` |
 | Many PRs coordinated | `orchestrate`, `superpowers:dispatching-parallel-agents` |
 | Repeated human corrections | `correct` |
+| Before a release, or when docs drift from the code | `docs-audit` |
 
 ## 11. Autonomous-run checklist
 

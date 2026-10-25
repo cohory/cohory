@@ -9,6 +9,9 @@ on:
       - "docs/**"
       - "**/*.md"
       - ".claude/**"
+      - ".github/ISSUE_TEMPLATE/**"
+      - "skills-lock.json"
+      - ".env*.example"
   push:
     tags: ["v*"]
   schedule:

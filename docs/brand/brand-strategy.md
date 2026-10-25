@@ -80,11 +80,11 @@ Proof points:
 
 ### Pillar 3: Openness for agents and developers
 
-Everything a person can do in the UI will be available through a documented API, with agent access that is scoped, logged, and approved by a human.
+Everything a person can do in the UI is available through a documented API, with agent access that is scoped, logged, and approved by a human.
 
 Proof points:
-- **Confirmed:** the platform is API-first, with an OpenAPI description planned at `/api/openapi.json`.
-- **Recommendation:** MCP server, agent identities, scoped permissions, and audit logs are planned post-MVP. Agents never receive unrestricted financial or admin permissions.
+- **Confirmed:** the platform is API-first, with an OpenAPI description served at `/api/openapi.json`.
+- **Recommendation:** MCP server, agent identities, scoped permissions, and audit logs shipped after MVP (0.6.0 and 0.7.0). Agents never receive unrestricted financial or admin permissions.
 - **Confirmed:** the stack is mainstream and documented (TypeScript, Next.js, PostgreSQL, Drizzle, Tailwind CSS, shadcn/ui), deployed with Docker Compose.
 
 ## Tagline candidates
@@ -108,7 +108,7 @@ Proof points:
 
 ## Homepage messaging
 
-**Recommendation:** draft copy for the MVP homepage. Capabilities marked planned must not appear as available.
+**Recommendation:** draft copy for the MVP homepage. Capabilities marked planned must not appear as available. As built (0.11.0, [0047](../decisions/0047-cloud-marketing-in-the-app.md)), the Cloud landing, pricing, and open source pages use the copy listed in [information architecture](../product/information-architecture.md#2-platform-level), which differs from this draft.
 
 **Hero:** Your community. Your subscribers. Your business.
 
@@ -184,7 +184,7 @@ Proof points:
 
 - Never promise unconditional portability. Say what exports include and what depends on the payment provider.
 - Never hide or soften fees. The 2% platform fee and separate processing fees are always shown together.
-- Never present planned features (BYO payment provider, MCP, agent courses, migration importers) as available.
+- Never present planned features (custom domains, direct messaging, the plugin SDK, native apps) as available.
 - Never use urgency or scarcity tactics (countdowns, "only 3 spots left", fake social proof).
 - Never invent testimonials, user counts, or market research.
 - Never copy another product's logo, color pairing, illustrations, or proprietary UI, including Skool, Circle, Linear, and Notion.

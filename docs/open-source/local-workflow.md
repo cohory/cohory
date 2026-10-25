@@ -80,3 +80,8 @@ Use the user names and passwords from your `.env` if you changed `POSTGRES_USER`
 | A host e2e run failed | The service logs are in `apps/e2e/test-results/host-logs`, next to the Playwright report. |
 
 More detail on each suite is in [testing](testing.md).
+
+## Decisions and open questions
+
+- **Confirmed** ([0046](../decisions/0046-test-slots-and-host-e2e.md)): one machine wide pool of 2 test slots, an e2e run takes all of them, and `pnpm e2e:host` runs the specs on the host for the inner loop.
+- **Recommendation:** `pnpm e2e` against the production image is the gate before landing a batch and for releases, not a step of the inner loop.

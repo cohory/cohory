@@ -28,11 +28,20 @@ Processing fees are always separate and charged by the provider. Polar is the me
 
 ## Connect Stripe Connect (Cloud)
 
-Open Manage, Payments, keep Stripe Connect selected, and choose Connect your Stripe account. Stripe's hosted form collects your business details. Testing against a sandbox is described in [testing.md](../open-source/testing.md#testing-payments-against-stripe-test-mode).
+Open Manage, Payments, choose the country of your business, keep Stripe Connect selected, and choose Connect your Stripe account. Stripe's hosted form collects your business details. Testing against a sandbox is described in [testing.md](../open-source/testing.md#testing-payments-against-stripe-test-mode).
+
+The operator registers two webhook destinations in the platform's Stripe Dashboard, both pointing at `/api/webhooks/stripe`, with API version `2026-09-30.endive` (the version the Stripe client pins; upgrade the endpoints and the `stripe` package together):
+
+| Destination | Signing secret | Events |
+|---|---|---|
+| Connected accounts | `STRIPE_CONNECT_WEBHOOK_SECRET` | `checkout.session.completed`, `checkout.session.expired`, `customer.subscription.created`, `customer.subscription.updated`, `customer.subscription.deleted`, `invoice.paid`, `invoice.payment_failed`, `charge.refunded`, `charge.dispute.created`, `charge.dispute.updated`, `charge.dispute.closed`, `charge.dispute.funds_withdrawn`, `charge.dispute.funds_reinstated`, `radar.early_fraud_warning.created`, `account.updated`, `account.application.deauthorized` |
+| Your account | `STRIPE_WEBHOOK_SECRET` | `application_fee.created`, `application_fee.refunded`, plus the platform billing events listed in [platform-billing.md](platform-billing.md#what-the-operator-runs) |
+
+Events the destination sends but Cohory does not handle are answered as ignored. The design (one endpoint, two secrets, processing in the worker) is in [payments.md](../architecture/payments.md) section 4.
 
 ## Connect your own Stripe keys (Community Edition)
 
-The operator sets `PAYMENTS_ENCRYPTION_KEY`. In Manage, Payments, paste a secret or restricted key and the webhook signing secret. Cohory then shows the webhook URL to add in Stripe (`/api/webhooks/stripe/own/{connectionId}`).
+The operator sets `PAYMENTS_ENCRYPTION_KEY`. In Manage, Payments, paste a secret or restricted key and the webhook signing secret. Cohory then shows the webhook URL to add in Stripe (`/api/webhooks/stripe/own/{connectionId}`). Select the same events as the Connected accounts destination above; the application fee events do not apply to your own account.
 
 ## Connect Polar
 
@@ -57,6 +66,20 @@ Polar cannot take a fee for a third party at checkout. On Cloud, every paid Pola
 
 `packages/payments/support/fake-polar/server.mts` stands in for the Polar API, the hosted checkout, the customer portal, and the webhook settings page. Start it with `FAKE_POLAR_PORT=12112 node packages/payments/support/fake-polar/server.mts`, set `POLAR_API_BASE_URL=http://localhost:12112` for the app, and open `http://localhost:12112/dashboard/webhooks` to register the app's webhook URL and get a signing secret. Fixture routes under `/__fixtures/` list the recorded calls and deliveries and can deliver any signed event. Leave `POLAR_API_BASE_URL` empty in production.
 
+## Local development with a Stripe sandbox
+
+`pnpm db:seed` creates the private community Cohory Pro (`/c/cohory-pro`) owned by `owner@cohory.local`, with join mode approval, an invite link (`/join/cohory-pro-invite-link-for-local-paid-tests`), a welcome post, and `member@cohory.local` as an active member without a subscription, but with no price and no payment connection, so tests and fresh installs work offline. The paid part is a separate step that needs a Stripe sandbox and is never part of `db:seed` or CI:
+
+1. Put a sandbox key (`sk_test_`) in `STRIPE_SECRET_KEY` in the root `.env`, set `COHORY_EDITION=cloud`, enable Connect in the sandbox, and start the webhook listener with `scripts/stripe-dev.sh` (default port 3000). It forwards platform and Connect events to one URL with one signing secret, so put the `whsec_` value it prints into both `STRIPE_WEBHOOK_SECRET` and `STRIPE_CONNECT_WEBHOOK_SECRET` and restart the web app and the worker. Start the listener after Connect is enabled. The full setup is in [testing.md](../open-source/testing.md#testing-payments-against-stripe-test-mode).
+2. Set `PAID_SEED_ACCOUNT_ID` to a connected account (`acct_`) in that sandbox.
+3. Run `pnpm db:seed` and then `pnpm db:seed:paid` (`packages/payments/src/seed-paid-cli.ts`, reads the root `.env`).
+
+The paid seed refuses to run when `NODE_ENV` is `production`, when `STRIPE_SECRET_KEY` is not an `sk_test_` key, or when `COHORY_EDITION` is not `cloud`, and refuses with the reason when the named account is live, cannot take charges, or is already connected to another community. It stores a `stripe_connect` connection for Cohory Pro with the account's state (the same row Cloud onboarding produces) and saves the plan through the payments service, so the Product and the USD 19.00 monthly and USD 190.00 yearly Prices get the production metadata and idempotency keys. Putting the plan on sale turns the join mode from approval to open. Checkout applies the configured platform fee (`PLATFORM_FEE_BPS`, 200 by default on Cloud). A second run finds the connection and the plan and creates nothing. It prints only ids, never keys, and touches no other object on the account.
+
+Then sign in as `user@cohory.local`, open `/c/cohory-pro`, and buy the membership with a Stripe test card.
+
+The end to end stacks (`pnpm e2e:host` and `pnpm e2e`) run the same paid seed against the fake Stripe server, on a connected account the fake creates and passes in `PAID_SEED_ACCOUNT_ID`, so the seeded About page shows the price. `pnpm db:reset:local --yes` runs the paid seed after the seed and only warns when it refuses, for example without a sandbox key. Recorded Stripe events and objects for the unit and integration suites live in `packages/payments/src/test/fixtures/stripe` (recorded 2026-10-22, API version `2026-09-30.endive`, personal data removed); a unit test fails when they disagree with the pinned API version.
+
 ## Checking pause on a Stripe test clock
 
 Pause and resume are covered by tests against a fake gateway only. Before a release that changes them, a person with a Stripe sandbox checks the real behavior once:
@@ -70,7 +93,7 @@ This is a human gate in the [backlog](../product/backlog.md).
 
 ## Decisions and open questions
 
-- **Decided** (0.5.0): Polar is the first bring your own provider (gate default: first candidate with a public sandbox).
+- **Confirmed** (0.5.0, recorded in [0051](../decisions/0051-payment-provider-decisions-without-records.md)): Polar is the first bring your own provider, chosen as the first candidate with a public sandbox. [0027](../decisions/0027-safe-exit-and-2-percent-fee.md) later switched it off by default.
 - **Assumption:** Polar's order `refunded_amount` excludes tax. To verify in the sandbox.
 - **Open question:** a live run against the Polar sandbox (connect, checkout with a test card, renewal, refund, portal cancel) is a human gate, because it needs a Polar account.
 - **Confirmed** (founder decision, 2026-10-19): no creator attestation of revenue a provider reports. Cohory fetches each order from the API after a signed webhook, and the daily `billing.reconcile` job checks totals ([platform-billing.md](platform-billing.md)); that is enough. Periodic order listing is not built.

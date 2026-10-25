@@ -11,16 +11,17 @@ description: Use when about to commit, rebase commits for review, write a commit
 
 1. Work in a worktree or branch off `main` (`superpowers:using-git-worktrees`). Never commit to `main` directly.
 2. Run `no-comments` over the diff.
-3. Run the repo's checks once: lint, typecheck, and tests for touched packages (for example `pnpm turbo run lint typecheck test --filter=...[origin/main]`). Push with git hooks enabled. Never pass `--no-verify`.
+3. Run `pnpm verify:changed` once (typecheck, lint, unit tests, and integration tests for the touched packages and their dependents). Push with git hooks enabled. Never pass `--no-verify`.
 4. For changes to auth, payments, tenancy, or the schema, run `interrogate` first.
 5. Confirm with `superpowers:verification-before-completion` that every claim in the PR body has evidence.
+6. Update every doc the change touches in the same PR (AGENTS.md section 8): `docs/product` for screens and labels, `docs/architecture` for code shape, `docs/operations` for operator steps, and a decision record for an architectural change. The PR checklist asks for it.
 
 ## Commits
 
 - Commit often while working. Before opening the PR, rebase into small, ordered commits. Each commit builds and passes checks on its own.
 - Order commits so the history argues for the change: a failing test before the fix, a deletion before the reshape, the scaffold before the feature.
 - Amend when a fix belongs in the commit you just made. Add a new commit when it is separable.
-- Subject lines use Conventional Commits: `type(scope): subject`. Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `perf`, `build`, `ci`. Scope is the package or area (`web`, `database`, `payments`, `community`, `courses`, `ui`, `skills`). Subject is imperative, short, no trailing period, and names a real symbol when one carries the change.
+- Subject lines use Conventional Commits: `type(scope): subject`. Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `perf`, `ci`. Scope is the package or module name (`web`, `worker`, `db`, `payments`, `communities`, `courses`, `ui`, `skills`). Subject is imperative, short, no trailing period, and names a real symbol when one carries the change.
 - Commit bodies explain why, not what. Do not restate the subject.
 - No `Co-Authored-By` trailers. Never mention AI assistants.
 
@@ -30,14 +31,11 @@ Same format as a commit subject. Example: `fix(payments): verify webhook signatu
 
 ## PR body
 
-A one-minute briefing for a reviewer who has the diff. Short sentences, few identifiers, no walls of text. Use `##` headings in this order and drop a section with nothing to say:
+Fill the template in `.github/PULL_REQUEST_TEMPLATE.md`. It is a one-minute briefing for a reviewer who has the diff: short sentences, few identifiers, no walls of text.
 
-- `## Why`. The problem and the approach in one to three sentences.
-- `## What changed`. One to three bullets. Name both sides of a rename.
-- `## Scope`. Always present. What it covers and what it deliberately leaves out.
-- `## Tradeoffs`. Only rejected alternatives a reviewer would otherwise ask about.
-- `## Blast radius`. One or two sentences on what it touches and why that is safe or risky. Required for migrations, auth, and payment changes.
+- `## Summary`. The problem and the approach in one to three sentences, what changed (name both sides of a rename), what the PR deliberately leaves out, and the issue it closes. For migrations, auth, and payment changes, add one or two sentences on the blast radius and why it is safe. Mention a rejected alternative only when a reviewer would otherwise ask about it.
 - `## Verification`. One to three bullets, each a command or user path you actually ran and its result. Evidence of what was done, never a checklist for the reviewer. Do not add a "Test plan" section.
+- `## Checklist`. Tick each item only when it is true.
 
 Attach screenshots or a short video for any UI change, at desktop and mobile widths. Long logs, benchmark tables, and decision trails go in a linked file or gist, not the body.
 

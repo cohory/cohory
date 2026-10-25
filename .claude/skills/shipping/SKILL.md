@@ -51,6 +51,7 @@ Extending the run needs new verdicts, which is a new pass through step 1.
 
 When cutting a release (tag, changelog, Docker image):
 
+- Run `docs-audit` first. The tag waits until its four scripts are clean and the audit PR has merged.
 - Confirm `main` is green and every merged PR since the last tag has a verdict.
 - Generate the changelog from Conventional Commit subjects since the last tag (`git log <last-tag>..HEAD --oneline`). Write it with `technical-writing`.
 - Pause for the human before pushing a tag, publishing an image, or deploying. These are irreversible.

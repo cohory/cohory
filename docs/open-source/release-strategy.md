@@ -2,7 +2,7 @@
 
 How Cohory will version, release, and support the Community Edition, and how security fixes ship.
 
-The repository is at version 0.12.0, but no version has been tagged and no image has been published yet. Everything here is a **Recommendation** unless marked otherwise, and takes effect with the first tagged release.
+Releases are tagged `vX.Y.Z`; the first tagged release was `v0.12.0`. The `Docker` workflow pushes its image to `ghcr.io/cohory/cohory`, a public package that anyone can pull. Everything here is a **Recommendation** unless marked otherwise.
 
 ## What gets released
 
@@ -39,7 +39,7 @@ Internal package APIs inside the monorepo are not part of the contract.
 
 ## Release cadence
 
-- Minor releases about every four weeks once code exists, when there is something worth releasing. No release just to keep a schedule.
+- Minor releases about every four weeks, when there is something worth releasing. No release just to keep a schedule.
 - Patch releases as needed for bug fixes.
 - Security releases outside the cadence (see below).
 - Release candidates (`0.x.0-rc.1`) for any minor that contains migrations or payment changes, available for at least one week.
@@ -50,7 +50,7 @@ Internal package APIs inside the monorepo are not part of the contract.
 - Today each PR that changes behavior adds one line to `CHANGELOG.md` under `## [Unreleased]` by hand. **Recommendation:** move to [Changesets](https://github.com/changesets/changesets) once releases are tagged, so the release PR merges per PR entries into `CHANGELOG.md`. Changesets is not set up yet; it works with pnpm workspaces and lets the SDK version independently later.
 - Release notes group entries as Breaking changes, Features, Fixes, Security, and Upgrade notes. Upgrade notes include migration steps and any change to environment variables.
 - Entries are written for creators and self-hosters, following [voice-and-tone](../brand/voice-and-tone.md).
-- `CHANGELOG.md` follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/): an `## [Unreleased]` section at the top, then one `## [x.y.z] - YYYY-MM-DD` heading per release (that heading format is the only place a spaced hyphen is allowed in the docs). The history before 0.11.0 was folded into one 0.11.0 entry; the detail is in git. Link references at the end of the file point `[Unreleased]` at the compare view from the latest tag, the first tagged release (0.12.0) at its tag, and every later release at the compare view from the previous tag.
+- `CHANGELOG.md` follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/): an `## [Unreleased]` section at the top, then one `## [x.y.z] - YYYY-MM-DD` heading per release (that heading format is the only place a spaced hyphen is allowed in the docs). The history before 0.11.0 was folded into one 0.11.0 entry; the detail is in git. Link references at the end of the file point `[Unreleased]` at the compare view from the latest tag, the first tagged release at its tag, and every later release at the compare view from the previous tag.
 
 ## Docker image tagging
 
@@ -95,6 +95,8 @@ Images pushed from `main` and tags are multi-architecture (amd64 and arm64); pul
 ## Who releases
 
 The release manager role is described in [GOVERNANCE.md](../../GOVERNANCE.md). Releases, tags, and image publishing are irreversible actions: coding agents prepare release PRs but never tag or publish (see the `shipping` skill).
+
+Before tagging, the release manager runs the `docs-audit` skill in `.claude/skills/docs-audit`. It checks every doc against the code, simplifies what drifted, and keeps release numbers out of the docs that would otherwise go stale with each tag.
 
 ## Decisions and open questions
 

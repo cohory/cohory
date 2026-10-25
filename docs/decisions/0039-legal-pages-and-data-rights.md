@@ -5,7 +5,7 @@ Legal and trust links come from one parsed config in `packages/config`. `/terms`
 - ADR status: Accepted
 - Date: 2026-10-22
 - Deciders: coordinator as product owner (founder decisions, 2026-10-22); legal wording stays a human gate
-- Related: [0033](0033-platform-config-and-neutral-home.md), [0038](0038-email-verification-required.md), [../self-hosting.md](../self-hosting.md), [../architecture/data-model.md](../architecture/data-model.md) section 14.2, [../../SECURITY.md](../../SECURITY.md), [../../LICENSING.md](../../LICENSING.md)
+- Related: [0033](0033-platform-config-and-neutral-home.md), [0038](0038-email-verification-required.md), [../self-hosting.md](../self-hosting.md), [../architecture/data-model.md](../architecture/data-model.md) section 3, [../../SECURITY.md](../../SECURITY.md), [../../LICENSING.md](../../LICENSING.md)
 
 ## Context
 

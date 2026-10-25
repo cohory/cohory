@@ -1,6 +1,6 @@
 # Principles
 
-The ten rules we use to make product and engineering trade-offs, with concrete consequences for each.
+The eleven rules (ten from the founder brief and one added) we use to make product and engineering trade-offs, with concrete consequences for each.
 
 **Confirmed.** The ten principles below come from the founder brief. The examples, exclusions, and tensions are **Recommendation** unless marked otherwise. When two principles conflict, the tension notes say which one usually wins and why. A decision that overrides a principle needs a decision record in [../decisions/README.md](../decisions/README.md).
 
@@ -33,7 +33,7 @@ When reviewing a feature, a pull request, or a design, ask for each relevant pri
 
 **How it influences decisions.**
 - Stripe Connect uses direct charges on the creator's connected account, so subscription objects live in the creator's Stripe account. **Recommendation.** Use connected accounts with full Dashboard access, with Stripe as the processing fee and loss collector (the Accounts v2 configuration in [../architecture/payments.md](../architecture/payments.md)), so the creator can keep using that account without us. The legacy Standard account type is deprecated for new platforms.
-- A full community export is available from Settings at all times, including on free Cloud communities.
+- A full community export is available from Manage, Migration at all times, including on free Cloud communities.
 - Offboarding from the Cloud Edition removes the application fee from future invoices of active subscriptions. We do not keep collecting fees after the creator leaves.
 - Custom domains are creator-controlled DNS. If the creator moves to self-hosting, they repoint DNS and members keep the same URL.
 - Member email addresses are visible and exportable by the creator (subject to the privacy rules in Principle 7).
@@ -49,11 +49,11 @@ When reviewing a feature, a pull request, or a design, ask for each relevant pri
 **Why it matters.** Standards make exports useful, integrations cheap, and self-hosting realistic. A creator who leaves should be able to read their data with ordinary tools.
 
 **How it influences decisions.**
-- API described with OpenAPI 3.1 and served at a stable path (planned `/api/openapi.json`).
+- API described with OpenAPI 3.1 and served at a stable path (`/api/openapi.json`).
 - Rich text stored as a documented JSON document model with a Markdown export. Lesson content exports as Markdown with front matter.
-- Events export as iCalendar (`.ics`), and each member gets a personal calendar feed URL.
+- Events export as iCalendar (`.ics`), and each member gets a personal calendar feed URL (planned, REQ-EVT-005).
 - Member exports in CSV and JSON. Community export as a versioned JSON bundle plus media files in a ZIP.
-- Authentication supports OAuth 2.0 and OpenID Connect providers. Agent integration uses MCP (post-MVP) rather than a custom protocol.
+- Authentication supports OAuth 2.0 and OpenID Connect providers (planned, REQ-ID-003). Agent integration uses MCP (built in 0.7.0) rather than a custom protocol.
 - Object storage uses the S3 API so any compatible store works.
 
 **What it rules out.** Custom binary export formats. A custom agent protocol when MCP fits. Storing lesson content as HTML blobs with inline styles that cannot be converted.
@@ -85,7 +85,7 @@ When reviewing a feature, a pull request, or a design, ask for each relevant pri
 **How it influences decisions.**
 - A new community starts with sensible categories (General, Introductions, Announcements), a suggested introduction post, and the default level names.
 - Appearance customization is limited to accent color, logo, cover image, three curated fonts, card style (Soft or Minimal), and Light, Dark, or System.
-- Notification defaults are conservative: email only for replies and mentions, batched every 15 minutes. A daily digest is Post-MVP.
+- Notification defaults are conservative: email right away for mentions and replies (merged per post after 3 minutes), a daily summary for comments on your posts, and a weekly digest, each with its own switch.
 - Membership setup offers free or one paid plan (monthly with an optional annual price) in MVP. More tiers are Post-MVP.
 - Self-hosting ships with one `docker-compose.yml` and an `.env.example` where every variable has a working default except secrets.
 
@@ -142,7 +142,7 @@ When reviewing a feature, a pull request, or a design, ask for each relevant pri
 
 **What it rules out.** "AI" buttons scattered across the member UI. Agent access through scraped sessions or shared passwords. Skipping the approval step for money because an agent is "trusted".
 
-**Tensions.** With Principle 1: approvals and audit logs add creator-facing surface. Resolution: approvals appear as a single queue in Manage, Overview, only when an agent is connected. With Principle 10: approval steps slow down automation. Resolution: creators can pre-approve narrow, low-risk actions (for example "publish drafts in Announcements"), never money.
+**Tensions.** With Principle 1: approvals and audit logs add creator-facing surface. Resolution: approvals appear as a single queue in Manage, Inbox (Agent approvals), with a count on Overview only when the community has agents. With Principle 10: approval steps slow down automation. Resolution: creators will be able to pre-approve narrow, low-risk actions (for example "publish drafts in Announcements"), never money; this is deferred (founder decision F-18) and not built.
 
 ## 9. Self-hosting must remain genuinely useful
 
@@ -205,7 +205,7 @@ When reviewing a feature, a pull request, or a design, ask for each relevant pri
 | Confirmed | Principles 1 to 10 as listed in the brief. |
 | Recommendation | Principle 11, "Honest money", covering fee transparency and the fee ledger. |
 | Recommendation | Knobs for developers go in the API, environment variables, or plugins, never in the creator UI. |
-| Recommendation | Agent approvals live in a single queue under Manage, Overview, shown only when an agent is connected. |
+| Recommendation | Agent approvals live in a single queue under Manage, Inbox, with a count on Overview shown only when the community has agents. |
 | Recommendation | Accent colors are validated and automatically adjusted for contrast. |
 | Recommendation | Reference self-hosting footprint is 2 vCPU and 4 GB RAM with Docker Compose. |
 | Open question | Should creators be able to pre-approve any agent action category beyond publishing drafts? Proposed default: only content actions, never money, roles, or removals. |

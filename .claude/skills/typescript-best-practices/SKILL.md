@@ -39,10 +39,10 @@ If `AGENTS.md` or `docs/architecture/*.md` define a rule that differs from this 
 
 ## Drizzle specifics
 
-- The Drizzle schema in each module (re-exported by `packages/db`) is the source of truth for row shapes. Derive, do not duplicate.
+- The Drizzle schema in `packages/db/src/schema` is the source of truth for row shapes. Derive, do not duplicate.
 - Multi-step writes that must succeed together go in `db.transaction`.
 - Scope every query that reads tenant data by community id. A query without the scope is a data leak waiting for a caller.
 
 ## Before you finish
 
-Run the repo's typecheck and lint scripts (for example `pnpm typecheck` and `pnpm lint`, or `pnpm turbo run typecheck lint`). New `any`, `@ts-ignore`, `@ts-expect-error`, or `eslint-disable` lines need a one-line reason on the same line, or they do not ship.
+Run `pnpm verify:changed` (typecheck, lint, unit tests, and integration tests for the packages you changed and their dependents). New `any`, `@ts-ignore`, `@ts-expect-error`, or `eslint-disable` lines need a one-line reason on the same line, or they do not ship.

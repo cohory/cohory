@@ -39,7 +39,7 @@ The log lists deliveries newest first with when, status, event, and result (answ
 | `event.rsvp_changed` | A member answers or changes an RSVP | `communityId`, `userId`, `eventId`, `occurrenceId`, `status` |
 | `subscription.activated` | A paid membership starts giving access | `communityId`, `userId`, `subscriptionId`, `planId` |
 | `subscription.ended` | A paid membership stops giving access | `communityId`, `userId`, `subscriptionId`, `planId` |
-| `review.created` | A member writes a review (Step 17) | `communityId`, `reviewId`, `authorId`, `rating` |
+| `review.created` | A member writes a review | `communityId`, `reviewId`, `authorId`, `rating` |
 | `review.updated` | The author edits their review | `communityId`, `reviewId`, `authorId`, `rating` |
 | `review.deleted` | The author deletes their review | `communityId`, `reviewId` |
 | `review.hidden` | The owner hides a reported review | `communityId`, `reviewId`, `reason` (`spam`, `abuse`, `personal_data`, `off_topic`) |
@@ -117,3 +117,8 @@ Deliveries go through the egress helper (`@cohory/egress`). It refuses loopback,
 | `WEBHOOKS_ENCRYPTION_KEYS` | Optional. A comma separated list of keys, current first, for rotation: the first seals new secrets, all of them (and the two above) open stored ones, and `pnpm secrets rotate` or the hourly `secrets.reencrypt` job moves stored secrets to the first key, including the old secret of a roll still in its 24 hour overlap. See [Rotating secrets](operator-guide.md#rotating-secrets). |
 
 The worker runs three queues: `webhooks.fanout` (creates one delivery per endpoint and event from the outbox), `webhooks.deliver`, and `webhooks.sweep` (every minute, picks up deliveries that are due and not held by a job).
+
+## Decisions and open questions
+
+- **Confirmed** (REQ-AGT-007, built in 0.6.0): outbound webhooks with signed deliveries, a delivery log, and resend.
+- **Recommendation:** the Standard Webhooks header and signature scheme above, the 10 attempt retry schedule, and turning an endpoint off after a delivery fails every attempt. No decision record covers outbound webhooks; the design is described in [agent-integrations.md](../architecture/agent-integrations.md) section 6.

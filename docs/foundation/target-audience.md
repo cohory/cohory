@@ -113,7 +113,7 @@ Six working personas. Four describe the primary and secondary audience, one the 
 |---|---|---|
 | Paying members must re-enter cards | Link existing Stripe subscriptions when the creator already owns the Stripe account. Where card data is held by another platform, document what is and is not possible. | 3 and 5 |
 | Re-uploading course content | Importers for course structure, plus bulk upload | 5 |
-| Members' habits | Familiar four-tab layout, email digest, custom domain | 1 and 4 |
+| Members' habits | Familiar four-tab layout, email digest, custom domain (Post-MVP) | 1 |
 | Fear of maintaining a server | Cloud Edition, or a documented Docker Compose setup with backups | 4 |
 | Project longevity | Open governance, clear license, public roadmap | 0 |
 
@@ -145,7 +145,7 @@ Skool is not in the founder's table. Its pricing and fee structure must be resea
 
 ## Validation plan
 
-**Recommendation.** Before Phase 3 ends, validate the primary persona with at least the following, and update this document with findings:
+**Recommendation.** Validate the primary persona with at least the following, and update this document with findings. The plan named the end of Phase 3 as the deadline; Phase 3 shipped in 0.1.0 without it, so it is still owed before a public Cloud launch.
 
 1. Structured conversations with creators currently running paid communities on Skool, Circle, or Mighty Networks, focused on switching barriers and payments.
 2. A review of public documentation from those platforms on export and subscription transfer, recorded with dates.
@@ -162,7 +162,7 @@ Results replace assumptions in this document. Any change in primary persona need
 | Assumption | All personas and their frustrations, motivations, and barriers. None are validated. |
 | Assumption | Competitor pricing is founder-provided and unverified. |
 | Recommendation | Maya is the default persona for UI decisions, Priya for API and self-hosting decisions. |
-| Recommendation | Run the validation plan before the end of Phase 3. |
+| Recommendation | Run the validation plan before a public Cloud launch (it was due by the end of Phase 3 and has not run). |
 | Open question | Is the primary persona more often a solo creator (Maya) or a small business with staff? This affects how early roles and permissions need depth. |
 | Open question | Which source platform do most likely switchers come from? This decides importer order in Phase 5. |
 | Open question | Skool's current pricing and fees, to be verified before any public comparison. |

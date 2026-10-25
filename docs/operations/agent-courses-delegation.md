@@ -92,3 +92,8 @@ Agents without `proposals:write`, community wide agents, and agents of banned pe
 - Notification preferences gain "Your agents' course access and purchase requests".
 - The archive export does not carry agent settings, delegations, or results.
 - Signed download links are keyed from `BETTER_AUTH_SECRET` and built on `APP_URL`. Agent course delivery needs no migration and no new variables. Design: [ADR 0023](../decisions/0023-agent-course-delivery.md).
+
+## Decisions and open questions
+
+- **Confirmed** ([0022](../decisions/0022-delegated-entitlements.md)): agents read a course only through a delegation from a person who has access, for 30 days at a time.
+- **Confirmed** ([0023](../decisions/0023-agent-course-delivery.md)): delivery through MCP tools and the matching REST routes, with signed links for files.

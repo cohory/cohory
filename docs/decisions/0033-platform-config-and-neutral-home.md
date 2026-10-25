@@ -2,7 +2,7 @@
 
 The edition, the app URL, and the instance's name and logo are parsed once in `packages/config`. The app's `/` is a neutral page that names the instance and carries no sales copy or fee numbers; the Cloud marketing site lives outside this repository.
 
-- ADR status: Accepted
+- ADR status: Accepted (the marketing site and `MARKETING_URL` superseded by [0047](0047-cloud-marketing-in-the-app.md))
 - Date: 2026-10-22
 - Deciders: founder (Cloud home: marketing site separate, app `/` neutral and edition aware), coordinator as product owner for the details
 - Related: [0027](0027-safe-exit-and-2-percent-fee.md), [../architecture/overview.md](../architecture/overview.md) sections 10 and 11, [../product/information-architecture.md](../product/information-architecture.md) section 2, [../self-hosting.md](../self-hosting.md)

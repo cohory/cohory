@@ -5,7 +5,7 @@ A community that sells memberships uses payment as its approval step. Invite onl
 - ADR status: Accepted
 - Date: 2026-10-22
 - Deciders: product owner under the founder's mandate (founder decision, 2026-10-22), coordinator for the details
-- Related: [0026](0026-community-page-for-non-members.md), [0036](0036-about-page-that-sells.md), [../architecture/payments.md](../architecture/payments.md) section 13.4, [../product/decisions-log.md](../product/decisions-log.md) row P3
+- Related: [0026](0026-community-page-for-non-members.md), [0036](0036-about-page-that-sells.md), [../architecture/payments.md](../architecture/payments.md) section 12.4, [../product/decisions-log.md](../product/decisions-log.md) row P3
 
 ## Context
 

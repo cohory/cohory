@@ -27,15 +27,15 @@ A member publishes a post to a community feed. Other members see it at the top o
 
 - Title and body with markdown.
 - Category selection.
-- Image attachment (S3-compatible storage).
+- Image attachment (local disk or S3 compatible storage).
 
 ## How to get to it (user POV)
 
-Sign in as `member@seed.local`. Open `/c/demo`. Click the "Write something" box at the top of the feed.
+Sign in as `member@cohory.local`. Open `/c/cohory-creators`. Click the "Write something" box at the top of the feed.
 
 ## Driving it with the browser
 
-1. Go to `http://localhost:3000/c/demo`.
+1. Go to `http://localhost:3000/c/cohory-creators`.
 2. Click the textbox with accessible name "Write something".
 3. Fill "Title" and "Body". Click the button named "Post".
 4. Wait for the post card with the same title to appear first in the feed.
@@ -44,6 +44,6 @@ Proof: screenshot of the feed with the new card, plus `select id, title from pos
 
 ## Gotchas
 
-- The composer is disabled for members whose subscription is `past_due`. Use the seeded active member.
-- Image upload needs the MinIO service from Docker Compose. Without it, the post saves but the image fails silently in dev.
+- A banned person or someone whose membership ended cannot post. Use the seeded active member.
+- With the default `STORAGE_DRIVER=local`, uploaded images land in `STORAGE_LOCAL_PATH`; with `STORAGE_DRIVER=s3` the bucket must be reachable or the upload fails.
 ```

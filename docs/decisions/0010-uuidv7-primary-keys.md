@@ -2,7 +2,7 @@
 
 Use application-generated UUIDv7 values as primary keys for all tables.
 
-- ADR status: Proposed
+- ADR status: Accepted (founder, 2026-10-25)
 - Date: 2026-10-17
 - Deciders: architecture docs wave
 - Related: [../architecture/data-model.md](../architecture/data-model.md) section 1

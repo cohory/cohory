@@ -2,7 +2,7 @@
 
 Until Cloud opens to the public, anyone can sign up on cohory.org and join communities, but only approved design partners can create a community, and the Cloud landing page asks other creators to request early access instead of creating a community.
 
-- ADR status: Proposed
+- ADR status: Accepted (founder, 2026-10-25)
 - Date: 2026-10-23
 - Deciders: founder (restricted creation instead of invite only sign up, early access as the main button, Self-host now as the second, the conditions for opening), coordinator as product owner for the details
 - Related: the go to market plan, [0047](0047-cloud-marketing-in-the-app.md), [0048](0048-creators-community-invitation.md), [0049](0049-creator-feedback.md), [../self-hosting.md](../self-hosting.md)

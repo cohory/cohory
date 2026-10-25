@@ -6,7 +6,7 @@ Tenant isolation is in [multi-tenancy.md](multi-tenancy.md). Agent surfaces are 
 
 ## 1. Principles
 
-1. **One policy module.** All authorization decisions go through `packages/policy`. No ad hoc role checks elsewhere.
+1. **One policy module.** All authorization decisions go through `packages/authz` (`@cohory/authz`, called `packages/policy` in the sketches below). No ad hoc role checks elsewhere.
 2. **Checked in services, not in the UI.** The UI hides what you cannot do, but the service refuses it regardless of the caller (web, API, MCP, job).
 3. **Deny by default.** An action not listed in the matrix is denied.
 4. **Roles answer "may you manage this", entitlements answer "may you access this content".** Both are needed for most member actions.
@@ -131,7 +131,7 @@ Moderators "edit" means moderate: they cannot rewrite another person's words, on
 
 **Recommendation.** The Entitlements module answers `hasAccess(userId, resource)` with one function (REQ-ENT-001).
 
-**As built** ([0031](../decisions/0031-community-access-module.md)). Community access has one helper, `communityAccessIn(queries, userId, now)` from `@cohory/entitlements/access` (with `getCommunityAccess(scope, userId, now)` for callers without a transaction). It returns `{ role, entitled }`: no role and no entitlement without an active membership; otherwise the active role, and `entitled` from the paid access rule `resolveMembershipAccess` (`packages/entitlements/src/community-access/membership-access.ts`) applied to the subscription mirror, the closed connection date, open comps, and whether a plan is on sale. Posts, calendar, courses, payments, members, gamification, communities, the agent delegation read, and the web page loader all build their `PolicyContext` from it, so `entitled` is never derived from the role alone. It is derived on every check; the `entitlements` table in section 4.2 is not built. `@cohory/entitlements` depends only on `authz` and `db`, so content modules import it without a package cycle; the agent directory and the notifier are ports, and the default delegation service is built by `getEntitlementsService` in `@cohory/api/services` for the web app and the API, and in `apps/worker/src/services.ts` for the worker ([0044](../decisions/0044-composition-roots-and-shared-infrastructure.md)).
+**As built** ([0031](../decisions/0031-community-access-module.md)). Community access has one helper, `communityAccessIn(queries, userId, now)` from `@cohory/entitlements/access` (with `getCommunityAccess(scope, userId, now)` for callers without a transaction). It returns `{ role, entitled }`: no role and no entitlement without an active membership; otherwise the active role, and `entitled` from the paid access rule `resolveMembershipAccess` (`packages/entitlements/src/community-access/membership-access.ts`) applied to the subscription mirror, the closed connection date, open comps, and whether a plan is on sale. Posts, calendar, courses, payments, members, gamification, communities, the agent delegation read, and the web page loader all build their `PolicyContext` from it, so `entitled` is never derived from the role alone. It is derived on every check; the `entitlements` table in section 4.2 is not built. `@cohory/entitlements` depends only on `authz`, `db`, and `infra`, so content modules import it without a package cycle; the agent directory and the notifier are ports, and the default delegation service is built by `getEntitlementsService` in `@cohory/api/services` for the web app and the API, and in `apps/worker/src/services.ts` for the worker ([0044](../decisions/0044-composition-roots-and-shared-infrastructure.md)).
 
 | Viewer | `role` | `entitled` |
 |---|---|---|
@@ -162,15 +162,15 @@ Subscription status to access state mapping is defined in [payments.md](payments
 
 ### 4.2 Materialization and caching
 
-- Entitlements are rows in `entitlements` ([data-model.md](data-model.md) section 10), written by the Entitlements module when it receives `member.joined`, `subscription.*`, `member.removed`, comp grants, and revocations.
-- `hasAccess` reads rows with an index on `(community_id, user_id, resource_type)`. A per-request memo avoids repeated reads. **Recommendation:** no cross-request cache in MVP; the query is cheap. If a cache is added (Redis), its TTL is at most 60 seconds and revocations delete keys explicitly.
-- A reconciliation job recomputes entitlements per community daily and after webhook backlogs, and logs any corrections (REQ-ENT-003: changes take effect within one minute of a payment event).
+As built ([0031](../decisions/0031-community-access-module.md)): access is derived on every check from the membership, the subscription, and comp grants, through `communityAccessIn` in `@cohory/entitlements/access`. There is no `entitlements` table, no cross request cache, and no reconciliation job; a payment event changes the answer as soon as the worker has stored it (REQ-ENT-003).
+
+**Recommendation**, not built: if derivation ever becomes too slow, materialize access as rows in an `entitlements` table written from membership, subscription, and comp events, with an index on `(community_id, user_id, resource_type)`, a cache TTL of at most 60 seconds, and a daily reconciliation job that logs corrections. [data-model.md](data-model.md) section 10 keeps that sketch.
 
 ### 4.3 Revocation
 
-- Revocation sets `revoked_at` (never deletes), emits `entitlement.revoked`, and takes effect on the next request.
-- Open sessions are not terminated by revocation. Pages re-check access on each request. Long-lived surfaces (the iCalendar feed post-MVP, API tokens) re-check on use.
-- Removing or banning a member revokes all their entitlements in that community and ends their subscription now ([0029](../decisions/0029-remove-or-ban-ends-billing.md)).
+- Access ends on the next check when the membership ends, the subscription stops counting (section 4.1), or a comp grant expires or is revoked. Nothing is deleted; the rows that caused the access keep their history.
+- Open sessions are not terminated by revocation. Pages re-check access on each request. API tokens re-check on use.
+- Removing or banning a member ends their subscription now and revokes their access in that community ([0029](../decisions/0029-remove-or-ban-ends-billing.md)).
 
 ### 4.4 Delegated entitlements
 
@@ -187,7 +187,7 @@ See [ADR 0022](../decisions/0022-delegated-entitlements.md) (Accepted) and [../o
 ## 5. How authorization is enforced
 
 ```ts
-// packages/policy (sketch)
+// packages/authz (sketch; the real functions are can() and assertCan())
 type Actor =
   | { kind: "user"; userId: string }
   | { kind: "agent"; agentId: string; ownerUserId: string; scopes: Scope[] }
@@ -239,7 +239,7 @@ Not grantable to any token: payment connection changes, refunds, plan and price 
 
 **Confirmed** (founder, 2026-10-19): OAuth access tokens work only at `/mcp`; `/api/v1` refuses them with 401 `invalid_token` (`wrong_resource`). Personal and agent tokens work at both. OAuth clients may not register custom scheme redirect URIs; only `https`, or `http` on loopback, is accepted ([../operations/mcp.md](../operations/mcp.md)).
 
-Mapping from scope to actions is a table in `packages/policy`, used by the API layer, the MCP tool registry, and the docs generator.
+Mapping from scope to actions lives in `packages/authz` and the route metadata described below, used by the API layer, the MCP tool registry, and the API reference.
 
 Implementation (since 0.6.0): the scope list is one Zod enum with plain language labels in `packages/authz/src/scopes.ts` (`scopes`, `scopeSchema`, `scopeDetails`, `defaultScopes`). Instead of a separate scope to action table, every `/api/v1` route declares `x-cohory: { operationId, scope, action }` on its definition (`packages/api/src/route-meta.ts`, the `routeScopes` table), which also appears in `/api/openapi.json`; `scope: null` means session only. Tokens are bound to one community. The non grantable list above is `nonGrantableActions` in `packages/authz/src/credentials.ts`; it also covers managing tokens and agents, invite links, settings and appearance changes, imports, and the audit log export. Personal tokens (Account, API tokens) and agent tokens (Manage, Settings, Agents) are described in [../operations/api-tokens.md](../operations/api-tokens.md) and [ADR 0017](../decisions/0017-bearer-api-tokens.md). `notifications:read` exists but no route uses it yet. Since 0.6.0, `proposals:write` lets an agent turn an approval classified action into an approval request (section 8) and read its own requests. Three scopes go beyond the table (since 0.6.0): `webhooks:read`, `webhooks:write`, and `members:export`. Since 0.7.0, the same scope names are the OAuth `scope` values: authorization server metadata lists all of them, protected resource metadata lists the default read scopes, and unknown values such as `offline_access` are ignored. A personal token with `members:export` may download the members CSV when its owner may (owner only), as confirmed above; the export stays approval only for agents.
 
@@ -329,7 +329,7 @@ Resolves the open question in [../product/information-architecture.md](../produc
 - The handoff only targets verified, active custom domains. Return URLs are validated against them to prevent open redirects.
 - **Assumption:** Better Auth supports multiple trusted origins and custom session issuance for this flow. **Unverified**; a small custom plugin may be needed.
 
-As of 0.12.0 custom domains are not built, so the handoff does not exist; every session lives on the instance's own host.
+Custom domains are not built yet, so the handoff does not exist; every session lives on the instance's own host.
 
 ## 10. Two-factor authentication
 
@@ -374,7 +374,7 @@ Rules: append-only table, no update or delete for the application role, visible 
 | Confirmed | Agents never get unrestricted financial or admin permissions. Human approval workflows. |
 | Recommendation | One policy module with `authorize(ctx, action, resource)` called inside services. |
 | Recommendation | Permission matrix in section 3, deny by default, 404 for hidden resources. |
-| Recommendation | Entitlements materialized as rows, derived from memberships, subscriptions, and comp grants in MVP. |
+| Confirmed ([0031](../decisions/0031-community-access-module.md)) | Access is derived on every check from memberships, subscriptions, and comp grants; a materialized table stays a Recommendation (section 4.2). |
 | Recommendation | Scopes in section 6, no wildcard, a list of actions no token can perform directly. |
 | Recommendation | Agent effective permission is grants intersected with the owner's current permissions. |
 | Recommendation | Host-bound sessions with a single-use handoff code for custom domains. |
@@ -385,6 +385,6 @@ Rules: append-only table, no update or delete for the application role, visible 
 | Confirmed | Personal tokens may hold `members:export` for their own person; agents need approval (founder, 2026-10-19). |
 | Confirmed | OAuth access tokens only at `/mcp`; custom scheme redirects refused (founder, 2026-10-19). |
 | Confirmed | Public communities are readable by everyone with Join; export, import, and the members CSV stay owner only (founder, 2026-10-19). |
-| Open question | Whether admins may edit pricing (proposed: no). |
+| Recommendation | Admins cannot edit pricing, connect or disconnect payments, or refund; those are owner only in the matrix (`payment.edit_plan`, `payment.connect`, `payment.refund`). Admins can read payments, grant free access, and link existing subscriptions. |
 | Open question | Classroom-only teacher role. |
 | Open question | Audit log retention. |

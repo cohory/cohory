@@ -32,8 +32,8 @@ Boundaries below are **Recommendation** unless marked otherwise.
 
 - In: three-step wizard (name and slug, free or paid, logo and accent). Defaults make the community usable immediately.
 - In: About page, private (default) or public read-only feed preview, join modes (open, approval required, invite link), up to 3 join questions.
-- In: transfer ownership, delete community (14-day soft delete).
-- In: custom domain mapped to the community root (Cloud and self-hosted).
+- In: transfer ownership, delete community (a 14-day soft delete is a Recommendation; as built, an archived community is deleted at once).
+- Out: custom domain mapped to the community root (Cloud and self-hosted). Moved to a later phase (founder decision, 2026-10-25); not built yet.
 - Out: community directory, templates, multiple languages per community.
 
 ### 2.3 Member management
@@ -64,7 +64,7 @@ Boundaries below are **Recommendation** unless marked otherwise.
 ### 2.6 Basic events
 
 - In: single events and weekly recurring series with optional end date (**Recommendation**, decided here: weekly only, because a weekly community call is the common case and other patterns multiply time zone edge cases).
-- In: cancel one occurrence, edit the whole series, occurrences generated 12 weeks ahead.
+- In: cancel one occurrence, edit the whole series, occurrences generated 26 weeks ahead.
 - In: location as meeting URL or text, month and list views, viewer's local time, RSVP (going or not going), reminder email one hour before for RSVP'd members, .ics download.
 - Out: daily or monthly recurrence, per-occurrence edits other than cancel, calendar feed subscription, paid events, built-in video.
 
@@ -73,19 +73,21 @@ Boundaries below are **Recommendation** unless marked otherwise.
 - In: 1 point per like received on a post or comment. No points for posting. No self-likes. Unlike or deletion removes the point.
 - In: 9 levels with fixed thresholds. Creators can rename levels, not change thresholds.
 - In: leaderboards for a rolling 7 days and all time, level badge on avatars, admin reset of one member's points.
-- Built in 0.3.0: an owner or admin resets every member's points at once from Manage, Settings, with the history kept. Resetting one member is not built.
+- Built in 0.3.0: an owner or admin resets every member's points at once from Manage, Settings, with the history kept. Resetting one member is built since 0.9.0 (Manage, People, the member's menu).
 
-| Level | Points needed | Default name |
-|---|---|---|
-| 1 | 0 | Newcomer |
-| 2 | 10 | Member |
-| 3 | 30 | Regular |
-| 4 | 75 | Contributor |
-| 5 | 150 | Helper |
-| 6 | 300 | Guide |
-| 7 | 600 | Mentor |
-| 8 | 1,200 | Leader |
-| 9 | 2,500 | Legend |
+The default level names are "Level 1" to "Level 9". Creators rename them in Manage, Settings, Points.
+
+| Level | Points needed |
+|---|---|
+| 1 | 0 |
+| 2 | 10 |
+| 3 | 30 |
+| 4 | 75 |
+| 5 | 150 |
+| 6 | 300 |
+| 7 | 600 |
+| 8 | 1,200 |
+| 9 | 2,500 |
 
 - Built, off by default ([0045](../decisions/0045-levels-that-unlock-and-learning-points.md)): points for learning, 1 point per finished lesson and per attended event (a going RSVP on an occurrence that ended and was not cancelled), each counted once, awarded by a worker job within about 15 minutes. It is off in every community until an owner or admin turns on Each lesson a member finishes or Each event a member attends in Manage, Settings, Points.
 - In: the leaderboard shows the viewer's progress to the next level, how points are earned, and the nine levels with the share of members at each.
@@ -135,7 +137,7 @@ See [../brand/design-tokens.md](../brand/design-tokens.md).
 - In (founder, 2026-10-22, [0034](../decisions/0034-notification-types-and-weekly-digest.md)): a weekly digest email on Monday at the member's digest hour, on by default, combining every community with at least 2 new posts that week (top posts, new members, next events, course progress), with a one click off. Built in 0.11.0, together with notices for new members, likes, reports, and money events, failed payment emails to the member, and the ownership transfer email.
 - In: one welcome email per membership, sent 2 minutes after activation, with the creator's name and links to the feed, the first course, and the next event. Built in 0.11.0.
 - Community-scoped search over posts, comments, members, and lesson titles and bodies (PostgreSQL full-text).
-- Migration section in Settings that explains options and links to members CSV export. No importers.
+- A Migration section that explains the options and links to the members CSV export. No importers in MVP. As built, Migration is its own Manage section since 0.9.0 and holds the Phase 5 importers (see [feature-inventory.md](feature-inventory.md)).
 
 ## 3. Out of scope
 
@@ -281,7 +283,7 @@ Recommendation:
 - Events: single and weekly recurring, RSVP, reminder, .ics.
 - Gamification: points from likes received, and optionally from finished lessons and attended events, 9 fixed levels with renamable names, courses locked until a level, 7-day and all-time leaderboards with the level ladder.
 - Memberships: one paid plan, monthly and optional annual, one currency, no trials.
-- Members CSV export and an informational Migration section in Settings.
+- Members CSV export and a Migration section (its own Manage section since 0.9.0, founder decision F-17).
 - WCAG 2.2 AA as the accessibility target.
 
 Assumption:

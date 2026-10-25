@@ -29,7 +29,7 @@ Each candidate contains:
 
 - The caller's usage, written first: two or three realistic call sites in the app (a server action, a page, a job).
 - The type sketch derived from that usage. Bodies are `throw new Error("not implemented")` with `// TODO` pseudocode for tricky logic.
-- A module map: which package owns what (`packages/modules/communities`, `packages/modules/payments`, and so on) and what each exports.
+- A module map: which package owns what (`packages/communities`, `packages/payments`, and so on; the table in `AGENTS.md` section 2 is the map) and what each exports.
 
 ## Phase C: Pick
 

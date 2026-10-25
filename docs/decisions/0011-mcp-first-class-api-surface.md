@@ -2,7 +2,7 @@
 
 Expose Cohory to AI assistants through an MCP server at `/mcp` that is generated from the same route definitions as the REST API and enforces the same permissions.
 
-- ADR status: Accepted (MCP as a first-class feature is Confirmed). Transport, auth, and tool details are Proposed.
+- ADR status: Accepted (MCP as a first-class feature is Confirmed; transport, auth, and tool details are settled in [0017](0017-bearer-api-tokens.md), [0019](0019-mcp-dispatch-through-http-handlers.md), and [0020](0020-oauth-authorization-server.md)).
 - Date: 2026-10-17
 - Deciders: founder (MCP first class, scoped permissions, approvals), architecture docs wave (design)
 - Related: [../architecture/agent-integrations.md](../architecture/agent-integrations.md), [../architecture/authorization.md](../architecture/authorization.md)

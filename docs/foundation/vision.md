@@ -24,11 +24,11 @@ Most community platforms bundle three things that should be separate:
 
 **Recommendation.** Use Stripe Connect connected accounts with full Dashboard access, Stripe as the processing fee and loss collector (the Accounts v2 configuration defined in [../architecture/payments.md](../architecture/payments.md)). The legacy Standard account type is deprecated for new platforms. Use direct charges so that the creator holds a full Stripe account they can keep after disconnecting from us. The trade-offs are covered in [../architecture/payments.md](../architecture/payments.md).
 
-### 2. Portability that will be implemented and tested
+### 2. Portability that is implemented and tested
 
 **Confirmed.** Portability must be implemented and tested, not promised.
 
-This is a product requirement, not a marketing line. In practice it means:
+This is a product requirement, not a marketing line. Since 0.4.0 the archive export, the import, and the round trip test exist. In practice it means:
 
 - A documented export format for communities, members, posts, comments, courses, lessons, events, and membership records.
 - An automated test that exports a Cloud community and imports it into a fresh Community Edition instance, then checks that content, members, and entitlements match.
@@ -42,7 +42,7 @@ This is a product requirement, not a marketing line. In practice it means:
 
 The rules that keep this safe and useful:
 
-- Every action a human can take in the UI will be available through a documented API. MCP is planned as a first-class interface on top of that API (post-MVP).
+- Every action a human can take in the UI is available through a documented API. MCP is a first-class interface on top of that API (since 0.7.0).
 - Agents get their own identity, scoped permissions, and an audit trail. They never get unrestricted financial or admin rights.
 - Human approval is required for agent actions that move money, change access, or publish on behalf of the creator, unless the creator explicitly loosens a specific rule.
 - External course content and downloaded skills are untrusted input.
@@ -81,7 +81,7 @@ The following describes what we intend to have built if the strategy works. It i
 
 **Year 4 and 5 intent.** Courses can be published in an agent-readable form: structured lessons, reference material, executable exercises, and evaluations. A human buys a course, delegates access to their agent, and the agent's results are checked against the course's evaluations. Developers and agencies extend the platform through a stable plugin SDK.
 
-Throughout all five years, the member experience stays as calm as it was on day one. If a later capability cannot fit within the four member areas and the five Manage sections, it belongs in the API, not in the UI.
+Throughout all five years, the member experience stays as calm as it was on day one. If a later capability cannot fit within the four member areas and the Manage sections, it belongs in the API, not in the UI.
 
 ## Product shape
 
@@ -100,11 +100,13 @@ Creator admin ("Manage", visible to creators and authorized staff only):
 
 | Section | What lives there |
 |---|---|
-| Overview | Health of the community at a glance: new members, revenue, activity |
+| Overview | Health of the community at a glance: setup, what needs you, money, activity |
+| Inbox | Join requests, reports, and agent approvals (added in the review of 2026-10-21) |
 | People | Members, roles, invitations, removals, bans |
 | Payments | Connect a payment account, membership tiers, platform fee visibility |
-| Appearance | Accent color, logo, cover image, font, card style, light or dark |
-| Settings | Name, privacy, domain, notifications, and (Recommendation) Migration |
+| Appearance | Accent color, logo, cover image, font, card style, light or dark, the About page |
+| Settings | Name, privacy, URL, joining, categories, points, agents, webhooks, audit log, danger zone |
+| Migration | Imports, exports, and bringing existing subscribers (its own section, founder decision 2026-10-19) |
 
 **Confirmed.** Content is created where it lives: posts in Community, lessons in Classroom, events in Calendar. Manage is for configuration, not content.
 

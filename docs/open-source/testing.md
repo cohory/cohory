@@ -146,7 +146,7 @@ bash scripts/e2e-down.sh
 
 ### What it covers
 
-`apps/e2e/tests` holds 49 spec files. The `journey-*` specs follow [user-journeys](../product/user-journeys.md), and each is one test whose steps show up in the report. The other specs are named after the area they check (`safe-exit-*`, `legal-pages`, `email-opt-out`, `slug-change`, `manage-structure`, `paid-leave-rejoin`) or the build step that added them (`step10-*` to `step18-*`: joining, moderation, archive, importers, providers, agents, approvals, webhooks, MCP, OAuth, agent courses, the About page, reviews, theme, and cover). The table lists the journey specs and the oldest area specs.
+`apps/e2e/tests` holds 53 spec files. The `journey-*` specs follow [user-journeys](../product/user-journeys.md), and each is one test whose steps show up in the report. The other specs are named after the area they check (`safe-exit-*`, `manage-*`, `legal-pages`, `email-opt-out`, `slug-change`, `paid-leave-rejoin`, `payments`, `auth-layout`, `contact`, `cloud-marketing`, `creator-feedback`, `creators-and-feedback`, `seed`) or the build step that added them (`step10-*` to `step18-*`: joining, moderation, archive, importers, providers, agents, approvals, webhooks, MCP, OAuth, agent courses, the About page, reviews, theme, and cover). The table lists the journey specs and the oldest area specs.
 
 | Spec | Journey | Projects |
 |------|---------|----------|
@@ -166,7 +166,7 @@ bash scripts/e2e-down.sh
 
 The `mobile` project uses a 390 by 844 viewport with touch for the member journeys 3, 4, 5, 6, 8, and 10. In those specs the creator works at desktop size and the member at phone size.
 
-Every spec signs up its own people with unique emails, so specs run in parallel and in any order on one database. Journeys 1 and 3 sign up through the form; other people are created through the Better Auth sign up endpoint, which is the same call the form makes. The seed users are used only by the `seed` spec, because specs that changed the shared Cohories community would depend on each other. The seed spec only reads.
+Every spec signs up its own people with unique emails, so specs run in parallel and in any order on one database. Journeys 1 and 3 sign up through the form; other people are created through the Better Auth sign up endpoint, which is the same call the form makes. The seed users are used only by the `seed` spec, because specs that changed the shared Cohory Creators community would depend on each other. The seed spec only reads.
 
 ### Accessibility
 
@@ -186,7 +186,7 @@ Rules that keep the suite stable:
 
 ## Testing payments against Stripe test mode
 
-The Playwright suite talks to a fake Stripe server, in CI and locally. No CI job runs against real Stripe. Before a release, a person runs journeys 2, 4 and 10 by hand against a Stripe sandbox. This run is a human gate: a release waits for it, because only Stripe can prove the hosted onboarding, Checkout, the customer portal, Connect events, and the application fee. The run on 2026-10-18 is recorded in [payments.md](../architecture/payments.md) section 13.7.
+The Playwright suite talks to a fake Stripe server, in CI and locally. No CI job runs against real Stripe. Before a release, a person runs journeys 2, 4 and 10 by hand against a Stripe sandbox. This run is a human gate: a release waits for it, because only Stripe can prove the hosted onboarding, Checkout, the customer portal, Connect events, and the application fee. The run on 2026-10-18 is recorded in [payments.md](../architecture/payments.md) section 12.7.
 
 Setup, once per sandbox:
 
@@ -202,9 +202,9 @@ What to check, in order:
 - Journey 10: force a failed renewal by attaching the payment method `pm_card_chargeCustomerFail` as the default and invoicing a change (`items[0][quantity]=2` with `proration_behavior=always_invoice`). The community shows the "Payment failed" banner and access continues. Cancel at period end through the portal ("Manage billing"), then cancel immediately with `stripe subscriptions cancel`, refund the charge with `stripe refunds create --charge ch_...`, and check the ledger has a `fee_refunded` entry for the whole fee.
 - Disconnect: after a purchase, "Disconnect Stripe" on Manage, Payments with "Take my members with me" shows Disconnecting, the worker clears `application_fee_percent` on the subscription within a few seconds (`stripe subscriptions retrieve sub_... --stripe-account acct_...`), and only then does the page show Connect your Stripe account again. With "Wind down" the subscription also gets `cancel_at_period_end`. The member gets the notice and email that the creator bills them directly. The end to end journey is `apps/e2e/tests/safe-exit-disconnect.spec.ts`.
 - Delete: after a purchase, archive the community, then Delete community in the danger zone. The dialog says "1 paying member. Their subscriptions are cancelled now and they are not charged again."; the worker cancels the subscription (`stripe subscriptions retrieve sub_... --stripe-account acct_...` shows `canceled` and no proration invoice) and only then deletes the community. The member gets the "has closed" email. The end to end journey, including a cancel that keeps failing and Try again, is `apps/e2e/tests/safe-exit-delete.spec.ts`.
-- Fee after leaving: on an account that is already disconnected, create and pay an invoice with `application_fee_amount` for the member (`--stripe-account acct_...`). Cohory refunds the whole fee by itself and writes `fee_collected` at rate 0 and `fee_refunded`; `stripe events resend` of the `application_fee.created` event changes nothing. The 0.11.0 run of disconnect, wind down, fee after leaving, and delete is recorded in [payments.md](../architecture/payments.md) section 13.16.
+- Fee after leaving: on an account that is already disconnected, create and pay an invoice with `application_fee_amount` for the member (`--stripe-account acct_...`). Cohory refunds the whole fee by itself and writes `fee_collected` at rate 0 and `fee_refunded`; `stripe events resend` of the `application_fee.created` event changes nothing. The 0.11.0 run of disconnect, wind down, fee after leaving, and delete is recorded in [payments.md](../architecture/payments.md) section 12.16.
 - Safe exit runs need one connected account per path (take members, wind down, delete), because each path closes or deletes what it uses. Keep a list of every id you create outside the repository, and clean up only those: cancel their subscriptions, archive their products, and delete those connected accounts. Never touch an account, customer, or subscription that was there before the run.
-- Bring your existing subscribers: set `STRIPE_CONNECT_CLIENT_ID` to the platform's `ca_` id (subscriptions the platform creates on the connected account carry it), create a customer with an email, a default payment method, and a subscription on the connected account (`--stripe-account acct_...`), then open Manage, Payments, "Review existing subscriptions". Discovery lists only subscriptions without a test clock; link a test clock subscription by id through the service and advance the clock to see `invoice.paid` update the mirror. Details of the 2026-10-18 run are in payments.md section 13.10.
+- Bring your existing subscribers: set `STRIPE_CONNECT_CLIENT_ID` to the platform's `ca_` id (subscriptions the platform creates on the connected account carry it), create a customer with an email, a default payment method, and a subscription on the connected account (`--stripe-account acct_...`), then open Manage, Payments, "Review existing subscriptions". Discovery lists only subscriptions without a test clock; link a test clock subscription by id through the service and advance the clock to see `invoice.paid` update the mirror. Details of the 2026-10-18 run are in payments.md section 12.10.
 - Edge cases: `stripe events resend evt_... --account acct_...` answers 200 with outcome `duplicate`; an older event replayed after a cancellation leaves the mirror canceled because the handler fetches the current object; a request signed with another secret answers 400.
 
 Clean up the sandbox afterwards: cancel subscriptions, archive products, and delete the connected accounts you created (`stripe accounts delete acct_...`). Sandboxes are isolated from live data, but leftovers make the next run harder to read.
@@ -224,9 +224,9 @@ Run it from another starting point with `UPGRADE_FROM=0008 scripts/upgrade-check
 
 ## CI
 
-`.github/workflows/e2e.yml` runs on pull requests and on pushes to `main`:
+`.github/workflows/e2e.yml` runs on pull requests that change more than docs, nightly on `main`, on release tags, and on demand ([workflows](../../.github/workflows/README.md)):
 
-- **Playwright on Compose** builds the image once with Buildx (GitHub Actions cache, scope `e2e`) as `cohory:e2e` (`COHORY_VERSION=e2e`), installs Chromium with its system packages, runs `E2E_SKIP_BUILD=1 pnpm e2e` with two workers and one retry, uploads the HTML report on every run and the traces and screenshots when it fails.
+- **Playwright on Compose** builds the image once with Buildx (GitHub Actions cache, scope `e2e`) as `cohory:e2e` (`COHORY_VERSION=e2e`), installs Chromium with its system packages, runs `E2E_SKIP_BUILD=1 pnpm e2e` with two workers and one retry, uploads the HTML report on every run and the traces and screenshots when it fails. Pull requests run the critical journeys (`journey-*`, payments, seed); the nightly run, release tags, manual runs, and pull requests labeled `full-e2e` run the full suite in three parallel jobs.
 - **Upgrade path** builds the same image from the cache and runs `scripts/upgrade-check.sh`.
 
 ## Decisions and open questions

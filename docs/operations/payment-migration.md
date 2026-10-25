@@ -44,7 +44,7 @@ Limits:
 
 When the subscriptions live in a different Stripe account than the one you connect, Stripe can copy customers and payment methods between accounts on request. This is a Stripe process, not a Cohory feature.
 
-1. Ask Stripe support to copy the customers and payment data from the old account to the account you will connect. Stripe copies customers and saved payment methods, not subscriptions (**Unverified**: confirm the current scope with Stripe before you plan around it).
+1. Ask Stripe support to copy the customers and payment data from the old account to the account you will connect. Stripe copies customers and saved payment methods, not subscriptions (**Assumption:** confirm the current scope with Stripe before you plan around it).
 2. Recreate the subscriptions on the new account (in the Stripe Dashboard or with the API), using the copied payment methods and a trial or billing anchor that matches each old renewal date.
 3. Cancel the subscriptions on the old account.
 4. Link the new subscriptions with Option A.
@@ -77,10 +77,15 @@ Limits: members must act. Some will not come back. The old platform's own fees a
 
 ## Bring your own payment provider
 
-Since 0.5.0, the platform fee for payments through a provider other than Stripe (REQ-PAY-008) is billed through the fee ledger and a periodic invoice ([platform-billing.md](platform-billing.md), [payments.md](../architecture/payments.md) section 9). Linking existing subscriptions on this page works for Stripe own keys only.
+The platform fee for payments through a provider other than Stripe (REQ-PAY-008) is billed through the fee ledger and a periodic invoice ([platform-billing.md](platform-billing.md), [payments.md](../architecture/payments.md) section 9). Linking existing subscriptions on this page works for Stripe own keys only.
 
 ## Related
 
-- [payments.md](../architecture/payments.md) section 10 (ownership and portability) and section 13.9 (linking as built)
+- [payments.md](../architecture/payments.md) section 10 (ownership and portability) and section 12.9 (linking as built)
 - [user journey 13](../product/user-journeys.md#13-creator-brings-existing-stripe-subscribers)
 - [testing.md](../open-source/testing.md#testing-payments-against-stripe-test-mode) for the sandbox check
+
+## Decisions and open questions
+
+- **Confirmed** ([0042](../decisions/0042-moving-paying-members.md)): the three options above, with Option A on the Community Edition only and Option C on Cloud.
+- **Assumption:** Stripe's account to account copy moves customers and payment methods but not subscriptions (Option B).

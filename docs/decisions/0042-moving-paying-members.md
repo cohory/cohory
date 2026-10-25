@@ -5,7 +5,7 @@ Cloud no longer offers to link existing Stripe subscriptions. Members who paid s
 - ADR status: Accepted
 - Date: 2026-10-22
 - Deciders: founder (founder decision, 2026-10-22), coordinator as product owner for the rest
-- Related: [../operations/payment-migration.md](../operations/payment-migration.md), [../architecture/payments.md](../architecture/payments.md) section 10.1, [../architecture/data-model.md](../architecture/data-model.md) section 14.2 (`subscriber_moves`)
+- Related: [../operations/payment-migration.md](../operations/payment-migration.md), [../architecture/payments.md](../architecture/payments.md) section 10.1, [../architecture/data-model.md](../architecture/data-model.md) section 9.1 (`subscriber_moves`)
 
 ## Context
 
