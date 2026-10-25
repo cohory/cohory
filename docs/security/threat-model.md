@@ -2,7 +2,7 @@
 
 What Cohory protects, who can attack it, where trust changes hands, and which controls exist today with the file that implements each one.
 
-This document was written at MVP 0.1.0 and is updated as surfaces are added; a row that depends on a later release names it. Controls listed here exist in the repository as of 0.12.0. Planned controls are marked as such and are not available. The companion review with findings is [review-2026-10](review-2026-10.md). Reporting rules are in [SECURITY.md](../../SECURITY.md).
+This document was written at MVP 0.1.0 and is updated as surfaces are added; a row that depends on a later release names it. Controls listed here exist in the repository today. Planned controls are marked as such and are not available. The companion review with findings is [review-2026-10](review-2026-10.md). Reporting rules are in [SECURITY.md](../../SECURITY.md).
 
 ## 1. Assets
 

@@ -9,7 +9,7 @@ Payment implementation details live in [../architecture/payments.md](../architec
 **Confirmed.**
 
 - **Community Edition.** Open source, self-hosted, free. 0% platform fee. Includes community, courses, gamification, events, member management, payment integrations, API access, and agent integrations as they ship.
-- **Cloud Edition.** Managed hosting. No mandatory monthly subscription. 2% platform fee on successful transactions. Payment processing fees are separate and charged by the provider. Creator-owned payment accounts, custom domains (not built in 0.12.0), automatic updates, managed infrastructure.
+- **Cloud Edition.** Managed hosting. No mandatory monthly subscription. 2% platform fee on successful transactions. Payment processing fees are separate and charged by the provider. Creator-owned payment accounts, custom domains (not built yet), automatic updates, managed infrastructure.
 
 The founder's tagline candidate captures it: "Free to start. Just 2% when you earn. Own your community." Final messaging belongs to [../brand/brand-strategy.md](../brand/brand-strategy.md).
 

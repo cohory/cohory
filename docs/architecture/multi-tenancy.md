@@ -69,7 +69,7 @@ Middleware determines the community from the request:
 3. Single-community mode: `COHORY_DEFAULT_COMMUNITY` maps `/` to that community (section 11).
 4. API routes take the community as a path parameter (`/api/v1/communities/{communityId}/...`). Tokens are bound to one community, and a mismatch is rejected.
 
-As built in 0.12.0: custom domains are not built; old slugs live in `community_slug_history` and redirect to the current slug; `HOME_COMMUNITY` sends signed out visitors who open `/` to that community's About page instead of the single community mode above; most API routes take `{slug}`, and payments routes take `{communityId}`.
+As built: custom domains are not built; old slugs live in `community_slug_history` and redirect to the current slug; `HOME_COMMUNITY` sends signed out visitors who open `/` to that community's About page instead of the single community mode above; most API routes take `{slug}`, and payments routes take `{communityId}`.
 
 The result is a `TenantContext { communityId, slug, source }` placed on the request context. **Recommendation**, not built: cache lookups in process for 60 seconds and invalidate them on a slug or domain change.
 
@@ -243,7 +243,7 @@ As built (Step 18, [payments.md](payments.md)): only the owner can delete, and o
 
 ## 10. Platform administration
 
-**Recommendation.** As of 0.12.0 no platform admin tooling exists: `platformAdmin` is always false and there is no `platformDb` ([threat-model](../security/threat-model.md) section 6). Platform admins (operators on Community Edition, Cohory staff on Cloud) act through `platformDb` and audited tools only. Every platform admin read of community content is written to the audit log of that community with `actorType = platform_admin`. Platform admins do not appear as community members. Support access to a community's private content on Cloud requires the owner's consent, recorded in the audit log (**Recommendation**).
+**Recommendation.** No platform admin tooling exists yet: `platformAdmin` is always false and there is no `platformDb` ([threat-model](../security/threat-model.md) section 6). Platform admins (operators on Community Edition, Cohory staff on Cloud) act through `platformDb` and audited tools only. Every platform admin read of community content is written to the audit log of that community with `actorType = platform_admin`. Platform admins do not appear as community members. Support access to a community's private content on Cloud requires the owner's consent, recorded in the audit log (**Recommendation**).
 
 ## 11. Self-hosted single-community and multi-community modes
 
@@ -252,7 +252,7 @@ As built (Step 18, [payments.md](payments.md)): only the owner can delete, and o
 | Single community | `COHORY_DEFAULT_COMMUNITY=<slug>` and optionally `COHORY_SIGNUP_CREATE_COMMUNITY=false` | `/` serves the community. Platform home and "Create community" are hidden for non-admins. Typical for one creator on one VPS. |
 | Multi community | Default | Platform home lists the user's communities. The operator decides whether any signed-up user can create communities (`instance_settings.community_creation = anyone|admins`). Typical for agencies or groups. |
 
-As built in 0.12.0 these are environment variables, not instance settings: `HOME_COMMUNITY` (signed out visitors to `/` go to that community's About page), `SIGNUP_MODE` (`open`, `invite`, or `closed`), and `COMMUNITY_CREATION` with `OPERATOR_EMAILS` ([../self-hosting.md](../self-hosting.md)). There is no `instance_settings` table.
+As built, these are environment variables, not instance settings: `HOME_COMMUNITY` (signed out visitors to `/` go to that community's About page), `SIGNUP_MODE` (`open`, `invite`, or `closed`), and `COMMUNITY_CREATION` with `OPERATOR_EMAILS` ([../self-hosting.md](../self-hosting.md)). There is no `instance_settings` table.
 
 Both modes use the same tenant model and the same tests. Switching modes changes routing only, never data.
 

@@ -14,6 +14,7 @@ description: Use when about to commit, rebase commits for review, write a commit
 3. Run `pnpm verify:changed` once (typecheck, lint, unit tests, and integration tests for the touched packages and their dependents). Push with git hooks enabled. Never pass `--no-verify`.
 4. For changes to auth, payments, tenancy, or the schema, run `interrogate` first.
 5. Confirm with `superpowers:verification-before-completion` that every claim in the PR body has evidence.
+6. Update every doc the change touches in the same PR (AGENTS.md section 8): `docs/product` for screens and labels, `docs/architecture` for code shape, `docs/operations` for operator steps, and a decision record for an architectural change. The PR checklist asks for it.
 
 ## Commits
 

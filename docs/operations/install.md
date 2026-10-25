@@ -55,7 +55,7 @@ Fill in `.env`. Generate `BETTER_AUTH_SECRET` and `PAYMENTS_ENCRYPTION_KEY` with
 |---|---|
 | `DOMAIN` | `community.example.com` |
 | `ACME_EMAIL` | An address Let's Encrypt can reach |
-| `COHORY_VERSION` | `0.12.0` |
+| `COHORY_VERSION` | The release to run, from the [releases page](https://github.com/cohory/cohory/releases): the latest tag without its `v` |
 | `COHORY_IMAGE` | `ghcr.io/cohory/cohory` (the default) to pull the published image, or `cohory` to build it on this server |
 | `BETTER_AUTH_SECRET` | A random value |
 | `ALLOW_INSECURE_HTTP` | Leave unset. Set `true` only when `APP_URL` is an `http://` address on a private network; anyone on that network can then read session cookies in transit. |
@@ -85,7 +85,7 @@ With `COHORY_IMAGE=cohory`, build the image on the server instead (or build it e
 docker compose build web
 ```
 
-Either way the image is tagged from `COHORY_IMAGE` and `COHORY_VERSION`, for example `ghcr.io/cohory/cohory:0.12.0` or `cohory:0.12.0`.
+Either way the image is tagged from `COHORY_IMAGE` and `COHORY_VERSION`, so a release `X.Y.Z` runs as `ghcr.io/cohory/cohory:X.Y.Z` or `cohory:X.Y.Z`.
 
 ## 4. Start
 

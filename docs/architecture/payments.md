@@ -1,6 +1,6 @@
 # Payments
 
-How the payment engine is built in 0.12.0: Stripe Connect on Cloud, own Stripe keys on the Community Edition, webhooks processed in the worker, subscription sync, refunds and disputes, the fee ledger, the provider abstraction, platform billing, subscription ownership, safe exits, and the testing rules for money code.
+How the payment engine is built: Stripe Connect on Cloud, own Stripe keys on the Community Edition, webhooks processed in the worker, subscription sync, refunds and disputes, the fee ledger, the provider abstraction, platform billing, subscription ownership, safe exits, and the testing rules for money code.
 
 Fee rules (base, rounding, refunds, disputes) are defined in [../foundation/business-model.md](../foundation/business-model.md) and repeated here only where the mechanism depends on them. Table shapes are in [data-model.md](data-model.md). How-to steps for operators and creators are in [payment-providers.md](../operations/payment-providers.md), [platform-billing.md](../operations/platform-billing.md), and [payment-migration.md](../operations/payment-migration.md). Nothing here is legal or tax advice.
 
@@ -354,7 +354,7 @@ Recorded Stripe events and objects for every handled type except `checkout.sessi
 
 ## 12. Implementation
 
-What exists in code as of 0.12.0. Anything above that is not here is a design, not a feature.
+What exists in code today. Anything above that is not here is a design, not a feature.
 
 ### 12.1 Packages and tables
 

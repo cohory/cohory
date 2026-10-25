@@ -62,7 +62,7 @@ See [mission.md](mission.md) for the full list with reasons. In short: no native
 | REQ-COM-004 | Member navigation is exactly Community, Classroom, Calendar, Members. | MVP | **Confirmed.** No configuration can add a fifth tab. Mobile uses bottom navigation. |
 | REQ-COM-005 | Manage area with Overview, People, Payments, Appearance, Settings, Migration. | MVP | **Confirmed.** Visible only to creators and admins. Migration is its own section (founder decision, 2026-10-19). As built in 0.11.0, Inbox sits second, and moderators see Inbox and People only. |
 | REQ-COM-006 | Public about page with description, pricing, and join button. | MVP | Renders for visitors without JavaScript. |
-| REQ-COM-007 | Custom domain per community. | Post-MVP (founder decision, 2026-10-25; not built as of 0.12.0) | Cloud: automatic TLS. Community Edition: operator configures reverse proxy, documented. |
+| REQ-COM-007 | Custom domain per community. | Post-MVP (founder decision, 2026-10-25; not built yet) | Cloud: automatic TLS. Community Edition: operator configures reverse proxy, documented. |
 | REQ-COM-008 | Transfer community ownership to another member. | MVP | Requires the new owner to connect their own payment account. Existing subscriptions are not moved automatically. |
 | REQ-COM-009 | Archive and delete a community. | MVP | Deletion offers export first, cancels future fees, and warns about active subscriptions. |
 | REQ-COM-010 | White labeling (remove Cohory branding). | Post-MVP | Agency direction. |
@@ -306,7 +306,7 @@ See [mission.md](mission.md) for the full list with reasons. In short: no native
 |---|---|
 | Confirmed | MVP scope per the brief, four member tabs, the Manage sections in REQ-COM-005, 2% Cloud platform fee, 0% on Community Edition. |
 | Confirmed | Migration is its own Manage section (founder, 2026-10-19). This replaces the earlier recommendation to keep it inside Settings. |
-| Confirmed | Custom domains (REQ-COM-007) are Post-MVP (founder, 2026-10-25). Nothing is built for them in 0.12.0. |
+| Confirmed | Custom domains (REQ-COM-007) are Post-MVP (founder, 2026-10-25). Nothing is built for them yet. |
 | Recommendation | Stripe Connect (Accounts v2 connected accounts with full dashboard access) with direct charges. |
 | Recommendation | Past due keeps access in MVP. Configurable grace period Post-MVP. |
 | Recommendation | No video transcoding in MVP. |

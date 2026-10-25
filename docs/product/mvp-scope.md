@@ -33,7 +33,7 @@ Boundaries below are **Recommendation** unless marked otherwise.
 - In: three-step wizard (name and slug, free or paid, logo and accent). Defaults make the community usable immediately.
 - In: About page, private (default) or public read-only feed preview, join modes (open, approval required, invite link), up to 3 join questions.
 - In: transfer ownership, delete community (a 14-day soft delete is a Recommendation; as built, an archived community is deleted at once).
-- Out: custom domain mapped to the community root (Cloud and self-hosted). Moved to a later phase (founder decision, 2026-10-25); not built as of 0.12.0.
+- Out: custom domain mapped to the community root (Cloud and self-hosted). Moved to a later phase (founder decision, 2026-10-25); not built yet.
 - Out: community directory, templates, multiple languages per community.
 
 ### 2.3 Member management

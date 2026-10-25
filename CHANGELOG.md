@@ -4,6 +4,10 @@ All notable changes to Cohory are recorded here. The format follows [Keep a Chan
 
 ## [Unreleased]
 
+### Added
+
+- A `docs-audit` skill for coding agents that checks every doc against the code before a release.
+
 ### Changed
 
 - The published Docker image `ghcr.io/cohory/cohory` is public. The production env example pulls it by default, and the install guide explains how to build on the server instead.

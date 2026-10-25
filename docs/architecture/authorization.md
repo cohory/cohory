@@ -329,7 +329,7 @@ Resolves the open question in [../product/information-architecture.md](../produc
 - The handoff only targets verified, active custom domains. Return URLs are validated against them to prevent open redirects.
 - **Assumption:** Better Auth supports multiple trusted origins and custom session issuance for this flow. **Unverified**; a small custom plugin may be needed.
 
-As of 0.12.0 custom domains are not built, so the handoff does not exist; every session lives on the instance's own host.
+Custom domains are not built yet, so the handoff does not exist; every session lives on the instance's own host.
 
 ## 10. Two-factor authentication
 

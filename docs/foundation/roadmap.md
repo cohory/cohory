@@ -6,7 +6,7 @@ The eight phases from foundation to agent-ready courses, with scope, dependencie
 
 ## Overview
 
-| Phase | Name | Release | Status (0.12.0) |
+| Phase | Name | Release | Status |
 |---|---|---|---|
 | 0 | Foundation and design | Internal | Done |
 | 1 | Community core | Internal, then early self-hosters | Built (0.1.0) |

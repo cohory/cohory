@@ -2,7 +2,7 @@
 
 The operating manual for coding agents (and humans) working in the Cohory repository.
 
-The repository holds Cohory 0.12.0: the web app, the worker, and the packages listed in section 2 (see [overview](docs/architecture/overview.md) for how they fit together). Rules below apply to every package. Rules are **Confirmed** when they come from the founder brief and **Recommendation** otherwise; both are binding for agents until changed through a decision record.
+The repository holds Cohory: the web app, the worker, and the packages listed in section 2 (see [overview](docs/architecture/overview.md) for how they fit together). Rules below apply to every package. Rules are **Confirmed** when they come from the founder brief and **Recommendation** otherwise; both are binding for agents until changed through a decision record.
 
 ## 1. Read first
 
@@ -48,7 +48,7 @@ In code, Comments live in `@cohory/posts`, Lessons in `@cohory/courses`, Subscri
 
 ### Where code lives
 
-The layout as of 0.12.0. Packages sit flat under `packages/`, one per module or shared concern. [overview](docs/architecture/overview.md) explains how they fit together.
+The current layout. Packages sit flat under `packages/`, one per module or shared concern. [overview](docs/architecture/overview.md) explains how they fit together.
 
 | Path | Contents |
 |------|----------|
@@ -155,6 +155,8 @@ Rules:
 - Keep `docs/product` in sync with the UI: screens, labels, and journeys.
 - Follow [documentation-conventions](docs/open-source/documentation-conventions.md): labels, no dashes as punctuation, no emojis, relative links.
 - Do not describe planned features as implemented.
+- Keep the current release number out of docs that are not `CHANGELOG.md`, decision records, the decisions log, dated reviews, or env examples. Write "today" or "not built yet" instead, so a release does not touch the docs.
+- Run the `docs-audit` skill before each release. It checks every doc against the code and simplifies what drifted.
 - Keep `CHANGELOG.md` short: one line per user visible change under `## [Unreleased]`, grouped by Added, Changed, Fixed, and Removed. No implementation detail, ticket numbers, or file paths.
 
 ## 9. Git and pull requests
@@ -196,6 +198,7 @@ Project skills live in [.claude/skills](.claude/skills/README.md) and assume the
 | Pausing or resuming | `session-handoff` |
 | Many PRs coordinated | `orchestrate`, `superpowers:dispatching-parallel-agents` |
 | Repeated human corrections | `correct` |
+| Before a release, or when docs drift from the code | `docs-audit` |
 
 ## 11. Autonomous-run checklist
 

@@ -31,6 +31,7 @@ Most skills were adapted from [pstack](https://github.com/cursor/plugins/tree/ma
 | `benchmark-checklist` | Reporting any performance number | `benchmark-checklist` | Web-stack tools: `next build` versus `next dev`, `EXPLAIN ANALYZE`, Core Web Vitals. |
 | `create-verification-skill` | No scripted way to prove app behavior, or the verify skill drifted | `create-verification-skill`, `maintain-verification-skill` | Merged generation and maintenance. Targets `.claude/skills/verify-cohory/`. Cohory journeys, seed roles, Stripe test mode, and Compose cleanup. |
 | `correct` | Repeated corrections, or capturing lessons after a long task | `correct`, `reflect` | Merged. Uses `.learnings/`, `AGENTS.md`, and ESLint rules. Skill edits still wait for human approval. |
+| `docs-audit` | Before a release, or when the docs drifted from the code | New for Cohory | Scripts for links, style, structure, and the skills lock, three reviewers with disjoint file sets, founder decisions collected in one file. |
 
 ## Skipped pstack skills
 
@@ -64,6 +65,7 @@ For a typical feature, such as "members can bookmark posts":
 9. `no-comments`, then `superpowers:verification-before-completion`. Use `verify-cohory` (from `create-verification-skill`) to prove the feature in the running app.
 10. `superpowers:finishing-a-development-branch`, then `opening-a-pr` with `technical-writing` for the commits and PR body.
 11. `babysit-pr` to reach merge-ready, `superpowers:receiving-code-review` for human feedback, and `shipping` when the human says land it.
+12. `docs-audit` before each release, so the docs match the code and carry no release number that the release would make stale.
 12. `correct` if the human had to correct the same thing twice.
 
 For unattended work, wrap steps 5 to 11 in `autonomous-run` with a `show-me-your-work` trail, and use `session-handoff` if the session must stop. For a program of many features, a coordinator runs `orchestrate` and hands each worker a brief that names the skills above.

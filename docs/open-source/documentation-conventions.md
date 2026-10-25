@@ -17,6 +17,8 @@ Docs carry no status or date line; git history and the CHANGELOG record when the
 
 Every doc ends with a short "Decisions and open questions" section that lists the labeled statements in the doc. The files written for visitors rather than contributors are exempt: `README.md`, `CHANGELOG.md`, `CODE_OF_CONDUCT.md`, and the GitHub issue and pull request templates.
 
+The current release number is written only in `CHANGELOG.md`, decision records, the decisions log, dated reviews, and the env examples. Everywhere else write "today", "as built", or "not built yet", so a release does not touch the docs. History such as "since 0.8.0" may stay. The `docs-audit` skill checks this, with links, style, and structure, before each release.
+
 Decision records in `docs/decisions` use their own template described in [decisions/README.md](../decisions/README.md), with the states Proposed, Accepted, Rejected, and Superseded.
 
 ## Labels

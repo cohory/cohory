@@ -77,7 +77,7 @@ These are things we will not do this year, and in several cases ever. Each has a
 | Edition | First-year state | What it costs the creator |
 |---|---|---|
 | Community Edition | Public release at the end of Phase 4. Earlier builds available to early self-hosters from Phase 1. | Nothing from us. Server costs and payment processing fees are the creator's. 0% platform fee. |
-| Cloud Edition | Private beta during Phase 3, public at the end of Phase 4. As of 0.12.0, sign up is open and community creation is limited to a small group of creators ([0050](../decisions/0050-restricted-cloud-community-creation.md)). | No monthly subscription. 2% platform fee on successful transactions. Processing fees separate. Fair-use limits apply (see [business-model.md](business-model.md)). |
+| Cloud Edition | Private beta during Phase 3, public at the end of Phase 4. Today sign up is open and community creation is limited to a small group of creators ([0050](../decisions/0050-restricted-cloud-community-creation.md)). | No monthly subscription. 2% platform fee on successful transactions. Processing fees separate. Fair-use limits apply (see [business-model.md](business-model.md)). |
 
 **Recommendation.** The Cloud Edition does not process live payments until the fee base, rounding, taxes, refunds, and disputes in [business-model.md](business-model.md) have been reviewed by legal and accounting advisors.
 

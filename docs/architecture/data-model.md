@@ -1,6 +1,6 @@
 # Data model
 
-The tables of Cohory 0.12.0 by module, with their keys, constraints, row level security policies, and the rules for ids, tenancy, money, indexing, migrations, seeds, and export.
+The tables of Cohory by module, with their keys, constraints, row level security policies, and the rules for ids, tenancy, money, indexing, migrations, seeds, and export.
 
 Every table, column, enum value, and constraint named here exists in `packages/db/src/schema` and `packages/db/migrations` unless it is labeled **Not built** or **Recommendation**. Module ownership follows [overview.md](overview.md). Tenancy rules are in [multi-tenancy.md](multi-tenancy.md). Payment semantics are in [payments.md](payments.md). The archive format is in [archive-format.md](archive-format.md).
 
@@ -38,7 +38,7 @@ Shared column helpers live in `packages/db/src/schema/columns.ts` (`id`, `timest
 | Agent integrations | `agents.ts`, `oauth.ts`, `approvals.ts`, `webhooks.ts` | `agent_identities`, `api_tokens`, `oauth_clients`, `oauth_grants`, `oauth_authorization_codes`, `oauth_refresh_tokens`, `approval_requests`, `webhook_endpoints`, `webhook_deliveries`, `webhook_delivery_attempts` |
 | Migration and outbox | `migration.ts`, `outbox.ts` | `migration_jobs`, `migration_id_map`, `outbox` |
 
-**Not built** as of 0.12.0, kept only as proposals in the sections below: `custom_domains`, `entitlements` (access is derived on read, section 10), and lesson comments. Sketched names that were built under another name: `post_reports` is `content_reports`, `community_slug_redirects` is `community_slug_history`, `join_questions` is the `communities.join_questions` column, `import_jobs` is `migration_jobs`, `customers` is `payment_customers`, `outbox_events` is `outbox`, and `agent_grants` became the `scopes` arrays on `agent_identities` and `api_tokens`.
+**Not built** yet, kept only as proposals in the sections below: `custom_domains`, `entitlements` (access is derived on read, section 10), and lesson comments. Sketched names that were built under another name: `post_reports` is `content_reports`, `community_slug_redirects` is `community_slug_history`, `join_questions` is the `communities.join_questions` column, `import_jobs` is `migration_jobs`, `customers` is `payment_customers`, `outbox_events` is `outbox`, and `agent_grants` became the `scopes` arrays on `agent_identities` and `api_tokens`.
 
 ### 1.2 Row level security
 
@@ -415,7 +415,7 @@ The relay claims up to 100 pending rows whose lease is empty or past in a short 
 7. An index that serves `order by x desc, id desc` must say `desc nulls first` (the PostgreSQL default for `desc`). Drizzle's `.desc()` alone emits `DESC NULLS LAST`, which the planner cannot use for that sort, so write `.desc().nullsFirst()`. An index whose query groups rows and sorts by an aggregate (`content_reports_queue_idx`, `review_reports_queue_idx`, `lesson_progress_recent_idx`) may keep a plain `desc`.
 8. A replacement index is built under a new name (`*_v2_idx`) before the old one is dropped at the end of the migration (section 15).
 
-The indexes and constraints that carry a business rule or a hot path as of 0.12.0. The migration column names the SQL file that gave each its current shape; foreign key indexes and plain length checks are left out.
+The indexes and constraints that carry a business rule or a hot path today. The migration column names the SQL file that gave each its current shape; foreign key indexes and plain length checks are left out.
 
 | Table | Index or constraint | Columns and condition | Why | Migration |
 |---|---|---|---|---|

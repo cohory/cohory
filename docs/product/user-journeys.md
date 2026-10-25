@@ -245,7 +245,7 @@ Steps:
 
 1. Member posts or comments (journey 5).
 2. Another member likes the post or comment. System adds 1 point to the author for that community, records the point event, and updates level if a threshold is crossed.
-3. On level up, system shows a small in-app notification ("You reached Level 3"). Recommendation, not built as of 0.12.0; the new level shows on the avatar badge and the leaderboard.
+3. On level up, system shows a small in-app notification ("You reached Level 3"). Recommendation, not built yet; the new level shows on the avatar badge and the leaderboard.
 4. **Members, Leaderboard** (`/c/{slug}/members/leaderboard`) shows the level ladder with how many members are at each level, the 7-day ranking, the all-time ranking, and the member's own rank pinned at the bottom if outside the top 10.
 5. Member's level shows on their avatar across the community and on their profile.
 

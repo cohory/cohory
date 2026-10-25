@@ -166,7 +166,7 @@ Rules:
 
 ### 4.1 Custom domains
 
-**Recommendation (Cloud and self-hosted):** a custom domain maps to one community root. `learn.example.com/` serves `/c/{slug}`, `learn.example.com/classroom/{courseSlug}/{lessonSlug}` serves `/c/{slug}/classroom/{courseSlug}/{lessonSlug}`, and so on. The `/c/{slug}` form keeps working and redirects to the custom domain once the domain is verified. Account pages and checkout stay reachable on the custom domain so members are not bounced to another host. Post-MVP (founder decision, 2026-10-25); not built as of 0.12.0.
+**Recommendation (Cloud and self-hosted):** a custom domain maps to one community root. `learn.example.com/` serves `/c/{slug}`, `learn.example.com/classroom/{courseSlug}/{lessonSlug}` serves `/c/{slug}/classroom/{courseSlug}/{lessonSlug}`, and so on. The `/c/{slug}` form keeps working and redirects to the custom domain once the domain is verified. Account pages and checkout stay reachable on the custom domain so members are not bounced to another host. Post-MVP (founder decision, 2026-10-25); not built yet.
 
 **Recommendation (self-hosted):** an instance can set a default community, so a single-community install serves that community at `/` without a custom domain step. As built, `HOME_COMMUNITY` sends signed out visitors who open `/` to that community's About page.
 
@@ -329,7 +329,7 @@ Confirmed:
 - Creator customization is limited to accent color, logo, cover image, 3 curated fonts, card style, and appearance mode. Layout stays the same.
 
 Recommendation:
-- URL scheme under `/c/{slug}`, with custom domains mapping the community root (custom domains are Post-MVP and not built in 0.12.0).
+- URL scheme under `/c/{slug}`, with custom domains mapping the community root (custom domains are Post-MVP and not built yet).
 - Feed is the community home at `/c/{slug}` and carries the "Continue learning" card.
 - Tabs are never hidden, even when empty.
 - Admins cannot change pricing, the payment connection, or refunds, and cannot delete the community (as built: `payment.edit_plan`, `payment.connect`, and `payment.refund` are owner only in `@cohory/authz`). Moderators see Inbox and People only.
