@@ -4,8 +4,11 @@ All notable changes to Cohory are recorded here. The format follows [Keep a Chan
 
 ## [Unreleased]
 
+## [0.13.0] - 2026-10-25
+
 ### Added
 
+- A product tour with screenshots in the README.
 - A `docs-audit` skill for coding agents that checks every doc against the code before a release.
 
 ### Changed
@@ -100,5 +103,6 @@ The first summarized release. Cohory 0.11.0 is an open source community platform
 - Rate limits on sign in, invitations, and public writes, and a structured logger that redacts secrets.
 - Account deletion, data download, legal pages, and consent at sign up.
 
-[Unreleased]: https://github.com/cohory/cohory/compare/v0.12.0...HEAD
+[Unreleased]: https://github.com/cohory/cohory/compare/v0.13.0...HEAD
+[0.13.0]: https://github.com/cohory/cohory/compare/v0.12.0...v0.13.0
 [0.12.0]: https://github.com/cohory/cohory/releases/tag/v0.12.0

@@ -29,7 +29,7 @@ This is a design. Cohory does not run evaluations, scripts, or agents on its ser
       { "kind": "script", "index": 2, "status": "not_run", "reason": "..." }
     ],
     "output": {},
-    "environment": { "runner": "@cohory/agent-runner", "runnerVersion": "0.12.0", "node": "22.20.0", "platform": "linux" }
+    "environment": { "runner": "@cohory/agent-runner", "runnerVersion": "0.13.0", "node": "22.20.0", "platform": "linux" }
   }
 }
 ```

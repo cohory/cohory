@@ -275,7 +275,7 @@ test("step 14 mcp: an assistant connects with OAuth and its removal waits for th
   );
 
   await test.step("tools work through MCP and the removal is approved in Approvals", async () => {
-    expect(client.getServerVersion()).toMatchObject({ name: "cohory", version: "0.12.0" });
+    expect(client.getServerVersion()).toMatchObject({ name: "cohory", version: "0.13.0" });
     await journey(client, owner.page, slug, "Milo", memberId);
   });
 

@@ -61,7 +61,7 @@ import { createWebhooksRoutes, type WebhooksRouteDeps } from "./routes/webhooks"
 
 export const openApiInfo = {
   title: "Cohory API",
-  version: "0.12.0",
+  version: "0.13.0",
   description: "HTTP API for Cohory communities.",
 } as const;
 
