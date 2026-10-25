@@ -63,7 +63,7 @@ export class RunnerError extends Error {
   }
 }
 
-export const runnerVersion = "0.12.0";
+export const runnerVersion = "0.13.0";
 
 export function defaultEnvironment(): Environment {
   return {

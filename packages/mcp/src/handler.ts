@@ -22,7 +22,7 @@ import { visibleTools } from "./visibility";
 
 export const rateLimitedErrorCode = -32029;
 
-export const serverInfo = { name: "cohory", version: "0.12.0" } as const;
+export const serverInfo = { name: "cohory", version: "0.13.0" } as const;
 
 export const insufficientScopeErrorCode = -32003;
 

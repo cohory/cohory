@@ -4,7 +4,7 @@ import { archiveEntities, type ArchiveEntity } from "./records";
 
 export const archiveFormat = "cohory-archive";
 export const schemaVersion = "1.6.0";
-export const cohoryVersion = "0.12.0";
+export const cohoryVersion = "0.13.0";
 
 const semver = z.string().regex(/^\d+\.\d+\.\d+$/);
 
