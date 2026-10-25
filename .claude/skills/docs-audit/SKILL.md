@@ -28,7 +28,7 @@ python3 .claude/skills/docs-audit/scripts/check-structure.py
 node .claude/skills/docs-audit/scripts/lock-hash.mjs
 ```
 
-They cover: relative links and heading anchors; dashes as punctuation, curly quotes, and emojis outside code (the `## [x.y.z] - date` changelog headings are the one allowed spaced hyphen); every doc ending with a "Decisions and open questions" section; every decision record indexed with the same status as its status line; current release numbers outside the places that may carry them; every doc linked from another doc; and the skills lock against the installed folders. The three Python scripts end with a `N defect(s)` line; `lock-hash.mjs` ends with one summary line and exits 1 only for stale entries or symlinks. A skill it lists under "only the CLI can verify" counts as clean once the CLI check in `scripts/README.md` reinstalls it without changing a file. Read that README for the rest.
+They cover: relative links and heading anchors; dashes as punctuation, curly quotes, and emojis outside code (the `## [x.y.z] - date` changelog headings are the one allowed spaced hyphen); every doc ending with a "Decisions and open questions" section; every decision record indexed with the same status as its status line; current release numbers outside the places that may carry them; every doc linked from another doc; and the skills lock against the installed folders. The three Python scripts end with a `N defect(s)` line; `lock-hash.mjs` ends with one summary line and exits 1 only for stale entries or symlinks. A skill it lists under "only the CLI can verify" counts as clean once the skills CLI, run in a scratch copy as `.claude/skills/docs-audit/scripts/README.md` describes, reports it up to date or reinstalls it without changing a file. Read that README for the rest.
 
 ## 3. Claim checks against the code
 
@@ -54,11 +54,11 @@ Give each reviewer its own file prefix in the scratchpad. Two reviewers sharing 
 
 You do not decide product questions. Collect everything that needs the founder in one file outside the repository, for example `~/cohory-backups/cohory-open-items-<date>.md`: the open questions, to-dos, and unapplied recommendations the docs themselves list (each ending with its source path), plus what the audit raised. The audit raises three kinds of decision: a decision record still Proposed although its feature is in the code, a requirement whose priority no longer matches what is built (for example an MVP item nobody started), and a setting only the founder can change (package visibility, a license, a default). Ask once, with options. Apply the answers: status lines and the index, the decisions log, the requirement tables, and the open items file.
 
-Dangerous actions wait for the founder: deleting records, making a package or repository public, changing a license, or any download of third party content into the repository (the permission classifier blocks skill updates for agents; the founder runs `npx skills update -p -y` and you verify, see `scripts/README.md`).
+Dangerous actions wait for the founder: deleting records, making a package or repository public, changing a license, or any download of third party content into the repository (the permission classifier blocks skill updates for agents; the founder runs `npx skills update -p -y` and you verify, see `.claude/skills/docs-audit/scripts/README.md`).
 
 ## 6. Finish
 
-1. Rerun section 2. All four scripts must be clean.
+1. Rerun section 2. All four scripts must be clean as section 2 defines it.
 2. Run `pnpm verify:changed`.
 3. Present the diff for review and wait. Then commit once with sign off, no attribution trailers, and open the PR with `opening-a-pr`. The Verification section carries the last line of each script, one line per reviewer (file set, number of fixes, anything left for the founder), and the `pnpm verify:changed` result.
 
