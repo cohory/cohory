@@ -29,7 +29,7 @@
     "@cohory/infra": "workspace:*",
     "drizzle-orm": "0.45.4",
     "pg-boss": "12.38.0",
-    "stripe": "23.0.0",
+    "stripe": "23.1.0",
     "zod": "4.6.7"
   },
   "devDependencies": {
